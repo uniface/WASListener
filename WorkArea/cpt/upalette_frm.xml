@@ -1,0 +1,3394 @@
+﻿<?xml version='1.0' encoding='UTF-8' ?>
+<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
+<UNIFACE release="10.3" repversion="7" xmlengine="2.0">
+<TABLE>
+<DSC name="UFORM" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="UTIMESTAMP" seqno="1" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="ULABEL" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
+<FLD name="FTYP" seqno="3" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="DATA_ACCESS" seqno="4" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UKVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
+<FLD name="UMVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
+<FLD name="UDESCR" seqno="7" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="FHEAD" seqno="8" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOLOR" seqno="9" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="WVPOS" seqno="10" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="WHPOS" seqno="11" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="WVSIZ" seqno="12" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="WHSIZ" seqno="13" type="S" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="CLRSCRN" seqno="14" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UBORDER" seqno="15" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="RIBIN" seqno="16" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="RIBOT" seqno="17" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="MOVABLE" seqno="18" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="VIDEOINVERSE" seqno="19" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="VIDEOBRIGHT" seqno="20" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="VIDEOUNLINE" seqno="21" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="VIDEOBLINK" seqno="22" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UPANEL" seqno="23" type="S" level="2" pack="1" scale="0" length="128"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="POSPANEL" seqno="24" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UPULL" seqno="25" type="S" level="2" pack="1" scale="0" length="128"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="HIDESTACK" seqno="26" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TEMPLATENAME" seqno="27" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="1" ufocc="0" idxnum="4" idxsnr="1" />
+<FLD name="UINHERIT" seqno="28" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="LIBRAR" seqno="29" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UTRANSACT" seqno="30" type="S" level="2" pack="1" scale="0" length="8"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UPURPOSE" seqno="31" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UALT_NAME" seqno="32" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="33" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
+<FLD name="TPLACTUAL" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="TPLACTUAL2" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="UDECLARATIONS" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+<FLD name="USCRIPT" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
+<FLD name="INIT" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
+<FLD name="CLEAR" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
+<FLD name="RETRIEVE" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
+<FLD name="RECORD" seqno="42" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
+<FLD name="STORE" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
+<FLD name="DELET" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
+<FLD name="ACCEPT" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
+<FLD name="QUIT" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
+<FLD name="MENU" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
+<FLD name="INTKEY" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
+<FLD name="SPRINT" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
+<FLD name="EPRINT" seqno="50" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
+<FLD name="ASYNC" seqno="51" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
+<FLD name="GENERAL" seqno="52" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D2,0,0,0,,0,0,0,," />
+<FLD name="FRLF" seqno="53" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
+<FLD name="FRGF" seqno="54" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D4,0,0,0,,0,0,0,," />
+<FLD name="SFUNC" seqno="55" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D5,0,0,0,,0,0,0,," />
+<FLD name="GETSTATE" seqno="56" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D6,0,0,0,,0,0,0,," />
+<FLD name="SETSTATE" seqno="57" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
+<FLD name="UCTRIGGERS" seqno="58" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
+<FLD name="FORMPIC" seqno="59" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D9,0,0,0,,0,0,0,," />
+<FLD name="TITLE" seqno="60" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
+<FLD name="WINPROP" seqno="61" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
+<FLD name="USCONTAINED" seqno="62" type="B" level="2" pack="128" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
+<FLD name="ATTACHED" seqno="63" type="B" level="2" pack="128" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
+<FLD name="UPOPUP" seqno="64" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DE,0,0,0,,0,0,0,," />
+<FLD name="USPLITPROP" seqno="65" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
+<FLD name="USTATEMANAGEDBY" seqno="66" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
+<FLD name="HTMLSKELETON" seqno="67" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="UTIMESTAMP">2020-06-16T15:10:45.00</DAT>
+<DAT name="ULABEL">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">3</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Palette of objects for Form components</DAT>
+<DAT name="WVPOS">3</DAT>
+<DAT name="WHPOS">1</DAT>
+<DAT name="WVSIZ">35</DAT>
+<DAT name="WHSIZ">85</DAT>
+<DAT name="CLRSCRN">N</DAT>
+<DAT name="UBORDER">N</DAT>
+<DAT name="UTRANSACT">0</DAT>
+<DAT name="UPURPOSE">P</DAT>
+<DAT name="FORMPIC" xml:space='preserve'>
+ &uFRM;TYP=E&uSEP;NAM=ENT.HIDDENINPALETTE&uSEP;WID=22&uSEP;HEI=101&uSEP;HOC=22&uSEP;VOC=101&uFRM;
+  &uFRM;TYP=E&uSEP;NAM=ENTITY.NOMODEL&uSEP;WID=2&uSEP;HEI=1&uSEP;HOC=2&uSEP;VOC=1&uFRM;
+
+  &uFRM;TYP=E&uSEP;NAM=GRID.NOMODEL&uSEP;WID=4&uSEP;HEI=1&uSEP;HOC=4&uSEP;VOC=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=EDITBOX&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=EDITBOX_ML&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=PASSWORD&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=RICHTEXT&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=CHECKBOX&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=COMBOBOX&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=DROPDOWN&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=LISTBOX&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=RADIOGROUP&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=SPINBUTTON&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=SLIDER&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=MONTH_CALENDAR&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=COLORLIST_WEB&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=COLORLIST_SYSTEM&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=COLORBOX&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=STATIC_TEXT&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=HTML&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=PICTURE_DBMS&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=PICTURE_FILE&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=PICTURE_GLYPH&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=MAP&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=METER&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=PROGRESSBAR&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=PUTMESS_OUTPUT&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=COMPILER_OUTPUT&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=MESSAGELINE_OUTPUT&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=FLAT_BUTTON&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=COMMAND_BUTTON&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=UNIFACE_BUTTON&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=HEADER_BUTTON&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=HYPERLINK&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=TREE&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=TAB&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=TABEX&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=FORM_CONTAINER&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=OCX_CONTAINER&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=OLE_CONTAINER&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=DRAG_SOURCE&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=DROP_TARGET&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=BTN_OK&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=BTN_CANCEL&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=BTN_CLOSE&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=BTN_CLEAR&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=BTN_CREOCC&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=BTN_REMOCC&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=BTN_RETRIEVE&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=BTN_STORE&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=L&uSEP;NAM=LABEL&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+
+ &uFRM;TYP=A&uSEP;NAM=AREA&uSEP;WID=20&uSEP;HEI=1&uSEP;HOC=20&uSEP;VOC=1&uFRM;
+
+ &uFRM;TYP=D&uSEP;NAM=LINE&uSEP;WID=20&uSEP;HEI=1&uSEP;HOC=1&uSEP;VOC=1&uFRM;
+
+ &uFRM;TYP=H&uSEP;NAM=HEADER.USYS&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+ &uFRM;TYP=T&uSEP;NAM=TRAILER.USYS&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+ &uFRM;TYP=B&uSEP;NAM=BREAK.USYS&uSEP;WID=20&uSEP;HEI=1&uFRM;</DAT>
+<DAT name="USCONTAINED">T</DAT>
+<DAT name="USTATEMANAGEDBY">0</DAT>
+<DAT name="HTMLSKELETON" xml:space='preserve'>&lt;!-- This is a palette object; layout is never used and therefore empty --&gt;</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="UXGROUP" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="ULABEL" seqno="1" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
+<FLD name="UBASE" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="102" />
+<FLD name="UFORM" seqno="3" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="103,1" />
+<FLD name="UKVERSION" seqno="4" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
+<FLD name="UMVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="4" idxsnr="1" />
+<FLD name="UDESCR" seqno="6" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_BORD" seqno="7" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="DB_ACCESS" seqno="8" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_UPD" seqno="9" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_MINR" seqno="10" type="N" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_MAXR" seqno="11" type="N" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_INT" seqno="12" type="S" level="2" pack="1" scale="0" length="128"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TEMPLATENAME" seqno="13" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UINHERIT" seqno="14" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UALT_NAME" seqno="15" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="16" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="17" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
+<FLD name="TPLACTUAL" seqno="18" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="UDECLARATIONS" seqno="19" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="UCOLL_SCRIPT" seqno="20" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+<FLD name="UOCC_SCRIPT" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
+<FLD name="GETOCC" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
+<FLD name="PUTOCC" seqno="23" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
+<FLD name="DELOCC" seqno="24" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
+<FLD name="LCK" seqno="25" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
+<FLD name="UNLOCK" seqno="26" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
+<FLD name="GETSEGM" seqno="27" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
+<FLD name="ADDOCC" seqno="28" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
+<FLD name="DELOCCR" seqno="29" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
+<FLD name="ENDMOD" seqno="30" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
+<FLD name="DOC" seqno="31" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
+<FLD name="DETAIL" seqno="32" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
+<FLD name="CREOCC" seqno="33" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
+<FLD name="MENU" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
+<FLD name="FINDOCC" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D2,0,0,0,,0,0,0,," />
+<FLD name="ERROR" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
+<FLD name="GENERAL" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D4,0,0,0,,0,0,0,," />
+<FLD name="BREAK" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D5,0,0,0,,0,0,0,," />
+<FLD name="VLDE" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D6,0,0,0,,0,0,0,," />
+<FLD name="VLDK" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
+<FLD name="PRLO" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
+<FLD name="PSLO" seqno="42" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D9,0,0,0,,0,0,0,," />
+<FLD name="PRSO" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
+<FLD name="PSSO" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
+<FLD name="UEOOPERS" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
+<FLD name="UECOPERS" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
+<FLD name="UECTRIGGERS" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
+<FLD name="FLIST" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
+<FLD name="UPOPUP" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
+<FLD name="U_OBJSVC" seqno="50" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E2,0,0,0,,0,0,0,," />
+<FLD name="UEOINTERFACE" seqno="51" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E4,0,0,0,,0,0,0,," />
+<FLD name="UECINTERFACE" seqno="52" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E5,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETTYPE" seqno="53" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E6,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETPROPS" seqno="54" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E7,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETTYPE" seqno="55" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E8,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETPROPS" seqno="56" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E9,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETTYPE" seqno="57" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EA,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETPROPS" seqno="58" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EB,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETTYPE" seqno="59" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EC,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETPROPS" seqno="60" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\ED,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="ULABEL">BREAK</DAT>
+<DAT name="UBASE">USYS</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Inline header frame for printed reports</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Printer Break Frame</DAT>
+<DAT name="UOCC_SCRIPT" xml:space='preserve'>
+trigger getFocus
+
+end
+</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">BUTTONS</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Buttons category</DAT>
+<DAT name="U_BORD">N</DAT>
+<DAT name="UALT_NAME">&lt;b&gt;Buttons&lt;/b&gt;</DAT>
+<DAT name="UDECLARATIONS" xml:space='preserve'>
+; This is a Category object: it is not meant to be created from
+</DAT>
+<DAT name="USP_WIDGETPROPS" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">COMPLEX</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Complex category</DAT>
+<DAT name="U_BORD">N</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;b&gt;Complex data&lt;/b&gt;</DAT>
+<DAT name="UDECLARATIONS" xml:space='preserve'>
+; This is a Category object: it is not meant to be created from
+</DAT>
+<DAT name="USP_WIDGETPROPS" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">CONTROL</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Entity control buttons category</DAT>
+<DAT name="U_BORD">N</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;b&gt;Entity control buttons&lt;/b&gt;</DAT>
+<DAT name="UDECLARATIONS" xml:space='preserve'>
+; This is a Category object: it is not meant to be created from
+</DAT>
+<DAT name="USP_WIDGETPROPS" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">DATA_DISPLAY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Data display category</DAT>
+<DAT name="U_BORD">N</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;b&gt;Data display&lt;/b&gt;</DAT>
+<DAT name="UDECLARATIONS" xml:space='preserve'>
+; This is a Category object: it is not meant to be created from
+</DAT>
+<DAT name="USP_WIDGETPROPS" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">DATA_ENTRY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Data Entry category</DAT>
+<DAT name="U_BORD">N</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;b&gt;Data entry&lt;/b&gt;</DAT>
+<DAT name="UDECLARATIONS" xml:space='preserve'>
+; This is a Category object: it is not meant to be created from
+</DAT>
+<DAT name="USP_WIDGETPROPS" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Component Palettes</DAT>
+<DAT name="U_BORD">N</DAT>
+<DAT name="UALT_NAME">&lt;b&gt;PALETTE&lt;/b&gt;</DAT>
+<DAT name="UDECLARATIONS" xml:space='preserve'>
+; This is a Category object; it is not meant for creating objects.
+</DAT>
+<DAT name="USP_WIDGETPROPS" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">ENTITIES</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Entities category</DAT>
+<DAT name="U_BORD">N</DAT>
+<DAT name="UALT_NAME">&lt;b&gt;Entities&lt;/b&gt;</DAT>
+<DAT name="UDECLARATIONS" xml:space='preserve'>
+; This is a Category object: it is not meant to be created from
+</DAT>
+<DAT name="USP_WIDGETPROPS" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">ENTITY</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Component Palettes</DAT>
+<DAT name="U_BORD">N</DAT>
+<DAT name="UALT_NAME">&lt;b&gt;PALETTE&lt;/b&gt;</DAT>
+<DAT name="UDECLARATIONS" xml:space='preserve'>
+; This is a Category object; it is not meant for creating objects.
+</DAT>
+<DAT name="USP_WIDGETPROPS" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">ENTITY</DAT>
+<DAT name="UBASE">NOMODEL</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Repeated frames for occurrences</DAT>
+<DAT name="U_BORD">N</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Non-DBMS Entity: &lt;/c&gt;&lt;/t&gt;Occurrence List</DAT>
+<DAT name="USP_WIDGETPROPS" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">GRID</DAT>
+<DAT name="UBASE">NOMODEL</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Table-like representation of occurrences</DAT>
+<DAT name="U_BORD">N</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Non-DBMS Entity: &lt;/c&gt;&lt;/t&gt;Grid</DAT>
+<DAT name="UOCC_SCRIPT" xml:space='preserve'>; Typical triggers for this widget:
+trigger ColumnHeader_LClicked
+params 
+  string pFieldName : in
+  numeric pModifierKeys : in  ; 0=None | 1=Shift | 2=Ctrl | 4=Alt
+endparams 
+
+  selectcase pModifierKeys
+  case 0  ; No modifier key pressed
+    ; Your implementation here ...
+  case 1  ; Shift key pressed
+    ; Your implementation here ...
+  case 2  ;- Control key pressed
+    ; Your implementation here ...
+  case 3  ;- Control + Shift key pressed
+    ; Your implementation here ...
+  case 4  ;- Alt key pressed
+    ; Your implementation here ...
+  case 5  ;- Alt + Shift key pressed
+    ; Your implementation here ...
+  case 6  ;- Alt + Control key pressed
+    ; Your implementation here ...
+  case 7  ;- Alt + Control + Shift key pressed
+    ; Your implementation here ...
+  endselectcase
+
+end
+
+
+trigger RowHeader_LClicked
+params 
+  numeric pOccIndex : in
+  numeric pModifierKeys : in  ; 0=None | 1=Shift | 2=Ctrl | 4=Alt
+endparams 
+
+  selectcase pModifierKeys
+  case 0  ; No modifier key pressed
+    ; Your implementation here ...
+  case 1  ; Shift key pressed
+    ; Your implementation here ...
+  case 2  ;- Control key pressed
+    ; Your implementation here ...
+  case 3  ;- Control + Shift key pressed
+    ; Your implementation here ...
+  case 4  ;- Alt key pressed
+    ; Your implementation here ...
+  case 5  ;- Alt + Shift key pressed
+    ; Your implementation here ...
+  case 6  ;- Alt + Control key pressed
+    ; Your implementation here ...
+  case 7  ;- Alt + Control + Shift key pressed
+    ; Your implementation here ...
+  endselectcase
+
+end
+
+
+trigger CornerButton_LClicked 
+params
+  numeric pModifierKeys : in  ; 0=None | 1=Shift | 2=Ctrl | 4=Alt
+endparams
+
+  selectcase pModifierKeys
+  case 0  ; No modifier key pressed
+    ; Your implementation here ...
+  case 1  ; Shift key pressed
+    ; Your implementation here ...
+  case 2  ;- Control key pressed
+    ; Your implementation here ...
+  case 3  ;- Control + Shift key pressed
+    ; Your implementation here ...
+  case 4  ;- Alt key pressed
+    ; Your implementation here ...
+  case 5  ;- Alt + Shift key pressed
+    ; Your implementation here ...
+  case 6  ;- Alt + Control key pressed
+    ; Your implementation here ...
+  case 7  ;- Alt + Control + Shift key pressed
+    ; Your implementation here ...
+  endselectcase
+
+end
+
+
+trigger VScrollBar_HitEnd
+
+  ; Your implementation here...
+
+end
+
+
+trigger Viewport_Resized 
+params 
+  numeric pWidth        : in  ; pixels
+  numeric pHeight       : in  ; pixels
+  string  pColumnWidths : in  ; "FieldName1=WidthPx1{...&uSEP;FieldNameN=WidthPxN}"
+endparams 
+
+  ; Your implementation here...
+
+end
+
+
+trigger Column_Resized
+params 
+  string  vFieldName    : in
+  numeric viewportWidth : in  ; pixels
+  string  columnWidths  : in  ; "FieldName1=WidthPx1{...&uSEP;FieldNameN=WidthPxN}"
+endparams 
+
+  ; Your implementation here...
+  message/info "vFieldName: %%(vFieldName), viewportWidth: %%(viewportWidth), columnWidths: %%(columnWidths)"
+
+end
+</DAT>
+<DAT name="FRM_WIDGETTYPE">EGRID</DAT>
+<DAT name="USP_WIDGETPROPS" xml:space='preserve'>U_ATLEASTONE=1&uSEP;U_STARTOCC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">HEADER</DAT>
+<DAT name="UBASE">USYS</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Header frame for printed reports</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Printer Header Frame</DAT>
+<DAT name="UOCC_SCRIPT" xml:space='preserve'>
+trigger getFocus
+
+end
+</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">TRAILER</DAT>
+<DAT name="UBASE">USYS</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Footer frame for printed reports</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Printer Footer Frame</DAT>
+<DAT name="UOCC_SCRIPT" xml:space='preserve'>
+trigger getFocus
+
+end
+</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="UXFIELD" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="ULABEL" seqno="1" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
+<FLD name="GRP" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="102,1" />
+<FLD name="UBASE" seqno="3" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="103,2" />
+<FLD name="UFORM" seqno="4" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="3" ufocc="0" mandatory="yes" idxnum="1,2,3" idxsnr="104,3,1" />
+<FLD name="UKVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="4" idxsnr="1" />
+<FLD name="UMVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="5" idxsnr="1" />
+<FLD name="UDESCR" seqno="7" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_DTYP" seqno="8" type="S" level="2" pack="1" scale="0" length="10"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="IS_STATIC" seqno="9" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="IS_CONTROL" seqno="10" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="DATA_LAYOUT" seqno="11" type="S" level="2" pack="0" scale="0" length="192"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="DATA_SYNTAX" seqno="12" type="S" level="2" pack="0" scale="0" length="256"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_INT" seqno="13" type="S" level="2" pack="0" scale="0" length="256"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="TEMPLATENAME" seqno="14" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UINHERIT" seqno="15" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UALT_NAME" seqno="16" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="17" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="18" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
+<FLD name="TPLACTUAL" seqno="19" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="UDECLARATIONS" seqno="20" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="USCRIPT" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+<FLD name="STARTMOD" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
+<FLD name="ENDMOD" seqno="23" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
+<FLD name="NEXTFLD" seqno="24" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
+<FLD name="PREVFLD" seqno="25" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
+<FLD name="ENCRYPT" seqno="26" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
+<FLD name="DECRYPT" seqno="27" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
+<FLD name="DOC" seqno="28" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
+<FLD name="DETAIL" seqno="29" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
+<FLD name="MENU" seqno="30" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
+<FLD name="ERROR" seqno="31" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
+<FLD name="UFORMAT" seqno="32" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
+<FLD name="DEFORMAT" seqno="33" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
+<FLD name="GENERAL" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
+<FLD name="GETFOCUS" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
+<FLD name="VCHANGED" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D2,0,0,0,,0,0,0,," />
+<FLD name="VLDF" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
+<FLD name="UFTRIGGERS" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D5,0,0,0,,0,0,0,," />
+<FLD name="VALLAB" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D6,0,0,0,,0,0,0,," />
+<FLD name="INITVALUE" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
+<FLD name="UPOPUP" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETTYPE" seqno="42" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D9,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETPROPS" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETTYPE" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETPROPS" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETTYPE" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETPROPS" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DE,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETTYPE" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETPROPS" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="ULABEL">BTN_CANCEL</DAT>
+<DAT name="GRP">CONTROL</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Cancel Button</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">T</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Cancel Button</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger detail
+; Pressing this button fires this trigger.
+; This trigger invokes the ^quit macro, which fires the quit operation.
+; The quit operation should handle the request further after which the form is closed.
+; OK and Cancel buttons are typically used on modal data entry forms.
+
+  macro "^quit"
+
+end
+</DAT>
+<DAT name="INITVALUE">Cancel</DAT>
+<DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="DSP_WIDGETTYPE">COMMANDBUTTON_UPDATABLE</DAT>
+<DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">BTN_CANCEL</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Button to cancel action and close form</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">T</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;Cancel</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger detail
+; Pressing this button fires this trigger.
+; This trigger invokes the ^quit macro, which fires the quit operation.
+; The quit operation should handle the request further, after which the form is closed.
+; OK and Cancel buttons are typically used on modal data entry forms.
+
+  macro "^quit"
+
+end
+</DAT>
+<DAT name="INITVALUE">Cancel</DAT>
+<DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="DSP_WIDGETTYPE">COMMANDBUTTON_UPDATABLE</DAT>
+<DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">BTN_CLEAR</DAT>
+<DAT name="GRP">CONTROL</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Clear Button</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">T</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Clear button</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger detail
+; Pressing this button fires this trigger.
+; This trigger clears the retrieved occurrences from the entity to be controlled by this button.
+
+; TO DO:
+;   1. Paint this field within the entity it needs to control or specify a literal entity name in code.
+
+  clear/e "&lt;$entname&gt;"
+
+end</DAT>
+<DAT name="INITVALUE">Clear</DAT>
+<DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">BTN_CLEAR</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Button to clear component</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">T</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;Clear</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger detail
+; Pressing this button fires this trigger.
+; This trigger clears the retrieved occurrences from the entity to be controlled by this button.
+
+; TO DO:
+;   1. Draw this field within the entity it needs to control, or specify a literal entity name in code.
+
+  clear/e "&lt;$entname&gt;"
+
+end</DAT>
+<DAT name="INITVALUE">Clear</DAT>
+<DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">BTN_CLOSE</DAT>
+<DAT name="GRP">CONTROL</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Close Button</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">T</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Close Button</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger detail
+; Pressing this button fires this trigger.
+; This trigger invokes the ^quit macro, which fires the quit operation.
+; The quit operation should handle the request further after which the form is closed.
+; a Close button is typically used in non-forms or modal read-only forms.
+
+  macro "^quit"
+
+end</DAT>
+<DAT name="INITVALUE">Close</DAT>
+<DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="DSP_WIDGETTYPE">COMMANDBUTTON_UPDATABLE</DAT>
+<DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">BTN_CLOSE</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Button to close form</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">T</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;Close</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger detail
+; Pressing this button fires this trigger.
+; This trigger invokes the ^quit macro, which fires the quit operation.
+; The quit operation should handle the request further, after which the form is closed.
+; A Close button is typically used in non-modal forms or modal read-only forms.
+
+  macro "^quit"
+
+end</DAT>
+<DAT name="INITVALUE">Close</DAT>
+<DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="DSP_WIDGETTYPE">COMMANDBUTTON_UPDATABLE</DAT>
+<DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">BTN_CREOCC</DAT>
+<DAT name="GRP">CONTROL</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Creocc Button</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Create occurrence button</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger detail
+; Pressing this button fires this trigger.
+; This trigger creates a new occurrence after the current occurrence of the entity to be controlled by this button.
+
+; TO DO:
+;   1. Paint this field within the entity it needs to control.
+
+  creocc "&lt;$entname&gt;", $curocc("&lt;$entname&gt;")
+  ; Insert code to generate any technical keys, e.g.
+  ; KEYFIELD.&lt;$entname&gt; = $uuid
+
+end</DAT>
+<DAT name="INITVALUE">Insert</DAT>
+<DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">BTN_CREOCC</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Button to create an occurrence</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;Create Occurrence</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger detail
+; Pressing this button fires this trigger.
+; This trigger creates a new occurrence after the current occurrence of the entity to be controlled by this button.
+
+; TO DO:
+;   1. Draw this field within the entity it needs to control.
+
+  creocc "&lt;$entname&gt;", $curocc("&lt;$entname&gt;")
+  ; Insert code to generate any technical keys, e.g.
+  ; KEYFIELD.&lt;$entname&gt; = $uuid
+
+end</DAT>
+<DAT name="INITVALUE">Insert</DAT>
+<DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">BTN_OK</DAT>
+<DAT name="GRP">CONTROL</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>OK Button</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>OK Button</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger detail
+; Pressing this button fires this trigger.
+; This trigger invokes the ^accept macro, which fires the accept operation.
+; The accept operation should handle the request further after which the form is closed.
+; OK and Cancel buttons are typically used on modal data entry forms.
+
+  macro "^accept"
+
+end
+</DAT>
+<DAT name="INITVALUE">OK</DAT>
+<DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">BTN_OK</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Button to confirm an action</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;OK</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger detail
+; Pressing this button fires this trigger.
+; This trigger invokes the ^accept macro, which fires the accept operation.
+; The accept operation should handle the request further, after which the form is closed.
+; OK and Cancel buttons are typically used on modal data entry forms.
+
+  macro "^accept"
+
+end
+</DAT>
+<DAT name="INITVALUE">OK</DAT>
+<DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">BTN_REMOCC</DAT>
+<DAT name="GRP">CONTROL</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Remocc Button</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Remove occurrence button</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger detail
+; Pressing this button fires this trigger.
+; This triggers marks the current occurrence of the eneity to be conrolled by this button for deletion;
+; actual deletion occurs on store.
+
+; TO DO:
+;   1. Paint this field within the entity it needs to control or specify a literal entity name in code.
+
+  remocc "&lt;$entname&gt;", 0
+
+end</DAT>
+<DAT name="INITVALUE">Delete</DAT>
+<DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">BTN_REMOCC</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Button to mark occurrence for deletion</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;Remove Occurrence</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger detail
+; Pressing this button fires this trigger.
+; The remocc command marks the current occurrence of the entity controlled by this button for deletion
+; actual deletion occurs upon store.
+
+; TO DO:
+;   1. Draw this field within the entity it needs to control, or specify a literal entity name in code.
+
+  remocc "&lt;$entname&gt;", 0
+
+end</DAT>
+<DAT name="INITVALUE">Delete</DAT>
+<DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">BTN_RETRIEVE</DAT>
+<DAT name="GRP">CONTROL</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Retrieve Button</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">T</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Retrieve data from database button</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger detail
+; Pressing this button fires this trigger.
+; This triggers marks the current occurrence of the eneity to be conrolled by this button for deletion;
+; actual deletion occurs on store.
+
+; TO DO:
+;   1. Paint this field within the entity it needs to control or specify a literal entity name in code.
+
+; Retrieves data from database and loads them as occurrences in the current entity.
+variables
+  string vProfiles
+endvariables
+
+  ; Optionally copy single ooccurrence from a dedicated profile entity to be used as profile
+  ; clear/e "&lt;$entname&gt;"
+  ; putlistitems/occ vProfiles, "PROFILE_ENTITY"
+  ; getlistitems/occ/init vProfiles, "&lt;$entname&gt;"
+
+  retrieve/e "&lt;$entname&gt;"
+  selectcase $procerror
+  case 0
+    ; ok
+  case -2, -4
+    message/info "Retrieve: No data found in the database."
+  elsecase
+    message/error "Retrieve: Error occurred - (%%($procerror))."
+  endselectcase
+
+  return 0
+
+end</DAT>
+<DAT name="INITVALUE">Retrieve</DAT>
+<DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">BTN_RETRIEVE</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Button to retrieve data from database</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">T</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;Retrieve</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger detail
+; Pressing this button fires this trigger.
+; This trigger marks the current occurrence of the entity controlled by this button for retrieval
+
+; TO DO:
+;   1. Paint this field within the entity it needs to control, or specify a literal entity name in code.
+
+; Retrieves data from database and loads it as occurrences in the current entity.
+variables
+  string vProfiles
+endvariables
+
+  ; Optionally copy single occurrence from a dedicated profile entity to be used as profile
+  ; clear/e "&lt;$entname&gt;"
+  ; putlistitems/occ vProfiles, "PROFILE_ENTITY"
+  ; getlistitems/occ/init vProfiles, "&lt;$entname&gt;"
+
+  retrieve/e "&lt;$entname&gt;"
+  selectcase $procerror
+  case 0
+    ; ok
+  case -2, -4
+    message/info "Retrieve: No data found in the database."
+  elsecase
+    message/error "Retrieve: Error occurred - (%%($procerror))."
+  endselectcase
+
+  return 0
+
+end</DAT>
+<DAT name="INITVALUE">Retrieve</DAT>
+<DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">BTN_STORE</DAT>
+<DAT name="GRP">CONTROL</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Store Button</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Store data into database button</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger detail
+; Pressing this button fires this trigger.
+; This trigger stores occurrences that are modified into the database and
+; deletes any occurrences marked for deletion from the database.
+
+; TO DO:
+;   1. Paint this field within the entity it needs to control or specify a literal entity name in code.
+;   2. Define a constant DATAERRORS at component with the name of the struct variable that will hold data validation errors
+
+variables
+  numeric vProcError
+endvariables
+
+  ; Store entity
+  store/e "&lt;$entname&gt;"
+  selectcase $procerror
+  case 0
+    ; no store errors
+    selectcase $status
+    case 1
+      ; no modifications
+      message/info "No modifications."
+    case 0
+      ; store successful
+      commit
+      selectcase $procerror
+      case 0
+        ; store and commit successful
+        message/info "Store successful."
+      elsecase
+        ; commit error
+        message/info "Commit failed ($procerror=%%($procerror))."
+      endselectcase
+    endselectcase
+  elsecase
+    ; store failed
+    vProcError = $procerror
+
+    ; rollback
+    rollback
+    selectcase $procerror
+    case 0
+      ; rollback successful
+      message/error "Store failed ($procerror=%%(vProcError)) - transaction rolled back."
+    elsecase
+      ; rollback error
+      message/error "Store failed ($procerror=%%(vProcError)) - Rollback failed ($procerror=%%($procerror))."
+    endselectcase
+    return vProcError
+  endselectcase
+
+  return 0
+
+end
+
+</DAT>
+<DAT name="INITVALUE">Store</DAT>
+<DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">BTN_STORE</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Button to save data to database</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;Store</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger detail
+; Pressing this button fires this trigger.
+; This trigger stores occurrences that are modified into the database and
+; deletes any occurrences marked for deletion from the database.
+
+; TO DO:
+;   1. Draw this field within the entity it needs to control, or specify a literal entity name in code.
+;   2. Define a constant DATAERRORS at component with the name of the struct variable that will hold data validation errors
+
+variables
+  numeric vProcError
+endvariables
+
+  ; Store entity
+  store/e "&lt;$entname&gt;"
+  selectcase $procerror
+  case 0
+    ; no store errors
+    selectcase $status
+    case 1
+      ; no modifications
+      message/info "No modifications."
+    case 0
+      ; store successful
+      commit
+      selectcase $procerror
+      case 0
+        ; store and commit successful
+        message/info "Store successful."
+      elsecase
+        ; commit error
+        message/info "Commit failed ($procerror=%%($procerror))."
+      endselectcase
+    endselectcase
+  elsecase
+    ; store failed
+    vProcError = $procerror
+
+    ; rollback
+    rollback
+    selectcase $procerror
+    case 0
+      ; rollback successful
+      message/error "Store failed ($procerror=%%(vProcError)) - transaction rolled back."
+    elsecase
+      ; rollback error
+      message/error "Store failed ($procerror=%%(vProcError)) - Rollback failed ($procerror=%%($procerror))."
+    endselectcase
+    return vProcError
+  endselectcase
+
+  return 0
+
+end
+
+</DAT>
+<DAT name="INITVALUE">Store</DAT>
+<DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">CHECKBOX</DAT>
+<DAT name="GRP">DATA_ENTRY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Checkbox (Boolean)</DAT>
+<DAT name="U_DTYP">B</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Checkbox (Boolean)</DAT>
+<DAT name="FRM_WIDGETTYPE">CHECKBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">CHECKBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">CHECKBOX</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Tri-state CheckBox (Boolean)</DAT>
+<DAT name="U_DTYP">B</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt;CheckBox</DAT>
+<DAT name="FRM_WIDGETTYPE">CHECKBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">CHECKBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">COLORBOX</DAT>
+<DAT name="GRP">DATA_ENTRY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Color Box</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Color Box</DAT>
+<DAT name="FRM_WIDGETTYPE">COLORBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">RADIOGROUP</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">COLORBOX</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Single-line edit control for colors (String, Unicode)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt;ColorBox</DAT>
+<DAT name="FRM_WIDGETTYPE">COLORBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">RADIOGROUP</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">COLORLIST_SYSTEM</DAT>
+<DAT name="GRP">DATA_ENTRY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Color List (System colors)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Color List (System colors)</DAT>
+<DAT name="FRM_WIDGETTYPE">COLORLIST</DAT>
+<DAT name="FRM_WIDGETPROPS">ColorType=SYSTEM</DAT>
+<DAT name="DSP_WIDGETTYPE">RADIOGROUP</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">COLORLIST_SYSTEM</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Pre-defined set of colors for System (String, Unicode)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt;Color List (System)</DAT>
+<DAT name="FRM_WIDGETTYPE">COLORLIST</DAT>
+<DAT name="FRM_WIDGETPROPS">ColorType=SYSTEM</DAT>
+<DAT name="DSP_WIDGETTYPE">RADIOGROUP</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">COLORLIST_WEB</DAT>
+<DAT name="GRP">DATA_ENTRY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Color List (Web colors)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Color List (Web colors)</DAT>
+<DAT name="FRM_WIDGETTYPE">COLORLIST</DAT>
+<DAT name="FRM_WIDGETPROPS">ColorType=STRICTWEB</DAT>
+<DAT name="DSP_WIDGETTYPE">RADIOGROUP</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">COLORLIST_WEB</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Pre-defined set of colors for Web (String, Unicode)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt;Color List (Web)</DAT>
+<DAT name="FRM_WIDGETTYPE">COLORLIST</DAT>
+<DAT name="FRM_WIDGETPROPS">ColorType=STRICTWEB</DAT>
+<DAT name="DSP_WIDGETTYPE">RADIOGROUP</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">COMBOBOX</DAT>
+<DAT name="GRP">DATA_ENTRY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Combobox (Text)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Combobox (Text)</DAT>
+<DAT name="FRM_WIDGETTYPE">COMBOBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">ATTRIBUTESONLY</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">COMBOBOX</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Editable drop-down list (String, Unicode)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt;ComboBox</DAT>
+<DAT name="FRM_WIDGETTYPE">COMBOBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">ATTRIBUTESONLY</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">COMMAND_BUTTON</DAT>
+<DAT name="GRP">BUTTONS</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Command Button</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">T</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Command Button</DAT>
+<DAT name="INITVALUE" xml:space='preserve'>Button text</DAT>
+<DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">COMMAND_BUTTON</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Windows command button to activate a command</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">T</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Button: &lt;/c&gt;&lt;/t&gt;Command Button</DAT>
+<DAT name="INITVALUE" xml:space='preserve'>Button text</DAT>
+<DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">COMPILER_OUTPUT</DAT>
+<DAT name="GRP">DATA_DISPLAY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Output Box (Compiler)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Output Box (Compiler)</DAT>
+<DAT name="FRM_WIDGETTYPE">OUTPUTBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MSGCHANNEL=1</DAT>
+<DAT name="DSP_WIDGETTYPE">RADIOGROUP</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">COMPILER_OUTPUT</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Compiler messages (String, Unicode)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Display: &lt;/c&gt;&lt;/t&gt;Output Box (Compiler)</DAT>
+<DAT name="FRM_WIDGETTYPE">OUTPUTBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MSGCHANNEL=1</DAT>
+<DAT name="DSP_WIDGETTYPE">RADIOGROUP</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">DRAG_SOURCE</DAT>
+<DAT name="GRP">COMPLEX</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Drag Source</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Drag Source</DAT>
+<DAT name="FRM_WIDGETTYPE">DRAGSOURCE</DAT>
+<DAT name="DSP_WIDGETTYPE">TEXTAREA</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">DRAG_SOURCE</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Drag-and-drop source</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Complex: &lt;/c&gt;&lt;/t&gt;Drag Source</DAT>
+<DAT name="FRM_WIDGETTYPE">DRAGSOURCE</DAT>
+<DAT name="DSP_WIDGETTYPE">TEXTAREA</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">DROPDOWN</DAT>
+<DAT name="GRP">DATA_ENTRY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Dropdownlist (Valrep)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Dropdownlist (Valrep)</DAT>
+<DAT name="FRM_WIDGETTYPE">DROPDOWNLIST</DAT>
+<DAT name="DSP_WIDGETTYPE">ATTRIBUTESONLY</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">DROPDOWN</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fixed drop-down list for ValRep (String, Unicode)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt;Dropdown List</DAT>
+<DAT name="FRM_WIDGETTYPE">DROPDOWNLIST</DAT>
+<DAT name="DSP_WIDGETTYPE">ATTRIBUTESONLY</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">DROP_TARGET</DAT>
+<DAT name="GRP">COMPLEX</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Drop Target</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Drop Target</DAT>
+<DAT name="FRM_WIDGETTYPE">DROPTARGET</DAT>
+<DAT name="DSP_WIDGETTYPE">PASSWORD</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">DROP_TARGET</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Drag-and-drop target</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Complex: &lt;/c&gt;&lt;/t&gt;Drop Target</DAT>
+<DAT name="FRM_WIDGETTYPE">DROPTARGET</DAT>
+<DAT name="DSP_WIDGETTYPE">PASSWORD</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">EDITBOX</DAT>
+<DAT name="GRP">DATA_ENTRY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Editbox (Single-line String)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">NCR</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Editbox (Single-line String)</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger onEdit
+; This trigger is fired on every key press done by the user
+
+  ; Your implementation here...
+
+end
+
+</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=F</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">EDITBOX</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Single-line EditBox (String, Unicode, No carriage return)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">NCR</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt;EditBox (Single-line)</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger onEdit
+; This trigger is fired on every key press done by the user
+
+  ; Your implementation here...
+
+end
+
+</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=F</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">EDITBOX_ML</DAT>
+<DAT name="GRP">DATA_ENTRY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Editbox (Multi-line String)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Editbox (Multi-line String)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">TEXTAREA</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">EDITBOX_ML</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Multi-line EditBox (String, Unicode)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt; EditBox (Multi-line)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">TEXTAREA</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">FLAT_BUTTON</DAT>
+<DAT name="GRP">BUTTONS</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Flat Button</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">T</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Flat Button</DAT>
+<DAT name="INITVALUE" xml:space='preserve'>Button text</DAT>
+<DAT name="FRM_WIDGETTYPE">HYPERLINK</DAT>
+<DAT name="DSP_WIDGETTYPE">FLATBUTTON_UPDATABLE</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">FLAT_BUTTON</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Hyperlink-like button</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">T</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Button: &lt;/c&gt;&lt;/t&gt;Flat Button</DAT>
+<DAT name="INITVALUE" xml:space='preserve'>Button text</DAT>
+<DAT name="FRM_WIDGETTYPE">HYPERLINK</DAT>
+<DAT name="DSP_WIDGETTYPE">FLATBUTTON_UPDATABLE</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">FORM_CONTAINER</DAT>
+<DAT name="GRP">COMPLEX</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Form Container</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Form Container</DAT>
+<DAT name="FRM_WIDGETTYPE">FORMCONTAINER</DAT>
+<DAT name="DSP_WIDGETTYPE">PASSWORD</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">FORM_CONTAINER</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Container for embedded non-modal forms</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Complex: &lt;/c&gt;&lt;/t&gt;Form Container</DAT>
+<DAT name="FRM_WIDGETTYPE">FORMCONTAINER</DAT>
+<DAT name="DSP_WIDGETTYPE">PASSWORD</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">HEADER_BUTTON</DAT>
+<DAT name="GRP">BUTTONS</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Header Button</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">T</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Header Button</DAT>
+<DAT name="INITVALUE" xml:space='preserve'>Button text</DAT>
+<DAT name="FRM_WIDGETTYPE">HEADERBUTTON</DAT>
+<DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">HEADER_BUTTON</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Windows header button for columns</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">T</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Button: &lt;/c&gt;&lt;/t&gt;Header Button</DAT>
+<DAT name="INITVALUE" xml:space='preserve'>Button text</DAT>
+<DAT name="FRM_WIDGETTYPE">HEADERBUTTON</DAT>
+<DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">HTML</DAT>
+<DAT name="GRP">DATA_DISPLAY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Raw Html</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">NED</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Raw Html</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger loadError
+params
+    numeric ErrorCode : IN
+    string  ErrorText : IN
+endparams
+
+  ; Enter your code here ...
+
+end
+
+
+; CUSTOM TRIGGERS
+; --------------------
+; Custom triggers allow you to call from the HTML widget back into the Uniface engine.
+; For example, the following JavaScript code calls this custom trigger:
+;   ...
+;   window.unifaceTriggers("myTrigger", pParam1, pParam2);
+;   ...
+;  
+ trigger myTrigger
+params
+  string pParam1 : IN 
+  string pParam2 : IN 
+  ; ...
+endparams
+
+  ; Your implementation here...
+
+end
+
+</DAT>
+<DAT name="FRM_WIDGETTYPE">HTML</DAT>
+<DAT name="DSP_WIDGETTYPE">RAWHTML</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">HTML</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Non-editable HTML (Unicode)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">NED</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Display: &lt;/c&gt;&lt;/t&gt;Raw Html</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger loadError
+params
+    numeric ErrorCode : IN
+    string  ErrorText : IN
+endparams
+
+  ; Enter your code here ...
+
+end
+
+
+; CUSTOM TRIGGERS
+; --------------------
+; Custom triggers allow you to call from the HTML widget back into the Uniface engine.
+; For example, the following JavaScript code calls this custom trigger:
+;   ...
+;   window.unifaceTriggers("myTrigger", pParam1, pParam2);
+;   ...
+;  
+trigger myTrigger
+params
+  string pParam1 : IN 
+  string pParam2 : IN 
+  ; ...
+endparams
+
+  ; Your implementation here...
+
+end
+
+</DAT>
+<DAT name="FRM_WIDGETTYPE">HTML</DAT>
+<DAT name="DSP_WIDGETTYPE">RAWHTML</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">HYPERLINK</DAT>
+<DAT name="GRP">BUTTONS</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR">Hyperlink</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">T</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME">Hyperlink</DAT>
+<DAT name="INITVALUE" xml:space='preserve'>Button text</DAT>
+<DAT name="FRM_WIDGETTYPE">HYPERLINK</DAT>
+<DAT name="DSP_WIDGETTYPE">FLATBUTTON_UPDATABLE</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">HYPERLINK</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Link text to activate a command(String)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">T</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Button: &lt;/c&gt;&lt;/t&gt;Hyperlink</DAT>
+<DAT name="INITVALUE" xml:space='preserve'>Button text</DAT>
+<DAT name="FRM_WIDGETTYPE">HYPERLINK</DAT>
+<DAT name="DSP_WIDGETTYPE">FLATBUTTON_UPDATABLE</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">LISTBOX</DAT>
+<DAT name="GRP">DATA_ENTRY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Listbox (Valrep)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Listbox (Valrep)</DAT>
+<DAT name="FRM_WIDGETTYPE">LISTBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">LISTBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">LISTBOX</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Multi-line list box for ValRep (String, Unicode)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt;ListBox</DAT>
+<DAT name="FRM_WIDGETTYPE">LISTBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">LISTBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">MAP</DAT>
+<DAT name="GRP">DATA_DISPLAY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR">Map</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME">Map</DAT>
+<DAT name="FRM_WIDGETTYPE">MAP</DAT>
+<DAT name="DSP_WIDGETTYPE">RADIOGROUP</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">MAP</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Clickable image map (String)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Display: &lt;/c&gt;&lt;/t&gt;Map</DAT>
+<DAT name="FRM_WIDGETTYPE">MAP</DAT>
+<DAT name="DSP_WIDGETTYPE">RADIOGROUP</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">MESSAGELINE_OUTPUT</DAT>
+<DAT name="GRP">DATA_DISPLAY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Output Box (MessagesLine)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Output Box (MessagesLine)</DAT>
+<DAT name="FRM_WIDGETTYPE">OUTPUTBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MSGCHANNEL=3</DAT>
+<DAT name="DSP_WIDGETTYPE">RADIOGROUP</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">MESSAGELINE_OUTPUT</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Non-obtrusive runtime messages (String, Unicode)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Display: &lt;/c&gt;&lt;/t&gt;Output Box (Message Line)</DAT>
+<DAT name="FRM_WIDGETTYPE">OUTPUTBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MSGCHANNEL=3</DAT>
+<DAT name="DSP_WIDGETTYPE">RADIOGROUP</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">METER</DAT>
+<DAT name="GRP">DATA_DISPLAY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Meter (Numeric)</DAT>
+<DAT name="U_DTYP">N</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">C*</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Meter (Numeric)</DAT>
+<DAT name="FRM_WIDGETTYPE">METER</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">METER</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Graphical representation of numeric data (Numeric)</DAT>
+<DAT name="U_DTYP">N</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">C*</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Display: &lt;/c&gt;&lt;/t&gt;Meter</DAT>
+<DAT name="FRM_WIDGETTYPE">METER</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">MONTH_CALENDAR</DAT>
+<DAT name="GRP">DATA_ENTRY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Month Calendar</DAT>
+<DAT name="U_DTYP">D</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Month Calendar (Date)</DAT>
+<DAT name="FRM_WIDGETTYPE">MONTHCALENDAR</DAT>
+<DAT name="DSP_WIDGETTYPE">DATEPICKER</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">MONTH_CALENDAR</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Date picker (Date)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_LAYOUT">YYYYMMDD</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt;Month Calendar</DAT>
+<DAT name="FRM_WIDGETTYPE">MONTHCALENDAR</DAT>
+<DAT name="DSP_WIDGETTYPE">DATEPICKER</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">OCX_CONTAINER</DAT>
+<DAT name="GRP">COMPLEX</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>OCX Container</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>OCX Container</DAT>
+<DAT name="FRM_WIDGETTYPE">OCXCONTAINER</DAT>
+<DAT name="DSP_WIDGETTYPE">CHECKBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">OCX_CONTAINER</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Embedded Microsoft OCX control</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Complex: &lt;/c&gt;&lt;/t&gt;OCX Container</DAT>
+<DAT name="FRM_WIDGETTYPE">OCXCONTAINER</DAT>
+<DAT name="DSP_WIDGETTYPE">CHECKBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">OLE_CONTAINER</DAT>
+<DAT name="GRP">COMPLEX</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>OLE Container</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>OLE Container</DAT>
+<DAT name="FRM_WIDGETTYPE">OLECONTAINER</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">OLE_CONTAINER</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Embedded OLE object</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Complex: &lt;/c&gt;&lt;/t&gt;OLE Container</DAT>
+<DAT name="FRM_WIDGETTYPE">OLECONTAINER</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">PASSWORD</DAT>
+<DAT name="GRP">DATA_ENTRY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Password (Single-line String)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">NCR;NDI</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Password (String)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS" xml:space='preserve'>MULTILINE=F&uSEP;NODISPLAY=42</DAT>
+<DAT name="DSP_WIDGETTYPE">PASSWORD</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">PASSWORD</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Masked single-line EditBox (String, Unicode, No carriage-return)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">NCR,NDI</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt; Password</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS" xml:space='preserve'>MULTILINE=F&uSEP;NODISPLAY=42</DAT>
+<DAT name="DSP_WIDGETTYPE">PASSWORD</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">PICTURE_DBMS</DAT>
+<DAT name="GRP">DATA_DISPLAY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Picture (dbms)</DAT>
+<DAT name="U_DTYP">I#</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Picture (dbms)</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>; Typical triggers fired by this widget:
+trigger moveTo
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+
+trigger moveFrom
+params
+  string dragvalue: in
+  string dropformat: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+
+trigger moveWithin
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+
+trigger copyTo
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+
+trigger createShortcutTo
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+</DAT>
+<DAT name="FRM_WIDGETTYPE">PICTURE</DAT>
+<DAT name="DSP_WIDGETTYPE">PICTURE_UPDATABLE</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">PICTURE_DBMS</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Image from database (Image)</DAT>
+<DAT name="U_DTYP">I#</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Display: &lt;/c&gt;&lt;/t&gt;Picture (DBMS)</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>; Typical triggers fired by this widget:
+trigger moveTo
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+
+trigger moveFrom
+params
+  string dragvalue: in
+  string dropformat: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+
+trigger moveWithin
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+
+trigger copyTo
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+
+trigger createShortcutTo
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+</DAT>
+<DAT name="FRM_WIDGETTYPE">PICTURE</DAT>
+<DAT name="DSP_WIDGETTYPE">PICTURE_UPDATABLE</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">PICTURE_FILE</DAT>
+<DAT name="GRP">DATA_DISPLAY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Picture (file)</DAT>
+<DAT name="U_DTYP">I@</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Picture (file)</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>; Typical triggers fired by this widget:
+trigger moveTo
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+
+trigger moveFrom
+params
+  string dragvalue: in
+  string dropformat: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+
+trigger moveWithin
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+
+trigger copyTo
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+
+trigger createShortcutTo
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+</DAT>
+<DAT name="FRM_WIDGETTYPE">PICTURE</DAT>
+<DAT name="DSP_WIDGETTYPE">PICTURE_UPDATABLE</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">PICTURE_FILE</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Image from file system (Image)</DAT>
+<DAT name="U_DTYP">I@</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Display: &lt;/c&gt;&lt;/t&gt;Picture (File)</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>; Typical triggers fired by this widget:
+trigger moveTo
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+
+trigger moveFrom
+params
+  string dragvalue: in
+  string dropformat: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+
+trigger moveWithin
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+
+trigger copyTo
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+
+trigger createShortcutTo
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+</DAT>
+<DAT name="FRM_WIDGETTYPE">PICTURE</DAT>
+<DAT name="DSP_WIDGETTYPE">PICTURE_UPDATABLE</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">PICTURE_GLYPH</DAT>
+<DAT name="GRP">DATA_DISPLAY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Picture (glyph)</DAT>
+<DAT name="U_DTYP">I^</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Picture (glyph)</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>; Typical triggers fired by this widget:
+trigger moveTo
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+
+trigger moveFrom
+params
+  string dragvalue: in
+  string dropformat: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+
+trigger moveWithin
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+
+trigger copyTo
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+
+trigger createShortcutTo
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+</DAT>
+<DAT name="FRM_WIDGETTYPE">PICTURE</DAT>
+<DAT name="DSP_WIDGETTYPE">PICTURE_UPDATABLE</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">PICTURE_GLYPH</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Uniface glyph from library (Image)</DAT>
+<DAT name="U_DTYP">I^</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Display: &lt;/c&gt;&lt;/t&gt;Picture (Glyph)</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>; Typical triggers fired by this widget:
+trigger moveTo
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+
+trigger moveFrom
+params
+  string dragvalue: in
+  string dropformat: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+
+trigger moveWithin
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+
+trigger copyTo
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+
+trigger createShortcutTo
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+</DAT>
+<DAT name="FRM_WIDGETTYPE">PICTURE</DAT>
+<DAT name="DSP_WIDGETTYPE">PICTURE_UPDATABLE</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">PROGRESSBAR</DAT>
+<DAT name="GRP">DATA_DISPLAY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Progress Bar (Numeric)</DAT>
+<DAT name="U_DTYP">N</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">C*</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Progress Bar (Numeric)</DAT>
+<DAT name="FRM_WIDGETTYPE">PROGRESSBAR</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">PROGRESSBAR</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Progress bar (Numeric)</DAT>
+<DAT name="U_DTYP">N</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">C*</DAT>
+<DAT name="UINHERIT">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Display: &lt;/c&gt;&lt;/t&gt;Progress Bar</DAT>
+<DAT name="FRM_WIDGETTYPE">PROGRESSBAR</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">PUTMESS_OUTPUT</DAT>
+<DAT name="GRP">DATA_DISPLAY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Output Box ($putmess)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Output Box ($putmess)</DAT>
+<DAT name="FRM_WIDGETTYPE">OUTPUTBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MSGCHANNEL=2</DAT>
+<DAT name="DSP_WIDGETTYPE">RADIOGROUP</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">PUTMESS_OUTPUT</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Messages from putmess command (String, Unicode)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Display: &lt;/c&gt;&lt;/t&gt;Output Box (Message Frame)</DAT>
+<DAT name="FRM_WIDGETTYPE">OUTPUTBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MSGCHANNEL=2</DAT>
+<DAT name="DSP_WIDGETTYPE">RADIOGROUP</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">RADIOGROUP</DAT>
+<DAT name="GRP">DATA_ENTRY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Radio Group (Valrep)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Radio Button (Valrep)</DAT>
+<DAT name="FRM_WIDGETTYPE">RADIOGROUP</DAT>
+<DAT name="DSP_WIDGETTYPE">RADIOGROUP</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">RADIOGROUP</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Aligned radio buttons for ValRep (String, Unicode)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt;Radio Buttons</DAT>
+<DAT name="FRM_WIDGETTYPE">RADIOGROUP</DAT>
+<DAT name="DSP_WIDGETTYPE">RADIOGROUP</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">RICHTEXT</DAT>
+<DAT name="GRP">DATA_ENTRY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Rich Editbox (RTF)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Rich Editbox (RTF)</DAT>
+<DAT name="FRM_WIDGETTYPE">RICHEDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">TEXTAREA</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">RICHTEXT</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>RTF multi-line EditBox (String, Unicode)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt; Rich Editbox</DAT>
+<DAT name="FRM_WIDGETTYPE">RICHEDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">TEXTAREA</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">SLIDER</DAT>
+<DAT name="GRP">DATA_ENTRY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Slider (Numeric)</DAT>
+<DAT name="U_DTYP">N</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Slider (Numeric)</DAT>
+<DAT name="FRM_WIDGETTYPE">SLIDER</DAT>
+<DAT name="DSP_WIDGETTYPE">FLATBUTTON_UPDATABLE</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">SLIDER</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Slide control selector (Numeric)</DAT>
+<DAT name="U_DTYP">N</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt;Slider</DAT>
+<DAT name="FRM_WIDGETTYPE">SLIDER</DAT>
+<DAT name="DSP_WIDGETTYPE">FLATBUTTON_UPDATABLE</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">SPINBUTTON</DAT>
+<DAT name="GRP">DATA_ENTRY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Spin Button (Numeric)</DAT>
+<DAT name="U_DTYP">N</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Spin Button (Numeric)</DAT>
+<DAT name="FRM_WIDGETTYPE">SPINBUTTON</DAT>
+<DAT name="DSP_WIDGETTYPE">RADIOGROUP</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">SPINBUTTON</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Spin button selector (Numeric)</DAT>
+<DAT name="U_DTYP">N</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt;Spin Button</DAT>
+<DAT name="FRM_WIDGETTYPE">SPINBUTTON</DAT>
+<DAT name="DSP_WIDGETTYPE">RADIOGROUP</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">STATIC_TEXT</DAT>
+<DAT name="GRP">DATA_DISPLAY</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Static Text</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">NED</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Static Text</DAT>
+<DAT name="FRM_WIDGETTYPE">NOEDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">STATICTEXT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">STATIC_TEXT</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Non-editable text (String, Unicode)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">NED</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Display: &lt;/c&gt;&lt;/t&gt;Static Text</DAT>
+<DAT name="FRM_WIDGETTYPE">NOEDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">STATICTEXT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">TAB</DAT>
+<DAT name="GRP">COMPLEX</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Tab (Native)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Tab (Windows)</DAT>
+<DAT name="FRM_WIDGETTYPE">TAB</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">TAB</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Basic tab widget to browse collection of contained forms</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Complex: &lt;/c&gt;&lt;/t&gt;Tab (Basic)</DAT>
+<DAT name="FRM_WIDGETTYPE">TAB</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">TABEX</DAT>
+<DAT name="GRP">COMPLEX</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Tab (Custom)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Tab (Custom)</DAT>
+<DAT name="FRM_WIDGETTYPE">TABEX</DAT>
+<DAT name="DSP_WIDGETTYPE">TEXTAREA</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">TABEX</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Enhanced tab widget (flexible and highly customizable)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Complex: &lt;/c&gt;&lt;/t&gt;Tab (Extended)</DAT>
+<DAT name="FRM_WIDGETTYPE">TABEX</DAT>
+<DAT name="DSP_WIDGETTYPE">TEXTAREA</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">TREE</DAT>
+<DAT name="GRP">COMPLEX</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR">Tree</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME">Tree</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>; Typical triggers fired by this widget
+trigger Expand
+params
+  string control: in ; TREE | LIST | KEYBOARD
+  string item: in
+endparams
+
+end ; trigger Expand
+
+trigger Collapse
+params
+  string control: in ; TREE | LIST | KEYBOARD
+  string item: in
+endparams
+
+end ; trigger Collapse
+
+trigger Open
+params
+  string control: in ; TREE | LIST | KEYBOARD
+  string item: in
+endparams
+
+end ; trigger Open
+
+trigger Close
+params
+  string control: in ; TREE | LIST | KEYBOARD
+  string item: in
+endparams
+
+end ; trigger Close
+
+trigger doubleClick
+params
+  string control: in ; TREE | LIST | KEYBOARD
+  string item: in
+endparams
+
+end ; trigger doubleClick
+
+trigger columnSorted
+params
+  numeric columnId: in
+  string sortingOrder: in ; ASC | DESC
+endparams
+
+end ; trigger columnSorted
+
+trigger columnWidth
+params
+  numeric id: in
+  numeric width: in
+endparams
+
+end ; trigger columnWidth
+
+trigger representationChanging
+params
+  string itemValue: in
+endparams
+
+end ; trigger representationChanging
+
+trigger representationChanged ; Only works if tree widget property INLINEEDIT=TRUE
+params
+  string itemValue: in
+  string control: in ; TREE | LIST
+  string newRepresentation: in
+endparams
+variables
+  string treeItem, listUpdate
+endvariables
+
+  getitem/id treeItem, $valrep, itemValue
+  putitem treeItem, 3, newRepresentation       ; Change representation
+  listUpdate = "0="                            ; Indicate partial valrep update
+  putitem/id listUpdate, itemValue, treeItem
+  $valrep = listUpdate
+
+end ; trigger representationChanged
+
+; start drag &amp; drop triggers for tree widget
+
+trigger moveTo
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end ; trigger moveTo
+
+trigger moveFrom
+params
+  string dragvalue: in
+  string dropformat: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end ; trigger moveFrom
+
+trigger moveWithin
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end ; trigger moveWithin
+
+trigger copyTo
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end ; trigger copyTo
+
+trigger createShortcutTo
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+</DAT>
+<DAT name="FRM_WIDGETTYPE">TREE</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">TREE</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Hierarchical view of data</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Complex: &lt;/c&gt;&lt;/t&gt;Tree</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>; Typical triggers fired by this widget
+trigger Expand
+params
+  string control: in ; TREE | LIST | KEYBOARD
+  string item: in
+endparams
+
+end ; trigger Expand
+
+trigger Collapse
+params
+  string control: in ; TREE | LIST | KEYBOARD
+  string item: in
+endparams
+
+end ; trigger Collapse
+
+trigger Open
+params
+  string control: in ; TREE | LIST | KEYBOARD
+  string item: in
+endparams
+
+end ; trigger Open
+
+trigger Close
+params
+  string control: in ; TREE | LIST | KEYBOARD
+  string item: in
+endparams
+
+end ; trigger Close
+
+trigger doubleClick
+params
+  string control: in ; TREE | LIST | KEYBOARD
+  string item: in
+endparams
+
+end ; trigger doubleClick
+
+trigger columnSorted
+params
+  numeric columnId: in
+  string sortingOrder: in ; ASC | DESC
+endparams
+
+end ; trigger columnSorted
+
+trigger columnWidth
+params
+  numeric id: in
+  numeric width: in
+endparams
+
+end ; trigger columnWidth
+
+trigger representationChanging
+params
+  string itemValue: in
+endparams
+
+end ; trigger representationChanging
+
+trigger representationChanged ; Only works if tree widget property INLINEEDIT=TRUE
+params
+  string itemValue: in
+  string control: in ; TREE | LIST
+  string newRepresentation: in
+endparams
+variables
+  string treeItem, listUpdate
+endvariables
+
+  getitem/id treeItem, $valrep, itemValue
+  putitem treeItem, 3, newRepresentation       ; Change representation
+  listUpdate = "0="                            ; Indicate partial valrep update
+  putitem/id listUpdate, itemValue, treeItem
+  $valrep = listUpdate
+
+end ; trigger representationChanged
+
+; start drag &amp; drop triggers for tree widget
+
+trigger moveTo
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end ; trigger moveTo
+
+trigger moveFrom
+params
+  string dragvalue: in
+  string dropformat: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end ; trigger moveFrom
+
+trigger moveWithin
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end ; trigger moveWithin
+
+trigger copyTo
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end ; trigger copyTo
+
+trigger createShortcutTo
+params
+  string dragvalue: in
+  string dropformat: in
+  string itemvalue: in
+  numeric numberofobjects: in
+  numeric index: in
+endparams
+
+end
+</DAT>
+<DAT name="FRM_WIDGETTYPE">TREE</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">UNIFACE_BUTTON</DAT>
+<DAT name="GRP">BUTTONS</DAT>
+<DAT name="UBASE">CATEGORY</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Classic Command Button</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">T</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Classic Command Button</DAT>
+<DAT name="INITVALUE" xml:space='preserve'>Button text</DAT>
+<DAT name="FRM_WIDGETTYPE">UNIFACEBUTTON</DAT>
+<DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">UNIFACE_BUTTON</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_FRM</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Uniface command button to activate a command</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">T</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Button: &lt;/c&gt;&lt;/t&gt;Classic Command Button</DAT>
+<DAT name="INITVALUE" xml:space='preserve'>Button text</DAT>
+<DAT name="FRM_WIDGETTYPE">UNIFACEBUTTON</DAT>
+<DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
+</OCC>
+</TABLE>
+</UNIFACE>

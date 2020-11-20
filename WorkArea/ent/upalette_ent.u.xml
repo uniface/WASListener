@@ -1,0 +1,2414 @@
+﻿<?xml version='1.0' encoding='UTF-8' ?>
+<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
+<UNIFACE release="10.3" repversion="7" xmlengine="2.0">
+<TABLE>
+<DSC name="UCTABLE" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="UTIMESTAMP" seqno="1" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_VLAB" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
+<FLD name="U_TLAB" seqno="3" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="102" />
+<FLD name="UKVERSION" seqno="4" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
+<FLD name="UMVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
+</DSC>
+<OCC>
+<DAT name="UTIMESTAMP">2017-09-26T07:32:14.00</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="UKVERSION">4</DAT>
+<DAT name="UMVERSION">3</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="UCGROUP" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="U_GLAB" seqno="1" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
+<FLD name="U_VLAB" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="3" ufocc="0" mandatory="yes" idxnum="1,2,3" idxsnr="102,1,1" />
+<FLD name="U_TLAB" seqno="3" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="2" idxsnr="2" />
+<FLD name="UPARENT" seqno="4" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UKVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="4" idxsnr="1" />
+<FLD name="UMVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="5" idxsnr="1" />
+<FLD name="UDESCR" seqno="7" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_BORD" seqno="8" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_INDB" seqno="9" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="DB_ACCESS" seqno="10" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_DBMS" seqno="11" type="S" level="2" pack="0" scale="0" length="3"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_UPD" seqno="12" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_MINR" seqno="13" type="N" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_MAXR" seqno="14" type="N" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_INT" seqno="15" type="S" level="2" pack="1" scale="0" length="128"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UPURPOSE" seqno="16" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UALT_NAME" seqno="17" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="18" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="19" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
+<FLD name="TPLACTUAL" seqno="20" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="UDECLARATIONS" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="UCOLL_SCRIPT" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+<FLD name="UOCC_SCRIPT" seqno="23" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
+<FLD name="P_READ" seqno="24" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
+<FLD name="P_WRIT" seqno="25" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
+<FLD name="P_DEL" seqno="26" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
+<FLD name="P_LOCK" seqno="27" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
+<FLD name="P_WUP" seqno="28" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
+<FLD name="P_DUP" seqno="29" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
+<FLD name="P_HELP" seqno="30" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
+<FLD name="P_DET" seqno="31" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
+<FLD name="P_OCUR" seqno="32" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
+<FLD name="P_OMOD" seqno="33" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
+<FLD name="P_OREM" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
+<FLD name="P_ODEF" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
+<FLD name="P_MENU" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
+<FLD name="P_FNDOCC" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D2,0,0,0,,0,0,0,," />
+<FLD name="P_ERROR" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
+<FLD name="P_GENERAL" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D5,0,0,0,,0,0,0,," />
+<FLD name="VLDE" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D6,0,0,0,,0,0,0,," />
+<FLD name="VLDK" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
+<FLD name="UECOPERS" seqno="42" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
+<FLD name="UEOOPERS" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
+<FLD name="UECTRIGGERS" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
+<FLD name="PRLO" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
+<FLD name="PSLO" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
+<FLD name="PRSO" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DE,0,0,0,,0,0,0,," />
+<FLD name="PSSO" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
+<FLD name="UPOPUP" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
+<FLD name="U_OBJSVC" seqno="50" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
+<FLD name="UEOINTERFACE" seqno="51" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E3,0,0,0,,0,0,0,," />
+<FLD name="UECINTERFACE" seqno="52" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E4,0,0,0,,0,0,0,," />
+<FLD name="UTARGET" seqno="53" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E5,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETTYPE" seqno="54" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E6,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETPROPS" seqno="55" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E7,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETTYPE" seqno="56" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E8,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETPROPS" seqno="57" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E9,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETTYPE" seqno="58" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EA,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETPROPS" seqno="59" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EB,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETTYPE" seqno="60" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EC,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETPROPS" seqno="61" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\ED,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="U_GLAB">UPALETTE_ENT</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Palette of objects for Modeled Entities</DAT>
+<DAT name="U_BORD">N</DAT>
+<DAT name="U_INDB">N</DAT>
+<DAT name="U_DBMS">DEF</DAT>
+<DAT name="U_MINR">0</DAT>
+<DAT name="U_MAXR">0</DAT>
+<DAT name="UPURPOSE">P</DAT>
+<DAT name="UEOINTERFACE">UPALETTE_ENT_OCC</DAT>
+<DAT name="UECINTERFACE">UPALETTE_ENT_COL</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_GLAB">USUBENT</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="UPARENT">UPALETTE_ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Subtype Entity</DAT>
+<DAT name="U_MINR">0</DAT>
+<DAT name="U_MAXR">0</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Subtype Entity</DAT>
+<DAT name="UEOINTERFACE">USUBENT_OCC</DAT>
+<DAT name="UECINTERFACE">USUBENT_COL</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_GLAB">USUBENT_ESV</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="UPARENT">UPALETTE_ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Subtype Entity - Database access via Entity Service</DAT>
+<DAT name="DB_ACCESS">Y</DAT>
+<DAT name="U_MINR">0</DAT>
+<DAT name="U_MAXR">0</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Subtype Entity - Database access via Entity Service</DAT>
+<DAT name="U_OBJSVC">MYESVC</DAT>
+<DAT name="UEOINTERFACE">USUBENT_ESV_OCC</DAT>
+<DAT name="UECINTERFACE">USUBENT_ESV_COL</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_GLAB">USUBENT_NODB</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="UPARENT">UPALETTE_ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Subtype Entity - No database access</DAT>
+<DAT name="DB_ACCESS">N</DAT>
+<DAT name="U_MINR">0</DAT>
+<DAT name="U_MAXR">0</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Subtype Entity - No database access</DAT>
+<DAT name="UEOINTERFACE">USUBENT_NODB_OCC</DAT>
+<DAT name="UECINTERFACE">USUBENT_NODB_COL</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_GLAB">USUBENT_PATH</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="UPARENT">UPALETTE_ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Subtype Entity - Database access via path</DAT>
+<DAT name="DB_ACCESS">D</DAT>
+<DAT name="U_MINR">0</DAT>
+<DAT name="U_MAXR">0</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Subtype Entity - Database access via path</DAT>
+<DAT name="UEOINTERFACE">USUBENT_PATH_OCC</DAT>
+<DAT name="UECINTERFACE">USUBENT_PATH_COL</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="UCFIELD" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="U_FLAB" seqno="1" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="101,1" />
+<FLD name="U_VLAB" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="4" ufocc="0" mandatory="yes" idxnum="1,2,3,4" idxsnr="102,2,1,1" />
+<FLD name="U_TLAB" seqno="3" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="3" ufocc="0" mandatory="yes" idxnum="1,3,4" idxsnr="103,2,2" />
+<FLD name="U_FSEQ" seqno="4" type="N" level="2" pack="0" scale="5" length="10"
+ pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="3" />
+<FLD name="UKVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="5" idxsnr="1" />
+<FLD name="UMVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="6" idxsnr="1" />
+<FLD name="UDESCR" seqno="7" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_DTYP" seqno="8" type="S" level="2" pack="1" scale="0" length="10"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="IS_EXTERNAL" seqno="9" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="IS_STATIC" seqno="10" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="IS_CONTROL" seqno="11" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_INT" seqno="12" type="S" level="2" pack="1" scale="0" length="128"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="DATA_SYNTAX" seqno="13" type="S" level="2" pack="0" scale="0" length="256"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="DATA_LAYOUT" seqno="14" type="S" level="2" pack="0" scale="0" length="192"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UALT_NAME" seqno="15" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="16" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="17" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
+<FLD name="ACTVALS" seqno="18" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="UDECLARATIONS" seqno="19" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="USCRIPT" seqno="20" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+<FLD name="P_HELP" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
+<FLD name="P_DET" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
+<FLD name="P_SMOD" seqno="23" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
+<FLD name="P_EMOD" seqno="24" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
+<FLD name="P_NFLD" seqno="25" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
+<FLD name="P_PFLD" seqno="26" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
+<FLD name="P_ENCR" seqno="27" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
+<FLD name="P_DECR" seqno="28" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
+<FLD name="P_MENU" seqno="29" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
+<FLD name="P_ERROR" seqno="30" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
+<FLD name="P_GENERAL" seqno="31" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
+<FLD name="P_FORMAT" seqno="32" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
+<FLD name="P_DEFORMAT" seqno="33" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
+<FLD name="P_GETFOCUS" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
+<FLD name="P_VCHANGED" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D2,0,0,0,,0,0,0,," />
+<FLD name="VLDF" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
+<FLD name="UFTRIGGERS" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D5,0,0,0,,0,0,0,," />
+<FLD name="U_DESC" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D6,0,0,0,,0,0,0,," />
+<FLD name="VALLAB" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
+<FLD name="INITVALUE" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
+<FLD name="UPOPUP" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D9,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETTYPE" seqno="42" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETPROPS" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETTYPE" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETPROPS" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETTYPE" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DE,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETPROPS" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETTYPE" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETPROPS" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="U_FLAB">ASCSTRING</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="U_FSEQ">5</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fixed length field</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">C40</DAT>
+<DAT name="DATA_SYNTAX">ASC</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>String field (ASCII)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">BOOLEAN</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="U_FSEQ">12</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fixed length field</DAT>
+<DAT name="U_DTYP">B</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">B</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Boolean field</DAT>
+<DAT name="FRM_WIDGETTYPE">CHECKBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">CHECKBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_CHECKBOX</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">DATE</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="U_FSEQ">9</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fixed length field</DAT>
+<DAT name="U_DTYP">D</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">D</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Date field</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">DATEPICKER</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">DATETIME</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="U_FSEQ">11</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fixed length field</DAT>
+<DAT name="U_DTYP">E</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">E</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Date-Time field</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">FIX_LENGTH_STRING</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="U_FSEQ">2</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fixed length field</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">C40</DAT>
+<DAT name="DATA_SYNTAX">ASC</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>String field (Fixed length)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">FIX_LENGTH_WIDECHAR</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="U_FSEQ">3</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fixed length, wide character field</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W40</DAT>
+<DAT name="DATA_SYNTAX">ASC</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>String field (Fixed length wide char)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">FLOAT</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="U_FSEQ">8</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fixed length field</DAT>
+<DAT name="U_DTYP">F</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Floating decimal point field</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">IMAGE_ANY</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="U_FSEQ">14</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Variable length field</DAT>
+<DAT name="U_DTYP">I</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">R*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Any Image field</DAT>
+<DAT name="FRM_WIDGETTYPE">PICTURE</DAT>
+<DAT name="DSP_WIDGETTYPE">PICTURE</DAT>
+<DAT name="USP_WIDGETTYPE">U_PICTURE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">IMAGE_DATABASE</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="U_FSEQ">15</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Variable length field</DAT>
+<DAT name="U_DTYP">I#</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">R*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Database Image field</DAT>
+<DAT name="FRM_WIDGETTYPE">PICTURE</DAT>
+<DAT name="DSP_WIDGETTYPE">PICTURE</DAT>
+<DAT name="USP_WIDGETTYPE">U_PICTURE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">IMAGE_DISK</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="U_FSEQ">16</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Variable length field</DAT>
+<DAT name="U_DTYP">I@</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">C256</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Disk Image field</DAT>
+<DAT name="FRM_WIDGETTYPE">PICTURE</DAT>
+<DAT name="DSP_WIDGETTYPE">PICTURE</DAT>
+<DAT name="USP_WIDGETTYPE">U_PICTURE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">IMAGE_URL</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="U_FSEQ">17</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fixed length field</DAT>
+<DAT name="U_DTYP">I&amp;</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">C256</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Url Image field</DAT>
+<DAT name="FRM_WIDGETTYPE">PICTURE</DAT>
+<DAT name="DSP_WIDGETTYPE">PICTURE</DAT>
+<DAT name="USP_WIDGETTYPE">U_PICTURE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">LINEAR_DATE</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="U_FSEQ">18</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fixed length field</DAT>
+<DAT name="U_DTYP">LD</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">N</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Linear Date field</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">LINEAR_DATETIME</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="U_FSEQ">20</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fixed length field</DAT>
+<DAT name="U_DTYP">LE</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">N</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Linear Date-Time field</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">LINEAR_TIME</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="U_FSEQ">19</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fixed length field</DAT>
+<DAT name="U_DTYP">LT</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">N</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Linear Time field</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">NUMERIC</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="U_FSEQ">7</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fixed length field</DAT>
+<DAT name="U_DTYP">N</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">N</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Numeric field</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">RAW</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="U_FSEQ">13</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Variable length field</DAT>
+<DAT name="U_DTYP">R</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">R*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Raw field</DAT>
+<DAT name="FRM_WIDGETTYPE">PICTURE</DAT>
+<DAT name="DSP_WIDGETTYPE">PICTURE</DAT>
+<DAT name="USP_WIDGETTYPE">U_PICTURE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">STATIC</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="U_FSEQ">1</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not included in I/O and not included in occurrence repetition</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">F</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>String field (Static)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">TIME</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="U_FSEQ">10</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fixed length field</DAT>
+<DAT name="U_DTYP">T</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">T</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Time field</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UNISTRING</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="U_FSEQ">6</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Variable length, wide character field</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="DATA_SYNTAX">FUL</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>String field (Unicode)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">VARIABLE_LENGTH_STRING</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="U_FSEQ">4</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Variable length field</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">VC*</DAT>
+<DAT name="DATA_SYNTAX">ASC</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>String field (Variable length)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">XMLSTREAM</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">UPALETTE_ENT</DAT>
+<DAT name="U_FSEQ">21</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Variable length field</DAT>
+<DAT name="U_DTYP">XM</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">VC*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Xmlstream field</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">TEXTAREA</DAT>
+<DAT name="USP_WIDGETTYPE">U_TEXTAREA</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="UCFIELD" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="U_FLAB" seqno="1" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="101,1" />
+<FLD name="U_VLAB" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="4" ufocc="0" mandatory="yes" idxnum="1,2,3,4" idxsnr="102,2,1,1" />
+<FLD name="U_TLAB" seqno="3" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="3" ufocc="0" mandatory="yes" idxnum="1,3,4" idxsnr="103,2,2" />
+<FLD name="U_FSEQ" seqno="4" type="N" level="2" pack="0" scale="5" length="10"
+ pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="3" />
+<FLD name="UKVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="5" idxsnr="1" />
+<FLD name="UMVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="6" idxsnr="1" />
+<FLD name="UDESCR" seqno="7" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_DTYP" seqno="8" type="S" level="2" pack="1" scale="0" length="10"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="IS_EXTERNAL" seqno="9" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="IS_STATIC" seqno="10" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="IS_CONTROL" seqno="11" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_INT" seqno="12" type="S" level="2" pack="1" scale="0" length="128"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="DATA_SYNTAX" seqno="13" type="S" level="2" pack="0" scale="0" length="256"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="DATA_LAYOUT" seqno="14" type="S" level="2" pack="0" scale="0" length="192"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UALT_NAME" seqno="15" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="16" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="17" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
+<FLD name="ACTVALS" seqno="18" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="UDECLARATIONS" seqno="19" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="USCRIPT" seqno="20" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+<FLD name="P_HELP" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
+<FLD name="P_DET" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
+<FLD name="P_SMOD" seqno="23" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
+<FLD name="P_EMOD" seqno="24" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
+<FLD name="P_NFLD" seqno="25" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
+<FLD name="P_PFLD" seqno="26" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
+<FLD name="P_ENCR" seqno="27" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
+<FLD name="P_DECR" seqno="28" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
+<FLD name="P_MENU" seqno="29" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
+<FLD name="P_ERROR" seqno="30" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
+<FLD name="P_GENERAL" seqno="31" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
+<FLD name="P_FORMAT" seqno="32" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
+<FLD name="P_DEFORMAT" seqno="33" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
+<FLD name="P_GETFOCUS" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
+<FLD name="P_VCHANGED" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D2,0,0,0,,0,0,0,," />
+<FLD name="VLDF" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
+<FLD name="UFTRIGGERS" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D5,0,0,0,,0,0,0,," />
+<FLD name="U_DESC" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D6,0,0,0,,0,0,0,," />
+<FLD name="VALLAB" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
+<FLD name="INITVALUE" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
+<FLD name="UPOPUP" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D9,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETTYPE" seqno="42" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETPROPS" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETTYPE" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETPROPS" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETTYPE" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DE,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETPROPS" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETTYPE" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETPROPS" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="U_FLAB">ASCSTRING</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT</DAT>
+<DAT name="U_FSEQ">5</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">BOOLEAN</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT</DAT>
+<DAT name="U_FSEQ">12</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">DATE</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT</DAT>
+<DAT name="U_FSEQ">9</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">DATETIME</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT</DAT>
+<DAT name="U_FSEQ">11</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">FIX_LENGTH_STRING</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT</DAT>
+<DAT name="U_FSEQ">2</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">FIX_LENGTH_WIDECHAR</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT</DAT>
+<DAT name="U_FSEQ">3</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">FLOAT</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT</DAT>
+<DAT name="U_FSEQ">8</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">IMAGE_ANY</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT</DAT>
+<DAT name="U_FSEQ">14</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">IMAGE_DATABASE</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT</DAT>
+<DAT name="U_FSEQ">15</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">IMAGE_DISK</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT</DAT>
+<DAT name="U_FSEQ">16</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">IMAGE_URL</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT</DAT>
+<DAT name="U_FSEQ">17</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">LINEAR_DATE</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT</DAT>
+<DAT name="U_FSEQ">18</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">LINEAR_DATETIME</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT</DAT>
+<DAT name="U_FSEQ">20</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">LINEAR_TIME</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT</DAT>
+<DAT name="U_FSEQ">19</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">NUMERIC</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT</DAT>
+<DAT name="U_FSEQ">7</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">RAW</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT</DAT>
+<DAT name="U_FSEQ">13</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">STATIC</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT</DAT>
+<DAT name="U_FSEQ">1</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">TIME</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT</DAT>
+<DAT name="U_FSEQ">10</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UNISTRING</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT</DAT>
+<DAT name="U_FSEQ">6</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">VARIABLE_LENGTH_STRING</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT</DAT>
+<DAT name="U_FSEQ">4</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">XMLSTREAM</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT</DAT>
+<DAT name="U_FSEQ">21</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="UCFIELD" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="U_FLAB" seqno="1" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="101,1" />
+<FLD name="U_VLAB" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="4" ufocc="0" mandatory="yes" idxnum="1,2,3,4" idxsnr="102,2,1,1" />
+<FLD name="U_TLAB" seqno="3" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="3" ufocc="0" mandatory="yes" idxnum="1,3,4" idxsnr="103,2,2" />
+<FLD name="U_FSEQ" seqno="4" type="N" level="2" pack="0" scale="5" length="10"
+ pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="3" />
+<FLD name="UKVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="5" idxsnr="1" />
+<FLD name="UMVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="6" idxsnr="1" />
+<FLD name="UDESCR" seqno="7" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_DTYP" seqno="8" type="S" level="2" pack="1" scale="0" length="10"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="IS_EXTERNAL" seqno="9" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="IS_STATIC" seqno="10" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="IS_CONTROL" seqno="11" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_INT" seqno="12" type="S" level="2" pack="1" scale="0" length="128"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="DATA_SYNTAX" seqno="13" type="S" level="2" pack="0" scale="0" length="256"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="DATA_LAYOUT" seqno="14" type="S" level="2" pack="0" scale="0" length="192"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UALT_NAME" seqno="15" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="16" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="17" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
+<FLD name="ACTVALS" seqno="18" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="UDECLARATIONS" seqno="19" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="USCRIPT" seqno="20" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+<FLD name="P_HELP" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
+<FLD name="P_DET" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
+<FLD name="P_SMOD" seqno="23" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
+<FLD name="P_EMOD" seqno="24" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
+<FLD name="P_NFLD" seqno="25" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
+<FLD name="P_PFLD" seqno="26" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
+<FLD name="P_ENCR" seqno="27" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
+<FLD name="P_DECR" seqno="28" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
+<FLD name="P_MENU" seqno="29" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
+<FLD name="P_ERROR" seqno="30" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
+<FLD name="P_GENERAL" seqno="31" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
+<FLD name="P_FORMAT" seqno="32" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
+<FLD name="P_DEFORMAT" seqno="33" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
+<FLD name="P_GETFOCUS" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
+<FLD name="P_VCHANGED" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D2,0,0,0,,0,0,0,," />
+<FLD name="VLDF" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
+<FLD name="UFTRIGGERS" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D5,0,0,0,,0,0,0,," />
+<FLD name="U_DESC" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D6,0,0,0,,0,0,0,," />
+<FLD name="VALLAB" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
+<FLD name="INITVALUE" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
+<FLD name="UPOPUP" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D9,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETTYPE" seqno="42" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETPROPS" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETTYPE" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETPROPS" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETTYPE" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DE,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETPROPS" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETTYPE" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETPROPS" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="U_FLAB">ASCSTRING</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_ESV</DAT>
+<DAT name="U_FSEQ">5</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">BOOLEAN</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_ESV</DAT>
+<DAT name="U_FSEQ">12</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">DATE</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_ESV</DAT>
+<DAT name="U_FSEQ">9</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">DATETIME</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_ESV</DAT>
+<DAT name="U_FSEQ">11</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">FIX_LENGTH_STRING</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_ESV</DAT>
+<DAT name="U_FSEQ">2</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">FIX_LENGTH_WIDECHAR</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_ESV</DAT>
+<DAT name="U_FSEQ">3</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">FLOAT</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_ESV</DAT>
+<DAT name="U_FSEQ">8</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">IMAGE_ANY</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_ESV</DAT>
+<DAT name="U_FSEQ">14</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">IMAGE_DATABASE</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_ESV</DAT>
+<DAT name="U_FSEQ">15</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">IMAGE_DISK</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_ESV</DAT>
+<DAT name="U_FSEQ">16</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">IMAGE_URL</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_ESV</DAT>
+<DAT name="U_FSEQ">17</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">LINEAR_DATE</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_ESV</DAT>
+<DAT name="U_FSEQ">18</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">LINEAR_DATETIME</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_ESV</DAT>
+<DAT name="U_FSEQ">20</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">LINEAR_TIME</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_ESV</DAT>
+<DAT name="U_FSEQ">19</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">NUMERIC</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_ESV</DAT>
+<DAT name="U_FSEQ">7</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">RAW</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_ESV</DAT>
+<DAT name="U_FSEQ">13</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">STATIC</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_ESV</DAT>
+<DAT name="U_FSEQ">1</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">TIME</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_ESV</DAT>
+<DAT name="U_FSEQ">10</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UNISTRING</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_ESV</DAT>
+<DAT name="U_FSEQ">6</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">VARIABLE_LENGTH_STRING</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_ESV</DAT>
+<DAT name="U_FSEQ">4</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">XMLSTREAM</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_ESV</DAT>
+<DAT name="U_FSEQ">21</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="UCFIELD" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="U_FLAB" seqno="1" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="101,1" />
+<FLD name="U_VLAB" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="4" ufocc="0" mandatory="yes" idxnum="1,2,3,4" idxsnr="102,2,1,1" />
+<FLD name="U_TLAB" seqno="3" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="3" ufocc="0" mandatory="yes" idxnum="1,3,4" idxsnr="103,2,2" />
+<FLD name="U_FSEQ" seqno="4" type="N" level="2" pack="0" scale="5" length="10"
+ pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="3" />
+<FLD name="UKVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="5" idxsnr="1" />
+<FLD name="UMVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="6" idxsnr="1" />
+<FLD name="UDESCR" seqno="7" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_DTYP" seqno="8" type="S" level="2" pack="1" scale="0" length="10"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="IS_EXTERNAL" seqno="9" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="IS_STATIC" seqno="10" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="IS_CONTROL" seqno="11" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_INT" seqno="12" type="S" level="2" pack="1" scale="0" length="128"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="DATA_SYNTAX" seqno="13" type="S" level="2" pack="0" scale="0" length="256"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="DATA_LAYOUT" seqno="14" type="S" level="2" pack="0" scale="0" length="192"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UALT_NAME" seqno="15" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="16" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="17" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
+<FLD name="ACTVALS" seqno="18" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="UDECLARATIONS" seqno="19" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="USCRIPT" seqno="20" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+<FLD name="P_HELP" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
+<FLD name="P_DET" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
+<FLD name="P_SMOD" seqno="23" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
+<FLD name="P_EMOD" seqno="24" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
+<FLD name="P_NFLD" seqno="25" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
+<FLD name="P_PFLD" seqno="26" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
+<FLD name="P_ENCR" seqno="27" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
+<FLD name="P_DECR" seqno="28" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
+<FLD name="P_MENU" seqno="29" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
+<FLD name="P_ERROR" seqno="30" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
+<FLD name="P_GENERAL" seqno="31" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
+<FLD name="P_FORMAT" seqno="32" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
+<FLD name="P_DEFORMAT" seqno="33" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
+<FLD name="P_GETFOCUS" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
+<FLD name="P_VCHANGED" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D2,0,0,0,,0,0,0,," />
+<FLD name="VLDF" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
+<FLD name="UFTRIGGERS" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D5,0,0,0,,0,0,0,," />
+<FLD name="U_DESC" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D6,0,0,0,,0,0,0,," />
+<FLD name="VALLAB" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
+<FLD name="INITVALUE" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
+<FLD name="UPOPUP" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D9,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETTYPE" seqno="42" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETPROPS" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETTYPE" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETPROPS" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETTYPE" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DE,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETPROPS" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETTYPE" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETPROPS" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="U_FLAB">ASCSTRING</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_NODB</DAT>
+<DAT name="U_FSEQ">5</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">BOOLEAN</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_NODB</DAT>
+<DAT name="U_FSEQ">12</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">DATE</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_NODB</DAT>
+<DAT name="U_FSEQ">9</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">DATETIME</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_NODB</DAT>
+<DAT name="U_FSEQ">11</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">FIX_LENGTH_STRING</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_NODB</DAT>
+<DAT name="U_FSEQ">2</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">FIX_LENGTH_WIDECHAR</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_NODB</DAT>
+<DAT name="U_FSEQ">3</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">FLOAT</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_NODB</DAT>
+<DAT name="U_FSEQ">8</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">IMAGE_ANY</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_NODB</DAT>
+<DAT name="U_FSEQ">14</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">IMAGE_DATABASE</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_NODB</DAT>
+<DAT name="U_FSEQ">15</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">IMAGE_DISK</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_NODB</DAT>
+<DAT name="U_FSEQ">16</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">IMAGE_URL</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_NODB</DAT>
+<DAT name="U_FSEQ">17</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">LINEAR_DATE</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_NODB</DAT>
+<DAT name="U_FSEQ">18</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">LINEAR_DATETIME</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_NODB</DAT>
+<DAT name="U_FSEQ">20</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">LINEAR_TIME</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_NODB</DAT>
+<DAT name="U_FSEQ">19</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">NUMERIC</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_NODB</DAT>
+<DAT name="U_FSEQ">7</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">RAW</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_NODB</DAT>
+<DAT name="U_FSEQ">13</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">STATIC</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_NODB</DAT>
+<DAT name="U_FSEQ">1</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">TIME</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_NODB</DAT>
+<DAT name="U_FSEQ">10</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UNISTRING</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_NODB</DAT>
+<DAT name="U_FSEQ">6</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">VARIABLE_LENGTH_STRING</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_NODB</DAT>
+<DAT name="U_FSEQ">4</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">XMLSTREAM</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_NODB</DAT>
+<DAT name="U_FSEQ">21</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="UCFIELD" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="U_FLAB" seqno="1" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="101,1" />
+<FLD name="U_VLAB" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="4" ufocc="0" mandatory="yes" idxnum="1,2,3,4" idxsnr="102,2,1,1" />
+<FLD name="U_TLAB" seqno="3" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="3" ufocc="0" mandatory="yes" idxnum="1,3,4" idxsnr="103,2,2" />
+<FLD name="U_FSEQ" seqno="4" type="N" level="2" pack="0" scale="5" length="10"
+ pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="3" />
+<FLD name="UKVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="5" idxsnr="1" />
+<FLD name="UMVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="6" idxsnr="1" />
+<FLD name="UDESCR" seqno="7" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_DTYP" seqno="8" type="S" level="2" pack="1" scale="0" length="10"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="IS_EXTERNAL" seqno="9" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="IS_STATIC" seqno="10" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="IS_CONTROL" seqno="11" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_INT" seqno="12" type="S" level="2" pack="1" scale="0" length="128"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="DATA_SYNTAX" seqno="13" type="S" level="2" pack="0" scale="0" length="256"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="DATA_LAYOUT" seqno="14" type="S" level="2" pack="0" scale="0" length="192"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UALT_NAME" seqno="15" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="16" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="17" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
+<FLD name="ACTVALS" seqno="18" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="UDECLARATIONS" seqno="19" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="USCRIPT" seqno="20" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+<FLD name="P_HELP" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
+<FLD name="P_DET" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
+<FLD name="P_SMOD" seqno="23" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
+<FLD name="P_EMOD" seqno="24" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
+<FLD name="P_NFLD" seqno="25" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
+<FLD name="P_PFLD" seqno="26" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
+<FLD name="P_ENCR" seqno="27" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
+<FLD name="P_DECR" seqno="28" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
+<FLD name="P_MENU" seqno="29" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
+<FLD name="P_ERROR" seqno="30" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
+<FLD name="P_GENERAL" seqno="31" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
+<FLD name="P_FORMAT" seqno="32" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
+<FLD name="P_DEFORMAT" seqno="33" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
+<FLD name="P_GETFOCUS" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
+<FLD name="P_VCHANGED" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D2,0,0,0,,0,0,0,," />
+<FLD name="VLDF" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
+<FLD name="UFTRIGGERS" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D5,0,0,0,,0,0,0,," />
+<FLD name="U_DESC" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D6,0,0,0,,0,0,0,," />
+<FLD name="VALLAB" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
+<FLD name="INITVALUE" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
+<FLD name="UPOPUP" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D9,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETTYPE" seqno="42" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETPROPS" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETTYPE" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETPROPS" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETTYPE" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DE,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETPROPS" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETTYPE" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETPROPS" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="U_FLAB">ASCSTRING</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_PATH</DAT>
+<DAT name="U_FSEQ">5</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">BOOLEAN</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_PATH</DAT>
+<DAT name="U_FSEQ">12</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">DATE</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_PATH</DAT>
+<DAT name="U_FSEQ">9</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">DATETIME</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_PATH</DAT>
+<DAT name="U_FSEQ">11</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">FIX_LENGTH_STRING</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_PATH</DAT>
+<DAT name="U_FSEQ">2</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">FIX_LENGTH_WIDECHAR</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_PATH</DAT>
+<DAT name="U_FSEQ">3</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">FLOAT</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_PATH</DAT>
+<DAT name="U_FSEQ">8</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">IMAGE_ANY</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_PATH</DAT>
+<DAT name="U_FSEQ">14</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">IMAGE_DATABASE</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_PATH</DAT>
+<DAT name="U_FSEQ">15</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">IMAGE_DISK</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_PATH</DAT>
+<DAT name="U_FSEQ">16</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">IMAGE_URL</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_PATH</DAT>
+<DAT name="U_FSEQ">17</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">LINEAR_DATE</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_PATH</DAT>
+<DAT name="U_FSEQ">18</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">LINEAR_DATETIME</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_PATH</DAT>
+<DAT name="U_FSEQ">20</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">LINEAR_TIME</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_PATH</DAT>
+<DAT name="U_FSEQ">19</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">NUMERIC</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_PATH</DAT>
+<DAT name="U_FSEQ">7</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">RAW</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_PATH</DAT>
+<DAT name="U_FSEQ">13</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">STATIC</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_PATH</DAT>
+<DAT name="U_FSEQ">1</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">TIME</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_PATH</DAT>
+<DAT name="U_FSEQ">10</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UNISTRING</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_PATH</DAT>
+<DAT name="U_FSEQ">6</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">VARIABLE_LENGTH_STRING</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_PATH</DAT>
+<DAT name="U_FSEQ">4</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">XMLSTREAM</DAT>
+<DAT name="U_VLAB">U</DAT>
+<DAT name="U_TLAB">USUBENT_PATH</DAT>
+<DAT name="U_FSEQ">21</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Not used; never shown in any Resource Browser</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Ignore</DAT>
+<DAT name="FRM_WIDGETTYPE">U_NONE</DAT>
+<DAT name="DSP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="USP_WIDGETTYPE">U_NONE</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+</TABLE>
+</UNIFACE>

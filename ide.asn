@@ -1,0 +1,14 @@
+[RESOURCES]
+.\resources
+
+#file usysadm:ide.asn
+
+[SETTINGS]
+$resources_output .\resources
+
+[FILES]
+*.*lst		development.zip:listings\*.*lst
+*.cmi		development.zip:cmi\*.cmi
+
+[LOGICALS]
+;VC_REQUEST_DB_IDS_FORMAT = SHOW

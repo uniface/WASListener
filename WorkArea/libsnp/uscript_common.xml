@@ -1,0 +1,804 @@
+﻿<?xml version='1.0' encoding='UTF-8' ?>
+<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
+<UNIFACE release="10.3" repversion="7" xmlengine="2.0">
+<TABLE>
+<DSC name="ULIBSNP" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="UNAME" seqno="1" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
+<FLD name="UKVERSION" seqno="2" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
+<FLD name="UMVERSION" seqno="3" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
+<FLD name="UDESCR" seqno="4" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UTIMESTAMP" seqno="5" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UPURPOSE" seqno="6" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UALT_NAME" seqno="7" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="8" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="9" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="UNAME">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Library of common Script snippets</DAT>
+<DAT name="UTIMESTAMP">2016-08-15T17:21:21.00</DAT>
+<DAT name="UPURPOSE">N</DAT>
+<DAT name="UCOMMENT" xml:space='preserve'>Basic system library for snippet/snippet library creation</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="USNP" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="UNAME" seqno="1" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,4" idxsnr="103,1" />
+<FLD name="USYNTAX" seqno="2" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,4" idxsnr="102,2" />
+<FLD name="ULIBRARY" seqno="3" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,5" idxsnr="101,1" />
+<FLD name="UCATEGORY" seqno="4" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UKVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
+<FLD name="UMVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
+<FLD name="UDESCR" seqno="7" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UALT_NAME" seqno="8" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="9" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="10" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
+<FLD name="UTEXT" seqno="11" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="UNAME">ACTIVATE_CLIENT</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>From server, instruct web client to activate operation (DSP)</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;webactivate&lt;/x&gt; instName.oper(p1,p2,..)&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    ; Instruct web client to activate component
+    webactivate vInstanceName.operationName(vParam1, vParam2, ...)
+    ; No errors occur here. The activation itself still has to occur.
+    ; No operation return value are available here. The activation itself still has to occur.</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">ACTIVATE_HANDLE_COLL</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Activate collection operation via handle</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;x&gt;$collhandle&lt;/x&gt;(&lt;y&gt;"ENT"&lt;/y&gt;)-&gt;oper(p1,p2,..)&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    ; Get the handle of the current collection of occurrences of the specified entity
+    vHandle = $collhandle("MYENTITY.MYMODEL")
+
+    ; Activate operation
+    vHandle-&gt;operationName(vParam1, vParam2, ...)
+    selectcase $procerror  ; Check execution error
+    case 0                 ; ok
+      selectcase $status   ; Check operation return value
+      case 0
+        ; Your code here...
+      case ...
+      elsecase
+        ; Your code here...
+      endselectcase
+    case -59               ; No definition found for operation.
+      ; Your specific error handling here...
+    case -1123             ; Wrong number of parameters.
+      ; Your specific error handling here...
+    elsecase
+      ; Generic error handling here...
+      putmess "Operation activation failed: %%($procerrorcontext)"
+    endselectcase
+
+    ; More activates...</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">ACTIVATE_HANDLE_CPT</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Activate component operation via handle</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;x&gt;$instancehandle&lt;/x&gt;(instName)-&gt;oper(p1,p2,..)&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    ; Get the handle of an existing component instance
+    vHandle = $instancehandle("MYINSTANCENAME")
+
+    ; Activate operation
+    vHandle-&gt;operationName(vParam1, vParam2, ...)
+    selectcase $procerror  ; Check execution error
+    case 0                 ; ok
+      selectcase $status   ; Check operation return value
+      case 0
+        ; Your code here...
+      case ...
+      elsecase
+        ; Your code here...
+      endselectcase
+    case -59               ; No definition found for operation.
+      ; Your specific error handling here...
+    case -1123             ; Wrong number of parameters.
+      ; Your specific error handling here...
+    elsecase
+      ; Generic error handling here...
+      putmess "Operation activation failed: %%($procerrorcontext)"
+    endselectcase
+
+    ; More activates...
+
+    ; Instance deletion is automatically handled when the instance handle-reference count is 0
+    ; (operation cleanup is implicitly invoked as part of the delete instance)
+    ; E.g. clear handle variable
+    vHandle = ""</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">ACTIVATE_HANDLE_OCC</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Activate occurrence operation via handle</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;x&gt;$occhandle&lt;/x&gt;(&lt;y&gt;"ENT"&lt;/y&gt;)-&gt;oper(p1,p2,..)&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    ; Get the handle of the current occurrence of the specified entity
+    vHandle = $occhandle("MYENTITY.MYMODEL")
+
+    ; Activate operation
+    vHandle-&gt;operationName(vParam1, vParam2, ...)
+    selectcase $procerror  ; Check execution error
+    case 0                 ; ok
+      selectcase $status   ; Check operation return value
+      case 0
+        ; Your code here...
+      case ...
+      elsecase
+        ; Your code here...
+      endselectcase
+    case -59               ; No definition found for operation.
+      ; Your specific error handling here...
+    case -1123             ; Wrong number of parameters.
+      ; Your specific error handling here...
+    elsecase
+      ; Generic error handling here...
+      putmess "Operation activation failed: %%($procerrorcontext)"
+    endselectcase
+
+    ; More activates...</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">ACTIVATE_STATEFULL</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Activate statefull component operation</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;activate&lt;/x&gt; instName.oper(p1,p2,..)&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    ; Activate operation
+    activate vExistingInstanceName.operationName(vParam1, vParam2, ...)
+    selectcase $procerror  ; Check execution error
+    case 0                 ; ok
+      selectcase $status   ; Check operation return value
+      case 0
+        ; Your code here...
+      case ...
+      elsecase
+        ; Your code here...
+      endselectcase
+    case -57               ; The named instance cannot be found in the instance pool.
+      ; Your specific error handling here, e.g.:
+    case -59               ; No definition found for operation.
+      ; Your specific error handling here...
+    case -1123             ; Wrong number of parameters.
+      ; Your specific error handling here...
+    elsecase
+      ; Generic error handling here...
+      putmess "Operation activation failed: %%($procerrorcontext)"
+    endselectcase
+
+    ; More activates...
+
+    ; Delete instance (operation cleanup is implicitly invoked as part of deleteinstance)
+    deleteinstance vInstanceName
+    selectcase $procerror
+    case -57               ; The named instance cannot be found in the instance pool.
+      ; Your specific error handling here, e.g.:
+    elsecase
+      putmess "Delete instance failed: %%($procerrorcontext)"
+    endselectcase</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">ACTIVATE_STATELESS</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Activate stateless component operation</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;activate&lt;/x&gt;/stateless instName.oper(p1,p2,..)&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    ; Activate component (an implicit newinstance/deleteinstance is performed)
+    activate/stateless "COMPONENTNAME".operationName(vParam1, vParam2, ...)
+    selectcase $procerror  ; Check execution error
+    case 0                 ; ok
+      selectcase $status   ; Check operation return value
+      case 0
+        ; Your code here...
+      case ...
+      elsecase
+        ; Your code here...
+      endselectcase
+    case -50               ; Signature not found. For example, the component name provided is not valid.
+      ; Your error handling here...
+    case -57               ; The named instance cannot be found in the instance pool.
+      ; Your specific error handling here, e.g.:
+    case -59               ; No definition found for operation.
+      ; Your specific error handling here...
+    case -1123             ; Wrong number of parameters.
+      ; Your specific error handling here...
+    elsecase
+      ; Generic error handling here...
+      putmess "Activate error: %%($procerrorcontext)"
+    endselectcase</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">COPY_OCCURRENCE</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Copy occurrence between compatible entities</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Copy occurrence between compatible entities</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    ; Use either:
+    ; 1. Copy single occurrence between compatible entities (e.g. subtypes) to be used as profile
+    putlistitems/occ vData, "SOURCE_ENTITY_NAME"
+    getlistitems/occ/init vData, "TARGET_ENTITY_NAME"
+    ; 2. Copy single occurrence between compatible entities (e.g. subtypes) to be used as data
+    putlistitems/occ vData, "SOURCE_ENTITY_NAME"
+    getlistitems/occ vData, "TARGET_ENTITY_NAME"</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">DELETE_INSTANCE_BY_HANDLE</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Delete component instance via handle</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;instHandle = &lt;y&gt;""&lt;/y&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    ; Instance deletion is automatically handled when the instance handle-reference count is 0
+    ; (operation cleanup is implicitly invoked as part of the delete instance)
+    ; Clear handle variable
+    vHandle = ""</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">DELETE_INSTANCE_BY_NAME</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Delete component instance via instance name</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;deleteinstance&lt;/x&gt; instName&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    ; Delete instance (operation cleanup is implicitly invoked as part of deleteinstance)
+    deleteinstance vExistingInstanceName
+    selectcase $procerror
+    case -57               ; The named instance cannot be found in the instance pool.
+      ; Your specific error handling here, e.g.:
+    elsecase
+      putmess "Delete instance failed: %%($procerrorcontext)"
+    endselectcase</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">ENTRY</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Function or Entry declaration</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;entry&lt;/x&gt; myFunction&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>entry myFunction
+; Your RETURNS declaration here...
+; Your PARAMS block here...
+; Your VARIABLES block here...
+
+  ; Your implementation here...
+
+  ; Return value
+  return vMyReturnVar
+
+end</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">FORENTITY</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UCATEGORY">Constructions</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Iterate entity occurrences</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;forentity&lt;/x&gt; &lt;y&gt;"ENT"&lt;y&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    forentity vEntityName
+      ; Your code here...
+
+      ; Get current occurrence
+      vCurOcc = $curocc(vEntityName)
+
+      ; Break loop
+      if (break_condition) break
+
+    endfor</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">FORLIST</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UCATEGORY">Constructions</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Iterate indexed list</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;forlist&lt;/x&gt; item &lt;x&gt;in&lt;/x&gt; list&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    forlist vItem, vItemIndex, in vItemList
+
+      ; Your code here...
+
+    endfor</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">FORLISTID</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UCATEGORY">Constructions</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Iterate associated list</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;forlist&lt;/x&gt;/id itemId, itemValue &lt;x&gt;in&lt;/x&gt; list&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    forlist/id vItemIdPart, vItemValuePart, vItemIndex in vItemList 
+
+      ; Your code here...
+      
+    endfor</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">IF_ELSE</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UCATEGORY">Constructions</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>If-elseif-else block</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;if&lt;/x&gt; (condition)&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    if (vValue == vSomeValue)
+      ; Your code here...
+
+    elseif (vValue &gt; vOtherValue)
+      ; Your code here...
+
+    elseif (vValue &lt; vAnotherValue &amp;&amp; vValue &gt; vAnotherValue || !vSomeBoolean)
+      ; Your code here...
+
+    else
+      ; Your code here...
+
+    endif</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">MESSAGE_CLIENT</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>From server, instruct web client to show message (DSP)</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;webmessage&lt;/x&gt; &lt;y&gt;"Message text here..."&lt;/y&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    ; Instruct web client to show a message
+    webmessage "Message text here..."</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">NEWINSTANCE_GIVEN_NAME</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Instantiate component using provided instance name</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;newinstance&lt;/x&gt; &lt;y&gt;"CPTNAME"&lt;/y&gt;, "INST"&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    newinstance "COMPONENTNAME", "MYINSTANCENAME"
+    selectcase $procerror
+    case -50                ; Signature not found. For example, the component name provided is not valid.
+      ; Your error handling here...
+    case -154               ; An instance with this name "MYINSTANCENAME" already exists.
+      ; Your error handling here...
+    elsecase
+      putmess "Newinstance error: %%($procerrorcontext)"
+    endselectcase</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">NEWINSTANCE_RETURN_HANDLE</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Instantiate component and return handle</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;newinstance&lt;/x&gt; &lt;y&gt;"CPTNAME"&lt;/y&gt;, instHandle&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    newinstance "COMPONENTNAME", vHandle   ; vHandle returns handle to instance
+    selectcase $procerror
+    case -50                ; Signature not found. For example, the component name provided is not valid.
+      ; Your error handling here...
+    elsecase
+      putmess "Newinstance error: %%($procerrorcontext)"
+    endselectcase</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">NEWINSTANCE_RETURN_NAME</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Instantiate component and return instance name</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;newinstance&lt;/x&gt; &lt;y&gt;"CPTNAME"&lt;/y&gt;, instName&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    newinstance "COMPONENTNAME", vInstanceName   ; vInstanceName holds generated instance name
+    selectcase $procerror
+    case -50                ; Signature not found. For example, the component name provided is not valid.
+      ; Your error handling here...
+    elsecase
+      putmess "Newinstance error: %%($procerrorcontext)"
+    endselectcase</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">OPER_DSP_CLIENT</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>DSP client-side operation declaration with web visibility</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;weboperation&lt;/x&gt; myOperation&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>weboperation myOperation
+; Your SCOPE block here (optional)...
+; Your PARAMS block here (optional)...
+javascript
+  
+  // Your implementation in JavaScript here...
+  
+endjavascript
+end</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">OPER_DSP_SERVER</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>DSP server-side operation declaration with web visibility</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;a&gt;&lt;/a&gt;&lt;t&gt;&lt;x&gt;public web operation&lt;/x&gt; myOperation&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>public operation myOperation
+; Specify how operation is visible to the web client:
+;   public web  - specifies that this operation can be activated from the web client
+;   partner web - specifies that this operation cannot be activated from the web client,
+;                 but its scope can be included in other operations/triggers
+public web
+
+; Your SCOPE  block here (optional)...
+; Your PARAMS block here (optional)...
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+  ; Return execution status (available in $status after activate):
+  ;   return 0    ; return &gt;= 0 typically indicates a succesful execution
+  ;   return -1   ; return &lt; 0 typically indicates an error during execution
+  return 0
+  
+end</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">OPER_PARTNER</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Operation declaration with component visibility</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;partner operation&lt;/x&gt; myOperation&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>partner operation myOperation
+; Your PARAMS block here (optional)...
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+  ; Return execution status (available in $status after activate):
+  ;   return 0     ; &gt;= 0 typically indicates succesful execution
+  ;   return -1    ;  &lt; 0 typically indicates an error during execution
+  return 0
+  
+end</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">OPER_PUBLIC</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>Triggers, Component,</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Operation declaration with public visibility</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;public operation&lt;/x&gt; myOperation&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>public operation myOperation
+; Your PARAMS block here (optional)...
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+  ; Return execution status (available in $status after activate):
+  ;   return 0     ; &gt;= 0 typically indicates succesful execution
+  ;   return -1    ;  &lt; 0 typically indicates an error during execution
+  return 0
+  
+end</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">PARAMS</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Script module parameter declaration</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;params&lt;/x&gt; &lt;/t&gt;...&lt;t&gt; &lt;x&gt;endparams&lt;/x&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>; Datatypes : any, boolean, date, datetime, float, public handle, partner handle, image,
+;             lineardate, lineardatetime, lineartime, numeric, raw, string, time, 
+;             byref struct, byval struct, entity, occurrence
+; Names     : LocalVariable, ComponentVariable, FieldName, EntityName (Entity | Occurrence)
+; Directions: in, out, inout
+params
+          string pMyLocalVariable         : in
+          string $myComponentVariable$    : in
+          string MYFIELD.MYENTITY.MYMODEL : in
+          entity MYENTITY.MYMODEL         : in  ; operations only
+      occurrence MYENTITY.MYMODEL         : in  ; operations only
+    byref struct pMyParam2                : in  ; copies reference to struct only
+    byval struct pMyParam2                : in  ; copies struct
+   public handle pMyParam3                : in
+  partner handle pMyParam3                : in
+endparams</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">POSTMESSAGE_EXTERNAL</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Communicate between instances in difference processes</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;postmessage&lt;/x&gt; &lt;y&gt;"server:INSTNAME"&lt;/y&gt;,id,data&lt;/y&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    postmessage "localhost+13002|user|wasv:MYINSTANCENAME", vMessageId, vMessageData
+    selectcase $procerror  ; Check execution error
+    case 0                 ; ok
+    case -159              ; Message could not be delivered to requested queue. 
+      ; Your specific error handling here...
+    case -1107             ; The path name is not correct or the path does not exist.
+      ; Your specific error handling here...
+    elsecase
+      ; Generic error handling here...
+      putmess "Postmessage error: %%($procerrorcontext)"
+    endselectcase</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">POSTMESSAGE_INTERNAL</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Communicate between instances within single process</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;postmessage&lt;/x&gt; &lt;y&gt;"INSTNAME"&lt;/y&gt;,id,data&lt;/y&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    postmessage "INSTANCENAME", vMessageId, vMessageData
+    selectcase $procerror  ; Check execution error
+    case 0                 ; ok
+    case -57               ; The named instance cannot be found in the instance pool.
+      ; Your specific error handling here, e.g.:
+    elsecase
+      ; Generic error handling here...
+      putmess "Postmessage error: %%($procerrorcontext)"
+    endselectcase
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">REPEAT</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UCATEGORY">Constructions</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Repeat-until block</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;repeat&lt;/x&gt; &lt;/t&gt;...&lt;t&gt; &lt;x&gt;until&lt;/x&gt; (condition)&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    repeat
+
+      ; Your code here...
+
+    until (vValue &gt; max)</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">RETURNS</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Script module return datatype specification</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;returns&lt;/x&gt; datatype&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>; Datatypes : any, boolean, date, datetime, float, public handle, partner handle, image,
+;             lineardate, lineardatetime, lineartime, numeric, raw, string, struct, time
+returns string</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">SCOPE</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Web module scope declaration</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;scope&lt;/x&gt; &lt;/t&gt;...&lt;t&gt; &lt;x&gt;endscope&lt;/x&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>; input     - specifies that data of this DSP instance is used as input (e.g. to store it)
+; output    - specifies that data of this DSP instance is used as output (e.g. to display it in the client)
+; operation - specifies that another operation is also activated from this operation and its scope definition needs to be included in this one.
+;             see Static and Synamic Scope in the Uniface documentation.
+scope
+  input
+  output
+  operation someInstanceName.someOperationName
+  operation weboperThatReturnsListOfInstanceNames().someOperationName
+endscope</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">SELECTCASE</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UCATEGORY">Constructions</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Select case block</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;selectcase&lt;/x&gt; var&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    selectcase vValue
+    case 1, 2
+      ; Your code for values 1 and 2
+
+    case 3
+      ; Your code for value 3
+
+    elsecase
+      ; Your code for other values
+
+    endselectcase</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">STRUCT_ADDNODE</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UCATEGORY">Struct</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Function that adds node to struct and returns a reference to it</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;node = addStructNode()&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>entry addStructNode
+; Add struct node as last child
+; Usage:
+;   vStructNode1 = addStructNode(vStructNode0, "node1")
+;   vStructNode2 = addStructNode(vStructNode1, "node2")
+;   vStructNode2 = addStructNode(vStructNode1, "node3")
+; Result (vStructNode0-&gt;$dbgstring):
+;   []
+;     [node1]
+;       [node2]
+;       [node3]
+returns struct
+params
+  byref struct pParentNode   : in
+        string pNewNodeName  : in
+endparams
+
+  pParentNode-&gt;"%%(pNewNodeName)"{-1} = $newstruct
+  return pParentNode-&gt;"%%(pNewNodeName)"{-1}
+
+end</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">STRUCT_COPY</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UCATEGORY">Struct</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Function that copies the struct and returns a reference to it</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;target = copyStruct(source)&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>entry copyStruct
+; Copy struct
+; Usage:
+;   vTargetStruct = copyStruct(vSourceStruct)
+returns struct
+params
+  byval struct pSource : in
+endparams
+
+  return pSource
+
+end</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">STRUCT_ITERATOR</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UCATEGORY">Struct</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Iterate struct nodes</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;for&lt;/x&gt; i = 1 to vStruct-&gt;$membercount&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    vEnd = vStruct-&gt;$membercount
+    for i = 1 to vEnd
+      vStructNode = vStruct-&gt;*{i}
+  
+      ; Your code here...
+
+    endfor</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">STRUCT_LIST_ITERATOR</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UCATEGORY">Struct</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Iterate struct references</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;for&lt;/x&gt; i = 1 to vStruct-&gt;$collsize&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    vEnd = vStruct-&gt;$collsize
+    for i = 1 to vEnd
+      vStructNode = vStruct{i}
+  
+      ; Your code here...
+
+    endfor</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">STRUCT_PUTMESS</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UCATEGORY">Struct</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Trace/debug struct</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;putmess&lt;/x&gt; struct-&gt;$dbgstring&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    putmess vStruct-&gt;$dbgstring</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">VARIABLES</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Script module variable declaration</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;variables&lt;/x&gt; &lt;/t&gt;...&lt;t&gt; &lt;x&gt;endvariables&lt;/x&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>; Datatypes: any, boolean, date, datetime, float, public handle, partner handle, image,
+;            lineardate, lineardatetime, lineartime, numeric, raw, string, struct, time
+variables
+          string vMyLocalVariable1, vMyLocalVariable2
+          struct vMyLocalVariable3, vMyLocalVariable4
+   public handle vMyLocalVariable5
+  partner handle vMyLocalVariable6
+endvariables</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">WHILE</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UCATEGORY">Constructions</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>While block</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;while&lt;/x&gt; (condition)&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    while (vValue &lt; max)
+
+      ; Your code here...
+
+    endwhile</DAT>
+</OCC>
+</TABLE>
+</UNIFACE>

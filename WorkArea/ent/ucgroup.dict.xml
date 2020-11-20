@@ -1,0 +1,2989 @@
+﻿<?xml version='1.0' encoding='UTF-8' ?>
+<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
+<UNIFACE release="10.3" repversion="7" xmlengine="2.0">
+<TABLE>
+<DSC name="UCTABLE" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="UTIMESTAMP" seqno="1" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_VLAB" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
+<FLD name="U_TLAB" seqno="3" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="102" />
+<FLD name="UKVERSION" seqno="4" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
+<FLD name="UMVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
+</DSC>
+<OCC>
+<DAT name="UTIMESTAMP">2019-05-26T18:52:04.00</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="UKVERSION">4</DAT>
+<DAT name="UMVERSION">3</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="UCGROUP" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="U_GLAB" seqno="1" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
+<FLD name="U_VLAB" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="3" ufocc="0" mandatory="yes" idxnum="1,2,3" idxsnr="102,1,1" />
+<FLD name="U_TLAB" seqno="3" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="2" idxsnr="2" />
+<FLD name="UPARENT" seqno="4" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UKVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="4" idxsnr="1" />
+<FLD name="UMVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="5" idxsnr="1" />
+<FLD name="UDESCR" seqno="7" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_BORD" seqno="8" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_INDB" seqno="9" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="DB_ACCESS" seqno="10" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_DBMS" seqno="11" type="S" level="2" pack="0" scale="0" length="3"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_UPD" seqno="12" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_MINR" seqno="13" type="N" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_MAXR" seqno="14" type="N" level="2" pack="0" scale="0" length="6"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_INT" seqno="15" type="S" level="2" pack="1" scale="0" length="128"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UPURPOSE" seqno="16" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UALT_NAME" seqno="17" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="18" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="19" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
+<FLD name="TPLACTUAL" seqno="20" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="UDECLARATIONS" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="UCOLL_SCRIPT" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+<FLD name="UOCC_SCRIPT" seqno="23" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
+<FLD name="P_READ" seqno="24" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
+<FLD name="P_WRIT" seqno="25" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
+<FLD name="P_DEL" seqno="26" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
+<FLD name="P_LOCK" seqno="27" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
+<FLD name="P_WUP" seqno="28" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
+<FLD name="P_DUP" seqno="29" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
+<FLD name="P_HELP" seqno="30" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
+<FLD name="P_DET" seqno="31" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
+<FLD name="P_OCUR" seqno="32" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
+<FLD name="P_OMOD" seqno="33" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
+<FLD name="P_OREM" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
+<FLD name="P_ODEF" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
+<FLD name="P_MENU" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
+<FLD name="P_FNDOCC" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D2,0,0,0,,0,0,0,," />
+<FLD name="P_ERROR" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
+<FLD name="P_GENERAL" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D5,0,0,0,,0,0,0,," />
+<FLD name="VLDE" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D6,0,0,0,,0,0,0,," />
+<FLD name="VLDK" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
+<FLD name="UECOPERS" seqno="42" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
+<FLD name="UEOOPERS" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
+<FLD name="UECTRIGGERS" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
+<FLD name="PRLO" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
+<FLD name="PSLO" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
+<FLD name="PRSO" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DE,0,0,0,,0,0,0,," />
+<FLD name="PSSO" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
+<FLD name="UPOPUP" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
+<FLD name="U_OBJSVC" seqno="50" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
+<FLD name="UEOINTERFACE" seqno="51" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E3,0,0,0,,0,0,0,," />
+<FLD name="UECINTERFACE" seqno="52" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E4,0,0,0,,0,0,0,," />
+<FLD name="UTARGET" seqno="53" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E5,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETTYPE" seqno="54" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E6,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETPROPS" seqno="55" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E7,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETTYPE" seqno="56" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E8,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETPROPS" seqno="57" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E9,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETTYPE" seqno="58" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EA,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETPROPS" seqno="59" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EB,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETTYPE" seqno="60" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EC,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETPROPS" seqno="61" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\ED,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="U_GLAB">UCGROUP</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Modeled entity or modeled subtype entity</DAT>
+<DAT name="U_BORD">N</DAT>
+<DAT name="U_INDB">Y</DAT>
+<DAT name="DB_ACCESS">D</DAT>
+<DAT name="U_DBMS">IDF</DAT>
+<DAT name="U_UPD">N</DAT>
+<DAT name="U_MINR">0</DAT>
+<DAT name="U_MAXR">0</DAT>
+<DAT name="U_INT">U*</DAT>
+<DAT name="UOCC_SCRIPT" xml:space='preserve'>trigger read
+  read
+end</DAT>
+<DAT name="UEOINTERFACE">UCGROUPOCC</DAT>
+<DAT name="UECINTERFACE">UCGROUPCOLL</DAT>
+</OCC>
+<OCC>
+<DAT name="U_GLAB">UCGROUP_ONE</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="UPARENT">UCGROUP</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>"One" entity in a relationship</DAT>
+<DAT name="U_BORD">N</DAT>
+<DAT name="DB_ACCESS">D</DAT>
+<DAT name="U_UPD">N</DAT>
+<DAT name="U_MINR">0</DAT>
+<DAT name="U_MAXR">0</DAT>
+<DAT name="UOCC_SCRIPT" xml:space='preserve'>trigger read
+  read
+end</DAT>
+<DAT name="UEOINTERFACE">NOTUSED</DAT>
+<DAT name="UECINTERFACE">NOTUSED</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="UCFIELD" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="U_FLAB" seqno="1" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="101,1" />
+<FLD name="U_VLAB" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="4" ufocc="0" mandatory="yes" idxnum="1,2,3,4" idxsnr="102,2,1,1" />
+<FLD name="U_TLAB" seqno="3" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="3" ufocc="0" mandatory="yes" idxnum="1,3,4" idxsnr="103,2,2" />
+<FLD name="U_FSEQ" seqno="4" type="N" level="2" pack="0" scale="5" length="10"
+ pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="3" />
+<FLD name="UKVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="5" idxsnr="1" />
+<FLD name="UMVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="6" idxsnr="1" />
+<FLD name="UDESCR" seqno="7" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_DTYP" seqno="8" type="S" level="2" pack="1" scale="0" length="10"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="IS_EXTERNAL" seqno="9" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="IS_STATIC" seqno="10" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="IS_CONTROL" seqno="11" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_INT" seqno="12" type="S" level="2" pack="1" scale="0" length="128"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="DATA_SYNTAX" seqno="13" type="S" level="2" pack="0" scale="0" length="256"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="DATA_LAYOUT" seqno="14" type="S" level="2" pack="0" scale="0" length="192"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UALT_NAME" seqno="15" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="16" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="17" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
+<FLD name="ACTVALS" seqno="18" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="UDECLARATIONS" seqno="19" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="USCRIPT" seqno="20" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+<FLD name="P_HELP" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
+<FLD name="P_DET" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
+<FLD name="P_SMOD" seqno="23" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
+<FLD name="P_EMOD" seqno="24" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
+<FLD name="P_NFLD" seqno="25" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
+<FLD name="P_PFLD" seqno="26" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
+<FLD name="P_ENCR" seqno="27" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
+<FLD name="P_DECR" seqno="28" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
+<FLD name="P_MENU" seqno="29" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
+<FLD name="P_ERROR" seqno="30" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
+<FLD name="P_GENERAL" seqno="31" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
+<FLD name="P_FORMAT" seqno="32" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
+<FLD name="P_DEFORMAT" seqno="33" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
+<FLD name="P_GETFOCUS" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
+<FLD name="P_VCHANGED" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D2,0,0,0,,0,0,0,," />
+<FLD name="VLDF" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
+<FLD name="UFTRIGGERS" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D5,0,0,0,,0,0,0,," />
+<FLD name="U_DESC" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D6,0,0,0,,0,0,0,," />
+<FLD name="VALLAB" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
+<FLD name="INITVALUE" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
+<FLD name="UPOPUP" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D9,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETTYPE" seqno="42" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETPROPS" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETTYPE" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETPROPS" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETTYPE" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DE,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETPROPS" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETTYPE" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETPROPS" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="U_FLAB">DB_ACCESS</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">10</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Database access; N=none, D=database, Y=Entity service</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">VC1</DAT>
+<DAT name="DATA_SYNTAX">UPC</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Database Access</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Database access</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">DSP_WIDGETPROPS</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">57</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Widget properties for use in DSP components</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^233</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Widget Properties</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Widget properties</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">DSP_WIDGETTYPE</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">56</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Widget type for use in DSP components</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^232</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Widget Type</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Widget type</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">FRM_WIDGETPROPS</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">55</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Widget properties for use in FRM components</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^231</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Widget Properties</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Widget properties</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">FRM_WIDGETTYPE</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">54</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Widget type for use in FRM components</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^230</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Widget Type</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Widget type</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">HFM_WIDGETPROPS</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">61</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Widget properties for use in HFM components</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^237</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Widget Properties</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Widget properties</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">HFM_WIDGETTYPE</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">60</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Widget type for use in HFM components</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^236</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Widget Type</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Widget type</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">PRLO</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">45</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^220</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME">PRLO</DAT>
+<DAT name="U_DESC" xml:space='preserve'>PRLO (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">.U</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">PRSO</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">47</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^222</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME">PRSO</DAT>
+<DAT name="U_DESC" xml:space='preserve'>PRSO (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">.U</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">PSLO</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">46</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^221</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME">PSLO</DAT>
+<DAT name="U_DESC" xml:space='preserve'>PSLO (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">.U</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">PSSO</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">48</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^223</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME">PSSO</DAT>
+<DAT name="U_DESC" xml:space='preserve'>PSSO (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">.U</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_DEL</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">26</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^199</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">DELE</DAT>
+<DAT name="U_DESC" xml:space='preserve'>DELE (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_DET</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">31</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^204</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">DTLE</DAT>
+<DAT name="U_DESC" xml:space='preserve'>DTLE (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_DUP</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">29</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^202</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">DLUP</DAT>
+<DAT name="U_DESC" xml:space='preserve'>DLUP (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_ERROR</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">38</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^211</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">ERRE</DAT>
+<DAT name="U_DESC" xml:space='preserve'>ERRE (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_FNDOCC</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">37</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^210</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">LMK</DAT>
+<DAT name="U_DESC" xml:space='preserve'>LMK (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_GENERAL</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">39</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^213</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">LPMX</DAT>
+<DAT name="U_DESC" xml:space='preserve'>LPMX (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_HELP</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">30</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^203</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">HLPE</DAT>
+<DAT name="U_DESC" xml:space='preserve'>HLPE (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_LOCK</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">27</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^200</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">LOCK</DAT>
+<DAT name="U_DESC" xml:space='preserve'>LOCK (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_MENU</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">36</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^209</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">MNUE</DAT>
+<DAT name="U_DESC" xml:space='preserve'>MNUE (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_OCUR</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">32</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^205</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">OGF</DAT>
+<DAT name="U_DESC" xml:space='preserve'>OGF (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_ODEF</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">35</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^208</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">AIO</DAT>
+<DAT name="U_DESC" xml:space='preserve'>AIO (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_OMOD</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">33</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^206</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">LMO</DAT>
+<DAT name="U_DESC" xml:space='preserve'>LMO (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_OREM</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">34</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^207</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">RMO</DAT>
+<DAT name="U_DESC" xml:space='preserve'>RMO (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_READ</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">24</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^197</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">READ</DAT>
+<DAT name="U_DESC" xml:space='preserve'>READ (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_WRIT</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">25</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^198</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">WRIT</DAT>
+<DAT name="U_DESC" xml:space='preserve'>WRIT (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_WUP</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">28</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^201</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">WRUP</DAT>
+<DAT name="U_DESC" xml:space='preserve'>WRUP (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">TPLACTUAL</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">20</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^193</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME">DEFN</DAT>
+<DAT name="U_DESC" xml:space='preserve'>DEFN (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UALT_NAME</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">17</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Display name in IDE Resource Browser</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W64</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Display name</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Display name</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UCOLL_SCRIPT</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">22</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Collection script container</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^195</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Collection Script</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Collection script</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UCOMMENT</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">19</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR">Comments</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\\^29</DAT>
+<DAT name="DATA_SYNTAX">FUL,YCR</DAT>
+<DAT name="UALT_NAME">Comments</DAT>
+<DAT name="U_DESC">Comments</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UDECLARATIONS</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">21</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Declarations container</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^194</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME">Declarations</DAT>
+<DAT name="U_DESC">Declarations</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UDESCR</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">7</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR">Description</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W64</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME">Description</DAT>
+<DAT name="U_DESC">Description</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=F</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UECINTERFACE</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">52</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Collection interface name</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^228</DAT>
+<DAT name="DATA_SYNTAX">UPC,FUL,LEN(0-60),ENT(~&amp;~@*($)~@*)</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Collection Interface Name</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Coll. interface</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UECOPERS</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">42</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^216</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Collection Operations</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Collection Operations (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UECTRIGGERS</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">44</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^219</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Collection Triggers</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Collection Triggers (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UEOINTERFACE</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">51</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Occurrence interface name</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^227</DAT>
+<DAT name="DATA_SYNTAX">UPC,FUL,LEN(0-60),ENT(~&amp;~@*($)~@*)</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Occurrence Interface Name</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Occ. interface</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UEOOPERS</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">43</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^218</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Occurrence Script</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Occurrence Script (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UKVERSION</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">5</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Table structure version</DAT>
+<DAT name="U_DTYP">N</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">I2</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Table structure version</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Table structure version</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UMVERSION</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">6</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Migration version</DAT>
+<DAT name="U_DTYP">N</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">I2</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Migration version</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Migration version</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UOCC_SCRIPT</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">23</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Occurrence script container</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^196</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Occurrence Script</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Occurrence script</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UPARENT</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">4</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Parent of this subtype entity, or NULL if this is not a subtype</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">C60</DAT>
+<DAT name="DATA_SYNTAX">UPC,FUL,LEN(0-32),ENT(~&amp;~@*($)~@*),YCR</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Parent of subtype</DAT>
+<DAT name="U_DESC">Parent</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UPOPUP</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">49</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Pop-up menu name</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^224</DAT>
+<DAT name="DATA_SYNTAX">UPC,FUL,LEN(0-128)</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Pop-up Menu</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Pop-up menu</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UPURPOSE</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">16</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Development purpose</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">VC1</DAT>
+<DAT name="DATA_SYNTAX">UPC</DAT>
+<DAT name="UALT_NAME">Purpose</DAT>
+<DAT name="U_DESC">Purpose</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">USP_WIDGETPROPS</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">59</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Widget properties for use in USP components</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^235</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Widget Properties</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Widget properties</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">USP_WIDGETTYPE</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">58</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Widget type for use in USP components</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^234</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Widget Type</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Widget type</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UTARGET</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">53</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Target component type; used in Uniface 9 for 3-tier generation</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^229</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Target component type</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Target component type</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UWAORDER</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">18</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Reserved for future use</DAT>
+<DAT name="U_DTYP">N</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">N5</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Reserved for future use</DAT>
+<DAT name="UCOMMENT" xml:space='preserve'>Sequence number in work area file</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Reserved for future use</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">U_BORD</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">8</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Has border line? (Y,N)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">VC1</DAT>
+<DAT name="DATA_SYNTAX" xml:space='preserve'>OVS,UPC,ASC,NIME,LEN(0-1),ENT((Y)(N)( ))</DAT>
+<DAT name="UALT_NAME">Borderline?</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Has border</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">U_DBMS</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">11</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Database path</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">C3</DAT>
+<DAT name="DATA_SYNTAX">UPC,LEN(0-3),MUL</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Database Path</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Database path</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">U_GLAB</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">1</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Name of this (subtype) entity</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">C60</DAT>
+<DAT name="DATA_SYNTAX">UPC,FUL,LEN(1-32),ENT(~&amp;~@*($)~@*),YCR</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Entity Name</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Entity name</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=F</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">U_INDB</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">9</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Is this entity's top-level entity in database (Y/N)</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">VC1</DAT>
+<DAT name="DATA_SYNTAX" xml:space='preserve'>OVS,UPC,ASC,NIME,LEN(0-1),ENT((Y)(N)( ))</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Database Behavior</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Is in database</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">U_INT</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">15</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Database interface</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">VC128</DAT>
+<DAT name="DATA_SYNTAX">UPC,PRO(--------),MUL</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Database Interface</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Database interface</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">U_MAXR</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">14</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Maximum number of occurrences</DAT>
+<DAT name="U_DTYP">N</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">C6</DAT>
+<DAT name="DATA_SYNTAX">DIG,LEN(0-4)</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Max. Number</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Max. Number</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">U_MINR</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">13</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Minimum number of occurrences</DAT>
+<DAT name="U_DTYP">N</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">C6</DAT>
+<DAT name="DATA_SYNTAX">DIG,LEN(0-4)</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Min. Number</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Min. Number</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">U_OBJSVC</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">50</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Entity service</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^225</DAT>
+<DAT name="DATA_SYNTAX">UPC,FUL,LEN(0-60),ENT(~&amp;~@*($)~@*)</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Entity Service</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Entity service</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">U_TLAB</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">3</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Top-level entity name</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">C60</DAT>
+<DAT name="DATA_SYNTAX">UPC,FUL,LEN(1-32),ENT(~&amp;~@*($)~@*),YCR</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Subtype Of</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Subtype of</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=F</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">U_UPD</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">12</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Locking; N=No updates, Y=Cautious, O=Optimistic</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">VC1</DAT>
+<DAT name="DATA_SYNTAX" xml:space='preserve'>UPC,LEN(0-1),ENT((y)(n)(o)( )),MUL</DAT>
+<DAT name="UALT_NAME">Locking</DAT>
+<DAT name="U_DESC">Locking</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">U_VLAB</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">2</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Model for this (subtype) entity</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">C60</DAT>
+<DAT name="DATA_SYNTAX">UPC,FUL,LEN(1-32),ENT(~&amp;~@*($)~@*),YCR</DAT>
+<DAT name="UALT_NAME">Model</DAT>
+<DAT name="U_DESC">Model</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=F</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">VLDE</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">40</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^214</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">VLDE</DAT>
+<DAT name="U_DESC" xml:space='preserve'>VLDE (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">VLDK</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_FSEQ">41</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*VI\^31^215</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">VLDK</DAT>
+<DAT name="U_DESC" xml:space='preserve'>VLDK (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="UCFIELD" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="U_FLAB" seqno="1" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="101,1" />
+<FLD name="U_VLAB" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="4" ufocc="0" mandatory="yes" idxnum="1,2,3,4" idxsnr="102,2,1,1" />
+<FLD name="U_TLAB" seqno="3" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="3" ufocc="0" mandatory="yes" idxnum="1,3,4" idxsnr="103,2,2" />
+<FLD name="U_FSEQ" seqno="4" type="N" level="2" pack="0" scale="5" length="10"
+ pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="3" />
+<FLD name="UKVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="5" idxsnr="1" />
+<FLD name="UMVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="6" idxsnr="1" />
+<FLD name="UDESCR" seqno="7" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_DTYP" seqno="8" type="S" level="2" pack="1" scale="0" length="10"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="IS_EXTERNAL" seqno="9" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="IS_STATIC" seqno="10" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="IS_CONTROL" seqno="11" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_INT" seqno="12" type="S" level="2" pack="1" scale="0" length="128"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="DATA_SYNTAX" seqno="13" type="S" level="2" pack="0" scale="0" length="256"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="DATA_LAYOUT" seqno="14" type="S" level="2" pack="0" scale="0" length="192"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UALT_NAME" seqno="15" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="16" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="17" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
+<FLD name="ACTVALS" seqno="18" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
+<FLD name="UDECLARATIONS" seqno="19" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="USCRIPT" seqno="20" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+<FLD name="P_HELP" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
+<FLD name="P_DET" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
+<FLD name="P_SMOD" seqno="23" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
+<FLD name="P_EMOD" seqno="24" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
+<FLD name="P_NFLD" seqno="25" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
+<FLD name="P_PFLD" seqno="26" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
+<FLD name="P_ENCR" seqno="27" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
+<FLD name="P_DECR" seqno="28" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
+<FLD name="P_MENU" seqno="29" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
+<FLD name="P_ERROR" seqno="30" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
+<FLD name="P_GENERAL" seqno="31" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
+<FLD name="P_FORMAT" seqno="32" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
+<FLD name="P_DEFORMAT" seqno="33" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
+<FLD name="P_GETFOCUS" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
+<FLD name="P_VCHANGED" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D2,0,0,0,,0,0,0,," />
+<FLD name="VLDF" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
+<FLD name="UFTRIGGERS" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D5,0,0,0,,0,0,0,," />
+<FLD name="U_DESC" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D6,0,0,0,,0,0,0,," />
+<FLD name="VALLAB" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
+<FLD name="INITVALUE" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
+<FLD name="UPOPUP" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D9,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETTYPE" seqno="42" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
+<FLD name="FRM_WIDGETPROPS" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETTYPE" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
+<FLD name="DSP_WIDGETPROPS" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETTYPE" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DE,0,0,0,,0,0,0,," />
+<FLD name="USP_WIDGETPROPS" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETTYPE" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
+<FLD name="HFM_WIDGETPROPS" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="U_FLAB">DB_ACCESS</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">10</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Database access; N=none, D=database, Y=Entity service</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Database Access</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Database access</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">DSP_WIDGETPROPS</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">57</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Widget properties for use in DSP components</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Widget Properties</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Widget properties</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">DSP_WIDGETTYPE</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">56</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Widget type for use in DSP components</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Widget Type</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Widget type</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">FRM_WIDGETPROPS</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">55</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Widget properties for use in FRM components</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Widget Properties</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Widget properties</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">FRM_WIDGETTYPE</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">54</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Widget type for use in FRM components</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Widget Type</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Widget type</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">HFM_WIDGETPROPS</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">61</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Widget properties for use in HFM components</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Widget Properties</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Widget properties</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">HFM_WIDGETTYPE</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">60</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Widget type for use in HFM components</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Widget Type</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Widget type</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">PRLO</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">45</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME">PRLO</DAT>
+<DAT name="U_DESC" xml:space='preserve'>PRLO (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">.U</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">PRSO</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">47</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME">PRSO</DAT>
+<DAT name="U_DESC" xml:space='preserve'>PRSO (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">.U</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">PSLO</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">46</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME">PSLO</DAT>
+<DAT name="U_DESC" xml:space='preserve'>PSLO (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">.U</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">PSSO</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">48</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME">PSSO</DAT>
+<DAT name="U_DESC" xml:space='preserve'>PSSO (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">.U</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_DEL</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">26</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">DELE</DAT>
+<DAT name="U_DESC" xml:space='preserve'>DELE (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_DET</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">31</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">DTLE</DAT>
+<DAT name="U_DESC" xml:space='preserve'>DTLE (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_DUP</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">29</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">DLUP</DAT>
+<DAT name="U_DESC" xml:space='preserve'>DLUP (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_ERROR</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">38</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">ERRE</DAT>
+<DAT name="U_DESC" xml:space='preserve'>ERRE (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_FNDOCC</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">37</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">LMK</DAT>
+<DAT name="U_DESC" xml:space='preserve'>LMK (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_GENERAL</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">39</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">LPMX</DAT>
+<DAT name="U_DESC" xml:space='preserve'>LPMX (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_HELP</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">30</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">HLPE</DAT>
+<DAT name="U_DESC" xml:space='preserve'>HLPE (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_LOCK</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">27</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">LOCK</DAT>
+<DAT name="U_DESC" xml:space='preserve'>LOCK (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_MENU</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">36</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">MNUE</DAT>
+<DAT name="U_DESC" xml:space='preserve'>MNUE (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_OCUR</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">32</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">OGF</DAT>
+<DAT name="U_DESC" xml:space='preserve'>OGF (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_ODEF</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">35</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">AIO</DAT>
+<DAT name="U_DESC" xml:space='preserve'>AIO (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_OMOD</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">33</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">LMO</DAT>
+<DAT name="U_DESC" xml:space='preserve'>LMO (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_OREM</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">34</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">RMO</DAT>
+<DAT name="U_DESC" xml:space='preserve'>RMO (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_READ</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">24</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">READ</DAT>
+<DAT name="U_DESC" xml:space='preserve'>READ (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_WRIT</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">25</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">WRIT</DAT>
+<DAT name="U_DESC" xml:space='preserve'>WRIT (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">P_WUP</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">28</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">WRUP</DAT>
+<DAT name="U_DESC" xml:space='preserve'>WRUP (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">SCRIPT_SDO_HANDLE</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">62</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Script document handle, for internal IDE use</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Script Document Handle</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Doc. handle</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">TPLACTUAL</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">20</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME">DEFN</DAT>
+<DAT name="U_DESC" xml:space='preserve'>DEFN (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UALT_NAME</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">17</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Display name in IDE Resource Browser</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Display name</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Display name</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UCOLL_SCRIPT</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">22</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Collection script container</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Collection Script</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Collection script</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UCOMMENT</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">19</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR">Comments</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">FUL,YCR</DAT>
+<DAT name="UALT_NAME">Comments</DAT>
+<DAT name="U_DESC">Comments</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UDECLARATIONS</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">21</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Declarations sontainer</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME">DEFN</DAT>
+<DAT name="U_DESC">Declarations</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UDESCR</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">7</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR">Description</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME">Description</DAT>
+<DAT name="U_DESC">Description</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=F</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UECINTERFACE</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">52</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Collection interface name</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">UPC,FUL,LEN(0-60),ENT(~&amp;~@*($)~@*)</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Collection Interface Name</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Coll. interface</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UECOPERS</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">42</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Collection Operations</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Collection Operations (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UECTRIGGERS</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">44</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Collection Triggers</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Collection Triggers (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UEOINTERFACE</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">51</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Occurrence interface name</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">UPC,FUL,LEN(0-60),ENT(~&amp;~@*($)~@*)</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Occurrence Interface Name</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Occ. interface</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UEOOPERS</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">43</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Occurrence Script</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Occurrence Script (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UKVERSION</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">5</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Table structure version</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Table structure version</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Table structure version</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UMVERSION</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">6</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Migration version</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Migration version</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Migration version</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UOCC_SCRIPT</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">23</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Occurrence script container</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Occurrence Script</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Occurrence script</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UPARENT</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">4</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Parent of this subtype entity, or NULL if this is not a subtype</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">UPC,FUL,LEN(0-60),ENT(~&amp;~@*($)~@*)</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Parent of subtype</DAT>
+<DAT name="U_DESC">Parent</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UPOPUP</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">49</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Pop-up menu name</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">UPC,FUL,LEN(0-128)</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Pop-up Menu</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Pop-up menu</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UPURPOSE</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">16</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Development purpose</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME">Purpose</DAT>
+<DAT name="U_DESC">Purpose</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">USP_WIDGETPROPS</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">59</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Widget properties for use in USP components</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Widget Properties</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Widget properties</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">USP_WIDGETTYPE</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">58</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Widget type for use in USP components</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Widget Type</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Widget type</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UTARGET</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">53</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Target component type; used in Uniface 9 for 3-tier generation</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Target component type</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Target component type</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">UWAORDER</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">18</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Reserved for future use</DAT>
+<DAT name="IS_EXTERNAL">T</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Reserved for future use</DAT>
+<DAT name="UCOMMENT" xml:space='preserve'>Sequence number in work area file</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Reserved for future use</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="HFM_WIDGETTYPE">U_NONE</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">U_BORD</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">8</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Has border line? (Y,N)</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX" xml:space='preserve'>OVS,UPC,ASC,NIME,LEN(0-1),ENT((Y)(N)( ))</DAT>
+<DAT name="UALT_NAME">Borderline?</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Has border</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">U_DBMS</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">11</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Database path</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">UPC,LEN(0-3),MUL</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Database Path</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Database path</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">U_GLAB</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">1</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Name of this (subtype) entity</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">UPC,FUL,YCR,LEN(1-60),ENT(~&amp;~@*($)~@*)</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Entity Name</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Entity name</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=F</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">U_INDB</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">9</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Is this entity's top-level entity in database (Y/N)</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX" xml:space='preserve'>OVS,UPC,ASC,NIME,LEN(0-1),ENT((Y)(N)( ))</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Database Behavior</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Is in database</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">U_INT</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">15</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Database interface</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">UPC,PRO(--------),MUL</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Database Interface</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Database interface</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">U_MAXR</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">14</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Maximum number of occurrences</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">DIG,LEN(0-4)</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Max. Number</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Max. Number</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">U_MINR</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">13</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Minimum number of occurrences</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">DIG,LEN(0-4)</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Min. Number</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Min. Number</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">U_OBJSVC</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">50</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Entity service</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">UPC,FUL,LEN(0-60),ENT(~&amp;~@*($)~@*)</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Entity Service</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Entity service</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">U_TLAB</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">3</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Top-level entity name</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">UPC,FUL,YCR,LEN(1-60),ENT(~&amp;~@*($)~@*)</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>Subtype Of</DAT>
+<DAT name="U_DESC" xml:space='preserve'>Subtype of</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=F</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">U_UPD</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">12</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Locking; N=No updates, Y=Cautious, O=Optimistic</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX" xml:space='preserve'>UPC,LEN(0-1),ENT((y)(n)(o)( )),MUL</DAT>
+<DAT name="UALT_NAME">Locking</DAT>
+<DAT name="U_DESC">Locking</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">U_VLAB</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">2</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Model for this (subtype) entity</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">UPC,FUL,YCR,LEN(1-60),ENT(~&amp;~@*($)~@*)</DAT>
+<DAT name="UALT_NAME">Model</DAT>
+<DAT name="U_DESC">Model</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=F</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">VLDE</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">40</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">VLDE</DAT>
+<DAT name="U_DESC" xml:space='preserve'>VLDE (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="U_FLAB">VLDK</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP_ONE</DAT>
+<DAT name="U_FSEQ">41</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Only exists for the purpose of migration from Uniface 9</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="DATA_SYNTAX">YCR</DAT>
+<DAT name="DATA_LAYOUT">WID(80)</DAT>
+<DAT name="UALT_NAME">VLDK</DAT>
+<DAT name="U_DESC" xml:space='preserve'>VLDK (old Uniface 9 code container)</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="FRM_WIDGETPROPS">MULTILINE=T</DAT>
+<DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="UCKEY" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="U_VLAB" seqno="1" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,4" idxsnr="101,1" />
+<FLD name="U_TLAB" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,4" idxsnr="102,2" />
+<FLD name="U_KSEQ" seqno="3" type="N" level="2" pack="0" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="103" />
+<FLD name="U_KTYP" seqno="4" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UKVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
+<FLD name="UMVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
+<FLD name="UDESCR" seqno="7" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UALT_NAME" seqno="8" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="9" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="10" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
+<FLD name="U_FLABS" seqno="11" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+<FLD name="UVALKEY" seqno="12" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_KSEQ">1</DAT>
+<DAT name="U_KTYP">P</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">1</DAT>
+<DAT name="U_FLABS">U_GLAB,U_VLAB</DAT>
+</OCC>
+<OCC>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_KSEQ">2</DAT>
+<DAT name="U_KTYP">I</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">1</DAT>
+<DAT name="U_FLABS">U_VLAB,U_TLAB</DAT>
+</OCC>
+<OCC>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_KSEQ">3</DAT>
+<DAT name="U_KTYP">I</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">1</DAT>
+<DAT name="U_FLABS">U_VLAB</DAT>
+</OCC>
+<OCC>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_KSEQ">4</DAT>
+<DAT name="U_KTYP">I</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">1</DAT>
+<DAT name="UDESCR" xml:space='preserve'>K-version index</DAT>
+<DAT name="U_FLABS">UKVERSION</DAT>
+</OCC>
+<OCC>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_TLAB">UCGROUP</DAT>
+<DAT name="U_KSEQ">5</DAT>
+<DAT name="U_KTYP">I</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">1</DAT>
+<DAT name="UDESCR" xml:space='preserve'>M-version index</DAT>
+<DAT name="U_FLABS">UMVERSION</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="UCRELSH" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="U_GLAB" seqno="1" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="101,1" />
+<FLD name="U_VLAB" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="102,2" />
+<FLD name="U_RGLAB" seqno="3" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,3" idxsnr="103,1" />
+<FLD name="U_RVLAB" seqno="4" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,3" idxsnr="104,2" />
+<FLD name="UKVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="4" idxsnr="1" />
+<FLD name="UMVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="5" idxsnr="1" />
+<FLD name="UDESCR" seqno="7" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_DELC" seqno="8" type="S" level="2" pack="0" scale="0" length="3"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_KSEQ" seqno="9" type="N" level="2" pack="0" scale="0" length="2"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_FIDX" seqno="10" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_PROCEDURE" seqno="11" type="S" level="2" pack="1" scale="0" length="32"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="U_INTEGRITY" seqno="12" type="B" level="2" pack="0" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UALT_NAME" seqno="13" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="14" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="15" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
+<FLD name="U_FLABS" seqno="16" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="U_GLAB">UCTABLE</DAT>
+<DAT name="U_VLAB">DICT</DAT>
+<DAT name="U_RGLAB">UCGROUP</DAT>
+<DAT name="U_RVLAB">DICT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">1</DAT>
+<DAT name="U_DELC">CAS</DAT>
+<DAT name="U_KSEQ">1</DAT>
+<DAT name="U_FIDX">N</DAT>
+<DAT name="U_PROCEDURE">U_UCTABLE_UCGROUP_DICT</DAT>
+<DAT name="U_INTEGRITY">T</DAT>
+<DAT name="U_FLABS">U_VLAB,U_TLAB</DAT>
+</OCC>
+</TABLE>
+</UNIFACE>

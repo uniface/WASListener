@@ -1,0 +1,2145 @@
+﻿<?xml version='1.0' encoding='UTF-8' ?>
+<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
+<UNIFACE release="10.3" repversion="7" xmlengine="2.0">
+<TABLE>
+<DSC name="ULIBSNP" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="UNAME" seqno="1" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
+<FLD name="UKVERSION" seqno="2" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
+<FLD name="UMVERSION" seqno="3" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
+<FLD name="UDESCR" seqno="4" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UTIMESTAMP" seqno="5" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UPURPOSE" seqno="6" type="S" level="2" pack="1" scale="0" length="1"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UALT_NAME" seqno="7" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="8" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="9" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="UNAME">USCRIPT_ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Library of script snippets for Modeled Entities</DAT>
+<DAT name="UTIMESTAMP">2016-08-24T14:40:22.00</DAT>
+<DAT name="UPURPOSE">N</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="USNP" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="UNAME" seqno="1" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,4" idxsnr="103,1" />
+<FLD name="USYNTAX" seqno="2" type="S" level="2" pack="0" scale="0" length="16"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,4" idxsnr="102,2" />
+<FLD name="ULIBRARY" seqno="3" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,5" idxsnr="101,1" />
+<FLD name="UCATEGORY" seqno="4" type="S" level="2" pack="0" scale="0" length="32"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UKVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
+<FLD name="UMVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
+<FLD name="UDESCR" seqno="7" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UALT_NAME" seqno="8" type="S" level="2" pack="13" scale="0" length="64"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="9" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="10" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
+<FLD name="UTEXT" seqno="11" type="S" level="2" pack="141" scale="0" length="0"
+ pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
+</DSC>
+<OCC>
+<DAT name="UNAME">U211_READ</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for occs read from the DBMS (retrieve)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;read&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger read
+; This trigger is fired as part of the retrieve process.
+; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+
+  ; Your implementation here...
+  #define example_1
+
+#ifdefined example_1
+  ; Read basic:
+  read
+#endif
+
+#ifdefined example_2
+  ; Read with DBMS lock for paranoid locking:
+  read/lock
+#endif
+
+#ifdefined example_3
+  ; Read with DBMS paging:
+variables
+  numeric vPageSize, vPageOffset
+endvariables
+  ; The page size and offset are maintained as entity properties,
+  ; this could also be maintained alsewhere.
+  vPageSize   = $item("PAGESIZE", $entityproperties("&lt;$entname&gt;"))
+  vPageOffset = $item("PAGEOFFSET", $entityproperties("&lt;$entname&gt;"))
+  read options "step=%%(vPageSize)&uSEP;offset=%%(vPageOffset)"
+#endif
+
+#ifdefined example_4
+  ; Read with DBMS where clause:
+variables
+  string  vProfile1, vProfile2   ; , ...
+endvariables
+  ; The profiles are maintained as entity properties,
+  ; this could also be maintained alsewhere, e.g. a dedicated profile entity with the fields that match the database fields.
+  vProfile1 = $item("PROFILE1", $entityproperties("&lt;$entname&gt;"))
+  vProfile2 = $item("PROFILE2", $entityproperties("&lt;$entname&gt;"))
+  ; ...
+  read u_where (MYFIELD1 == vProfile1 &amp;&amp; MYFIELD2 == MYFIELD2)
+#endif
+
+#ifdefined example_5
+  ; Read with DBMS order by:
+  read order by "MYFIELD1, MYFIELD2"
+#endif
+
+#ifdefined example_6
+  ; Typical read error handling
+  if ($status = 0)
+    ; Hit found. Your post read code here...
+  endif
+#endif
+
+#ifdefined example_7
+  ;- Discarding hits form the hitlist based on a procedural condition
+  read
+  if ($status = 0)
+    if (FIELD1.&lt;$entname&gt; &gt; FIELD2.&lt;$entname&gt;)
+      ; Some procedural condition determined to discard this occurrence.
+      discard
+    endif
+  endif
+#endif
+
+  ; Do not influence the return value of either the read and/or discard statements.
+  ; The returned value is used by the retrieve statement to determine e.g. fetch more hits.
+  return $status
+
+end
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U211_WRITE</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for occs that need to be written to DBMS (store)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;write&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger write
+; This trigger is fired as part of the store process.
+; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+
+  ; Your last moment field updates here...
+
+  write
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U211_WRITE_UP</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for up-occs that need to be written to DBMS (store)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;writeUp&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger writeUp
+; This trigger is fired as part of the store process.
+; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+
+  ; Your last moment field updates here...
+
+  write
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U212_DELETE</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for occs that needs to be deleted from the DBMS</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;delete&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger delete
+; This trigger is fired as part of the store/erase process.
+; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+
+  delete
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U212_DELETEUP</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for every up occ marked for deletion (statement store)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;deleteUp&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger deleteUp
+; This trigger is fired as part of the store/erase process.
+; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+
+  delete
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U22_LOCK</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for occs with validation errors</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;lock&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger lock
+
+  lock
+  if ($status = -10) reload
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U231_VALIDATE</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for occs that need to be validated</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;validate&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger validate
+; This trigger is fired as part of the validate/store process.
+; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+
+; Your VARIABLES block here (optional)...
+
+  ; Your occurrence validation rules here...
+  if (check1)
+    return -1
+  elseif (check2)
+    return -2
+  ...
+  endif
+
+  ; If we reach this point, validation was successful
+  return 0
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U232_VALIDATE_KEY</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for keys (prim/candidate) that need to be validated</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;validateKey&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger validateKey
+; This trigger is fired as part of the validate/store process.
+; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+
+  ; Your key validation rules here...
+  #define example_1
+
+#ifdefined example_1
+  ; Key exists check
+  findkey $entname, $curkey
+  if ($procerror &lt; 0)          ; procerror
+    $result = $procerrorcontext
+    return -1                  ; procerror
+  endif
+  selectcase $status
+  case 0                       ; key not found
+    if ($foreign) return -2    ; non existing key in up entity
+  case 1                       ; key found in Component
+    if (!$foreign) return -3   ; duplicate key in down entity
+  case 2                       ; key found in DBMS
+    if (!$foreign) return -4   ; duplicate key in down entity
+  elsecase
+    return $status 
+  endselectcase
+#endif
+
+  ; If we reach this point, validation was successful
+  return 0
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U233_ERROR_DSP</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for occs with validation errors (DSP)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;error&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger error
+; This trigger is fired as part of the validate/store process for every occurrence that is in error.
+; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+variables
+  string vErrorMsg, vErrorFields, vField, vEnt, vOcc
+  numeric vKeyNr
+endvariables
+
+  if ($error != 0)
+  
+    ; Specific error messages first:
+    selectcase $error
+    case 0148, 0149 ; No more hits before first/last occurrence -&gt; ignore
+      return 0
+
+    case 0147       ; Validation error caused by occurrence trigger validateKey (details in $dataerrorcontext)
+
+      vKeyNr = $item("KEY", $dataerrorcontext)
+      selectcase $item("STATUS", $dataerrorcontext)
+      ; Generate specific key error message
+      case -1       ; Findkey procerror ($procerrorcontext is in $result)
+        vErrorMsg = "%%($item("DESCRIPTION", $result)), key=%%(vKeyNr)"
+      case -2       ; Non existing key in up entity
+        vErrorMsg = "Lookup failed for up-entity %%($entinfo("&lt;$entname&gt;", "INNER"))"
+      case -3, -4   ; Duplicate key found in either component or DBMS
+        vErrorMsg = "Occurrence already exists for key %%(vKeyNr)"
+      ; case ...
+        ; More ...
+      elsecase
+        ; Generic key error message
+        vErrorMsg = "%%(getMessageText($item("ERROR", $dataerrorcontext))), key=%%(vKeyNr), $status=%%($item("STATUS", $dataerrorcontext))"
+      endselectcase
+      ; Set involved fields
+      vErrorFields = $keyfields("&lt;$entname&gt;", vKeyNr)
+
+    case 0153       ; Validation error caused by occurrence trigger validate (details in $dataerrorcontext)
+
+      selectcase $item("STATUS", $dataerrorcontext)
+      case -1       ; Check 1
+        vErrorMsg    = "Your error message for check1 here..."
+        vErrorFields = ""  ; The list of fields involved with this check
+      ; case ...
+        ; ...
+      elsecase
+        ; Generic occurrence error message
+        vErrorMsg = "Occurrence validation failed"
+        vErrorFields = ""  ; The list of fields involved with this check
+      endselectcase
+
+    ; More specific messages here:
+    ; case 2004       ; No modifications allowed on occurrence of this entity
+    ; case 2009       ; Occurrence locked
+    ; case 2012       ; Occurrence in form does not match database occurrence
+    ; case 2013       ; Occurrence does not exist
+    ; ...
+
+    elsecase
+
+      ; Generic error handling:
+      vErrorMsg = "Generic occurrence error handling: %%($dataerrorcontext)"
+    endselectcase
+
+    ; Add errors to DSP response, so the browser can show the errors
+    forlist vField in vErrorFields
+      putitem/id $fieldproperties(vField), "errormsg", vErrorMsg
+    endfor
+    ; Tag occurrence with error
+    putitem/id $occproperties("&lt;$entname&gt;"), "errormsg", vErrorMsg
+
+#ifdefined DATAERRORS
+    ; Add error to data validation log:
+    #comment ; For the reporting to work, a variable must be declared and initialized to "" before the start of validation/store.
+    #comment ; The name of the variable must be available in component level constant DATAERRORS
+
+    ; Add error to validation log:
+    vEnt = "ent:&lt;$entname&gt;.&lt;$modelname&gt;"
+    vOcc = "occ:%%($curocc("&lt;$entname&gt;"))"
+    if (&lt;DATAERRORS&gt;-&gt;$collsize == 0)                         &lt;DATAERRORS&gt; = $newstruct
+    if (&lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;$collsize == 0)             &lt;DATAERRORS&gt;-&gt;"%%(vEnt)" = $newstruct
+    if (&lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;$collsize == 0) &lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)" = $newstruct
+    &lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;*{-1} = vErrorMsg
+#endif
+
+    return -1
+  endif
+
+  return 0
+
+end
+
+entry getMessageText
+returns string
+params
+  string pMessageId : in
+endparams
+
+  selectcase $length(pMessageId)
+  case 1
+    return $text("000%%pMessageId")
+  case 2
+    return $text("00%%pMessageId")
+  case 3
+    return $text("0%%pMessageId")
+  elsecase
+    return $text("%%pMessageId")
+  endselectcase
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U233_ERROR_FRM</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for occs with validation errors (FRM)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;error&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger error
+; This trigger is fired for the current occurrence when it is in error caused by declarative or procedural validation.
+variables
+  string vErrorMsg, vErrorFields, vField, vEnt, vOcc
+  numeric vKeyNr
+endvariables
+
+  ; Your implementation here...
+  ;- Example: Catch specific errors and perform rerporting
+  selectcase $error
+  case 0          ; No validation errors
+    return 0      ; continue processing
+
+  ; Specific error messages first:
+  case 0148, 0149 ; No more hits before first/last occurrence -&gt; ignore
+    return 0
+
+  case 0147       ; Validation error caused by occurrence trigger validateKey (details in $dataerrorcontext)
+
+    vKeyNr = $item("KEY", $dataerrorcontext)
+    selectcase $item("STATUS", $dataerrorcontext)
+    ; Generate specific key error message
+    case -1       ; Findkey procerror ($procerrorcontext is in $result)
+      message/error "%%($item("DESCRIPTION", $result)), key=%%(vKeyNr)"
+    case -2       ; Non existing key in up entity
+      message/error "Lookup failed for up-entity %%($entinfo("&lt;$entname&gt;", "INNER"))"
+    case -3, -4   ; Duplicate key found in either component or DBMS
+      message/error  "Occurrence already exists for key %%(vKeyNr)"
+    ; case ...
+      ; More ...
+    elsecase
+      ; Generic key error message
+      message/error "%%(getMessageText($item("ERROR", $dataerrorcontext))), key=%%(vKeyNr), $status=%%($item("STATUS", $dataerrorcontext))"
+    endselectcase
+
+  case 0153       ; Validation error caused by occurrence trigger validate (details in $dataerrorcontext)
+
+    selectcase $item("STATUS", $dataerrorcontext)
+    case -1       ; Check 1
+      message/error "Your error message for check1 here..."
+    ; case ...
+      ; ...
+    elsecase
+      ; Generic occurrence error message
+      message/error "Procedural occurrence validation failed: %%($dataerrorcontext)"
+    endselectcase
+
+  ; More specific messages here:
+  ; case 2004       ; No modifications allowed on occurrence of this entity
+  ; case 2009       ; Occurrence locked
+  ; case 2012       ; Occurrence in form does not match database occurrence
+  ; case 2013       ; Occurrence does not exist
+  ; ...
+
+  elsecase
+
+    ; Generic error handling:
+    message/error "Generic error: %%($error)"
+  endselectcase
+
+  ; Return execution status:
+  ;   return 0    ; return &gt;= 0 to allow this occurrence to lose focus (ignoring the error)
+  ;   return -1   ; return &lt; 0 to prevent this occurrence from losing focus
+  return -1
+
+end
+
+entry getMessageText
+returns string
+params
+  string pMessageId : in
+endparams
+
+  selectcase $length(pMessageId)
+  case 1
+    return $text("000%%pMessageId")
+  case 2
+    return $text("00%%pMessageId")
+  case 3
+    return $text("0%%pMessageId")
+  elsecase
+    return $text("%%pMessageId")
+  endselectcase
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U233_ERROR_SVC</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>RPT SVC ESV SSV ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for occs with validation errors (RPT SVC ESV SSV)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;error&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger error
+; This trigger is fired as part of the validate/store process for every occurrence that is in error.
+; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+variables
+  string vErrorMsg, vEnt, vOcc
+  numeric vKeyNr
+endvariables
+
+  if ($error != 0)
+  
+    ; Specific error messages first:
+    selectcase $error
+    case 0148, 0149 ; No more hits before first/last occurrence -&gt; ignore
+      return 0
+
+    case 0147       ; Validation error caused by occurrence trigger validateKey (details in $dataerrorcontext)
+      vKeyNr = $item("KEY", $dataerrorcontext)
+      selectcase $item("STATUS", $dataerrorcontext)
+      ; Generate specific key error message
+      case -1       ; Findkey procerror ($procerrorcontext is in $result)
+        vErrorMsg = "%%($item("DESCRIPTION", $result)), key=%%(vKeyNr)"
+      case -2       ; Non existing key in up entity
+        vErrorMsg = "Lookup failed for up-entity %%($entinfo("&lt;$entname&gt;", "INNER"))"
+      case -3, -4   ; Duplicate key found in either component or DBMS
+        vErrorMsg = "Occurrence already exists for key %%(vKeyNr)"
+      ; case ...
+        ; More ...
+      elsecase
+        ; Generic key error message
+        vErrorMsg = "%%(getMessageText($item("ERROR", $dataerrorcontext))), key=%%(vKeyNr), $status=%%($item("STATUS", $dataerrorcontext))"
+      endselectcase
+
+    case 0153       ; Validation error caused by occurrence trigger validate (details in $dataerrorcontext)
+      selectcase $item("STATUS", $dataerrorcontext)
+      case -1       ; Check 1
+        vErrorMsg    = "Your error message for check1 here..."
+      ; case ...
+        ; ...
+      elsecase
+        ; Generic occurrence error message
+        vErrorMsg = "Occurrence validation failed"
+      endselectcase
+
+    ; More specific messages here:
+    ; case 2004       ; No modifications allowed on occurrence of this entity
+    ; case 2009       ; Occurrence locked
+    ; case 2012       ; Occurrence in form does not match database occurrence
+    ; case 2013       ; Occurrence does not exist
+    ; ...
+
+    elsecase
+
+      ; Generic error handling:
+      vErrorMsg = "Generic occurrence error handling: %%($dataerrorcontext)"
+    endselectcase
+
+#ifdefined DATAERRORS
+    ; Add error to data validation log:
+    #comment ; For the reporting to work, a variable must be declared and initialized to "" before the start of validation/store.
+    #comment ; The name of the variable must be available in component level constant DATAERRORS
+
+    ; Add error to validation log:
+    vEnt = "ent:&lt;$entname&gt;.&lt;$modelname&gt;"
+    vOcc = "occ:%%($curocc("&lt;$entname&gt;"))"
+    if (&lt;DATAERRORS&gt;-&gt;$collsize == 0)                         &lt;DATAERRORS&gt; = $newstruct
+    if (&lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;$collsize == 0)             &lt;DATAERRORS&gt;-&gt;"%%(vEnt)" = $newstruct
+    if (&lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;$collsize == 0) &lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)" = $newstruct
+    &lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;*{-1} = vErrorMsg
+#endif
+
+    return -1
+  endif
+
+  return 0
+
+end
+
+entry getMessageText
+returns string
+params
+  string pMessageId : in
+endparams
+
+  selectcase $length(pMessageId)
+  case 1
+    return $text("000%%pMessageId")
+  case 2
+    return $text("00%%pMessageId")
+  case 3
+    return $text("0%%pMessageId")
+  elsecase
+    return $text("%%pMessageId")
+  endselectcase
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U233_ERROR_USP</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>USP ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for occs with validation errors (USP)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;error&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger error
+; This trigger is fired as part of the validate/store process for every occurrence that is in error.
+; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+variables
+  string vErrorMsg, vErrorFields, vField, vEnt, vOcc
+  numeric vKeyNr
+endvariables
+
+  if ($error != 0)
+  
+    ; Specific error messages first:
+    selectcase $error
+    case 0148, 0149 ; No more hits before first/last occurrence -&gt; ignore
+      return 0
+
+    case 0147       ; Validation error caused by occurrence trigger validateKey (details in $dataerrorcontext)
+
+      vKeyNr = $item("KEY", $dataerrorcontext)
+      selectcase $item("STATUS", $dataerrorcontext)
+      ; Generate specific key error message
+      case -1       ; Findkey procerror ($procerrorcontext is in $result)
+        vErrorMsg = "%%($item("DESCRIPTION", $result)), key=%%(vKeyNr)"
+      case -2       ; Non existing key in up entity
+        vErrorMsg = "Lookup failed for up-entity %%($entinfo("&lt;$entname&gt;", "INNER"))"
+      case -3, -4   ; Duplicate key found in either component or DBMS
+        vErrorMsg = "Occurrence already exists for key %%(vKeyNr)"
+      ; case ...
+        ; More ...
+      elsecase
+        ; Generic key error message
+        vErrorMsg = "%%(getMessageText($item("ERROR", $dataerrorcontext))), key=%%(vKeyNr), $status=%%($item("STATUS", $dataerrorcontext))"
+      endselectcase
+      ; Set involved fields
+      vErrorFields = $keyfields("&lt;$entname&gt;", vKeyNr)
+
+    case 0153       ; Validation error caused by occurrence trigger validate (details in $dataerrorcontext)
+
+      selectcase $item("STATUS", $dataerrorcontext)
+      case -1       ; Check 1
+        vErrorMsg    = "Your error message for check1 here..."
+        vErrorFields = ""  ; The list of fields involved with this check
+      ; case ...
+        ; ...
+      elsecase
+        ; Generic occurrence error message
+        vErrorMsg = "Occurrence validation failed"
+        vErrorFields = ""
+      endselectcase
+
+    ; More specific messages here:
+    ; case 2004       ; No modifications allowed on occurrence of this entity
+    ; case 2009       ; Occurrence locked
+    ; case 2012       ; Occurrence in form does not match database occurrence
+    ; case 2013       ; Occurrence does not exist
+    ; ...
+
+    elsecase
+
+      ; Generic error handling:
+      vErrorMsg = "Generic occurrence error handling: %%($dataerrorcontext)"
+    endselectcase
+
+    ; Add errors to DSP response, so the browser can show the errors
+    forlist vField in vErrorFields
+      putitem/id $fieldproperties(vField), "SubClass", "errorstyle"
+      putitem/id $fieldproperties(vField), "errormsg", vErrorMsg
+    endfor
+    ; Tag occurrence with error
+    putitem/id $occproperties("&lt;$entname&gt;"), "errormsg", vErrorMsg
+
+#ifdefined DATAERRORS
+    ; Add error to data validation log:
+    #comment ; For the reporting to work, a variable must be declared and initialized to "" before the start of validation/store.
+    #comment ; The name of the variable must be available in component level constant DATAERRORS
+
+    ; Add error to validation log:
+    vEnt = "ent:&lt;$entname&gt;.&lt;$modelname&gt;"
+    vOcc = "occ:%%($curocc("&lt;$entname&gt;"))"
+    if (&lt;DATAERRORS&gt;-&gt;$collsize == 0)                         &lt;DATAERRORS&gt; = $newstruct
+    if (&lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;$collsize == 0)             &lt;DATAERRORS&gt;-&gt;"%%(vEnt)" = $newstruct
+    if (&lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;$collsize == 0) &lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)" = $newstruct
+    &lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;*{-1} = vErrorMsg
+#endif
+
+    return -1
+  endif
+
+  return 0
+
+end
+
+entry getMessageText
+returns string
+params
+  string pMessageId : in
+endparams
+
+  selectcase $length(pMessageId)
+  case 1
+    return $text("000%%pMessageId")
+  case 2
+    return $text("00%%pMessageId")
+  case 3
+    return $text("0%%pMessageId")
+  elsecase
+    return $text("%%pMessageId")
+  endselectcase
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U241_PRE_SERIALIZE</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired before occ serialization (componentToStruct, xmlsave)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;preSerialize&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger preSerialize
+; This trigger is fired as part of the entity serialization process, caused by e.g. xmlsave.
+; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U242_POST_SERIALIZE</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired after occ serialization (componentToStruct, xmlsave)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;postSerialize&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger postSerialize
+; This trigger is fired as part of the entity serialization process, caused by e.g. xmlsave.
+; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U243_PRE_DESERIALIZE</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired before occ deserialization (StructToComponent, xmlload)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;preDeserialize&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger preDeserialize
+; This trigger is fired as part of the entity deserialization process, caused by e.g. xmlload.
+; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U244_POST_DESERIALIZE</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired after occ deserialization (StructToComponent, xmlload)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;postDeserialize&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger postDeserialize
+; This trigger is fired as part of the entity deserialization process, caused by e.g. xmlload.
+; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U28_GETFOCUS_FRM</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired when occurrence gets focus (FRM)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;getFocus&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger getFocus
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U28_LEAVE_MODIFIED_FRM</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired when modified occurrence lost focus (FRM)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;leaveModified&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger leaveModified
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U28_LEAVE_MODIFIED_KEY_FRM</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired when modified key lost focus (FRM)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;leaveModKey&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger leaveModifiedKey
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U28_LEAVE_PRINTED_FRM_RPT</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM RPT ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired when occurrence has been printed (FRM RPT)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;leavePrinted&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger leavePrinted
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U29_CREATE_FRM</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired on macro "^INS_OCC" (ALT-I) or "^ADD_OCC" (GOLD-AO) (FRM)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;create&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger create
+; Fired on macro "^INS_OCC" (GOLD-IO) or "^ADD_OCC" (GOLD-AO)
+; The default behavior, when not defined, is that a new occurrence gets created
+; (according to the behavior as described in example_1).
+
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+  #define example_1
+
+#ifdefined example_1
+  ; Add or insert an occurremce based on the user request
+  ; (this is also the behavior if this trigger is not defined at all).
+  if ($rettype = 65)
+     ; User invoked this trigger using "^ADD_OCC" -&gt; add occurrence after current one
+     creocc "INVOICE", $curocc + 1
+  else
+     ; User invoked this trigger using "^INS_OCC" -&gt; insert occurrence before current one
+     creocc "INVOICE", $curocc
+  endif
+#endif
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U29_DETAIL_FRM</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired on macro "^DETAIL" (e.g. GOLD-D) or widget (FRM)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;detail&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger detail
+; This entity-level trigger is fired by fields that do not have a detail trigger implemented themselves
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+  #define example_1
+
+#ifdefined example_1
+  ; Show for what entity, occurrence and field this trigger is fired.
+  message/info "Detail trigger fired for cpt:&lt;$componentname&gt;/ent:&lt;$entname&gt;{%%($curocc("&lt;$entname&gt;"))}/fld:%%($fieldname)"
+#endif
+
+end</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U29_HELP_FRM</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired on macro "^HELP" (e.g. GOLD-H or F1) (FRM)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;help&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger help
+; This entity-level trigger is fired by fields that do not have a help trigger implemented themselves
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+  #define example_1
+
+#ifdefined example_1
+  ; Show for what entity, occurrence, and field this trigger is fired
+  message/info "Help trigger fired for cpt:&lt;$componentname&gt;/ent:&lt;$entname&gt;{%%($curocc("&lt;$entname&gt;"))}/fld:%%($fieldname)"
+#endif
+
+#ifdefined example_2
+  ; Call the (basic) Uniface help system:
+  $variation = "MYVARIATION"
+  $language = "USA"
+  help $text("TOPICID")
+#endif
+
+#ifdefined example_3
+  ; Call external help application
+  ; Specify the external help application in your INI file:
+  ;   [paths]
+  ;   helpdir=D:\myapp\helpUniface looks for a file in the specified directory with the name hlpTopic523.htm or hlpTopic523.html.
+  help/id "TOPICID", "CHM_FILE"
+#endif
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U29_MENU_FRM</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired on macro "^MENU" (e.g. GOLD-C) (FRM)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;menu&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger menu
+; This entity-level trigger is fired by fields that do not have a menu trigger implemented themselves.
+; 
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+  #define example_1
+
+#ifdefined example_1
+  ; Show for what entity, occurrence and field this trigger is fired.
+  message/info "Menu trigger fired for cpt:&lt;$componentname&gt;/ent:&lt;$entname&gt;{%%($curocc("&lt;$entname&gt;"))}/fld:%%($fieldname)"
+#endif
+
+end</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U29_REMOVE_FRM</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired on macro "^REM_OCC" (e.g. GOLD-RO) (FRM)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;remove&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'> trigger remove
+; This trigger is fired on macro "^REM_OCC" (e.g. GOLD-RO).
+; The return execution status of this trigger determines whether the delete trigger of the current occurrence is fired,
+; after which the delete trigger performs the actual mark for deletion (delete).
+; This trigger does not, nor is it supposed to, perform the actual delete itself.
+
+  ; Your mark for deletion condition here...
+
+#ifdefined example_1
+  ; Ask user to allow mark for deletion or not
+  askmess/question "Mark this occurrence for removal [Y/N]?", "Yes, No"
+  selectcase $status
+  case 1 ; Yes
+    return 0
+  case 2 ; No
+    return -1
+  elsecase
+    ; unexpected case
+  endselectcase
+#endif
+
+  ; Return execution status:
+  ;   return 0    ; return &gt;= 0 continues mark for deletion (fires delete trigger)
+  ;   return -1   ; return &lt; 0 cancels mark for deletion (does not fire delete trigger)
+  return 0
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U311_START_MODIFICATION_FRM</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired when field value is about to get modified (FRM)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;startModification&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger startModification
+; This trigger is fired when the user start modifying the field value.
+; This trigger is used to determine whether this is allowed or not by returning the proper execution return status.
+
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+#ifdefined example_1
+  ; Some business rules determine whether the user is allowed to modify the value of the field.
+  if (&lt;some_condition&gt;)
+    ; Modification is not allowed
+    message/error "Not allowed to change the field."
+    return -1
+  endif
+#endif
+
+  ; Return execution status:
+  ;   return 0    ; return &gt;= 0 to continue modification
+  ;   return -1   ; return &lt; 0  to prevent modification
+  return 0
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U31_ONCHANGE_DSP_CLIENT</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the value is changed (DSP)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onChange&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;webtrigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>webtrigger onChange
+; Your SCOPE  block here (optional)...
+javascript
+  
+  // Your implementation in JavaScript here...
+  
+endjavascript
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U31_ONCHANGE_DSP_SERVER</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the value is changed (DSP)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onChange&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger onChange
+public web
+; Your SCOPE  block here (optional)...
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U31_VALUE_CHANGED_FRM</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired when field value has changed (FRM)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;valueChanged&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger valueChanged
+; This trigger is fired when the value of a field has changed interactively.
+; This trigger is used to respond to the changed value or even to prevent it from changing.
+
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+#ifdefined example_1
+  ; Some business rule determines that the value is not allowed to be changed.
+  if (&lt;$fieldname&gt; == "HALLO")
+    ; You are not allowed to enter this value.
+    message/error "You are not allowed to enter this value (%%(&lt;$fieldname&gt;))"
+    return -1
+  endif
+#endif
+
+#ifdefined example_2
+  ; Some totals need to be recalculated after changing this field.
+  variables
+    numeric vCurocc, vTotals
+  endvariables
+
+  ; Remember which occurrence is current.
+  vCurocc  = $curocc("&lt;$entname&gt;")
+  ; Calculate totals
+  setocc "&lt;$entname&gt;", 1
+  forentity "&lt;$entname&gt;"
+    vTotals += &lt;$fieldname&gt;.&lt;$entname&gt;
+  endfor
+  ; Make the occurrence current again.
+  setocc "&lt;$entname&gt;", vCurocc
+  message/info vTotals
+#endif
+
+  ; Return execution status:
+  ;   return 0    ; return &gt;= 0 to continue modification and leave the field
+  ;   return -1   ; return &lt; 0  to prevent leaving the changed field
+  return 0
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U32_VALIDATE</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for fields that require validation</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;validate&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger validate
+; This trigger is fired as part of the validate/store process.
+; Make sure not to leave the context of this field, it would disrupt the trigger flow and give unpredictable results.
+
+; Your VARIABLES block here (optional)...
+
+  ; Your field validation rules here...
+  if (check1)
+    return -1
+  elseif (check2)
+    return -2
+  ...
+  endif
+
+  ; If we reach this point, validation was successful.
+  return 0
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U34_ERROR_DSP</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for fields with validation errors (DSP)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;error&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger error
+variables
+  string vErrorMsg, vEnt, vOcc, vFld
+endvariables
+
+  if ($error != 0)
+    selectcase $error
+    ; Specific error message first:
+    case 0140       ; Validation error caused by field trigger validate (details in $dataerrorcontext)
+
+      selectcase $item("STATUS", $dataerrorcontext)
+      case -1       ; Check 1
+        vErrorMsg = "Your error message for check 1"
+      case -2, -3   ; Check 2
+        vErrorMsg = "Your error message for check 2"
+      ; case ...
+        ; More ...
+      elsecase
+        vErrorMsg = "Field validation failed"
+      endselectcase
+
+    case 0129       ; subfield(s) are required
+      vErrorMsg = "Value not allowed to be empty"
+
+    ; More specific error messager here:
+    ; case 0119       ; illegal ValRep value
+    ; case 0120       ; subfield too large
+    ; case 0121       ; subfield too small
+    ; case 0122       ; incorrect checkdigit
+    ; case 0123       ; illegal format for numeric field
+    ; case 0124       ; illegal format for date field
+    ; case 0125       ; illegal format for time field
+    ; case 0126       ; illegal syntax format
+    ; case 0127       ; illegal entry format
+    ; case 0128       ; subfield too large to check
+    ; case 0130       ; too many subfields specified
+    ; case 0138       ; illegal format for floating field
+    ; ...
+
+    elsecase
+      ; Generic error message:
+      vErrorMsg = "A validation error occurred - %%($dataerrorcontext)"
+    endselectcase
+
+    ; Add error info to DSP response, allowing the browser to show the error
+    putitem/id $fieldproperties("&lt;$fieldname&gt;"), "errormsg", vErrorMsg
+    ; TO DO:
+    ;   1. Style the field to visualize that it is in error using the following CSS selector, like:
+    ;     .-ufld-highlight-error- {background-color: pink; }
+    ;   2. Add an error element to your layout to visualize the error message.
+    ;      Make sure it repeats with occurrence repetition, like:
+    ;     &lt;div id="uent:MYENTITY.MYMODEL"&gt;
+    ;       &lt;div id="uocc:MYENTITY.MYMODEL"&gt;
+    ;         ...
+    ;         &lt;input id="ufld:MYFIELD.MYENTITY.MYMODEL" /&gt;&lt;span id="uflderror:MYFIELD.MYENTITY.MYMODEL" /&gt;
+    ;         ...
+    ;       &lt;/div&gt;
+    ;     &lt;/div&gt;
+    ;   2. Style the error element using the following CSS selectors:
+    ;     .-uflderror-no-error- {display: none; }
+    ;     .-uflderror-in-error- {color: red; }
+
+#ifdefined DATAERRORS
+    ; Add error to validation log:
+    #comment ; For the reporting to work, a variable must be declared and initialized to "" before the start of validation/store.
+    #comment ; The name of the variable must be available in component level constant DATAERRORS.
+
+    ; Add error to validation log:
+    vEnt = "ent:&lt;$entname&gt;.&lt;$modelname&gt;"
+    vOcc = "occ:%%($curocc("&lt;$entname&gt;"))"
+    vFld = "fld:&lt;$fieldname&gt;"
+    if (&lt;DATAERRORS&gt;-&gt;$collsize == 0)                                     &lt;DATAERRORS&gt; = $newstruct
+    if (&lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;$collsize == 0)                         &lt;DATAERRORS&gt;-&gt;"%%(vEnt)" = $newstruct
+    if (&lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;$collsize == 0)             &lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)" = $newstruct
+    if (&lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;"%%(vFld)"-&gt;$collsize == 0) &lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;"%%(vFld)" = $newstruct
+    &lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;"%%(vFld)"-&gt;*{-1} = vErrorMsg
+#endif
+
+    return -1
+  endif
+
+  return 0
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U34_ERROR_FRM</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for fields with validation errors (FRM)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;error&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger error
+variables
+  string vErrorMsg, vEnt, vOcc, vFld
+endvariables
+
+  selectcase $error
+  case 0          ; No validation errors
+    return 0      ; continue processing
+
+  ; Specific error message first:
+  case 0140       ; Validation error caused by field trigger validate (details in $dataerrorcontext)
+    selectcase $item("STATUS", $dataerrorcontext)
+    case -1       ; Check 1
+      message/error "Your error message for check 1"
+      return -1
+    case -2, -3   ; Check 2
+      message/error "Your error message for check 2"
+      return -1
+    ; case ...
+      ; ...
+      ; return -1
+    elsecase
+      message/error "Field validation failed - %%($dataerrorcontext)"
+      return -1
+    endselectcase
+
+  case 0129       ; subfield(s) are required
+    message/error "Value not allowed to be empty"
+
+    ; More specific error messager here:
+    ; case 0119       ; illegal ValRep value
+    ; case 0120       ; subfield too large
+    ; case 0121       ; subfield too small
+    ; case 0122       ; incorrect checkdigit
+    ; case 0123       ; illegal format for numeric field
+    ; case 0124       ; illegal format for date field
+    ; case 0125       ; illegal format for time field
+    ; case 0126       ; illegal syntax format
+    ; case 0127       ; illegal entry format
+    ; case 0128       ; subfield too large to check
+    ; case 0130       ; too many subfields specified
+    ; case 0138       ; illegal format for floating field
+    ; ...
+
+  elsecase
+    ; Generic error message:
+    message/error "A validation error occurred - %%($dataerrorcontext)"
+    return -1
+  endselectcase
+
+  return 0
+
+end
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U34_ERROR_SVC</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>SVC ESV SSV ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for fields with validation errors (RPT SVC ESV SSV)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;error&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger error
+variables
+  string vErrorMsg, vEnt, vOcc, vFld
+endvariables
+
+  if ($error != 0)
+    selectcase $error
+    ; Specific error message first:
+    case 0140       ; Validation error caused by field trigger validate (details in $dataerrorcontext)
+
+      selectcase $item("STATUS", $dataerrorcontext)
+      case -1       ; Check 1
+        vErrorMsg = "Your error message for check 1"
+      case -2, -3   ; Check 2
+        vErrorMsg = "Your error message for check 2"
+      ; case ...
+        ; More ...
+      elsecase
+        vErrorMsg = "Field validation failed"
+      endselectcase
+
+    case 0129       ; subfield(s) are required
+      vErrorMsg = "Value not allowed to be empty"
+
+    ; More specific error messager here:
+    ; case 0119       ; illegal ValRep value
+    ; case 0120       ; subfield too large
+    ; case 0121       ; subfield too small
+    ; case 0122       ; incorrect checkdigit
+    ; case 0123       ; illegal format for numeric field
+    ; case 0124       ; illegal format for date field
+    ; case 0125       ; illegal format for time field
+    ; case 0126       ; illegal syntax format
+    ; case 0127       ; illegal entry format
+    ; case 0128       ; subfield too large to check
+    ; case 0130       ; too many subfields specified
+    ; case 0138       ; illegal format for floating field
+    ; ...
+
+    elsecase
+      ; Generic error message:
+      vErrorMsg = $dataerrorcontext
+    endselectcase
+
+#ifdefined DATAERRORS
+    ; Add error to validation log:
+    #comment ; For the reporting to work, a variable must be declared and initialized to "" before the start of validation/store.
+    #comment ; The name of the variable must be available in component level constant DATAERRORS.
+
+    ; Add error to validation log:
+    vEnt = "ent:&lt;$entname&gt;.&lt;$modelname&gt;"
+    vOcc = "occ:%%($curocc("&lt;$entname&gt;"))"
+    vFld = "fld:&lt;$fieldname&gt;"
+    if (&lt;DATAERRORS&gt;-&gt;$collsize == 0)                                     &lt;DATAERRORS&gt; = $newstruct
+    if (&lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;$collsize == 0)                         &lt;DATAERRORS&gt;-&gt;"%%(vEnt)" = $newstruct
+    if (&lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;$collsize == 0)             &lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)" = $newstruct
+    if (&lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;"%%(vFld)"-&gt;$collsize == 0) &lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;"%%(vFld)" = $newstruct
+    &lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;"%%(vFld)"-&gt;*{-1} = vErrorMsg
+#endif
+
+    return -1
+  endif
+
+  return 0
+
+end
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U34_ERROR_USP</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>USP ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for fields with validation errors (USP)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;error&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger error
+variables
+  string vErrorMsg, vEnt, vOcc, vFld
+endvariables
+
+  if ($error != 0)
+    selectcase $error
+    ; Specific error message first:
+    case 0140       ; Validation error caused by field trigger validate (details in $dataerrorcontext)
+
+      selectcase $item("STATUS", $dataerrorcontext)
+      case -1       ; Check 1
+        vErrorMsg = "Your error message for check 1"
+      case -2, -3   ; Check 2
+        vErrorMsg = "Your error message for check 2"
+      ; case ...
+        ; More ...
+      elsecase
+        vErrorMsg = "Field validation failed"
+      endselectcase
+
+    case 0129       ; subfield(s) are required
+      vErrorMsg = "Value not allowed to be empty"
+
+    ; More specific error messager here:
+    ; case 0119       ; illegal ValRep value
+    ; case 0120       ; subfield too large
+    ; case 0121       ; subfield too small
+    ; case 0122       ; incorrect checkdigit
+    ; case 0123       ; illegal format for numeric field
+    ; case 0124       ; illegal format for date field
+    ; case 0125       ; illegal format for time field
+    ; case 0126       ; illegal syntax format
+    ; case 0127       ; illegal entry format
+    ; case 0128       ; subfield too large to check
+    ; case 0130       ; too many subfields specified
+    ; case 0138       ; illegal format for floating field
+    ; ...
+
+    elsecase
+      ; Generic error message:
+      vErrorMsg = "A validation error occurred - %%($dataerrorcontext)"
+    endselectcase
+
+    ; Add error info to USP response, allowing the browser to show the error
+    putitem/id $fieldproperties("&lt;$fieldname&gt;"), "SubClass", "errorstyle"
+    putitem/id $fieldproperties("&lt;$fieldname&gt;"), "errormsg", vErrorMsg
+
+#ifdefined DATAERRORS
+    ; Add error to validation log:
+    #comment ; For the reporting to work, a variable must be declared and initialized to "" before the start of validation/store.
+    #comment ; The name of the variable must be available in component level constant DATAERRORS.
+
+    ; Add error to validation log:
+    vEnt = "ent:&lt;$entname&gt;.&lt;$modelname&gt;"
+    vOcc = "occ:%%($curocc("&lt;$entname&gt;"))"
+    vFld = "fld:&lt;$fieldname&gt;"
+    if (&lt;DATAERRORS&gt;-&gt;$collsize == 0)                                     &lt;DATAERRORS&gt; = $newstruct
+    if (&lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;$collsize == 0)                         &lt;DATAERRORS&gt;-&gt;"%%(vEnt)" = $newstruct
+    if (&lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;$collsize == 0)             &lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)" = $newstruct
+    if (&lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;"%%(vFld)"-&gt;$collsize == 0) &lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;"%%(vFld)" = $newstruct
+    &lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;"%%(vFld)"-&gt;*{-1} = vErrorMsg
+#endif
+
+    return -1
+  endif
+
+  return 0
+
+end
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U35_FORMAT_DBMS_FROM</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for fields that are read from the DBMS (read)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;formatFromDbms&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger formatFromDbms
+; This trigger is fired as part of the read from DBMS process.
+; Make sure not to leave the context of this field, it would disrupt the trigger flow and give unpredictable results.
+
+  ; Your conversion or decoding code here...
+  ; Example: Data was stored encrypted using BLOWFISH in the DBMS, so decrypt it:
+  &lt;$fieldname&gt;.&lt;$entname&gt; = $decode("BLOWFISH", &lt;$fieldname&gt;.&lt;$entname&gt;, "my secret key")
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U35_FORMAT_DBMS_TO</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for fields that are written to the DBMS (write)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;formatToDbms&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger formatToDbms
+; This trigger is fired as part of the write to DBMS process.
+; Make sure not to leave the context of this field, it would disrupt the trigger flow and give unpredictable results.
+
+  ; Your conversion or encoding code here...
+  ; Example: Data is stored encrypted using BLOWFISH in the DBMS:
+  &lt;$fieldname&gt;.&lt;$entname&gt; = $encode("BLOWFISH", &lt;$fieldname&gt;.&lt;$entname&gt;, "my secret key")
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U35_FORMAT_DISPLAY_FROM_FRMDSPUSP</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM DSP USP ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for fields of which a value has been entered (DSP,USP,FRM)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;formatFromDisplay&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger formatFromDisplay
+; This trigger is fired as part of the data entry process.
+; Make sure not to leave the context of this field, it would disrupt the trigger flow and give unpredictable results.
+; var = $format - returns the value as entered by the user
+; $format = var - assigns the converted value back to the internal administration of the system.
+
+  ; Your display deformatting code here...
+
+#ifdefined example_1
+  ; Data is displayed as a URL, deformat it:
+  ; 'GOLD-*' are displayed as regular '*' characters, convert them back on data entry
+  $format = $replace($format, 1, "*", "&uALL;", -1)
+#endif
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U35_FORMAT_DISPLAY_TO_FRMRPTDSPUSP</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for fields that are displayed (DSP USP FRM RPT)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;formatToDisplay&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger formatToDisplay
+; This trigger is fired as part of the show process.
+; Make sure not to leave the context of this field, it would disrupt the trigger flow and give unpredictable results.
+; var = $format - returns the internal value of the field
+; $format = var - assigns the formatted value back to the system for displaying.
+
+  ; Your display formatting code here...
+
+#ifdefined example_1
+  ; Display 'GOLD-*' characters as regular '*' characters
+  $format = $replace($format, 1, "&uALL;", "*", -1)
+#endif
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U36_FOCUS_GET_DSP_CLIENT</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the widget received focus (DSP)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onFocus&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;webtrigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>webtrigger onFocus
+; Your SCOPE  block here (optional)...
+javascript
+  
+  // Your implementation in JavaScript here...
+  
+endjavascript
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U36_FOCUS_GET_FRM</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired when field gets focus (FRM)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;getFocus&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger getFocus
+; Your VARIABLES block here (optional)...
+
+  ; Your display formatting code here...
+
+#ifdefined example_1
+  ; Set some custom styling on the current field
+  putitem/id $fieldproperties("&lt;$fieldname&gt;.&lt;$entname&gt;"), "backcolor", "#FFFFCC"
+#endif
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U36_FOCUS_LOSE_DSP_CLIENT</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the widget looses focus (DSP)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onBlur&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;webtrigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>webtrigger onBlur
+; Your SCOPE  block here (optional)...
+javascript
+  
+  // Your implementation in JavaScript here...
+  
+endjavascript
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U36_FOCUS_LOSE_FRM</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired when field loses focus (FRM)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;loseFocus&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger loseFocus
+; Your VARIABLES block here (optional)...
+
+  ; Your display formatting code here...
+
+#ifdefined example_1
+  ; Set some custom styling on the current field
+  putitem/id $fieldproperties("&lt;$fieldname&gt;.&lt;$entname&gt;"), "backcolor", ""
+#endif
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U36_SYNTAX_ERROR_DSP_CLIENT</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for fields when in error (DSP)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onSyntaxError&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;webtrigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>webtrigger onSyntaxError
+scope
+  input
+endscope
+javascript
+  
+  /* Your implementation in JavaScript here... */
+
+#ifdefined example_1
+  // Custom client side visualization of the error of the field.
+  // Make field pink.
+  this.setProperty("backcolor", "#FFCCCC")
+
+  // Show error alert box 
+  var vErrorObject = this.getError();
+  var vErrorString = "There as a Uniface Syntax Error.\n\n";
+  vErrorString += "Exception Code: " + errorObject.exceptionCode + "\n\n";
+  vErrorString += "Message: " + errorObject.message + "\n\n";
+  vErrorString += "Value in error: " + errorObject.valueInError+ "\n\n";
+  alert(vErrorString);
+#endif
+
+  // Return execution status:
+  // return false;  // Suppress default syntax error handling.
+  // return true;   // Also apply default syntax error handling.
+  return true;
+
+endjavascript
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U36_SYNTAX_ERROR_RESOLVED_DSP_CLIENT</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for fields when in error (DSP)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onSynErrResolved&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;webtrigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>webtrigger onSyntaxErrorResolved
+scope
+  input
+endscope
+javascript
+  
+  /* Your implementation in JavaScript here... */
+
+#ifdefined example_1
+  // Reset any custom client side visualization of the error of the field
+  this.clearProperty("backcolor")
+#endif
+
+  return true;
+
+endjavascript
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U381_DETAIL_DSP_CLIENT</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the button-widget gets pressed (DSP)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;detail&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;webtrigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>webtrigger detail
+; Your SCOPE  block here (optional)...
+javascript
+  
+  // Your implementation in JavaScript here...
+  
+endjavascript
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U381_DETAIL_DSP_SERVER</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the button-widget gets pressed (DSP)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;detail&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger detail
+public web
+; Your SCOPE  block here (optional)...
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U381_DETAIL_FRM</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired on macro "^DETAIL" (e.g. GOLD-D) or widget (FRM)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;detail&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger detail
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U381_DETAIL_USP</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>USP ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the button-widget gets pressed (USP)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;detail&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger detail
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U38_ONCLICK_DSP_CLIENT</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the widget is clicked (DSP)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onClick&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;webtrigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>webtrigger onClick
+; Your SCOPE  block here (optional)...
+javascript
+  
+  // Your implementation in JavaScript here...
+  
+endjavascript
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U38_ONCLICK_DSP_SERVER</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the widget is clicked (DSP)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onClick&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger onClick
+public web
+; Your SCOPE  block here (optional)...
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U38_ONDBLCLICK_DSP_CLIENT</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the widget is double-clicked (DSP)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onDblClick&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;webtrigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>webtrigger onDblClick
+; Your SCOPE  block here (optional)...
+javascript
+  
+  // Your implementation in JavaScript here...
+  
+endjavascript
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U38_ONDBLCLICK_DSP_SERVER</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the widget is double-clicked (DSP)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onDblClick&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger onDblClick
+public web
+; Your SCOPE  block here (optional)...
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U38_ONKEYPRESSED_DSP_CLIENT</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the widget received a key press (DSP)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onKeyPressed&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;webtrigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>webtrigger onKeyPressed
+; Your SCOPE  block here (optional)...
+javascript
+  
+  // Your implementation in JavaScript here...
+  
+endjavascript
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U38_ONKEYPRESSED_DSP_SERVER</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the widget received a key press (DSP)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onKeyPressed&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger onKeyPressed
+public web
+; Your SCOPE  block here (optional)...
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U39_HELP_FRM</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired on macro "^HELP" (e.g. GOLD-H or F1) (FRM)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;help&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger help
+; This trigger is fired by fields.
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+  #define example_1
+
+#ifdefined example_1
+  ; Show for what entity, occurrence and field this trigger is fired.
+  message/info "Help trigger fired for cpt:&lt;$componentname&gt;/ent:&lt;$entname&gt;{%%($curocc("&lt;$entname&gt;"))}/fld:%%($fieldname)"
+#endif
+
+#ifdefined example_2
+  ; Call the (basic) Uniface help system:
+  $variation = "MYVARIATION"
+  $language = "USA"
+  help $text("TOPICID")
+#endif
+
+#ifdefined example_3
+  ; Call external help application
+  ; Specify the external help application in your INI file:
+  ;   [paths]
+  ;   helpdir=D:\myapp\helpUniface looks for a file in the specified directory with the name hlpTopic523.htm or hlpTopic523.html.
+  help/id "TOPICID", "CHM_FILE"
+#endif
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U39_MENU_FRM</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired on macro "^MENU" (e.g. GOLD-C) (FRM)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;menu&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger menu
+; This trigger is fired by fields.
+ 
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+  #define example_1
+
+#ifdefined example_1
+  ; Show for what entity, occurrence and field this trigger is fired.
+  message/info "Menu trigger fired for cpt:&lt;$componentname&gt;/ent:&lt;$entname&gt;{%%($curocc("&lt;$entname&gt;"))}/fld:%%($fieldname)"
+#endif
+
+end</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U39_NAV_NEXT_FRM</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired on macro "^NEXT_FIELD" (e.g. GOLD-NF or TAB) (FRM)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;next&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger next
+; This trigger is fired on macro "^NEXT_FIELD" (e.g. GOLD-NF or TAB).
+; The return execution status of this trigger determines whether the navigation is performed or prohibited.
+; If this trigger is not defined, the default is to navigate to the next field within the same occurrence.
+
+  ; Your mark for deletion condition here...
+
+#ifdefined example_1
+  ; When on last field of current occurrence, then navigate to first field of next occurrence.
+  if ("&lt;$fieldname&gt;" == $itemnr(-1, $entinfo("&lt;$entname&gt;", "PAINTEDFIELDS")))
+    setocc "&lt;$entname&gt;", $curocc("&lt;$entname&gt;") + 1
+    $prompt = $itemnr(1, $entinfo("&lt;$entname&gt;", "PAINTEDFIELDS"))
+  endif
+#endif
+
+#ifdefined example_2
+  ; Conditionally navigate to a specific field
+  if (GENDER = "F") ; female, so prompt for maidenname
+    $prompt = MAIDEN_NAME
+  endif
+  ; Otherwise, use default prompt sequence
+#endif
+
+  ; Return execution status:
+  ;   return 0    ; return &gt;= 0 to perform the navigation
+  ;   return -1   ; return &lt; 0 to prohibit the navigation
+  return 0
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U39_NEV_PREVIOUS_FRM</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ENT</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired on macro "^PREV_FIELD" (e.g. GOLD-PF or SHIFT-TAB) (FRM)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;previous&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger previous
+; This trigger is fired on macro "^PREV_FIELD" (e.g. GOLD-PF or SHIFT-TAB).
+; The return execution status of this trigger determines whether the navigation is performed or prohibited.
+; If this trigger is not defined, the default is to navigate to the previous field within the same occurrence.
+
+  ; Your mark for deletion condition here...
+
+#ifdefined example_1
+  ; When on first field of current occurrence, then navigate to last field of previous occurrence.
+  if ("&lt;$fieldname&gt;" == $itemnr(1, $entinfo("&lt;$entname&gt;", "PAINTEDFIELDS")))
+    setocc "&lt;$entname&gt;", $curocc("&lt;$entname&gt;") - 1
+    $prompt = $itemnr(-1, $entinfo("&lt;$entname&gt;", "PAINTEDFIELDS"))
+  endif
+#endif
+
+#ifdefined example_2
+  ; Conditionally navigate to a specific field
+  if (GENDER = "F") ; female, so prompt for maidenname
+    $prompt = MAIDEN_NAME
+  endif
+  ; Otherwise, use default prompt sequence
+#endif
+
+  ; Return execution status:
+  ;   return 0    ; return &gt;= 0 to perform the navigation
+  ;   return -1   ; return &lt; 0 to prohibit the navigation
+  return 0
+
+end
+
+</DAT>
+</OCC>
+</TABLE>
+</UNIFACE>
