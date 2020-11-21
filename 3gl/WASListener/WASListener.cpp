@@ -23,11 +23,11 @@ WCHAR szTitle[MAX_LOADSTRING]; // The title bar text
 WCHAR szWindowClass[MAX_LOADSTRING]; // the main window class name
 
 // Forward declarations of functions included in this code module:
-ATOM MyRegisterClass(HINSTANCE hInstance);
-BOOL InitInstance(HINSTANCE, int);
+ATOM MyRegisterClass(HINSTANCE hInstance) noexcept;
+BOOL InitInstance(HINSTANCE, int) noexcept;
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
-INT_PTR CALLBACK About(HWND, UINT, WPARAM, LPARAM);
-void ShowContextMenu(HWND, POINT);
+INT_PTR CALLBACK About(HWND, UINT, WPARAM, LPARAM) noexcept;
+void ShowContextMenu(HWND, POINT) noexcept;
 int parseCommandLine(LPWSTR);
 // TODO: Globals should be constant or they shouldn't be globals
 std::unique_ptr<CFolderWatcher> watcher;
@@ -89,7 +89,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE const hInstance,
 			// Wait for Uniface to return the location of the WorkArea
 			watcher->setFolder(workArea_promise->get_future().get());
 		}
-		catch (std::exception& e)
+		catch (const std::exception& e)
 		{
 			MessageBoxA(nullptr, e.what(), "Error", MB_OK);
 		}
@@ -116,7 +116,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE const hInstance,
 //
 //  PURPOSE: Registers the window class.
 //
-ATOM MyRegisterClass(HINSTANCE hInstance)
+ATOM MyRegisterClass(HINSTANCE hInstance) noexcept
 {
 	WNDCLASSEXW wcex;
 
@@ -147,7 +147,7 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 //        In this function, we save the instance handle in a global variable and
 //        create and display the main program window.
 //
-BOOL InitInstance(HINSTANCE const hInstance, int)
+BOOL InitInstance(HINSTANCE const hInstance, int) noexcept
 {
 	hInst = hInstance; // Store instance handle in our global variable
 
@@ -155,7 +155,7 @@ BOOL InitInstance(HINSTANCE const hInstance, int)
 		CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr) ? TRUE : FALSE;
 }
 
-void ShowContextMenu(HWND const hwnd, POINT const pt)
+void ShowContextMenu(HWND const hwnd, POINT const pt) noexcept
 {
 	const auto hMenu = LoadMenu(hInst, MAKEINTRESOURCE(IDC_CONTEXTMENU));
 	if (hMenu)
@@ -217,7 +217,7 @@ LRESULT CALLBACK WndProc(HWND const hWnd, UINT const message, WPARAM const wPara
 			if (!gNotifications.AddNotificationIcon(hWnd, 100))
 				throw std::runtime_error{ "Unable to register notification icon" };
 		}
-		catch (std::runtime_error& msg)
+		catch (const std::runtime_error& msg)
 		{
 			MessageBoxA(hWnd, msg.what(), "Error", MB_OK);
 			return -1;
@@ -276,7 +276,7 @@ LRESULT CALLBACK WndProc(HWND const hWnd, UINT const message, WPARAM const wPara
 }
 
 // Message handler for about box.
-INT_PTR CALLBACK About(HWND const hDlg, UINT const message, WPARAM const wParam, LPARAM)
+INT_PTR CALLBACK About(HWND const hDlg, UINT const message, WPARAM const wParam, LPARAM) noexcept
 {
 	switch (message)
 	{

@@ -5,7 +5,7 @@
 class CFileAction
 {
 public:
-	CFileAction(DWORD lAction, std::wstring&& lFile);
+	CFileAction(DWORD lAction, std::wstring&& lFile) noexcept;
 
 	const DWORD m_action;
 	const std::wstring m_file;

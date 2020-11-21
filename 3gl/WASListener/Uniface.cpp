@@ -5,7 +5,7 @@
 
 using namespace std::string_literals;
 
-void CUniface::_resetFileInfo()
+void CUniface::_resetFileInfo() noexcept
 {
 	// Clear down the last status
 	m_lastFileActioned.clear();
@@ -65,7 +65,7 @@ std::wstring const& CUniface::getWASFolder()
 }
 
 CUniface::CUniface(CCommandLine&& pCmdLine,
-                   std::shared_ptr<boost::concurrent::sync_deque<CFileAction>> fileActionList)
+                   std::shared_ptr<boost::concurrent::sync_deque<CFileAction>> fileActionList) noexcept
 	: m_fileActionList(std::move(fileActionList)), m_pCmdLine(std::move(pCmdLine))
 {
 }
@@ -118,7 +118,7 @@ void CUniface::addFileAction(CFileAction const& fileAction)
 
 std::wstring CUniface::s2ws(const std::string& str)
 {
-	int size_needed = MultiByteToWideChar(CP_UTF8, 0, &str[0], (int)str.size(), NULL, 0);
+	const int size_needed = MultiByteToWideChar(CP_UTF8, 0, &str[0], (int)str.size(), NULL, 0);
 	std::wstring wstrTo(size_needed, 0);
 	MultiByteToWideChar(CP_UTF8, 0, &str[0], (int)str.size(), &wstrTo[0], size_needed);
 	return wstrTo;
@@ -127,8 +127,8 @@ std::wstring CUniface::s2ws(const std::string& str)
 /* -- External functions */
 std::wstring const& CUniface::_getWASFolder()
 {
-	long procError;
-	long oprStatus;
+	long procError{ 0 };
+	long oprStatus{ -1 };
 	UHACT hOp{nullptr};
 	UCHAR* tempFilePath{nullptr};
 
@@ -173,7 +173,7 @@ std::wstring const& CUniface::_getWASFolder()
 
 DWORD CUniface::_callUnifaceVC(std::filesystem::path const& file, const BOOL bDelete, const BOOL bImport)
 {
-	UHACT hOp;
+	UHACT hOp{ UHACT_NULL };
 	long procError{ 0 };
 	long oprStatus{ -1 };
 
@@ -244,7 +244,7 @@ void CUniface::_startUniface()
 	}
 }
 
-void CUniface::_stopUniface()
+void CUniface::_stopUniface() noexcept
 {
 	/* Delete instance */
 	long procError{ 0 };

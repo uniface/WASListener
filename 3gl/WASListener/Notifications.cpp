@@ -3,7 +3,7 @@
 #include "resource.h"
 
 
-int CNotifications::ShowDirty(std::wstring const& filename) const
+int CNotifications::ShowDirty(std::wstring const& filename) const noexcept
 {
 	// Display a balloon message for a print job with a custom icon
 	// TODO: Initialize all fields
@@ -19,7 +19,7 @@ int CNotifications::ShowDirty(std::wstring const& filename) const
 	return Shell_NotifyIcon(NIM_MODIFY, &nid);
 }
 
-BOOL CNotifications::AddNotificationIcon(HWND const lhWnd, DWORD const luID)
+BOOL CNotifications::AddNotificationIcon(HWND const lhWnd, DWORD const luID) noexcept
 {
 	m_hWnd = lhWnd;
 	m_uID = luID;
@@ -47,7 +47,7 @@ BOOL CNotifications::AddNotificationIcon(HWND const lhWnd, DWORD const luID)
 	return Shell_NotifyIcon(NIM_SETVERSION, &nid);
 }
 
-BOOL CNotifications::DeleteNotificationIcon() const
+BOOL CNotifications::DeleteNotificationIcon() const noexcept
 {
 	// TODO: Initialize all fields
 	NOTIFYICONDATA nid{};

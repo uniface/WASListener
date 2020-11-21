@@ -13,10 +13,10 @@ public:
 
 	// Function to be executed by thread function
 	void run();
-	void setFolder(std::wstring&& folder);
+	void setFolder(std::wstring&& folder) noexcept;
 
 private:
-	bool OpenDirectory();
+	bool OpenDirectory() noexcept;
 	void ProcessNotification();
 
 private:

@@ -7,14 +7,14 @@
 class CCommandLine
 {
 public:
-	bool parse(LPSTR lpCommandLine);
-	USTRING* getUnifaceCommandLine();
-	USTRING* getUnifaceAsnFile();
+	bool parse(LPCSTR lpCommandLine);
+	USTRING* getUnifaceCommandLine() noexcept;
+	USTRING* getUnifaceAsnFile() noexcept;
 
 private:
 	void _setUnifaceCommandOptions(std::string const& admFolder, std::string const& iniFile);
 	void _setUnifaceAsnFile(std::string const& asnFile);
-	bool _initConsole();
+	bool _initConsole() noexcept;
 
 private:
 	std::string m_unifaceCommandOptions;

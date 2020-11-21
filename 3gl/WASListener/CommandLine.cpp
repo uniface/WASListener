@@ -6,7 +6,7 @@
 using namespace std::string_literals;
 
 // Success: true , Failure: false
-bool CCommandLine::_initConsole()
+bool CCommandLine::_initConsole() noexcept
 {
 	if (!AllocConsole()) { return false; }
 	if (freopen_s(&_g_ic_file_cout_stream, "CONOUT$", "w", stdout) != 0) { return false; } // For std::cout 
@@ -78,7 +78,7 @@ void CCommandLine::_setUnifaceAsnFile(std::string const& asnFile)
 	m_unifaceAsnFile = optionalAsnFile.value();
 }
 
-bool CCommandLine::parse(LPSTR lpCommandLine)
+bool CCommandLine::parse(LPCSTR lpCommandLine)
 {
 	std::filesystem::path exePath;
 	std::filesystem::path projectFolder;
@@ -187,12 +187,12 @@ bool CCommandLine::parse(LPSTR lpCommandLine)
 	return true;
 }
 
-USTRING* CCommandLine::getUnifaceCommandLine()
+USTRING* CCommandLine::getUnifaceCommandLine() noexcept
 {
 	return reinterpret_cast<USTRING*>(m_unifaceCommandOptions.data());
 }
 
-USTRING* CCommandLine::getUnifaceAsnFile()
+USTRING* CCommandLine::getUnifaceAsnFile() noexcept
 {
 	return reinterpret_cast<USTRING*>(m_unifaceAsnFile.data());
 }

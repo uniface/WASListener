@@ -10,7 +10,7 @@
 class CUniface
 {
 public:
-	CUniface(CCommandLine&& pCmdLine, std::shared_ptr<boost::concurrent::sync_deque<CFileAction>> fileActionList);
+	CUniface(CCommandLine&& pCmdLine, std::shared_ptr<boost::concurrent::sync_deque<CFileAction>> fileActionList) noexcept;
 	CUniface(CUniface&& other) noexcept = default;
 
 	void run();
@@ -23,9 +23,9 @@ private:
 	//Make a call
 	std::wstring const& _getWASFolder();
 	DWORD _callUnifaceVC(std::filesystem::path const& file, BOOL bDelete, BOOL bImport);
-	void _stopUniface();
+	void _stopUniface() noexcept;
 	void _startUniface();
-	void _resetFileInfo();
+	void _resetFileInfo() noexcept;
 
 	//Uniface Environment
 	bool m_bStarted{false};

@@ -12,7 +12,7 @@ CFolderWatcher::CFolderWatcher(std::shared_ptr<boost::concurrent::sync_deque<CFi
 {
 	m_buffer.assign(buffer_size, 0);
 }
-void CFolderWatcher::setFolder(std::wstring&& folder)
+void CFolderWatcher::setFolder(std::wstring&& folder) noexcept
 {
 	m_folder = std::move(folder);
 }
@@ -74,7 +74,7 @@ void CFolderWatcher::run()
 	}
 }
 
-bool CFolderWatcher::OpenDirectory()
+bool CFolderWatcher::OpenDirectory() noexcept
 {
 	// Allow this routine to be called redundantly.
 	if (m_hDirectory)
