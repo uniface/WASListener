@@ -141,7 +141,7 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2020-06-17T11:12:30.00</DAT>
+<DAT name="UTIMESTAMP">2020-10-29T10:44:03.00</DAT>
 <DAT name="ULABEL">UPALETTE_DSP</DAT>
 <DAT name="UKVERSION">6</DAT>
 <DAT name="UMVERSION">3</DAT>
@@ -163,6 +163,8 @@
   &uFRM;TYP=F&uSEP;NAM=TEXT_AREA&uSEP;WID=20&uSEP;HEI=1&uFRM;
 
   &uFRM;TYP=F&uSEP;NAM=PASSWORD&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=NUMBERSPINNERBOX&uSEP;WID=20&uSEP;HEI=1&uFRM;
 
   &uFRM;TYP=F&uSEP;NAM=CHECKBOX&uSEP;WID=20&uSEP;HEI=1&uFRM;
 
@@ -1881,6 +1883,27 @@ end</DAT>
 </DAT>
 <DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="DSP_WIDGETTYPE">LISTBOX</DAT>
+<DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">NUMBERSPINNERBOX</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_DSP</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Spinner box HTML input control (Number)</DAT>
+<DAT name="U_DTYP">N</DAT>
+<DAT name="IS_STATIC">F</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt;NumberSpinnerBox</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>; Typical triggers fired by this widget:
+; (web)trigger OnChange
+; webtrigger OnSyntaxError()
+; webtrigger OnResolvedSyntaxError()
+</DAT>
+<DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
+<DAT name="DSP_WIDGETTYPE">NUMBERSPINNERBOX</DAT>
 <DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
 </OCC>
 <OCC>

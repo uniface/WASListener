@@ -141,7 +141,7 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2016-08-16T21:21:35.00</DAT>
+<DAT name="UTIMESTAMP">2020-10-19T17:24:15.00</DAT>
 <DAT name="ULABEL">UCDSP</DAT>
 <DAT name="UKVERSION">6</DAT>
 <DAT name="UMVERSION">3</DAT>
@@ -390,7 +390,7 @@ end</DAT>
     &lt;meta name="default" content="Uniface 10" /&gt;
     &lt;link rel="stylesheet" type="text/css" href="../css/uniface.css" /&gt;
   &lt;/head&gt;
-  &lt;body class="u"&gt;  &lt;!-- class "u" enables some minor pre-styled CSS rules in ../css/uniface.css --&gt;
+  &lt;body id="uinst:" class="u"&gt;  &lt;!-- class "u" enables some minor pre-styled CSS rules in ../css/uniface.css --&gt;
 
     Your content here...
 
