@@ -49,6 +49,6 @@
 
 At this point, all components have been built. As the sources have not been imported using the utility, all the sources will be marked as new. To fix this, you will need to export all objects into the WorkArea.
 
-1. Uncomment the  line ;IDE_DEFINE_USERMENUS=VC_UPDATED in ide.asn
+1. Uncomment the  line `;IDE_DEFINE_USERMENUS=VC_UPDATED` in ide.asn
 2. Start the IDE and select "WrokArea Export/Revert" from the burger menu
 3. Click Export All
