@@ -1,10 +1,10 @@
 
 
-# WASListener
+# WorkArea synchronisation for Uniface 10
 
 **A prebuilt version can be downloaded from - <https://community.uniface.com/display/DOW/Work+Area+Support+Utility>**
 
-- [WASListener](#waslistener)
+- [WorkArea synchronisation for Uniface 10](#workarea-synchronisation-for-uniface-10)
   - [WASListener.exe](#waslistenerexe)
     - [Prerequisites for 3gl](#prerequisites-for-3gl)
     - [Building](#building)
@@ -16,10 +16,10 @@
 
 ### Prerequisites for 3gl
 
-- cMake - <https://cmake.org/>
-- Boost - <https://www.boost.org/>
-- Visual Studio 2019 - <https://visualstudio.microsoft.com/>
-- Uniface 10 - <https://uniface.com/get-started>
+- [CMake](https://cmake.org/ "Get CMake")
+- [Boost (1.74)](https://www.boost.org/users/history/version_1_74_0.html "Get Boost")
+- [Visual Studio 2019](https://visualstudio.microsoft.com/ "Get Visual Studio")
+- [Uniface 10](https://uniface.com/get-started "Register for Uniface 10 CE")
 
 ### Building
 
@@ -38,16 +38,16 @@
 
 ### Prerequisites for Uniface
 
-- Uniface 10 - <https://uniface.com/get-started>
+- [Uniface 10](https://uniface.com/get-started "Register for Uniface 10 CE")
 
 ### Building
 
-1. Create shortcust for the development environment
+1. Create a shortcut for the development environment
 `{Uniface's Install folder}\common\bin\ide.exe /dir={projectFolder} /adm={Uniface's Install folder}\uniface\adm ?`
-2. Import all sources contained in the WorkArea folder and all it's sub folders.
+2. Import all sources contained in the WorkArea folder and all its subfolders.
 3. Compile the project by entering `/all` in the "Optional Command Line Parameters" field when starting the IDE and clicking "Continue"
 
-At this point all components have been built. As the sources have not been imported using the utility all the sources will be marked as new. To fix this you will need to export all objects into the workarea.
+At this point, all components have been built. As the sources have not been imported using the utility, all the sources will be marked as new. To fix this, you will need to export all objects into the WorkArea.
 
 1. Uncomment the  line ;IDE_DEFINE_USERMENUS=VC_UPDATED in ide.asn
 2. Start the IDE and select "WrokArea Export/Revert" from the burger menu
