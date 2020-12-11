@@ -3,7 +3,7 @@
 #
 cmake_minimum_required ( VERSION 3.8 )
 
-set ( SOURCE_FILES 
+set ( SOURCE 
 	"CommandLine.cpp" 
 	"FileAction.cpp" 
 	"FolderWatcher.cpp" 
@@ -12,7 +12,7 @@ set ( SOURCE_FILES
 	"WASListener.cpp" 
 )
 
-set ( HEADER_FILES 
+set ( HEADER 
   "CommandLine.h" 
   "FileAction.h"
   "FolderWatcher.h"
@@ -23,7 +23,7 @@ set ( HEADER_FILES
   "WASListener.h"
 )
 
-set ( EXTRA_FILES 
+set ( EXTRA
 	"WASListener.exe.manifest"
 	"WASListener.rc"
 )
@@ -44,7 +44,7 @@ if( Boost_FOUND )
 	include_directories( ${Boost_INCLUDE_DIRS} ${UNIFACE_3GL_FOLDER}/include )
 	link_directories(${Boost_LIBRARY_DIRS} ${UNIFACE_3GL_FOLDER}/lib )
 
-	add_executable ( WASListener WIN32 ${SOURCE_FILES} ${HEADER_FILES} ${EXTRA_FILES} )
+	add_executable ( WASListener WIN32 ${SOURCE} ${HEADER} ${EXTRA} )
 	target_link_libraries( WASListener ${UNIFACE_LIBRARIES} ${Boost_LIBRARIES} )
 
 	set( CMAKE_CXX_STANDARD_REQUIRED ON )
