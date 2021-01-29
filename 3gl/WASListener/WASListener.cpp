@@ -75,8 +75,16 @@ int APIENTRY wWinMain(_In_ HINSTANCE const hInstance,
 	workerThreads[0] = std::thread([workArea_promise, uniface{ std::make_unique<CUniface>(std::move(commandLine), list) }] ()
 	{
 		// Getting the working folder will make a call to Uniface so starting the whole Uniface environment
-		workArea_promise->set_value(uniface->getWASFolder());
-		uniface->run();
+		try {
+			workArea_promise->set_value(uniface->getWASFolder());
+			uniface->run();
+		}
+		catch (const std::exception& e)
+		{
+			MessageBoxA(nullptr, e.what(), "Error", MB_OK);
+			workArea_promise->set_value(std::wstring());
+		}
+
 		std::cout << "Finished processing actions\n";
 	});
 
@@ -87,13 +95,15 @@ int APIENTRY wWinMain(_In_ HINSTANCE const hInstance,
 		try
 		{
 			// Wait for Uniface to return the location of the WorkArea
-			watcher->setFolder(workArea_promise->get_future().get());
+			auto workAreaFolder = workArea_promise->get_future().get();
+			if ( !workAreaFolder.empty() ) {
+				watcher->run(std::move(workAreaFolder)); // Start listening for changes in the WorkArea
+			}
 		}
 		catch (const std::exception& e)
 		{
 			MessageBoxA(nullptr, e.what(), "Error", MB_OK);
 		}
-		watcher->run(); // Start listening for changes in the WorkArea
 		std::cout << "Finished watching\n";
 	});
 
@@ -101,6 +111,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE const hInstance,
 	// Main message loop:
 	while (GetMessage(&msg, nullptr, 0, 0))
 	{
+
 		if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
 		{
 			TranslateMessage(&msg);

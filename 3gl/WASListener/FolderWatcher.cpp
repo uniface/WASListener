@@ -12,13 +12,11 @@ CFolderWatcher::CFolderWatcher(std::shared_ptr<boost::concurrent::sync_deque<CFi
 {
 	m_buffer.assign(buffer_size, 0);
 }
-void CFolderWatcher::setFolder(std::wstring&& folder) noexcept
+
+void CFolderWatcher::run(std::wstring&& folder)
 {
 	m_folder = std::move(folder);
-}
 
-void CFolderWatcher::run()
-{
 	std::cout << "Task Start\n";
 	// Check if thread is requested to stop ?
 	OVERLAPPED ovl;

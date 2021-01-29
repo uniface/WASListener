@@ -220,7 +220,7 @@ void CUniface::_startUniface()
 		                             nullptr, &m_hUniEnv);
 		if (uniRet != UINI_SUCCESS)
 		{
-			throw std::runtime_error{ "Unable to start Uniface Environment (uecreate): "s + std::to_string(uniRet) };
+			throw std::runtime_error{ "Unable to start the Uniface Environment: "s + std::to_string(uniRet) };
 		}
 
 		long procError{ 0 };
@@ -236,8 +236,7 @@ void CUniface::_startUniface()
 
 		if (status != UACT_SUCCESS)
 		{
-			_stopUniface();
-			throw std::runtime_error{ "Unable in init Component VC_MAIN (UINSTNEW): "s + std::to_string(status) };
+			throw std::runtime_error{ "Unable to create a new instance of VC_MAIN: $procerror="s + std::to_string(status) };
 		}
 
 		m_bStarted = status == UACT_SUCCESS;
