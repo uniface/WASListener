@@ -24,7 +24,7 @@ WCHAR szWindowClass[MAX_LOADSTRING]; // the main window class name
 
 // Forward declarations of functions included in this code module:
 ATOM MyRegisterClass(HINSTANCE hInstance) noexcept;
-BOOL InitInstance(HINSTANCE, int) noexcept;
+HWND InitInstance(HINSTANCE, int) noexcept;
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK About(HWND, UINT, WPARAM, LPARAM) noexcept;
 void ShowContextMenu(HWND, POINT) noexcept;
@@ -46,7 +46,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE const hInstance,
 	MyRegisterClass(hInstance);
 
 	// Perform application initialization:
-	if (!InitInstance(hInstance, nShowCmd))
+	HWND hWnd = InitInstance(hInstance, nShowCmd);
+	if ( !hWnd )
 	{
 		return -1;
 	}
@@ -72,7 +73,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE const hInstance,
 	// Setup our thread for processing the WorkArea updates in Uniface
 	auto workArea_promise{ std::make_shared<std::promise<std::wstring>>() }; // Uniface will return the location of the WorkArea
 
-	workerThreads[0] = std::thread([workArea_promise, uniface{ std::make_unique<CUniface>(std::move(commandLine), list) }] ()
+	workerThreads[0] = std::thread([hWnd, workArea_promise, uniface{ std::make_unique<CUniface>(std::move(commandLine), list) }] ()
 	{
 		// Getting the working folder will make a call to Uniface so starting the whole Uniface environment
 		try {
@@ -83,6 +84,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE const hInstance,
 		{
 			MessageBoxA(nullptr, e.what(), "Error", MB_OK);
 			workArea_promise->set_value(std::wstring());
+			PostMessage(hWnd, UM_DESTROY, 0, 0);
+
 		}
 
 		std::cout << "Finished processing actions\n";
@@ -90,7 +93,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE const hInstance,
 
 	// Setup our thread for watching the WorkArea
 	watcher = std::make_unique<CFolderWatcher>(list);
-	workerThreads[1] = std::thread([workArea_promise{ std::move(workArea_promise) }]()
+	workerThreads[1] = std::thread([hWnd, workArea_promise{ std::move(workArea_promise) }]()
 	{
 		try
 		{
@@ -103,6 +106,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE const hInstance,
 		catch (const std::exception& e)
 		{
 			MessageBoxA(nullptr, e.what(), "Error", MB_OK);
+			PostMessage(hWnd, UM_DESTROY, 0, 0 );
 		}
 		std::cout << "Finished watching\n";
 	});
@@ -158,12 +162,12 @@ ATOM MyRegisterClass(HINSTANCE hInstance) noexcept
 //        In this function, we save the instance handle in a global variable and
 //        create and display the main program window.
 //
-BOOL InitInstance(HINSTANCE const hInstance, int) noexcept
+HWND InitInstance(HINSTANCE const hInstance, int) noexcept
 {
 	hInst = hInstance; // Store instance handle in our global variable
 
 	return CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-		CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr) ? TRUE : FALSE;
+		CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
 }
 
 void ShowContextMenu(HWND const hwnd, POINT const pt) noexcept
@@ -269,6 +273,11 @@ LRESULT CALLBACK WndProc(HWND const hWnd, UINT const message, WPARAM const wPara
 			EndPaint(hWnd, &ps);
 		}
 		break;
+
+	case UM_DESTROY: 
+		DestroyWindow(hWnd);
+		return TRUE;
+
 	case WM_DESTROY:
 		// Stop the processing
 		list->close();
