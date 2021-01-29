@@ -12,8 +12,7 @@ public:
 	explicit CFolderWatcher(std::shared_ptr<boost::concurrent::sync_deque<CFileAction>> list);
 
 	// Function to be executed by thread function
-	void run();
-	void setFolder(std::wstring&& folder) noexcept;
+	void run(std::wstring&& folder);
 
 private:
 	bool OpenDirectory() noexcept;

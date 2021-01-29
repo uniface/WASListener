@@ -13,11 +13,9 @@ inline UINT constexpr WMAPP_NOTIFYCALLBACK = WM_APP + 1;
 class CNotifications
 {
 public:
-	// TODO: Add [[nodiscard]]
-	BOOL ShowDirty(std::wstring const& filename) const noexcept;
+	void ShowDirty(std::wstring const& filename) const noexcept;
 	BOOL AddNotificationIcon(HWND lhWnd, DWORD luID) noexcept;
-	// TODO: Add [[nodiscard]]
-	BOOL DeleteNotificationIcon() const noexcept;
+	void DeleteNotificationIcon() const noexcept;
 
 private:
 	HWND m_hWnd{nullptr};

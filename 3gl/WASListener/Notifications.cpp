@@ -3,10 +3,9 @@
 #include "resource.h"
 
 
-int CNotifications::ShowDirty(std::wstring const& filename) const noexcept
+void CNotifications::ShowDirty(std::wstring const& filename) const noexcept
 {
 	// Display a balloon message for a print job with a custom icon
-	// TODO: Initialize all fields
 	NOTIFYICONDATA nid{};
 	nid.cbSize = sizeof nid;
 	nid.uFlags = NIF_INFO;
@@ -16,7 +15,7 @@ int CNotifications::ShowDirty(std::wstring const& filename) const noexcept
 	LoadString(HINST_THISCOMPONENT, IDS_DIRTY_TITLE, nid.szInfoTitle, ARRAYSIZE(nid.szInfoTitle));
 	wcsncpy_s(nid.szInfo, filename.c_str(), filename.length());
 	LoadIconMetric(HINST_THISCOMPONENT, MAKEINTRESOURCE(IDI_WASLISTENER), LIM_LARGE, &nid.hBalloonIcon);
-	return Shell_NotifyIcon(NIM_MODIFY, &nid);
+	Shell_NotifyIcon(NIM_MODIFY, &nid);
 }
 
 BOOL CNotifications::AddNotificationIcon(HWND const lhWnd, DWORD const luID) noexcept
@@ -25,7 +24,6 @@ BOOL CNotifications::AddNotificationIcon(HWND const lhWnd, DWORD const luID) noe
 	m_uID = luID;
 
 	// Declare NOTIFYICONDATA details.
-	// TODO: Initialize all fields
 	NOTIFYICONDATA nid {};
 	nid.cbSize = sizeof nid;
 	nid.uFlags = NIF_ICON | NIF_TIP | NIF_MESSAGE | NIF_SHOWTIP;
@@ -47,12 +45,11 @@ BOOL CNotifications::AddNotificationIcon(HWND const lhWnd, DWORD const luID) noe
 	return Shell_NotifyIcon(NIM_SETVERSION, &nid);
 }
 
-BOOL CNotifications::DeleteNotificationIcon() const noexcept
+void CNotifications::DeleteNotificationIcon() const noexcept
 {
-	// TODO: Initialize all fields
 	NOTIFYICONDATA nid{};
 	nid.cbSize = sizeof nid;
 	nid.hWnd = m_hWnd;
 	nid.uID = m_uID;
-	return Shell_NotifyIcon(NIM_DELETE, &nid);
+	Shell_NotifyIcon(NIM_DELETE, &nid);
 }
