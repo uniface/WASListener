@@ -199,7 +199,6 @@ DWORD CUniface::_callUnifaceVC(std::filesystem::path const& file, const BOOL bDe
 		                 &procError); /* $procerror */
 		if (status == UACT_SUCCESS && oprStatus == 2)
 		{
-			// TODO: Use return value
 			gNotifications.ShowDirty(file.wstring());
 		}
 	}

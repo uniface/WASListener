@@ -16,7 +16,6 @@
 
 constexpr auto MAX_LOADSTRING = 100;
 
-// TODO: Globals should be constant or they shouldn't be globals
 // Global Variables:
 HINSTANCE hInst; // current instance
 WCHAR szTitle[MAX_LOADSTRING]; // The title bar text
@@ -28,11 +27,6 @@ HWND InitInstance(HINSTANCE, int) noexcept;
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK About(HWND, UINT, WPARAM, LPARAM) noexcept;
 void ShowContextMenu(HWND, POINT) noexcept;
-int parseCommandLine(LPWSTR);
-// TODO: Globals should be constant or they shouldn't be globals
-std::unique_ptr<CFolderWatcher> watcher;
-std::thread workerThreads[2];
-auto const list(std::make_shared<boost::concurrent::sync_deque<CFileAction>>());
 
 int APIENTRY wWinMain(_In_ HINSTANCE const hInstance,
                       _In_opt_ HINSTANCE const,
@@ -54,8 +48,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE const hInstance,
 
 	const auto hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_WASLISTENER));
 
-	MSG msg;
-
 	CCommandLine commandLine;
 	try
 	{
@@ -65,54 +57,48 @@ int APIENTRY wWinMain(_In_ HINSTANCE const hInstance,
 	catch (const std::exception& e)
 	{
 		MessageBoxA(nullptr, e.what(), "Error", MB_OK);
-		// TODO: Use return value
-		gNotifications.DeleteNotificationIcon();
 		return -1;
 	}
 
-	// Setup our thread for processing the WorkArea updates in Uniface
-	auto workArea_promise{ std::make_shared<std::promise<std::wstring>>() }; // Uniface will return the location of the WorkArea
+	auto const list(std::make_shared<boost::concurrent::sync_deque<CFileAction>>());
 
-	workerThreads[0] = std::thread([hWnd, workArea_promise, uniface{ std::make_unique<CUniface>(std::move(commandLine), list) }] ()
+	// Setup our thread for processing the WorkArea updates in Uniface
+	auto workarea_promise{ std::make_shared<std::promise<std::wstring>>() }; // Uniface will return the location of the WorkArea
+	auto uniface_thread = std::thread([hWnd, workarea_promise, uniface{ std::make_unique<CUniface>(std::move(commandLine), list) }]()
 	{
 		// Getting the working folder will make a call to Uniface so starting the whole Uniface environment
 		try {
-			workArea_promise->set_value(uniface->getWASFolder());
+			workarea_promise->set_value(uniface->getWASFolder());
 			uniface->run();
 		}
 		catch (const std::exception& e)
 		{
 			MessageBoxA(nullptr, e.what(), "Error", MB_OK);
-			workArea_promise->set_value(std::wstring());
+			workarea_promise->set_value(std::wstring());
 			PostMessage(hWnd, UM_DESTROY, 0, 0);
-
 		}
-
-		std::cout << "Finished processing actions\n";
 	});
 
 	// Setup our thread for watching the WorkArea
-	watcher = std::make_unique<CFolderWatcher>(list);
-	workerThreads[1] = std::thread([hWnd, workArea_promise{ std::move(workArea_promise) }]()
+	auto listener_thread = std::thread([hWnd, watcher{ std::make_unique<CFolderWatcher>(list) }, workarea_promise{ std::move(workarea_promise) }]()
 	{
 		try
 		{
 			// Wait for Uniface to return the location of the WorkArea
-			auto workAreaFolder = workArea_promise->get_future().get();
-			if ( !workAreaFolder.empty() ) {
+			auto workAreaFolder = workarea_promise->get_future().get();
+			if (!workAreaFolder.empty()) {
 				watcher->run(std::move(workAreaFolder)); // Start listening for changes in the WorkArea
 			}
 		}
 		catch (const std::exception& e)
 		{
 			MessageBoxA(nullptr, e.what(), "Error", MB_OK);
-			PostMessage(hWnd, UM_DESTROY, 0, 0 );
+			PostMessage(hWnd, UM_DESTROY, 0, 0);
 		}
-		std::cout << "Finished watching\n";
 	});
 
-
 	// Main message loop:
+	MSG msg;
 	while (GetMessage(&msg, nullptr, 0, 0))
 	{
 
@@ -122,6 +108,11 @@ int APIENTRY wWinMain(_In_ HINSTANCE const hInstance,
 			DispatchMessage(&msg);
 		}
 	}
+
+	// Stop the processing
+	list->close();
+	listener_thread.join();
+	uniface_thread.join();
 
 	return static_cast<int>(msg.wParam);
 }
@@ -218,13 +209,13 @@ LRESULT CALLBACK WndProc(HWND const hWnd, UINT const message, WPARAM const wPara
 		{
 			// create a lock in the current folder to prevent multiple instances
 			auto const hFileLock = CreateFile(L".\\.WASListener.lock",
-			                       GENERIC_WRITE,
-			                       FILE_SHARE_READ,
-			                       nullptr,
-			                       CREATE_NEW,
-			                       FILE_ATTRIBUTE_HIDDEN | FILE_ATTRIBUTE_TEMPORARY | FILE_FLAG_DELETE_ON_CLOSE |
-			                       FILE_ATTRIBUTE_SYSTEM,
-			                       nullptr);
+				GENERIC_WRITE,
+				FILE_SHARE_READ,
+				nullptr,
+				CREATE_NEW,
+				FILE_ATTRIBUTE_HIDDEN | FILE_ATTRIBUTE_TEMPORARY | FILE_FLAG_DELETE_ON_CLOSE |
+				FILE_ATTRIBUTE_SYSTEM,
+				nullptr);
 			if (hFileLock == INVALID_HANDLE_VALUE)
 				throw std::runtime_error{ "Unable to create lock. Another instance is probably running already" };
 
@@ -275,18 +266,16 @@ LRESULT CALLBACK WndProc(HWND const hWnd, UINT const message, WPARAM const wPara
 		break;
 
 	case UM_DESTROY: 
+		// Close the application - there has been an exception from the threads. The exeption message has been displayed
 		DestroyWindow(hWnd);
+
 		return TRUE;
 
 	case WM_DESTROY:
-		// Stop the processing
-		list->close();
-		workerThreads[0].join();
-		workerThreads[1].join();
-		watcher.reset();
-
 		// TODO: Use return value
 		gNotifications.DeleteNotificationIcon();
+
+		// Quit the application
 		PostQuitMessage(0);
 		break;
 	default:
