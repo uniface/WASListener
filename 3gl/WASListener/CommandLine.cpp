@@ -14,53 +14,17 @@ bool CCommandLine::_initConsole() noexcept
 	return true;
 }
 
-std::optional<std::string> CCommandLine::_convertToShortName(std::string const& pathToMakeShort)
-{
-	std::optional<std::string> result;
-	// First obtain the size needed by passing NULL and 0.
-	auto dwLength = GetShortPathNameA(pathToMakeShort.c_str(), nullptr, 0);
-	if (dwLength)
-	{
-		// Dynamically allocate the correct size 
-		// (terminating null char was included in length)
-		std::string szShortPathName;
-		szShortPathName.reserve(dwLength);
-		
-		// Now simply call again using same long path
-		dwLength = GetShortPathNameA(pathToMakeShort.c_str(), szShortPathName.data(), dwLength);
-		if (dwLength)
-		{
-			result = szShortPathName.data();
-		}
-	}
-	return result;
-}
-
 void CCommandLine::_setUnifaceCommandOptions(std::string const& admFolder, std::string const& iniFile)
 {
 	std::string cmdLine;
 	if (!admFolder.empty())
 	{
-		auto const shortAdmFile{ _convertToShortName(admFolder) };
-		if (!shortAdmFile.has_value())
-		{
-			throw std::invalid_argument{ "Adm folder not found: "s + admFolder };
-		}
-		cmdLine = "/adm="s + shortAdmFile.value();
+		cmdLine = "/adm=\""s + admFolder + "\" ";
 	}
 
 	if (!iniFile.empty())
 	{
-		auto const shortInitFile{ _convertToShortName(iniFile) };
-		if (!shortInitFile.has_value())
-		{
-			throw std::invalid_argument{ "Initialisation file not found: "s + iniFile };
-		}
-		if (!cmdLine.empty())
-		{
-			cmdLine += " "s;
-		}
-		cmdLine += "/ini="s + shortInitFile.value();
+		cmdLine += "/ini=\""s + iniFile + "\" ";
 	}
 
 	m_unifaceCommandOptions = cmdLine;
@@ -68,14 +32,10 @@ void CCommandLine::_setUnifaceCommandOptions(std::string const& admFolder, std::
 
 void CCommandLine::_setUnifaceAsnFile(std::string const& asnFile)
 {
-	if (asnFile.empty())
-		return;
-	auto const optionalAsnFile{ _convertToShortName(asnFile) };
-	if (!optionalAsnFile.has_value())
+	if (!asnFile.empty())
 	{
-		throw std::invalid_argument{ "Assignment file not found: "s + asnFile };
+		m_unifaceAsnFile = "\""s + asnFile + "\""s;
 	}
-	m_unifaceAsnFile = optionalAsnFile.value();
 }
 
 bool CCommandLine::parse(LPCSTR lpCommandLine)
