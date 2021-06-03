@@ -19,7 +19,6 @@ private:
 private:
 	std::string m_unifaceCommandOptions;
 	std::string m_unifaceAsnFile;
-	static std::optional<std::string> _convertToShortName(std::string const& path);
 
 	FILE* _g_ic_file_cout_stream{nullptr};
 	FILE* _g_ic_file_cin_stream{nullptr};
