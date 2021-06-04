@@ -245,4 +245,4 @@ ModelManifest.xml
 development.z*p
 ide_state.zip
 resources
-dbms/*.db
+usys.db
