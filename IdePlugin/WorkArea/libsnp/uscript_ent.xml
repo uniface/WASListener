@@ -1,7 +1,7 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
 <!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
-<UNIFACE release="10.3" repversion="7" xmlengine="2.0">
+<UNIFACE release="10.4" repversion="8" xmlengine="2.0">
 <TABLE>
 <DSC name="ULIBSNP" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
  rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
@@ -11,22 +11,24 @@
  pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
 <FLD name="UMVERSION" seqno="3" type="N" level="2" pack="10" scale="0" length="2"
  pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
-<FLD name="UDESCR" seqno="4" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UDESCR" seqno="4" type="S" level="2" pack="13" scale="0" length="256"
  pointer="0" inum="0" ufocc="0" />
 <FLD name="UTIMESTAMP" seqno="5" type="E" level="2" pack="0" scale="0" length="15"
  pointer="0" inum="0" ufocc="0" />
 <FLD name="UPURPOSE" seqno="6" type="S" level="2" pack="1" scale="0" length="1"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UALT_NAME" seqno="7" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UALT_NAME" seqno="7" type="S" level="2" pack="13" scale="0" length="128"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UWAORDER" seqno="8" type="N" level="2" pack="7" scale="0" length="5"
+<FLD name="UKEYWORDS" seqno="8" type="S" level="2" pack="13" scale="0" length="256"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UCOMMENT" seqno="9" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UWAORDER" seqno="9" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="10" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
 </DSC>
 <OCC>
 <DAT name="UNAME">USCRIPT_ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Library of script snippets for Modeled Entities</DAT>
 <DAT name="UTIMESTAMP">2016-08-24T14:40:22.00</DAT>
@@ -36,27 +38,33 @@
 <TABLE>
 <DSC name="USNP" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
  rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
-<FLD name="UNAME" seqno="1" type="S" level="2" pack="0" scale="0" length="60"
+<FLD name="UTIMESTAMP" seqno="1" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UNAME" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
  pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,4" idxsnr="103,1" />
-<FLD name="USYNTAX" seqno="2" type="S" level="2" pack="0" scale="0" length="16"
+<FLD name="USYNTAX" seqno="3" type="S" level="2" pack="0" scale="0" length="16"
  pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,4" idxsnr="102,2" />
-<FLD name="ULIBRARY" seqno="3" type="S" level="2" pack="0" scale="0" length="60"
+<FLD name="ULIBRARY" seqno="4" type="S" level="2" pack="0" scale="0" length="60"
  pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,5" idxsnr="101,1" />
-<FLD name="UCATEGORY" seqno="4" type="S" level="2" pack="0" scale="0" length="32"
+<FLD name="UCATEGORY" seqno="5" type="S" level="2" pack="0" scale="0" length="32"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UKVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
+<FLD name="UKVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
  pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
-<FLD name="UMVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
+<FLD name="UMVERSION" seqno="7" type="N" level="2" pack="10" scale="0" length="2"
  pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
-<FLD name="UDESCR" seqno="7" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UDESCR" seqno="8" type="S" level="2" pack="13" scale="0" length="256"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UALT_NAME" seqno="8" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UPURPOSE" seqno="9" type="S" level="2" pack="1" scale="0" length="1"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UWAORDER" seqno="9" type="N" level="2" pack="7" scale="0" length="5"
+<FLD name="UALT_NAME" seqno="10" type="S" level="2" pack="13" scale="0" length="128"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UCOMMENT" seqno="10" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UKEYWORDS" seqno="11" type="S" level="2" pack="13" scale="0" length="256"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="12" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="13" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
-<FLD name="UTEXT" seqno="11" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UTEXT" seqno="14" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
@@ -64,7 +72,7 @@
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for occs read from the DBMS (retrieve)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;read&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -145,7 +153,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for occs that need to be written to DBMS (store)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;write&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -166,7 +174,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for up-occs that need to be written to DBMS (store)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;writeUp&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -187,7 +195,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for occs that needs to be deleted from the DBMS</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;delete&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -206,7 +214,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for every up occ marked for deletion (statement store)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;deleteUp&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -225,7 +233,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for occs with validation errors</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;lock&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -243,7 +251,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for occs that need to be validated</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;validate&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -273,7 +281,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for keys (prim/candidate) that need to be validated</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;validateKey&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -315,7 +323,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for occs with validation errors (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;error&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -435,7 +443,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for occs with validation errors (FRM)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;error&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -532,7 +540,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>RPT SVC ESV SSV ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for occs with validation errors (RPT SVC ESV SSV)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;error&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -639,7 +647,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>USP ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for occs with validation errors (USP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;error&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -760,7 +768,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired before occ serialization (componentToStruct, xmlsave)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;preSerialize&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -781,7 +789,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired after occ serialization (componentToStruct, xmlsave)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;postSerialize&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -802,7 +810,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired before occ deserialization (StructToComponent, xmlload)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;preDeserialize&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -823,7 +831,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired after occ deserialization (StructToComponent, xmlload)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;postDeserialize&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -844,7 +852,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired when occurrence gets focus (FRM)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;getFocus&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -862,7 +870,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired when modified occurrence lost focus (FRM)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;leaveModified&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -880,7 +888,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired when modified key lost focus (FRM)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;leaveModKey&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -898,7 +906,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM RPT ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired when occurrence has been printed (FRM RPT)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;leavePrinted&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -916,7 +924,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired on macro "^INS_OCC" (ALT-I) or "^ADD_OCC" (GOLD-AO) (FRM)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;create&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -951,7 +959,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired on macro "^DETAIL" (e.g. GOLD-D) or widget (FRM)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;detail&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -974,7 +982,7 @@ end</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired on macro "^HELP" (e.g. GOLD-H or F1) (FRM)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;help&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1014,7 +1022,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired on macro "^MENU" (e.g. GOLD-C) (FRM)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;menu&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1038,7 +1046,7 @@ end</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired on macro "^REM_OCC" (e.g. GOLD-RO) (FRM)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;remove&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1077,7 +1085,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired when field value is about to get modified (FRM)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;startModification&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1112,7 +1120,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the value is changed (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onChange&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;webtrigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1132,7 +1140,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the value is changed (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onChange&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1152,7 +1160,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired when field value has changed (FRM)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;valueChanged&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1205,7 +1213,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields that require validation</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;validate&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1235,7 +1243,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields with validation errors (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;error&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1331,7 +1339,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields with validation errors (FRM)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;error&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1395,7 +1403,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>SVC ESV SSV ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields with validation errors (RPT SVC ESV SSV)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;error&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1472,7 +1480,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>USP ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields with validation errors (USP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;error&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1553,7 +1561,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields that are read from the DBMS (read)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;formatFromDbms&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1574,7 +1582,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields that are written to the DBMS (write)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;formatToDbms&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1595,7 +1603,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM DSP USP ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields of which a value has been entered (DSP,USP,FRM)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;formatFromDisplay&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1622,7 +1630,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields that are displayed (DSP USP FRM RPT)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;formatToDisplay&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1648,7 +1656,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the widget received focus (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onFocus&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;webtrigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1668,7 +1676,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired when field gets focus (FRM)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;getFocus&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1691,7 +1699,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the widget looses focus (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onBlur&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;webtrigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1711,7 +1719,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired when field loses focus (FRM)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;loseFocus&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1734,7 +1742,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields when in error (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onSyntaxError&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;webtrigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1775,7 +1783,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields when in error (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onSynErrResolved&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;webtrigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1804,7 +1812,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the button-widget gets pressed (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;detail&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;webtrigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1824,7 +1832,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the button-widget gets pressed (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;detail&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1844,7 +1852,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired on macro "^DETAIL" (e.g. GOLD-D) or widget (FRM)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;detail&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1862,7 +1870,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>USP ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the button-widget gets pressed (USP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;detail&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1880,7 +1888,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the widget is clicked (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onClick&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;webtrigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1900,7 +1908,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the widget is clicked (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onClick&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1920,7 +1928,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the widget is double-clicked (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onDblClick&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;webtrigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1940,7 +1948,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the widget is double-clicked (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onDblClick&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1960,7 +1968,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the widget received a key press (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onKeyPressed&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;webtrigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -1980,7 +1988,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the widget received a key press (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onKeyPressed&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -2000,7 +2008,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired on macro "^HELP" (e.g. GOLD-H or F1) (FRM)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;help&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -2040,7 +2048,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired on macro "^MENU" (e.g. GOLD-C) (FRM)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;menu&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -2064,7 +2072,7 @@ end</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired on macro "^NEXT_FIELD" (e.g. GOLD-NF or TAB) (FRM)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;next&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
@@ -2105,7 +2113,7 @@ end
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ENT</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>FRM ENT</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired on macro "^PREV_FIELD" (e.g. GOLD-PF or SHIFT-TAB) (FRM)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;previous&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
