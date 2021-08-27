@@ -1,7 +1,7 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
 <!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
-<UNIFACE release="10.3" repversion="7" xmlengine="2.0">
+<UNIFACE release="10.4" repversion="8" xmlengine="2.0">
 <TABLE>
 <DSC name="UFORM" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
  rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
@@ -17,7 +17,7 @@
  pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
 <FLD name="UMVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
  pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
-<FLD name="UDESCR" seqno="7" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UDESCR" seqno="7" type="S" level="2" pack="13" scale="0" length="256"
  pointer="0" inum="0" ufocc="0" />
 <FLD name="FHEAD" seqno="8" type="S" level="2" pack="0" scale="0" length="6"
  pointer="0" inum="0" ufocc="0" />
@@ -67,83 +67,85 @@
  pointer="0" inum="0" ufocc="0" />
 <FLD name="UPURPOSE" seqno="31" type="S" level="2" pack="1" scale="0" length="1"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UALT_NAME" seqno="32" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UALT_NAME" seqno="32" type="S" level="2" pack="13" scale="0" length="128"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UWAORDER" seqno="33" type="N" level="2" pack="7" scale="0" length="5"
+<FLD name="UKEYWORDS" seqno="33" type="S" level="2" pack="13" scale="0" length="256"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UCOMMENT" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UWAORDER" seqno="34" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
-<FLD name="TPLACTUAL" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="TPLACTUAL" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
-<FLD name="TPLACTUAL2" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="TPLACTUAL2" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
-<FLD name="UDECLARATIONS" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UDECLARATIONS" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
-<FLD name="USCRIPT" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="USCRIPT" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
-<FLD name="INIT" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="INIT" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
-<FLD name="CLEAR" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="CLEAR" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
-<FLD name="RETRIEVE" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="RETRIEVE" seqno="42" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
-<FLD name="RECORD" seqno="42" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="RECORD" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
-<FLD name="STORE" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="STORE" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
-<FLD name="DELET" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="DELET" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
-<FLD name="ACCEPT" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="ACCEPT" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
-<FLD name="QUIT" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="QUIT" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
-<FLD name="MENU" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="MENU" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
-<FLD name="INTKEY" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="INTKEY" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
-<FLD name="SPRINT" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="SPRINT" seqno="50" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
-<FLD name="EPRINT" seqno="50" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="EPRINT" seqno="51" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
-<FLD name="ASYNC" seqno="51" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="ASYNC" seqno="52" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
-<FLD name="GENERAL" seqno="52" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="GENERAL" seqno="53" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D2,0,0,0,,0,0,0,," />
-<FLD name="FRLF" seqno="53" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="FRLF" seqno="54" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
-<FLD name="FRGF" seqno="54" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="FRGF" seqno="55" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D4,0,0,0,,0,0,0,," />
-<FLD name="SFUNC" seqno="55" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="SFUNC" seqno="56" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D5,0,0,0,,0,0,0,," />
-<FLD name="GETSTATE" seqno="56" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="GETSTATE" seqno="57" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D6,0,0,0,,0,0,0,," />
-<FLD name="SETSTATE" seqno="57" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="SETSTATE" seqno="58" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
-<FLD name="UCTRIGGERS" seqno="58" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UCTRIGGERS" seqno="59" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
-<FLD name="FORMPIC" seqno="59" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="FORMPIC" seqno="60" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D9,0,0,0,,0,0,0,," />
-<FLD name="TITLE" seqno="60" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="TITLE" seqno="61" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
-<FLD name="WINPROP" seqno="61" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="WINPROP" seqno="62" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
-<FLD name="USCONTAINED" seqno="62" type="B" level="2" pack="128" scale="0" length="0"
+<FLD name="USCONTAINED" seqno="63" type="B" level="2" pack="128" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
-<FLD name="ATTACHED" seqno="63" type="B" level="2" pack="128" scale="0" length="0"
+<FLD name="ATTACHED" seqno="64" type="B" level="2" pack="128" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
-<FLD name="UPOPUP" seqno="64" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UPOPUP" seqno="65" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DE,0,0,0,,0,0,0,," />
-<FLD name="USPLITPROP" seqno="65" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="USPLITPROP" seqno="66" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
-<FLD name="USTATEMANAGEDBY" seqno="66" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="USTATEMANAGEDBY" seqno="67" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
-<FLD name="HTMLSKELETON" seqno="67" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="HTMLSKELETON" seqno="68" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
 <DAT name="UTIMESTAMP">2020-10-29T10:44:03.00</DAT>
 <DAT name="ULABEL">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">3</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Palette of objects for Dynamic Server Page components</DAT>
 <DAT name="WVPOS">3</DAT>
@@ -229,132 +231,138 @@
 <TABLE>
 <DSC name="UXGROUP" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
  rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
-<FLD name="ULABEL" seqno="1" type="S" level="2" pack="0" scale="0" length="60"
+<FLD name="UTIMESTAMP" seqno="1" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="ULABEL" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
  pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
-<FLD name="UBASE" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
+<FLD name="UBASE" seqno="3" type="S" level="2" pack="0" scale="0" length="60"
  pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="102" />
-<FLD name="UFORM" seqno="3" type="S" level="2" pack="0" scale="0" length="60"
+<FLD name="UFORM" seqno="4" type="S" level="2" pack="0" scale="0" length="60"
  pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="103,1" />
-<FLD name="UKVERSION" seqno="4" type="N" level="2" pack="10" scale="0" length="2"
+<FLD name="UKVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
  pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
-<FLD name="UMVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
+<FLD name="UMVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
  pointer="0" inum="1" ufocc="0" idxnum="4" idxsnr="1" />
-<FLD name="UDESCR" seqno="6" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UDESCR" seqno="7" type="S" level="2" pack="13" scale="0" length="256"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="U_BORD" seqno="7" type="S" level="2" pack="1" scale="0" length="1"
+<FLD name="U_BORD" seqno="8" type="S" level="2" pack="1" scale="0" length="1"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="DB_ACCESS" seqno="8" type="S" level="2" pack="1" scale="0" length="1"
+<FLD name="DB_ACCESS" seqno="9" type="S" level="2" pack="1" scale="0" length="1"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="U_UPD" seqno="9" type="S" level="2" pack="1" scale="0" length="1"
+<FLD name="U_UPD" seqno="10" type="S" level="2" pack="1" scale="0" length="1"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="U_MINR" seqno="10" type="N" level="2" pack="0" scale="0" length="6"
+<FLD name="U_MINR" seqno="11" type="N" level="2" pack="0" scale="0" length="6"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="U_MAXR" seqno="11" type="N" level="2" pack="0" scale="0" length="6"
+<FLD name="U_MAXR" seqno="12" type="N" level="2" pack="0" scale="0" length="6"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="U_INT" seqno="12" type="S" level="2" pack="1" scale="0" length="128"
+<FLD name="U_INT" seqno="13" type="S" level="2" pack="1" scale="0" length="128"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="TEMPLATENAME" seqno="13" type="S" level="2" pack="0" scale="0" length="60"
+<FLD name="TEMPLATENAME" seqno="14" type="S" level="2" pack="0" scale="0" length="60"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UINHERIT" seqno="14" type="B" level="2" pack="0" scale="0" length="1"
+<FLD name="UINHERIT" seqno="15" type="B" level="2" pack="0" scale="0" length="1"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UALT_NAME" seqno="15" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UPURPOSE" seqno="16" type="S" level="2" pack="1" scale="0" length="1"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UWAORDER" seqno="16" type="N" level="2" pack="7" scale="0" length="5"
+<FLD name="UALT_NAME" seqno="17" type="S" level="2" pack="13" scale="0" length="128"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UCOMMENT" seqno="17" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UKEYWORDS" seqno="18" type="S" level="2" pack="13" scale="0" length="256"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="19" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="20" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
-<FLD name="TPLACTUAL" seqno="18" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="TPLACTUAL" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
-<FLD name="UDECLARATIONS" seqno="19" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UDECLARATIONS" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
-<FLD name="UCOLL_SCRIPT" seqno="20" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UCOLL_SCRIPT" seqno="23" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
-<FLD name="UOCC_SCRIPT" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UOCC_SCRIPT" seqno="24" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
-<FLD name="GETOCC" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="GETOCC" seqno="25" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
-<FLD name="PUTOCC" seqno="23" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="PUTOCC" seqno="26" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
-<FLD name="DELOCC" seqno="24" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="DELOCC" seqno="27" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
-<FLD name="LCK" seqno="25" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="LCK" seqno="28" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
-<FLD name="UNLOCK" seqno="26" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UNLOCK" seqno="29" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
-<FLD name="GETSEGM" seqno="27" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="GETSEGM" seqno="30" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
-<FLD name="ADDOCC" seqno="28" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="ADDOCC" seqno="31" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
-<FLD name="DELOCCR" seqno="29" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="DELOCCR" seqno="32" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
-<FLD name="ENDMOD" seqno="30" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="ENDMOD" seqno="33" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
-<FLD name="DOC" seqno="31" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="DOC" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
-<FLD name="DETAIL" seqno="32" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="DETAIL" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
-<FLD name="CREOCC" seqno="33" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="CREOCC" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
-<FLD name="MENU" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="MENU" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
-<FLD name="FINDOCC" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="FINDOCC" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D2,0,0,0,,0,0,0,," />
-<FLD name="ERROR" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="ERROR" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
-<FLD name="GENERAL" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="GENERAL" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D4,0,0,0,,0,0,0,," />
-<FLD name="BREAK" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="BREAK" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D5,0,0,0,,0,0,0,," />
-<FLD name="VLDE" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="VLDE" seqno="42" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D6,0,0,0,,0,0,0,," />
-<FLD name="VLDK" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="VLDK" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
-<FLD name="PRLO" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="PRLO" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
-<FLD name="PSLO" seqno="42" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="PSLO" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D9,0,0,0,,0,0,0,," />
-<FLD name="PRSO" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="PRSO" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
-<FLD name="PSSO" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="PSSO" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
-<FLD name="UEOOPERS" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UEOOPERS" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
-<FLD name="UECOPERS" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UECOPERS" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
-<FLD name="UECTRIGGERS" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UECTRIGGERS" seqno="50" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
-<FLD name="FLIST" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="FLIST" seqno="51" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
-<FLD name="UPOPUP" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UPOPUP" seqno="52" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
-<FLD name="U_OBJSVC" seqno="50" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="U_OBJSVC" seqno="53" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E2,0,0,0,,0,0,0,," />
-<FLD name="UEOINTERFACE" seqno="51" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UEOINTERFACE" seqno="54" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E4,0,0,0,,0,0,0,," />
-<FLD name="UECINTERFACE" seqno="52" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UECINTERFACE" seqno="55" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E5,0,0,0,,0,0,0,," />
-<FLD name="FRM_WIDGETTYPE" seqno="53" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="FRM_WIDGETTYPE" seqno="56" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E6,0,0,0,,0,0,0,," />
-<FLD name="FRM_WIDGETPROPS" seqno="54" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="FRM_WIDGETPROPS" seqno="57" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E7,0,0,0,,0,0,0,," />
-<FLD name="DSP_WIDGETTYPE" seqno="55" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="DSP_WIDGETTYPE" seqno="58" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E8,0,0,0,,0,0,0,," />
-<FLD name="DSP_WIDGETPROPS" seqno="56" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="DSP_WIDGETPROPS" seqno="59" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E9,0,0,0,,0,0,0,," />
-<FLD name="USP_WIDGETTYPE" seqno="57" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="USP_WIDGETTYPE" seqno="60" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EA,0,0,0,,0,0,0,," />
-<FLD name="USP_WIDGETPROPS" seqno="58" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="USP_WIDGETPROPS" seqno="61" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EB,0,0,0,,0,0,0,," />
-<FLD name="HFM_WIDGETTYPE" seqno="59" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="HFM_WIDGETTYPE" seqno="62" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\EC,0,0,0,,0,0,0,," />
-<FLD name="HFM_WIDGETPROPS" seqno="60" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="HFM_WIDGETPROPS" seqno="63" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\ED,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
 <DAT name="ULABEL">BUTTONS</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Buttons category</DAT>
 <DAT name="U_BORD">N</DAT>
@@ -368,7 +376,7 @@
 <DAT name="ULABEL">COMPLEX</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Complex category</DAT>
 <DAT name="U_BORD">N</DAT>
@@ -382,7 +390,7 @@
 <DAT name="ULABEL">CONTROL_BUTTONS</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Entity control buttons category</DAT>
 <DAT name="U_BORD">N</DAT>
@@ -396,7 +404,7 @@
 <DAT name="ULABEL">DATA_DISPLAY</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Data display category</DAT>
 <DAT name="U_BORD">N</DAT>
@@ -410,7 +418,7 @@
 <DAT name="ULABEL">DATA_ENTRY</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Data Entry category</DAT>
 <DAT name="U_BORD">N</DAT>
@@ -424,7 +432,7 @@
 <DAT name="ULABEL">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Component Palette</DAT>
 <DAT name="U_BORD">N</DAT>
@@ -438,7 +446,7 @@
 <DAT name="ULABEL">ENTITIES</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Entities category</DAT>
 <DAT name="U_BORD">N</DAT>
@@ -452,7 +460,7 @@
 <DAT name="ULABEL">ENTITY</DAT>
 <DAT name="UBASE">NOMODEL</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Component entity (non-modeled)</DAT>
 <DAT name="U_BORD">N</DAT>
@@ -463,103 +471,109 @@
 <TABLE>
 <DSC name="UXFIELD" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
  rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
-<FLD name="ULABEL" seqno="1" type="S" level="2" pack="0" scale="0" length="60"
+<FLD name="UTIMESTAMP" seqno="1" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="ULABEL" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
  pointer="0" inum="1" ufocc="0" mandatory="yes" idxnum="1" idxsnr="101" />
-<FLD name="GRP" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
+<FLD name="GRP" seqno="3" type="S" level="2" pack="0" scale="0" length="60"
  pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="102,1" />
-<FLD name="UBASE" seqno="3" type="S" level="2" pack="0" scale="0" length="60"
+<FLD name="UBASE" seqno="4" type="S" level="2" pack="0" scale="0" length="60"
  pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,2" idxsnr="103,2" />
-<FLD name="UFORM" seqno="4" type="S" level="2" pack="0" scale="0" length="60"
+<FLD name="UFORM" seqno="5" type="S" level="2" pack="0" scale="0" length="60"
  pointer="0" inum="3" ufocc="0" mandatory="yes" idxnum="1,2,3" idxsnr="104,3,1" />
-<FLD name="UKVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
+<FLD name="UKVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
  pointer="0" inum="1" ufocc="0" idxnum="4" idxsnr="1" />
-<FLD name="UMVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
+<FLD name="UMVERSION" seqno="7" type="N" level="2" pack="10" scale="0" length="2"
  pointer="0" inum="1" ufocc="0" idxnum="5" idxsnr="1" />
-<FLD name="UDESCR" seqno="7" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UDESCR" seqno="8" type="S" level="2" pack="13" scale="0" length="256"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="U_DTYP" seqno="8" type="S" level="2" pack="1" scale="0" length="10"
+<FLD name="U_DTYP" seqno="9" type="S" level="2" pack="1" scale="0" length="10"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="IS_STATIC" seqno="9" type="S" level="2" pack="1" scale="0" length="1"
+<FLD name="IS_STATIC" seqno="10" type="S" level="2" pack="1" scale="0" length="1"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="IS_CONTROL" seqno="10" type="S" level="2" pack="1" scale="0" length="1"
+<FLD name="IS_CONTROL" seqno="11" type="S" level="2" pack="1" scale="0" length="1"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="DATA_LAYOUT" seqno="11" type="S" level="2" pack="0" scale="0" length="192"
+<FLD name="DATA_LAYOUT" seqno="12" type="S" level="2" pack="0" scale="0" length="192"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="DATA_SYNTAX" seqno="12" type="S" level="2" pack="0" scale="0" length="256"
+<FLD name="DATA_SYNTAX" seqno="13" type="S" level="2" pack="0" scale="0" length="256"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="U_INT" seqno="13" type="S" level="2" pack="0" scale="0" length="256"
+<FLD name="U_INT" seqno="14" type="S" level="2" pack="0" scale="0" length="256"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="TEMPLATENAME" seqno="14" type="S" level="2" pack="0" scale="0" length="60"
+<FLD name="TEMPLATENAME" seqno="15" type="S" level="2" pack="0" scale="0" length="60"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UINHERIT" seqno="15" type="B" level="2" pack="0" scale="0" length="1"
+<FLD name="UINHERIT" seqno="16" type="B" level="2" pack="0" scale="0" length="1"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UALT_NAME" seqno="16" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UPURPOSE" seqno="17" type="S" level="2" pack="1" scale="0" length="1"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UWAORDER" seqno="17" type="N" level="2" pack="7" scale="0" length="5"
+<FLD name="UALT_NAME" seqno="18" type="S" level="2" pack="13" scale="0" length="128"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UCOMMENT" seqno="18" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UKEYWORDS" seqno="19" type="S" level="2" pack="13" scale="0" length="256"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="20" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
-<FLD name="TPLACTUAL" seqno="19" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="TPLACTUAL" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C1,0,0,0,,0,0,0,," />
-<FLD name="UDECLARATIONS" seqno="20" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UDECLARATIONS" seqno="23" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
-<FLD name="USCRIPT" seqno="21" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="USCRIPT" seqno="24" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
-<FLD name="STARTMOD" seqno="22" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="STARTMOD" seqno="25" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
-<FLD name="ENDMOD" seqno="23" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="ENDMOD" seqno="26" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
-<FLD name="NEXTFLD" seqno="24" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="NEXTFLD" seqno="27" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C6,0,0,0,,0,0,0,," />
-<FLD name="PREVFLD" seqno="25" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="PREVFLD" seqno="28" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C7,0,0,0,,0,0,0,," />
-<FLD name="ENCRYPT" seqno="26" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="ENCRYPT" seqno="29" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C8,0,0,0,,0,0,0,," />
-<FLD name="DECRYPT" seqno="27" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="DECRYPT" seqno="30" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C9,0,0,0,,0,0,0,," />
-<FLD name="DOC" seqno="28" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="DOC" seqno="31" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CA,0,0,0,,0,0,0,," />
-<FLD name="DETAIL" seqno="29" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="DETAIL" seqno="32" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CB,0,0,0,,0,0,0,," />
-<FLD name="MENU" seqno="30" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="MENU" seqno="33" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CC,0,0,0,,0,0,0,," />
-<FLD name="ERROR" seqno="31" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="ERROR" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CD,0,0,0,,0,0,0,," />
-<FLD name="UFORMAT" seqno="32" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UFORMAT" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CE,0,0,0,,0,0,0,," />
-<FLD name="DEFORMAT" seqno="33" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="DEFORMAT" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
-<FLD name="GENERAL" seqno="34" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="GENERAL" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D0,0,0,0,,0,0,0,," />
-<FLD name="GETFOCUS" seqno="35" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="GETFOCUS" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D1,0,0,0,,0,0,0,," />
-<FLD name="VCHANGED" seqno="36" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="VCHANGED" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D2,0,0,0,,0,0,0,," />
-<FLD name="VLDF" seqno="37" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="VLDF" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D3,0,0,0,,0,0,0,," />
-<FLD name="UFTRIGGERS" seqno="38" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UFTRIGGERS" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D5,0,0,0,,0,0,0,," />
-<FLD name="VALLAB" seqno="39" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="VALLAB" seqno="42" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D6,0,0,0,,0,0,0,," />
-<FLD name="INITVALUE" seqno="40" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="INITVALUE" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D7,0,0,0,,0,0,0,," />
-<FLD name="UPOPUP" seqno="41" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UPOPUP" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D8,0,0,0,,0,0,0,," />
-<FLD name="FRM_WIDGETTYPE" seqno="42" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="FRM_WIDGETTYPE" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\D9,0,0,0,,0,0,0,," />
-<FLD name="FRM_WIDGETPROPS" seqno="43" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="FRM_WIDGETPROPS" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DA,0,0,0,,0,0,0,," />
-<FLD name="DSP_WIDGETTYPE" seqno="44" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="DSP_WIDGETTYPE" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DB,0,0,0,,0,0,0,," />
-<FLD name="DSP_WIDGETPROPS" seqno="45" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="DSP_WIDGETPROPS" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DC,0,0,0,,0,0,0,," />
-<FLD name="USP_WIDGETTYPE" seqno="46" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="USP_WIDGETTYPE" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DD,0,0,0,,0,0,0,," />
-<FLD name="USP_WIDGETPROPS" seqno="47" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="USP_WIDGETPROPS" seqno="50" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DE,0,0,0,,0,0,0,," />
-<FLD name="HFM_WIDGETTYPE" seqno="48" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="HFM_WIDGETTYPE" seqno="51" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\DF,0,0,0,,0,0,0,," />
-<FLD name="HFM_WIDGETPROPS" seqno="49" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="HFM_WIDGETPROPS" seqno="52" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E0,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
@@ -567,7 +581,7 @@
 <DAT name="GRP">COMPLEX</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Attributes Only</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -591,7 +605,7 @@
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Bound HTML layout element to manipulate its attributes</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -615,7 +629,7 @@
 <DAT name="GRP">CONTROL_BUTTONS</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Clear Button</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -659,7 +673,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Button to clear retrieved data on the client</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -703,7 +717,7 @@ end</DAT>
 <DAT name="GRP">CONTROL_BUTTONS</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Clear Button</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -746,7 +760,7 @@ end
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Button to clear retrieved data on the server</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -789,7 +803,7 @@ end
 <DAT name="GRP">CONTROL_BUTTONS</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Creocc Button</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -834,7 +848,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Button to create occurrence on the client</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -879,7 +893,7 @@ end</DAT>
 <DAT name="GRP">CONTROL_BUTTONS</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Creocc Button</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -921,7 +935,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Button to create occurrence on the server</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -963,7 +977,7 @@ end</DAT>
 <DAT name="GRP">CONTROL_BUTTONS</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Remocc Button</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1006,7 +1020,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Button to remove occurrence on the client</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1049,7 +1063,7 @@ end</DAT>
 <DAT name="GRP">CONTROL_BUTTONS</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Remocc Button</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1089,7 +1103,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Button to remove occurrence on the server</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1129,7 +1143,7 @@ end</DAT>
 <DAT name="GRP">CONTROL_BUTTONS</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Retrieve Button</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1188,7 +1202,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Button to retrieve data from the database</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1247,7 +1261,7 @@ end</DAT>
 <DAT name="GRP">CONTROL_BUTTONS</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Store Button</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1350,7 +1364,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Button to save data into the database</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1453,7 +1467,7 @@ end</DAT>
 <DAT name="GRP">DATA_ENTRY</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR">Checkbox</DAT>
 <DAT name="U_DTYP">B</DAT>
@@ -1475,7 +1489,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Checkbox HTML input control (Boolean)</DAT>
 <DAT name="U_DTYP">B</DAT>
@@ -1496,7 +1510,7 @@ end</DAT>
 <DAT name="GRP">BUTTONS</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR">Button</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1515,7 +1529,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Read-only HTML button to activate a command</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1534,7 +1548,7 @@ end</DAT>
 <DAT name="GRP">BUTTONS</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR">Button</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1553,7 +1567,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Updatable  HTML button to activate a command</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1572,7 +1586,7 @@ end</DAT>
 <DAT name="GRP">DATA_ENTRY</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Date picker</DAT>
 <DAT name="U_DTYP">D</DAT>
@@ -1594,7 +1608,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>HTML input control for choosing date (Date)</DAT>
 <DAT name="U_DTYP">D</DAT>
@@ -1615,7 +1629,7 @@ end</DAT>
 <DAT name="GRP">DATA_ENTRY</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Dropdown List</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1635,7 +1649,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fixed drop-down list for ValRep (String)</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1654,7 +1668,7 @@ end</DAT>
 <DAT name="GRP">COMPLEX</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>DSP Container</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1673,7 +1687,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Container for embedded DSP</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1692,7 +1706,7 @@ end</DAT>
 <DAT name="GRP">DATA_ENTRY</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>String EditBox</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1717,7 +1731,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Single-line HTML input control (String, Unicode)</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1740,7 +1754,7 @@ end</DAT>
 <DAT name="GRP">DATA_DISPLAY</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Field used as Label</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1757,7 +1771,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Field that is used as label (String, Unicode)</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1774,7 +1788,7 @@ end</DAT>
 <DAT name="GRP">BUTTONS</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Flat Button</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1791,7 +1805,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Read-only hyperlink control to activate a command</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1808,7 +1822,7 @@ end</DAT>
 <DAT name="GRP">BUTTONS</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Flat Button</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1827,7 +1841,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Updatable hyperlink control to activate a command</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1846,7 +1860,7 @@ end</DAT>
 <DAT name="GRP">DATA_ENTRY</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>List box</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1869,7 +1883,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Multi-line HTML list box For ValRep (String)</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1890,7 +1904,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Spinner box HTML input control (Number)</DAT>
 <DAT name="U_DTYP">N</DAT>
@@ -1911,7 +1925,7 @@ end</DAT>
 <DAT name="GRP">DATA_ENTRY</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Password Field</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1934,7 +1948,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Masked single-line HTML input control (String, Unicode)</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -1956,7 +1970,7 @@ end</DAT>
 <DAT name="GRP">DATA_DISPLAY</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Picture Button</DAT>
 <DAT name="U_DTYP">I</DAT>
@@ -1972,7 +1986,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Read-only clickable image field (Image)</DAT>
 <DAT name="U_DTYP">I</DAT>
@@ -1988,7 +2002,7 @@ end</DAT>
 <DAT name="GRP">DATA_DISPLAY</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Picture Button</DAT>
 <DAT name="U_DTYP">I</DAT>
@@ -2006,7 +2020,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Updatable clickable image field (Image)</DAT>
 <DAT name="U_DTYP">I</DAT>
@@ -2024,7 +2038,7 @@ end</DAT>
 <DAT name="GRP">DATA_DISPLAY</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR">Picture</DAT>
 <DAT name="U_DTYP">I</DAT>
@@ -2040,7 +2054,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Read-only image (Image)</DAT>
 <DAT name="U_DTYP">I</DAT>
@@ -2056,7 +2070,7 @@ end</DAT>
 <DAT name="GRP">DATA_DISPLAY</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR">Picture</DAT>
 <DAT name="U_DTYP">I</DAT>
@@ -2074,7 +2088,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Updatable image (Image)</DAT>
 <DAT name="U_DTYP">I</DAT>
@@ -2092,7 +2106,7 @@ end</DAT>
 <DAT name="GRP">DATA_ENTRY</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Radio Group</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -2115,7 +2129,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>HTML radio button group for ValRep (String)</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -2136,7 +2150,7 @@ end</DAT>
 <DAT name="GRP">COMPLEX</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Raw HTML</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -2151,7 +2165,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Read-only control for HTML-encoded data</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -2166,7 +2180,7 @@ end</DAT>
 <DAT name="GRP">COMPLEX</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Raw HTML</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -2183,7 +2197,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Updatable control for HTML-encoded data</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -2200,7 +2214,7 @@ end</DAT>
 <DAT name="GRP">DATA_DISPLAY</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Static Text</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -2215,7 +2229,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Read-only text (String, Unicode)</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -2230,7 +2244,7 @@ end</DAT>
 <DAT name="GRP">DATA_DISPLAY</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Static Text</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -2247,7 +2261,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Updatable text (String, Unicode)</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -2264,7 +2278,7 @@ end</DAT>
 <DAT name="GRP">DATA_ENTRY</DAT>
 <DAT name="UBASE">CATEGORY</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Multi-line EditBox</DAT>
 <DAT name="U_DTYP">S</DAT>
@@ -2285,7 +2299,7 @@ end</DAT>
 <DAT name="GRP">ENT</DAT>
 <DAT name="UBASE">HIDDENINPALETTE</DAT>
 <DAT name="UFORM">UPALETTE_DSP</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Multi-line HTML input control (String, Unicode)</DAT>
 <DAT name="U_DTYP">S</DAT>

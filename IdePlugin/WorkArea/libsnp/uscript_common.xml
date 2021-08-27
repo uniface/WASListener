@@ -1,7 +1,7 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
 <!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
-<UNIFACE release="10.3" repversion="7" xmlengine="2.0">
+<UNIFACE release="10.4" repversion="8" xmlengine="2.0">
 <TABLE>
 <DSC name="ULIBSNP" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
  rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
@@ -11,22 +11,24 @@
  pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
 <FLD name="UMVERSION" seqno="3" type="N" level="2" pack="10" scale="0" length="2"
  pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
-<FLD name="UDESCR" seqno="4" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UDESCR" seqno="4" type="S" level="2" pack="13" scale="0" length="256"
  pointer="0" inum="0" ufocc="0" />
 <FLD name="UTIMESTAMP" seqno="5" type="E" level="2" pack="0" scale="0" length="15"
  pointer="0" inum="0" ufocc="0" />
 <FLD name="UPURPOSE" seqno="6" type="S" level="2" pack="1" scale="0" length="1"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UALT_NAME" seqno="7" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UALT_NAME" seqno="7" type="S" level="2" pack="13" scale="0" length="128"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UWAORDER" seqno="8" type="N" level="2" pack="7" scale="0" length="5"
+<FLD name="UKEYWORDS" seqno="8" type="S" level="2" pack="13" scale="0" length="256"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UCOMMENT" seqno="9" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UWAORDER" seqno="9" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="10" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
 </DSC>
 <OCC>
 <DAT name="UNAME">USCRIPT_COMMON</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Library of common Script snippets</DAT>
 <DAT name="UTIMESTAMP">2016-08-15T17:21:21.00</DAT>
@@ -37,34 +39,40 @@
 <TABLE>
 <DSC name="USNP" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
  rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
-<FLD name="UNAME" seqno="1" type="S" level="2" pack="0" scale="0" length="60"
+<FLD name="UTIMESTAMP" seqno="1" type="E" level="2" pack="0" scale="0" length="15"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UNAME" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
  pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,4" idxsnr="103,1" />
-<FLD name="USYNTAX" seqno="2" type="S" level="2" pack="0" scale="0" length="16"
+<FLD name="USYNTAX" seqno="3" type="S" level="2" pack="0" scale="0" length="16"
  pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,4" idxsnr="102,2" />
-<FLD name="ULIBRARY" seqno="3" type="S" level="2" pack="0" scale="0" length="60"
+<FLD name="ULIBRARY" seqno="4" type="S" level="2" pack="0" scale="0" length="60"
  pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,5" idxsnr="101,1" />
-<FLD name="UCATEGORY" seqno="4" type="S" level="2" pack="0" scale="0" length="32"
+<FLD name="UCATEGORY" seqno="5" type="S" level="2" pack="0" scale="0" length="32"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UKVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
+<FLD name="UKVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
  pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
-<FLD name="UMVERSION" seqno="6" type="N" level="2" pack="10" scale="0" length="2"
+<FLD name="UMVERSION" seqno="7" type="N" level="2" pack="10" scale="0" length="2"
  pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
-<FLD name="UDESCR" seqno="7" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UDESCR" seqno="8" type="S" level="2" pack="13" scale="0" length="256"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UALT_NAME" seqno="8" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UPURPOSE" seqno="9" type="S" level="2" pack="1" scale="0" length="1"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UWAORDER" seqno="9" type="N" level="2" pack="7" scale="0" length="5"
+<FLD name="UALT_NAME" seqno="10" type="S" level="2" pack="13" scale="0" length="128"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UCOMMENT" seqno="10" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UKEYWORDS" seqno="11" type="S" level="2" pack="13" scale="0" length="256"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="12" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="13" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
-<FLD name="UTEXT" seqno="11" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UTEXT" seqno="14" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
 <DAT name="UNAME">ACTIVATE_CLIENT</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>From server, instruct web client to activate operation (DSP)</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;webactivate&lt;/x&gt; instName.oper(p1,p2,..)&lt;/t&gt;</DAT>
@@ -77,7 +85,7 @@
 <DAT name="UNAME">ACTIVATE_HANDLE_COLL</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Activate collection operation via handle</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;x&gt;$collhandle&lt;/x&gt;(&lt;y&gt;"ENT"&lt;/y&gt;)-&gt;oper(p1,p2,..)&lt;/t&gt;</DAT>
@@ -110,7 +118,7 @@
 <DAT name="UNAME">ACTIVATE_HANDLE_CPT</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Activate component operation via handle</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;x&gt;$instancehandle&lt;/x&gt;(instName)-&gt;oper(p1,p2,..)&lt;/t&gt;</DAT>
@@ -148,7 +156,7 @@
 <DAT name="UNAME">ACTIVATE_HANDLE_OCC</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Activate occurrence operation via handle</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;x&gt;$occhandle&lt;/x&gt;(&lt;y&gt;"ENT"&lt;/y&gt;)-&gt;oper(p1,p2,..)&lt;/t&gt;</DAT>
@@ -181,7 +189,7 @@
 <DAT name="UNAME">ACTIVATE_STATEFULL</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Activate statefull component operation</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;activate&lt;/x&gt; instName.oper(p1,p2,..)&lt;/t&gt;</DAT>
@@ -222,7 +230,7 @@
 <DAT name="UNAME">ACTIVATE_STATELESS</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Activate stateless component operation</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;activate&lt;/x&gt;/stateless instName.oper(p1,p2,..)&lt;/t&gt;</DAT>
@@ -254,7 +262,7 @@
 <DAT name="UNAME">COPY_OCCURRENCE</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Copy occurrence between compatible entities</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>Copy occurrence between compatible entities</DAT>
@@ -270,7 +278,7 @@
 <DAT name="UNAME">DELETE_INSTANCE_BY_HANDLE</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Delete component instance via handle</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;instHandle = &lt;y&gt;""&lt;/y&gt;&lt;/t&gt;</DAT>
@@ -283,7 +291,7 @@
 <DAT name="UNAME">DELETE_INSTANCE_BY_NAME</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Delete component instance via instance name</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;deleteinstance&lt;/x&gt; instName&lt;/t&gt;</DAT>
@@ -300,7 +308,7 @@
 <DAT name="UNAME">ENTRY</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Function or Entry declaration</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;entry&lt;/x&gt; myFunction&lt;/t&gt;</DAT>
@@ -321,7 +329,7 @@ end</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
 <DAT name="UCATEGORY">Constructions</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Iterate entity occurrences</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;forentity&lt;/x&gt; &lt;y&gt;"ENT"&lt;y&gt;&lt;/t&gt;</DAT>
@@ -341,7 +349,7 @@ end</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
 <DAT name="UCATEGORY">Constructions</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Iterate indexed list</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;forlist&lt;/x&gt; item &lt;x&gt;in&lt;/x&gt; list&lt;/t&gt;</DAT>
@@ -356,7 +364,7 @@ end</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
 <DAT name="UCATEGORY">Constructions</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Iterate associated list</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;forlist&lt;/x&gt;/id itemId, itemValue &lt;x&gt;in&lt;/x&gt; list&lt;/t&gt;</DAT>
@@ -371,7 +379,7 @@ end</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
 <DAT name="UCATEGORY">Constructions</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>If-elseif-else block</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;if&lt;/x&gt; (condition)&lt;/t&gt;</DAT>
@@ -393,7 +401,7 @@ end</DAT>
 <DAT name="UNAME">MESSAGE_CLIENT</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>From server, instruct web client to show message (DSP)</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;webmessage&lt;/x&gt; &lt;y&gt;"Message text here..."&lt;/y&gt;&lt;/t&gt;</DAT>
@@ -404,7 +412,7 @@ end</DAT>
 <DAT name="UNAME">NEWINSTANCE_GIVEN_NAME</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Instantiate component using provided instance name</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;newinstance&lt;/x&gt; &lt;y&gt;"CPTNAME"&lt;/y&gt;, "INST"&lt;/t&gt;</DAT>
@@ -422,7 +430,7 @@ end</DAT>
 <DAT name="UNAME">NEWINSTANCE_RETURN_HANDLE</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Instantiate component and return handle</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;newinstance&lt;/x&gt; &lt;y&gt;"CPTNAME"&lt;/y&gt;, instHandle&lt;/t&gt;</DAT>
@@ -438,7 +446,7 @@ end</DAT>
 <DAT name="UNAME">NEWINSTANCE_RETURN_NAME</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Instantiate component and return instance name</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;newinstance&lt;/x&gt; &lt;y&gt;"CPTNAME"&lt;/y&gt;, instName&lt;/t&gt;</DAT>
@@ -454,7 +462,7 @@ end</DAT>
 <DAT name="UNAME">OPER_DSP_CLIENT</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>DSP client-side operation declaration with web visibility</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;weboperation&lt;/x&gt; myOperation&lt;/t&gt;</DAT>
@@ -472,7 +480,7 @@ end</DAT>
 <DAT name="UNAME">OPER_DSP_SERVER</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>DSP server-side operation declaration with web visibility</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;a&gt;&lt;/a&gt;&lt;t&gt;&lt;x&gt;public web operation&lt;/x&gt; myOperation&lt;/t&gt;</DAT>
@@ -500,7 +508,7 @@ end</DAT>
 <DAT name="UNAME">OPER_PARTNER</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Operation declaration with component visibility</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;partner operation&lt;/x&gt; myOperation&lt;/t&gt;</DAT>
@@ -522,7 +530,7 @@ end</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>Triggers, Component,</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Operation declaration with public visibility</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;public operation&lt;/x&gt; myOperation&lt;/t&gt;</DAT>
@@ -543,7 +551,7 @@ end</DAT>
 <DAT name="UNAME">PARAMS</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Script module parameter declaration</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;params&lt;/x&gt; &lt;/t&gt;...&lt;t&gt; &lt;x&gt;endparams&lt;/x&gt;&lt;/t&gt;</DAT>
@@ -568,7 +576,7 @@ endparams</DAT>
 <DAT name="UNAME">POSTMESSAGE_EXTERNAL</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Communicate between instances in difference processes</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;postmessage&lt;/x&gt; &lt;y&gt;"server:INSTNAME"&lt;/y&gt;,id,data&lt;/y&gt;</DAT>
@@ -588,7 +596,7 @@ endparams</DAT>
 <DAT name="UNAME">POSTMESSAGE_INTERNAL</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Communicate between instances within single process</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;postmessage&lt;/x&gt; &lt;y&gt;"INSTNAME"&lt;/y&gt;,id,data&lt;/y&gt;</DAT>
@@ -608,7 +616,7 @@ endparams</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
 <DAT name="UCATEGORY">Constructions</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Repeat-until block</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;repeat&lt;/x&gt; &lt;/t&gt;...&lt;t&gt; &lt;x&gt;until&lt;/x&gt; (condition)&lt;/t&gt;</DAT>
@@ -622,7 +630,7 @@ endparams</DAT>
 <DAT name="UNAME">RETURNS</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Script module return datatype specification</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;returns&lt;/x&gt; datatype&lt;/t&gt;</DAT>
@@ -634,7 +642,7 @@ returns string</DAT>
 <DAT name="UNAME">SCOPE</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Web module scope declaration</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;scope&lt;/x&gt; &lt;/t&gt;...&lt;t&gt; &lt;x&gt;endscope&lt;/x&gt;&lt;/t&gt;</DAT>
@@ -654,7 +662,7 @@ endscope</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
 <DAT name="UCATEGORY">Constructions</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Select case block</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;selectcase&lt;/x&gt; var&lt;/t&gt;</DAT>
@@ -675,7 +683,7 @@ endscope</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
 <DAT name="UCATEGORY">Struct</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Function that adds node to struct and returns a reference to it</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;node = addStructNode()&lt;/t&gt;</DAT>
@@ -706,7 +714,7 @@ end</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
 <DAT name="UCATEGORY">Struct</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Function that copies the struct and returns a reference to it</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;target = copyStruct(source)&lt;/t&gt;</DAT>
@@ -728,7 +736,7 @@ end</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
 <DAT name="UCATEGORY">Struct</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Iterate struct nodes</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;for&lt;/x&gt; i = 1 to vStruct-&gt;$membercount&lt;/t&gt;</DAT>
@@ -745,7 +753,7 @@ end</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
 <DAT name="UCATEGORY">Struct</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Iterate struct references</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;for&lt;/x&gt; i = 1 to vStruct-&gt;$collsize&lt;/t&gt;</DAT>
@@ -762,7 +770,7 @@ end</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
 <DAT name="UCATEGORY">Struct</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Trace/debug struct</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;putmess&lt;/x&gt; struct-&gt;$dbgstring&lt;/t&gt;</DAT>
@@ -772,7 +780,7 @@ end</DAT>
 <DAT name="UNAME">VARIABLES</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Script module variable declaration</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;variables&lt;/x&gt; &lt;/t&gt;...&lt;t&gt; &lt;x&gt;endvariables&lt;/x&gt;&lt;/t&gt;</DAT>
@@ -790,7 +798,7 @@ endvariables</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
 <DAT name="UCATEGORY">Constructions</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>While block</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;while&lt;/x&gt; (condition)&lt;/t&gt;</DAT>

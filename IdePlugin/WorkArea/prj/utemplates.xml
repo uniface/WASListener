@@ -1,7 +1,7 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
 <!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
-<UNIFACE release="10.3" repversion="7" xmlengine="2.0">
+<UNIFACE release="10.4" repversion="8" xmlengine="2.0">
 <TABLE>
 <DSC name="UPROJECT" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
  rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
@@ -13,7 +13,7 @@
  pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
 <FLD name="UMVERSION" seqno="4" type="N" level="2" pack="10" scale="0" length="2"
  pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
-<FLD name="UDESCR" seqno="5" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UDESCR" seqno="5" type="S" level="2" pack="13" scale="0" length="256"
  pointer="0" inum="0" ufocc="0" />
 <FLD name="UUARNAME" seqno="6" type="S" level="2" pack="0" scale="0" length="60"
  pointer="0" inum="0" ufocc="0" />
@@ -21,25 +21,27 @@
  pointer="0" inum="0" ufocc="0" />
 <FLD name="UPURPOSE" seqno="8" type="S" level="2" pack="1" scale="0" length="1"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UALT_NAME" seqno="9" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UALT_NAME" seqno="9" type="S" level="2" pack="13" scale="0" length="128"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UWAORDER" seqno="10" type="N" level="2" pack="7" scale="0" length="5"
+<FLD name="UKEYWORDS" seqno="10" type="S" level="2" pack="13" scale="0" length="256"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UCOMMENT" seqno="11" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UWAORDER" seqno="11" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UCOMMENT" seqno="12" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",0,0,0,,1,0,1,\1D,0,0,0,," />
-<FLD name="UUARREADME" seqno="12" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UUARREADME" seqno="13" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
-<FLD name="USTANDARDOUT" seqno="13" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="USTANDARDOUT" seqno="14" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C3,0,0,0,,0,0,0,," />
-<FLD name="UCONNECTIVITYOUT" seqno="14" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UCONNECTIVITYOUT" seqno="15" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C4,0,0,0,,0,0,0,," />
-<FLD name="UEXTERNALOUT" seqno="15" type="S" level="2" pack="141" scale="0" length="0"
+<FLD name="UEXTERNALOUT" seqno="16" type="S" level="2" pack="141" scale="0" length="0"
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C5,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
 <DAT name="ULABEL">UTEMPLATES</DAT>
-<DAT name="UTIMESTAMP">2018-06-18T16:12:36.00</DAT>
-<DAT name="UKVERSION">6</DAT>
+<DAT name="UTIMESTAMP">2021-05-04T16:29:29.00</DAT>
+<DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Uniface default templates and palettes (hidden)</DAT>
 <DAT name="UPURPOSE">H</DAT>
@@ -56,9 +58,9 @@
  pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
 <FLD name="UMVERSION" seqno="4" type="N" level="2" pack="10" scale="0" length="2"
  pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
-<FLD name="UDESCR" seqno="5" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UDESCR" seqno="5" type="S" level="2" pack="13" scale="0" length="256"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UALT_NAME" seqno="6" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UALT_NAME" seqno="6" type="S" level="2" pack="13" scale="0" length="128"
  pointer="0" inum="0" ufocc="0" />
 <FLD name="UWAORDER" seqno="7" type="N" level="2" pack="7" scale="0" length="5"
  pointer="0" inum="0" ufocc="0" />
@@ -107,9 +109,9 @@
  pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
 <FLD name="UMVERSION" seqno="4" type="N" level="2" pack="10" scale="0" length="2"
  pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
-<FLD name="UDESCR" seqno="5" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UDESCR" seqno="5" type="S" level="2" pack="13" scale="0" length="256"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UALT_NAME" seqno="6" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UALT_NAME" seqno="6" type="S" level="2" pack="13" scale="0" length="128"
  pointer="0" inum="0" ufocc="0" />
 <FLD name="UWAORDER" seqno="7" type="N" level="2" pack="7" scale="0" length="5"
  pointer="0" inum="0" ufocc="0" />
@@ -270,9 +272,9 @@
  pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
 <FLD name="UMVERSION" seqno="5" type="N" level="2" pack="10" scale="0" length="2"
  pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
-<FLD name="UDESCR" seqno="6" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UDESCR" seqno="6" type="S" level="2" pack="13" scale="0" length="256"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UALT_NAME" seqno="7" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UALT_NAME" seqno="7" type="S" level="2" pack="13" scale="0" length="128"
  pointer="0" inum="0" ufocc="0" />
 <FLD name="UWAORDER" seqno="8" type="N" level="2" pack="7" scale="0" length="5"
  pointer="0" inum="0" ufocc="0" />
@@ -329,9 +331,9 @@
  pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
 <FLD name="UMVERSION" seqno="4" type="N" level="2" pack="10" scale="0" length="2"
  pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
-<FLD name="UDESCR" seqno="5" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UDESCR" seqno="5" type="S" level="2" pack="13" scale="0" length="256"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UALT_NAME" seqno="6" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UALT_NAME" seqno="6" type="S" level="2" pack="13" scale="0" length="128"
  pointer="0" inum="0" ufocc="0" />
 <FLD name="UWAORDER" seqno="7" type="N" level="2" pack="7" scale="0" length="5"
  pointer="0" inum="0" ufocc="0" />
@@ -362,9 +364,9 @@
  pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
 <FLD name="UMVERSION" seqno="4" type="N" level="2" pack="10" scale="0" length="2"
  pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
-<FLD name="UDESCR" seqno="5" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UDESCR" seqno="5" type="S" level="2" pack="13" scale="0" length="256"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UALT_NAME" seqno="6" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UALT_NAME" seqno="6" type="S" level="2" pack="13" scale="0" length="128"
  pointer="0" inum="0" ufocc="0" />
 <FLD name="UWAORDER" seqno="7" type="N" level="2" pack="7" scale="0" length="5"
  pointer="0" inum="0" ufocc="0" />
@@ -395,9 +397,9 @@
  pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
 <FLD name="UMVERSION" seqno="4" type="N" level="2" pack="10" scale="0" length="2"
  pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
-<FLD name="UDESCR" seqno="5" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UDESCR" seqno="5" type="S" level="2" pack="13" scale="0" length="256"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UALT_NAME" seqno="6" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UALT_NAME" seqno="6" type="S" level="2" pack="13" scale="0" length="128"
  pointer="0" inum="0" ufocc="0" />
 <FLD name="UWAORDER" seqno="7" type="N" level="2" pack="7" scale="0" length="5"
  pointer="0" inum="0" ufocc="0" />
@@ -506,9 +508,9 @@
  pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
 <FLD name="UMVERSION" seqno="4" type="N" level="2" pack="10" scale="0" length="2"
  pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
-<FLD name="UDESCR" seqno="5" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UDESCR" seqno="5" type="S" level="2" pack="13" scale="0" length="256"
  pointer="0" inum="0" ufocc="0" />
-<FLD name="UALT_NAME" seqno="6" type="S" level="2" pack="13" scale="0" length="64"
+<FLD name="UALT_NAME" seqno="6" type="S" level="2" pack="13" scale="0" length="128"
  pointer="0" inum="0" ufocc="0" />
 <FLD name="UWAORDER" seqno="7" type="N" level="2" pack="7" scale="0" length="5"
  pointer="0" inum="0" ufocc="0" />
