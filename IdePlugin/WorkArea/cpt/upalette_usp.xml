@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
-<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!-- Created by Uniface - (C) Rocket Software B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
 <UNIFACE release="10.4" repversion="8" xmlengine="2.0">
 <TABLE>
@@ -143,7 +143,7 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2020-01-28T11:42:07.00</DAT>
+<DAT name="UTIMESTAMP">2022-05-24T10:28:00.00</DAT>
 <DAT name="ULABEL">UPALETTE_USP</DAT>
 <DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">3</DAT>
@@ -157,7 +157,7 @@
 <DAT name="UTRANSACT">6</DAT>
 <DAT name="UPURPOSE">P</DAT>
 <DAT name="FORMPIC" xml:space='preserve'>
- &uFRM;TYP=E&uSEP;NAM=ENT.HIDDENINPALETTE&uSEP;WID=22&uSEP;HEI=43&uSEP;HOC=22&uSEP;VOC=43&uFRM;
+ &uFRM;TYP=E&uSEP;NAM=ENT.HIDDENINPALETTE&uSEP;WID=22&uSEP;HEI=45&uSEP;HOC=22&uSEP;VOC=45&uFRM;
   &uFRM;TYP=E&uSEP;NAM=ENTITY.NOMODEL&uSEP;WID=2&uSEP;HEI=1&uSEP;HOC=2&uSEP;VOC=1&uFRM;
 
   &uFRM;TYP=F&uSEP;NAM=EDITBOX&uSEP;WID=20&uSEP;HEI=1&uFRM;
@@ -197,6 +197,8 @@
   &uFRM;TYP=F&uSEP;NAM=BTN_RETRIEVE&uSEP;WID=20&uSEP;HEI=1&uFRM;
 
   &uFRM;TYP=F&uSEP;NAM=BTN_STORE&uSEP;WID=20&uSEP;HEI=1&uFRM;
+
+  &uFRM;TYP=F&uSEP;NAM=BTN_REMOVE_SELECTED&uSEP;WID=20&uSEP;HEI=1&uFRM;
 
   &uFRM;TYP=L&uSEP;NAM=LABEL&uSEP;WID=20&uSEP;HEI=1&uFRM;</DAT>
 <DAT name="HTMLSKELETON" xml:space='preserve'>&lt;!-- This is a palette object; layout never used and therefore empty --&gt;</DAT>
@@ -588,13 +590,14 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;Clear</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>trigger detail
+throws
+public web
 ; Clears the retrieved occurrences from the entity.
 ; Code executed on the server.
 
 ; TO DO:
 ;   1. Define this field in the structure as a child of the entity it needs to control.
-;   2. Because this field is static, you can define its HTML element in the layout outside of the occurrence repetition,
-;      so that it is not repeated in each occurrence:
+;   2. This field should be defined as static, which allows to you define its HTML element in the layout outside of the occurrence repetition:
 ;      &lt;x-entity name="MYENTITY.MYMODEL"&gt;
 ;        &lt;x-subst type="submit" name="BTN_CLEAR.MYENTITY.MYMODEL" /&gt;
 ;        &lt;x-occurrence name="MYENTITY.MYMODEL"&gt;
@@ -667,6 +670,8 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;Create occurrence</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>trigger detail
+throws
+public web
 ; Creates a new occurrence after current occurrence of the current entity.
 ; Code executed on the server.
 
@@ -680,11 +685,111 @@ end</DAT>
 ;      &lt;/x-occurrence&gt;
 
   creocc "&lt;$entname&gt;", $curocc("&lt;$entname&gt;")
+
+#ifdefined option_1
   ; Insert code to generate any technical keys, e.g.
   ; KEYFIELD.&lt;$entname&gt; = $uuid
+#endif
 
 end</DAT>
 <DAT name="INITVALUE">Insert</DAT>
+<DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
+<DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
+<DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
+</OCC>
+<OCC>
+<DAT name="ULABEL">BTN_REMOVE_SELECTED</DAT>
+<DAT name="GRP">ENT</DAT>
+<DAT name="UBASE">HIDDENINPALETTE</DAT>
+<DAT name="UFORM">UPALETTE_USP</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">4</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Button to save data to the database</DAT>
+<DAT name="U_DTYP">S</DAT>
+<DAT name="IS_STATIC">T</DAT>
+<DAT name="IS_CONTROL">F</DAT>
+<DAT name="U_INT">W*</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;Store</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger detail
+throws
+public web
+; Stores modified occurrences into the database and deletes any occurrences marked for deletion from the database.
+; Code is executed on the server.
+
+; TO DO:
+;   1. Define this button field in the structure as a child of the entity it needs to control.
+;      Define this field as static so it can be added in the layout outside the occurrences repetition.
+;   2. Add an additional boolean field (e.g. checkbox) to the entity in the component structure.
+;      This field is used to select the occurrences to be removed and should not be static.
+;   3. Add the HTML of the button field to layout outside of the occurrence repetition,
+;      and add the HTML of the boolean checkbox field inside the occurrence repetition:
+;      &lt;x-entity name="MYENTITY.MYMODEL"&gt;
+;        &lt;x-subst type="submit" name="BTN_REMOVE_SELECTED.MYENTITY.MYMODEL" /&gt;
+;        &lt;x-occurrence name="MYENTITY.MYMODEL"&gt;
+;          &lt;x-subst type="checkbox" name="CHK_SELECTED.MYENTITY.MYMODEL" /&gt;
+;          More fields here...
+;        &lt;/x-occurrence&gt;
+;      &lt;/x-entity&gt;
+;   4. Add the following Occurrence Script to the entity, so we can delete the occurrence via its handle:
+;      partner operation remocc
+;      throws
+;        remocc "&lt;$entname&gt;", 0
+;      end
+;   5. This trigger reports in the message frame, which you need to display in your layout using the following HTML:
+;       &lt;x-subst type="function" name="$putmess"&gt;
+;         putmess area - display the contents of the message frame
+;       &lt;/x-subst&gt;
+
+variables
+  string vProcErrorContext
+endvariables
+
+  ; Mark the checked occurrences as selected
+  setocc "&lt;$entname&gt;", 1
+  forentity "&lt;$entname&gt;"
+    if (CHK_SELECTED.&lt;$entname&gt;)
+      $occhandle(&lt;$entname&gt;)-&gt;$selected = 1
+    endif
+  endfor
+  ; Repeat removing the first selected occurrence until all selected occurrences are removed
+  while (ustruct::isStruct($collhandle(&lt;$entname&gt;)-&gt;$selectedoccs))
+    $collhandle(&lt;$entname&gt;)-&gt;$selectedoccs{1}-&gt;remocc()
+    ; For this operation to work, add the following code to the Occurrence Script container of the entity:
+    ; partner operation remocc
+    ; throws
+    ;   remocc "&lt;$entname&gt;", 0
+    ; end
+  endwhile
+
+  ; Initialize message frame so it can be used for logging 
+  clrmess
+
+  ; Validate data before store to separate validation errors from store errors
+  ; Validation errors are reported back to the data and will be shown by the DSP web client
+  try
+    validate/e "&lt;$entname&gt;"
+    try
+      store/e "&lt;$entname&gt;"
+      if ($status == 1)
+        putmess "No modifications made or entity read-only."
+      else
+        commit
+        putmess "Store successful."
+      endif
+    catch
+      vProcErrorContext = $procerrorcontext
+      rollback
+      throw $item("ERROR", vProcErrorContext), "Rethrow", vProcErrorContext
+    endtry
+  catch &lt;UGENERR_4GL_SAYS_ERROR&gt;, &lt;UVALERR_SYNTAX&gt;, &lt;UVALERR_CONSTRAINT&gt;, &lt;UVALERR_KEY_PROFILE&gt;, &lt;UVALERR_KEY_EMPTY&gt;
+    ; Validation errors are already reported by the error trigger -&gt; ignore
+  endtry
+
+  return 0
+
+end</DAT>
+<DAT name="INITVALUE">Store</DAT>
 <DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
 <DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
 <DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
@@ -720,7 +825,7 @@ public web
 ;          ...
 ;        &lt;/x-occurrence&gt;
 ;      &lt;/x-entity&gt;
-;   3. This trigger reports in the mesasage frame, make sure to visualize it in your layout, using the following html:
+;   3. This trigger reports in the message frame, make sure to visualize it in your layout, using the following html:
 ;       &lt;x-subst type="function" name="$putmess"&gt;
 ;         putmess area - display the contents of the message frame
 ;       &lt;/x-subst&gt;
@@ -730,7 +835,7 @@ variables
 endvariables
 
 #ifdefined option_1
-  ; Optionally copy single ooccurrence from a dedicated profile entity to be used as profile
+  ; Optionally copy single occurrence from a dedicated profile entity to be used as profile
   clear/e "&lt;$entname&gt;"
   putlistitems/occ vProfiles, "PROFILE_ENTITY"
   getlistitems/occ/init vProfiles, "&lt;$entname&gt;"
@@ -768,24 +873,22 @@ end</DAT>
 <DAT name="IS_CONTROL">F</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;Retrieve</DAT>
-<DAT name="UDECLARATIONS" xml:space='preserve'>#ifundefined ENTNAME
-  #define ENTNAME = &lt;$entname&gt;
-#endif</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>trigger detail
+throws
+public web
 ; Retrieves data from the database and loads it as occurrences into the entity.
 ; Code is executed on the server.
 
 ; TO DO:
 ;   1. Define this field in the structure as a child of the entity it needs to control.
-;   2. Because this field is static, you can define its HTML element in the layout outside of the occurrence repetition,
-;      so that it does not repeat with occurrence repetition, like:
+;   2. This field should be defined as static, which allows to you define its HTML element in the layout outside of the occurrence repetition:
 ;      &lt;x-entity name="MYENTITY.MYMODEL"&gt;
 ;        &lt;x-subst type="submit" name="BTN_RETRIEVE.MYENTITY.MYMODEL" /&gt;
 ;        &lt;x-occurrence name="MYENTITY.MYMODEL"&gt;
 ;          ...
 ;        &lt;/x-occurrence&gt;
 ;      &lt;/x-entity&gt;
-;   3. This trigger reports in the mesasage frame, make sure to visualize it in your layout, using the following html:
+;   3. This trigger reports in the message frame, make sure to visualize it in your layout, using the following html:
 ;       &lt;x-subst type="function" name="$putmess"&gt;
 ;         putmess area - display the contents of the message frame
 ;       &lt;/x-subst&gt;
@@ -795,21 +898,18 @@ variables
 endvariables
 
 #ifdefined option_1
-  ; Optionally copy single ooccurrence from a dedicated profile entity to be used as profile
+  ; Optionally copy a single occurrence from another entity to be used as profile input
   clear/e "&lt;$entname&gt;"
   putlistitems/occ vProfiles, "PROFILE_ENTITY"
   getlistitems/occ/init vProfiles, "&lt;$entname&gt;"
 #endif
 
-  retrieve/e "&lt;$entname&gt;"
-  selectcase $procerror
-  case 0
-    ; ok
-  case -2, -4
-    putmess "Retrieve: No data found in the database."
-  elsecase
-    putmess "Retrieve: Error occurred - (%%($procerror))."
-  endselectcase
+  ; Retrieve data from database
+  try
+    retrieve/e "&lt;$entname&gt;"
+  catch &lt;UIOSERR_OCC_NOT_FOUND&gt;, &lt;UIOSERR_OPEN_FAILURE&gt;  ; -2, -4
+    putmess "Retrieve failed - No data found in the database."
+  endtry
 
   return 0
 
@@ -852,7 +952,7 @@ public web
 ;          ...
 ;        &lt;/x-occurrence&gt;
 ;      &lt;/x-entity&gt;
-;   4. This trigger reports in the mesasage frame, make sure to visualize it in your layout, using the following html:
+;   4. This trigger reports in the message frame, make sure to visualize it in your layout, using the following html:
 ;       &lt;x-subst type="function" name="$putmess"&gt;
 ;         putmess area - display the contents of the message frame
 ;       &lt;/x-subst&gt;
@@ -956,101 +1056,52 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;Store</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>trigger detail
+throws
+public web
 ; Stores modified occurrences into the database and deletes any occurrences marked for deletion from the database.
 ; Code is executed on the server.
 
 ; TO DO:
 ;   1. Define this field in the structure as a child of the entity it needs to control.
-;   2. Optionally, define a component variable of type struct and report any validation errors to it in the error triggers of the entity and field.
-;      Define a constant DATAERRORS with the name of this component variable.
-;   3. Because this field is static, you can define its HTML element in the layout outside of the occurrence repetition,
-;      so that it is not repeated in each occurrence:
+;   2. This field should be defined as static, which allows to you define its HTML element in the layout outside of the occurrence repetition:
 ;      &lt;x-entity name="MYENTITY.MYMODEL"&gt;
 ;        &lt;x-subst type="submit" name="BTN_STORE.MYENTITY.MYMODEL" /&gt;
 ;        &lt;x-occurrence name="MYENTITY.MYMODEL"&gt;
 ;          ...
 ;        &lt;/x-occurrence&gt;
 ;      &lt;/x-entity&gt;
-;   4. This trigger reports in the message frame, which you need to display in your layout using the following HTML:
+;   3. This trigger reports in the message frame, which you need to display in your layout using the following HTML:
 ;       &lt;x-subst type="function" name="$putmess"&gt;
 ;         putmess area - display the contents of the message frame
 ;       &lt;/x-subst&gt;
 
-#ifdefined option_1
-  ; Delete the selected occurrences (or perform some other action on the selected occurrences)
-  ; TO DO:
-  ;   1. Add an additional boolean field (e.g. checkbox) to the structure of the entity to be controlled.
-  ;      This field is used to hold the 'selected' occurrences.
-  ;   2. Define the HTML element for this field in the layout inside the occurrence repetition,
-  ;      so that it is not repeated in each occurrence:
-  ;      &lt;x-entity name="MYENTITY.MYMODEL"&gt;
-  ;        &lt;x-occurrence name="MYENTITY.MYMODEL"&gt;
-  ;          ...
-  ;          &lt;x-subst type="checkbox" name="CHK_SELECTED.MYENTITY.MYMODEL" /&gt;
-  ;          ...
-  ;        &lt;/x-occurrence&gt;
-  ;      &lt;/x-entity&gt;
-
-  ; Mark the selected occurrences for deletion
-  setocc "&lt;$entname&gt;", 1
-  forentity "&lt;$entname&gt;"
-    if (CHK_SELECTED.&lt;$entname&gt;)
-      remocc "&lt;$entname&gt;", 0
-    endif
-  endfor
-#endif
+variables
+  string vProcErrorContext
+endvariables
 
   ; Initialize message frame so it can be used for logging 
   clrmess
 
-#ifdefined DATAERRORS
-  ; Initialize a component variable holding the data validation error as reported by the entity and field error triggers
-  ; Note that this needs to be done before store initiation.
-  ; (See 'trigger error' snippets for USPs)
-  &lt;DATAERRORS&gt; = $newstruct
-  &lt;DATAERRORS&gt;-&gt;$name = "Data validation errors"
-#endif
-
-  ; Initiate the store
-  store/e "&lt;$entname&gt;"
-  selectcase $status
-  case 0
-    ; Store successful -&gt; report
-    putmess "Store successful."
-    commit
-    selectcase $procerror
-    case 0
-      ; Commit successful -&gt; report
-	  putmess "Commit successful."
-    elsecase
-      ; Commit failed -&gt; report
-	  putmess "Commit failed  ($procerror=%%($procerror))."
-	  rollback
-    endselectcase
-  case 1
-    ; No modifications -&gt; report
-    ; Instruct browser to show the error log
-    putmess "No modifications."
-  elsecase
-    ; store failed -&gt; report $procerror (more information also available in $procerrorcontext)
-    putmess "Store failed ($procerror=%%($procerror))."
-
-#ifdefined DATAERRORS
-    ; Also report the validation errors that might have been reported in &lt;DATAERRORS&gt;
-    putmess &lt;DATAERRORS&gt;-&gt;$dbgstring
-#endif
-
-    ; Perfromm rollback
-    rollback
-    selectcase $procerror
-    case 0
-      ; rollback ok
-      putmess "Rollback successful."
-    elsecase
-      ; rollback also failed
-      putmess "Rollback failed ($procerror=%%($procerror))."
-    endselectcase
-  endselectcase
+  ; Validate data before store to separate validation errors from store errors
+  ; Validation errors are reported back to the data and will be shown by the DSP web client
+  try
+    validate/e "&lt;$entname&gt;"
+    try
+      store/e "&lt;$entname&gt;"
+      if ($status == 1)
+        putmess "No modifications made or entity read-only."
+      else
+        commit
+        putmess "Store successful."
+      endif
+    catch
+      vProcErrorContext = $procerrorcontext
+      rollback
+      throw $item("ERROR", vProcErrorContext), "Rethrow", vProcErrorContext
+    endtry
+  catch &lt;UGENERR_4GL_SAYS_ERROR&gt;, &lt;UVALERR_SYNTAX&gt;, &lt;UVALERR_CONSTRAINT&gt;, &lt;UVALERR_KEY_PROFILE&gt;, &lt;UVALERR_KEY_EMPTY&gt;
+    ; Validation errors are already reported by the error trigger -&gt; ignore
+  endtry
 
   return 0
 
@@ -1091,8 +1142,6 @@ end</DAT>
 <DAT name="IS_STATIC">F</DAT>
 <DAT name="IS_CONTROL">F</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt;CheckBox</DAT>
-<DAT name="USCRIPT" xml:space='preserve'>; Triggers fired by widget:
-; None, use command button to submit data</DAT>
 <DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="DSP_WIDGETTYPE">CHECKBOX</DAT>
 <DAT name="USP_WIDGETTYPE">U_CHECKBOX</DAT>
@@ -1165,7 +1214,14 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Button: &lt;/c&gt;&lt;/t&gt;Command Button</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Typical triggers fired by this widget:
-; trigger detail</DAT>
+trigger detail
+throws
+public web
+
+  ; Your code here...
+
+end
+</DAT>
 <DAT name="INITVALUE" xml:space='preserve'>Button text</DAT>
 <DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
 <DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
@@ -1203,8 +1259,6 @@ end</DAT>
 <DAT name="IS_CONTROL">F</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt;Dropdown List</DAT>
-<DAT name="USCRIPT" xml:space='preserve'>; Triggers fired by widget:
-; None, use command button to submit data</DAT>
 <DAT name="DSP_WIDGETTYPE">DROPDOWNLIST</DAT>
 <DAT name="USP_WIDGETTYPE">U_LIST</DAT>
 </OCC>
@@ -1240,8 +1294,6 @@ end</DAT>
 <DAT name="IS_CONTROL">F</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt;EditBox (Single-line)</DAT>
-<DAT name="USCRIPT" xml:space='preserve'>; Triggers fired by widget:
-; None, use command button to submit data</DAT>
 <DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
@@ -1278,8 +1330,6 @@ end</DAT>
 <DAT name="IS_CONTROL">F</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt;File Upload</DAT>
-<DAT name="USCRIPT" xml:space='preserve'>; Triggers fired by widget:
-; None, use command button to submit data</DAT>
 <DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="DSP_WIDGETTYPE">STATICTEXT_UPDATABLE</DAT>
 <DAT name="USP_WIDGETTYPE">U_FILEUPLOAD</DAT>
@@ -1298,7 +1348,8 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>Flat Button / Hyperlink</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Typical triggers fired by this widget:
-; trigger detail</DAT>
+; trigger detail
+</DAT>
 <DAT name="DSP_WIDGETTYPE">FLATBUTTON</DAT>
 <DAT name="USP_WIDGETTYPE">U_HYPERLINK</DAT>
 <DAT name="USP_WIDGETPROPS">SYNC=1</DAT>
@@ -1316,8 +1367,6 @@ end</DAT>
 <DAT name="IS_CONTROL">F</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Button: &lt;/c&gt;&lt;/t&gt;Hyperlink</DAT>
-<DAT name="USCRIPT" xml:space='preserve'>; Typical triggers fired by this widget:
-; trigger detail</DAT>
 <DAT name="INITVALUE" xml:space='preserve'>Link text</DAT>
 <DAT name="DSP_WIDGETTYPE">FLATBUTTON</DAT>
 <DAT name="USP_WIDGETTYPE">U_HYPERLINK</DAT>
@@ -1355,8 +1404,6 @@ end</DAT>
 <DAT name="IS_CONTROL">F</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt;Listbox</DAT>
-<DAT name="USCRIPT" xml:space='preserve'>; Triggers fired by widget:
-; None, use command button to submit data</DAT>
 <DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="DSP_WIDGETTYPE">LISTBOX</DAT>
 <DAT name="USP_WIDGETTYPE">U_LIST</DAT>
@@ -1392,8 +1439,6 @@ end</DAT>
 <DAT name="IS_CONTROL">F</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt;Menu</DAT>
-<DAT name="USCRIPT" xml:space='preserve'>; Triggers fired by widget:
-; None, use command button to submit data</DAT>
 <DAT name="DSP_WIDGETTYPE">STATICTEXT</DAT>
 <DAT name="USP_WIDGETTYPE">U_MENU</DAT>
 </OCC>
@@ -1429,8 +1474,6 @@ end</DAT>
 <DAT name="IS_CONTROL">F</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt;Password</DAT>
-<DAT name="USCRIPT" xml:space='preserve'>; Triggers fired by widget:
-; None, use command button to submit data</DAT>
 <DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="DSP_WIDGETTYPE">PASSWORD</DAT>
 <DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
@@ -1499,8 +1542,6 @@ end</DAT>
 <DAT name="IS_CONTROL">F</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt;Radio Buttons</DAT>
-<DAT name="USCRIPT" xml:space='preserve'>; Triggers fired by widget:
-; None, use command button to submit data</DAT>
 <DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="DSP_WIDGETTYPE">RADIOGROUP</DAT>
 <DAT name="USP_WIDGETTYPE">U_RADIOBUTTON</DAT>
@@ -1569,8 +1610,6 @@ end</DAT>
 <DAT name="DATA_SYNTAX">NED</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Display: &lt;/c&gt;&lt;/t&gt;Static Text</DAT>
-<DAT name="UDECLARATIONS" xml:space='preserve'>
-</DAT>
 <DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
@@ -1606,8 +1645,6 @@ end</DAT>
 <DAT name="IS_CONTROL">F</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt;Text Area (Multi-line)</DAT>
-<DAT name="USCRIPT" xml:space='preserve'>; Triggers fired by widget:
-; None, use command button to submit data</DAT>
 <DAT name="DSP_WIDGETTYPE">TEXTAREA</DAT>
 <DAT name="USP_WIDGETTYPE">U_TEXTAREA</DAT>
 </OCC>

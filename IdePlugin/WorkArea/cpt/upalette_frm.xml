@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
-<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!-- Created by Uniface - (C) Rocket Software B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
 <UNIFACE release="10.4" repversion="8" xmlengine="2.0">
 <TABLE>
@@ -143,7 +143,7 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2020-06-16T15:10:45.00</DAT>
+<DAT name="UTIMESTAMP">2022-06-09T11:30:57.00</DAT>
 <DAT name="ULABEL">UPALETTE_FRM</DAT>
 <DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">3</DAT>
@@ -411,8 +411,8 @@
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Inline header frame for printed reports</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>Printer Break Frame</DAT>
-<DAT name="UOCC_SCRIPT" xml:space='preserve'>
-trigger getFocus
+<DAT name="UOCC_SCRIPT" xml:space='preserve'>trigger getFocus
+throws
 
 end
 </DAT>
@@ -551,6 +551,7 @@ end
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Non-DBMS Entity: &lt;/c&gt;&lt;/t&gt;Grid</DAT>
 <DAT name="UOCC_SCRIPT" xml:space='preserve'>; Typical triggers for this widget:
 trigger ColumnHeader_LClicked
+throws
 params 
   string pFieldName : in
   numeric pModifierKeys : in  ; 0=None | 1=Shift | 2=Ctrl | 4=Alt
@@ -579,6 +580,7 @@ end
 
 
 trigger RowHeader_LClicked
+throws
 params 
   numeric pOccIndex : in
   numeric pModifierKeys : in  ; 0=None | 1=Shift | 2=Ctrl | 4=Alt
@@ -607,6 +609,7 @@ end
 
 
 trigger CornerButton_LClicked 
+throws
 params
   numeric pModifierKeys : in  ; 0=None | 1=Shift | 2=Ctrl | 4=Alt
 endparams
@@ -634,6 +637,7 @@ end
 
 
 trigger VScrollBar_HitEnd
+throws
 
   ; Your implementation here...
 
@@ -641,6 +645,7 @@ end
 
 
 trigger Viewport_Resized 
+throws
 params 
   numeric pWidth        : in  ; pixels
   numeric pHeight       : in  ; pixels
@@ -653,6 +658,7 @@ end
 
 
 trigger Column_Resized
+throws
 params 
   string  vFieldName    : in
   numeric viewportWidth : in  ; pixels
@@ -675,8 +681,8 @@ end
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Header frame for printed reports</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>Printer Header Frame</DAT>
-<DAT name="UOCC_SCRIPT" xml:space='preserve'>
-trigger getFocus
+<DAT name="UOCC_SCRIPT" xml:space='preserve'>trigger getFocus
+throws
 
 end
 </DAT>
@@ -689,8 +695,8 @@ end
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Footer frame for printed reports</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>Printer Footer Frame</DAT>
-<DAT name="UOCC_SCRIPT" xml:space='preserve'>
-trigger getFocus
+<DAT name="UOCC_SCRIPT" xml:space='preserve'>trigger getFocus
+throws
 
 end
 </DAT>
@@ -846,6 +852,7 @@ end
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;Cancel</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>trigger detail
+throws
 ; Pressing this button fires this trigger.
 ; This trigger invokes the ^quit macro, which fires the quit operation.
 ; The quit operation should handle the request further, after which the form is closed.
@@ -902,13 +909,11 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;Clear</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>trigger detail
+throws
 ; Pressing this button fires this trigger.
 ; This trigger clears the retrieved occurrences from the entity to be controlled by this button.
 
-; TO DO:
-;   1. Draw this field within the entity it needs to control, or specify a literal entity name in code.
-
-  clear/e "&lt;$entname&gt;"
+  macro "^clear"
 
 end</DAT>
 <DAT name="INITVALUE">Clear</DAT>
@@ -957,6 +962,7 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;Close</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>trigger detail
+throws
 ; Pressing this button fires this trigger.
 ; This trigger invokes the ^quit macro, which fires the quit operation.
 ; The quit operation should handle the request further, after which the form is closed.
@@ -1014,6 +1020,7 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;Create Occurrence</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>trigger detail
+throws
 ; Pressing this button fires this trigger.
 ; This trigger creates a new occurrence after the current occurrence of the entity to be controlled by this button.
 
@@ -1072,6 +1079,7 @@ end
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;OK</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>trigger detail
+throws
 ; Pressing this button fires this trigger.
 ; This trigger invokes the ^accept macro, which fires the accept operation.
 ; The accept operation should handle the request further, after which the form is closed.
@@ -1101,7 +1109,7 @@ end
 <DAT name="UALT_NAME" xml:space='preserve'>Remove occurrence button</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>trigger detail
 ; Pressing this button fires this trigger.
-; This triggers marks the current occurrence of the eneity to be conrolled by this button for deletion;
+; This triggers marks the current occurrence of the entity to be controlled by this button for deletion;
 ; actual deletion occurs on store.
 
 ; TO DO:
@@ -1129,6 +1137,7 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;Remove Occurrence</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>trigger detail
+throws
 ; Pressing this button fires this trigger.
 ; The remocc command marks the current occurrence of the entity controlled by this button for deletion
 ; actual deletion occurs upon store.
@@ -1159,7 +1168,7 @@ end</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>Retrieve data from database button</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>trigger detail
 ; Pressing this button fires this trigger.
-; This triggers marks the current occurrence of the eneity to be conrolled by this button for deletion;
+; This triggers marks the current occurrence of the entity to be controlled by this button for deletion;
 ; actual deletion occurs on store.
 
 ; TO DO:
@@ -1170,7 +1179,7 @@ variables
   string vProfiles
 endvariables
 
-  ; Optionally copy single ooccurrence from a dedicated profile entity to be used as profile
+  ; Optionally copy single occurrence from a dedicated profile entity to be used as profile
   ; clear/e "&lt;$entname&gt;"
   ; putlistitems/occ vProfiles, "PROFILE_ENTITY"
   ; getlistitems/occ/init vProfiles, "&lt;$entname&gt;"
@@ -1207,35 +1216,34 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;Retrieve</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>trigger detail
+throws
 ; Pressing this button fires this trigger.
 ; This trigger marks the current occurrence of the entity controlled by this button for retrieval
 
 ; TO DO:
 ;   1. Paint this field within the entity it needs to control, or specify a literal entity name in code.
 
-; Retrieves data from database and loads it as occurrences in the current entity.
 variables
   string vProfiles
 endvariables
 
-  ; Optionally copy single occurrence from a dedicated profile entity to be used as profile
-  ; clear/e "&lt;$entname&gt;"
-  ; putlistitems/occ vProfiles, "PROFILE_ENTITY"
-  ; getlistitems/occ/init vProfiles, "&lt;$entname&gt;"
+#ifdefined option_1
+  ; Optionally copy a single occurrence from another entity to be used as profile input
+  clear/e "&lt;$entname&gt;"
+  putlistitems/occ vProfiles, "PROFILE_ENTITY"
+  getlistitems/occ/init vProfiles, "&lt;$entname&gt;"
+#endif
 
-  retrieve/e "&lt;$entname&gt;"
-  selectcase $procerror
-  case 0
-    ; ok
-  case -2, -4
-    message/info "Retrieve: No data found in the database."
-  elsecase
-    message/error "Retrieve: Error occurred - (%%($procerror))."
-  endselectcase
+  ; Retrieve data from DBMS using current occurrence as profile
+  try
+    retrieve
+    message "Retrieve successful"
+  catch &lt;UIOSERR_OCC_NOT_FOUND&gt;, &lt;UIOSERR_OPEN_FAILURE&gt;  ; -2, -4
+    message "Retrieve failed - No data found in the database."
+  endtry
 
-  return 0
-
-end</DAT>
+end
+</DAT>
 <DAT name="INITVALUE">Retrieve</DAT>
 <DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
 <DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
@@ -1329,6 +1337,7 @@ end
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;Store</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>trigger detail
+throws
 ; Pressing this button fires this trigger.
 ; This trigger stores occurrences that are modified into the database and
 ; deletes any occurrences marked for deletion from the database.
@@ -1338,48 +1347,29 @@ end
 ;   2. Define a constant DATAERRORS at component with the name of the struct variable that will hold data validation errors
 
 variables
-  numeric vProcError
+  string vProcErrorContext
 endvariables
 
-  ; Store entity
-  store/e "&lt;$entname&gt;"
-  selectcase $procerror
-  case 0
-    ; no store errors
-    selectcase $status
-    case 1
-      ; no modifications
-      message/info "No modifications."
-    case 0
-      ; store successful
-      commit
-      selectcase $procerror
-      case 0
-        ; store and commit successful
-        message/info "Store successful."
-      elsecase
-        ; commit error
-        message/info "Commit failed ($procerror=%%($procerror))."
-      endselectcase
-    endselectcase
-  elsecase
-    ; store failed
-    vProcError = $procerror
-
-    ; rollback
-    rollback
-    selectcase $procerror
-    case 0
-      ; rollback successful
-      message/error "Store failed ($procerror=%%(vProcError)) - transaction rolled back."
-    elsecase
-      ; rollback error
-      message/error "Store failed ($procerror=%%(vProcError)) - Rollback failed ($procerror=%%($procerror))."
-    endselectcase
-    return vProcError
-  endselectcase
-
-  return 0
+  ; Validate data before store to separate validation errors from store errors
+  ; Validation errors are reported back to the data and will be shown by the DSP web client
+  try
+    validate
+    try
+      store
+      if ($status == 1)
+        message "No modifications made or entity read-only"
+      else
+        commit
+        message "Store successful."
+      endif
+    catch
+      vProcErrorContext = $procerrorcontext
+      rollback
+      throw $item("ERROR", vProcErrorContext), "Rethrow", vProcErrorContext
+    endtry
+  catch &lt;UGENERR_4GL_SAYS_ERROR&gt;, &lt;UVALERR_SYNTAX&gt;, &lt;UVALERR_CONSTRAINT&gt;, &lt;UVALERR_KEY_PROFILE&gt;, &lt;UVALERR_KEY_EMPTY&gt;
+    ; Validation errors are already reported by the error trigger -&gt; ignore
+  endtry
 
 end
 
@@ -1592,6 +1582,14 @@ end
 <DAT name="IS_CONTROL">T</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Button: &lt;/c&gt;&lt;/t&gt;Command Button</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger detail
+throws
+; Pressing this button fires this trigger.
+
+  ; Your code here...
+
+end
+</DAT>
 <DAT name="INITVALUE" xml:space='preserve'>Button text</DAT>
 <DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
 <DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
@@ -1775,6 +1773,7 @@ end
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Input: &lt;/c&gt;&lt;/t&gt;EditBox (Single-line)</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>trigger onEdit
+throws
 ; This trigger is fired on every key press done by the user
 
   ; Your implementation here...
@@ -1852,6 +1851,14 @@ end
 <DAT name="IS_CONTROL">T</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Button: &lt;/c&gt;&lt;/t&gt;Flat Button</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger detail
+throws
+; Pressing this button fires this trigger.
+
+  ; Your code here...
+
+end
+</DAT>
 <DAT name="INITVALUE" xml:space='preserve'>Button text</DAT>
 <DAT name="FRM_WIDGETTYPE">HYPERLINK</DAT>
 <DAT name="DSP_WIDGETTYPE">FLATBUTTON_UPDATABLE</DAT>
@@ -1922,6 +1929,14 @@ end
 <DAT name="IS_CONTROL">T</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Button: &lt;/c&gt;&lt;/t&gt;Header Button</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger detail
+throws
+; Pressing this button fires this trigger.
+
+  ; Your code here...
+
+end
+</DAT>
 <DAT name="INITVALUE" xml:space='preserve'>Button text</DAT>
 <DAT name="FRM_WIDGETTYPE">HEADERBUTTON</DAT>
 <DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
@@ -1960,7 +1975,7 @@ end
 ;   window.unifaceTriggers("myTrigger", pParam1, pParam2);
 ;   ...
 ;  
- trigger myTrigger
+trigger myTrigger
 params
   string pParam1 : IN 
   string pParam2 : IN 
@@ -1990,9 +2005,10 @@ end
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Display: &lt;/c&gt;&lt;/t&gt;Raw Html</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>trigger loadError
+throws
 params
-    numeric ErrorCode : IN
-    string  ErrorText : IN
+  numeric ErrorCode : IN
+  string  ErrorText : IN
 endparams
 
   ; Enter your code here ...
@@ -2009,6 +2025,7 @@ end
 ;   ...
 ;  
 trigger myTrigger
+throws
 params
   string pParam1 : IN 
   string pParam2 : IN 
@@ -2054,6 +2071,14 @@ end
 <DAT name="IS_CONTROL">T</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Button: &lt;/c&gt;&lt;/t&gt;Hyperlink</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger detail
+throws
+; Pressing this button fires this trigger.
+
+  ; Your code here...
+
+end
+</DAT>
 <DAT name="INITVALUE" xml:space='preserve'>Button text</DAT>
 <DAT name="FRM_WIDGETTYPE">HYPERLINK</DAT>
 <DAT name="DSP_WIDGETTYPE">FLATBUTTON_UPDATABLE</DAT>
@@ -2419,6 +2444,7 @@ end
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Display: &lt;/c&gt;&lt;/t&gt;Picture (DBMS)</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Typical triggers fired by this widget:
 trigger moveTo
+throws
 params
   string dragvalue: in
   string dropformat: in
@@ -2428,8 +2454,10 @@ params
 endparams
 
 end
+
 
 trigger moveFrom
+throws
 params
   string dragvalue: in
   string dropformat: in
@@ -2438,8 +2466,10 @@ params
 endparams
 
 end
+
 
 trigger moveWithin
+throws
 params
   string dragvalue: in
   string dropformat: in
@@ -2449,8 +2479,10 @@ params
 endparams
 
 end
+
 
 trigger copyTo
+throws
 params
   string dragvalue: in
   string dropformat: in
@@ -2461,7 +2493,9 @@ endparams
 
 end
 
+
 trigger createShortcutTo
+throws
 params
   string dragvalue: in
   string dropformat: in
@@ -2561,6 +2595,7 @@ end
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Display: &lt;/c&gt;&lt;/t&gt;Picture (File)</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Typical triggers fired by this widget:
 trigger moveTo
+throws
 params
   string dragvalue: in
   string dropformat: in
@@ -2570,8 +2605,10 @@ params
 endparams
 
 end
+
 
 trigger moveFrom
+throws
 params
   string dragvalue: in
   string dropformat: in
@@ -2580,8 +2617,10 @@ params
 endparams
 
 end
+
 
 trigger moveWithin
+throws
 params
   string dragvalue: in
   string dropformat: in
@@ -2591,8 +2630,10 @@ params
 endparams
 
 end
+
 
 trigger copyTo
+throws
 params
   string dragvalue: in
   string dropformat: in
@@ -2603,7 +2644,9 @@ endparams
 
 end
 
+
 trigger createShortcutTo
+throws
 params
   string dragvalue: in
   string dropformat: in
@@ -2703,6 +2746,7 @@ end
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Display: &lt;/c&gt;&lt;/t&gt;Picture (Glyph)</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Typical triggers fired by this widget:
 trigger moveTo
+throws
 params
   string dragvalue: in
   string dropformat: in
@@ -2712,8 +2756,10 @@ params
 endparams
 
 end
+
 
 trigger moveFrom
+throws
 params
   string dragvalue: in
   string dropformat: in
@@ -2722,8 +2768,10 @@ params
 endparams
 
 end
+
 
 trigger moveWithin
+throws
 params
   string dragvalue: in
   string dropformat: in
@@ -2733,8 +2781,10 @@ params
 endparams
 
 end
+
 
 trigger copyTo
+throws
 params
   string dragvalue: in
   string dropformat: in
@@ -2745,7 +2795,9 @@ endparams
 
 end
 
+
 trigger createShortcutTo
+throws
 params
   string dragvalue: in
   string dropformat: in
@@ -3228,69 +3280,87 @@ end
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Complex: &lt;/c&gt;&lt;/t&gt;Tree</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Typical triggers fired by this widget
 trigger Expand
+throws
 params
   string control: in ; TREE | LIST | KEYBOARD
   string item: in
 endparams
 
-end ; trigger Expand
+end
+
 
 trigger Collapse
+throws
 params
   string control: in ; TREE | LIST | KEYBOARD
   string item: in
 endparams
 
-end ; trigger Collapse
+end
+
 
 trigger Open
+throws
 params
   string control: in ; TREE | LIST | KEYBOARD
   string item: in
 endparams
 
-end ; trigger Open
+end
+
 
 trigger Close
+throws
 params
   string control: in ; TREE | LIST | KEYBOARD
   string item: in
 endparams
 
-end ; trigger Close
+end
+
 
 trigger doubleClick
+throws
 params
   string control: in ; TREE | LIST | KEYBOARD
   string item: in
 endparams
 
-end ; trigger doubleClick
+end
+
 
 trigger columnSorted
+throws
 params
   numeric columnId: in
   string sortingOrder: in ; ASC | DESC
 endparams
 
-end ; trigger columnSorted
+end
+
 
 trigger columnWidth
+throws
 params
   numeric id: in
   numeric width: in
 endparams
 
-end ; trigger columnWidth
+end
+
 
 trigger representationChanging
+throws
 params
   string itemValue: in
 endparams
 
-end ; trigger representationChanging
+end
 
-trigger representationChanged ; Only works if tree widget property INLINEEDIT=TRUE
+
+trigger representationChanged
+; Only works if tree widget property INLINEEDIT=TRUE
+throws
 params
   string itemValue: in
   string control: in ; TREE | LIST
@@ -3306,11 +3376,12 @@ endvariables
   putitem/id listUpdate, itemValue, treeItem
   $valrep = listUpdate
 
-end ; trigger representationChanged
+end
+
 
 ; start drag &amp; drop triggers for tree widget
-
 trigger moveTo
+throws
 params
   string dragvalue: in
   string dropformat: in
@@ -3319,9 +3390,11 @@ params
   numeric index: in
 endparams
 
-end ; trigger moveTo
+end
+
 
 trigger moveFrom
+throws
 params
   string dragvalue: in
   string dropformat: in
@@ -3329,9 +3402,11 @@ params
   numeric index: in
 endparams
 
-end ; trigger moveFrom
+end
+
 
 trigger moveWithin
+throws
 params
   string dragvalue: in
   string dropformat: in
@@ -3340,9 +3415,11 @@ params
   numeric index: in
 endparams
 
-end ; trigger moveWithin
+end
+
 
 trigger copyTo
+throws
 params
   string dragvalue: in
   string dropformat: in
@@ -3351,9 +3428,11 @@ params
   numeric index: in
 endparams
 
-end ; trigger copyTo
+end
+
 
 trigger createShortcutTo
+throws
 params
   string dragvalue: in
   string dropformat: in
@@ -3399,6 +3478,14 @@ end
 <DAT name="IS_CONTROL">T</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Button: &lt;/c&gt;&lt;/t&gt;Classic Command Button</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger detail
+throws
+; Pressing this button fires this trigger.
+
+  ; Your code here...
+
+end
+</DAT>
 <DAT name="INITVALUE" xml:space='preserve'>Button text</DAT>
 <DAT name="FRM_WIDGETTYPE">UNIFACEBUTTON</DAT>
 <DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>

@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
-<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!-- Created by Uniface - (C) Rocket Software B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
 <UNIFACE release="10.4" repversion="8" xmlengine="2.0">
 <TABLE>
@@ -31,7 +31,7 @@
 <DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Library of common Script snippets</DAT>
-<DAT name="UTIMESTAMP">2016-08-15T17:21:21.00</DAT>
+<DAT name="UTIMESTAMP">2022-06-13T14:42:06.00</DAT>
 <DAT name="UPURPOSE">N</DAT>
 <DAT name="UCOMMENT" xml:space='preserve'>Basic system library for snippet/snippet library creation</DAT>
 </OCC>
@@ -93,9 +93,8 @@
     vHandle = $collhandle("MYENTITY.MYMODEL")
 
     ; Activate operation
-    vHandle-&gt;operationName(vParam1, vParam2, ...)
-    selectcase $procerror  ; Check execution error
-    case 0                 ; ok
+    try
+      vHandle-&gt;operationName(vParam1, vParam2, ...)
       selectcase $status   ; Check operation return value
       case 0
         ; Your code here...
@@ -103,15 +102,15 @@
       elsecase
         ; Your code here...
       endselectcase
-    case -59               ; No definition found for operation.
+    ; Catch execution error
+    catch &lt;UACTERR_NO_OPERATION&gt;  ; No definition found for operation.	
       ; Your specific error handling here...
-    case -1123             ; Wrong number of parameters.
+    catch &lt;UPROCERR_NPARAMETERS   ; Wrong number of parameters.
       ; Your specific error handling here...
-    elsecase
-      ; Generic error handling here...
+    catch                         ; Generic error handling here...	
       putmess "Operation activation failed: %%($procerrorcontext)"
-    endselectcase
-
+    endtry
+  
     ; More activates...</DAT>
 </OCC>
 <OCC>
@@ -126,9 +125,8 @@
     vHandle = $instancehandle("MYINSTANCENAME")
 
     ; Activate operation
-    vHandle-&gt;operationName(vParam1, vParam2, ...)
-    selectcase $procerror  ; Check execution error
-    case 0                 ; ok
+    try
+      vHandle-&gt;operationName(vParam1, vParam2, ...)
       selectcase $status   ; Check operation return value
       case 0
         ; Your code here...
@@ -136,14 +134,14 @@
       elsecase
         ; Your code here...
       endselectcase
-    case -59               ; No definition found for operation.
+    ; Catch execution error
+    catch &lt;UACTERR_NO_OPERATION&gt;  ; No definition found for operation.	
       ; Your specific error handling here...
-    case -1123             ; Wrong number of parameters.
+    catch &lt;UPROCERR_NPARAMETERS   ; Wrong number of parameters.
       ; Your specific error handling here...
-    elsecase
-      ; Generic error handling here...
+    catch                         ; Generic error handling here...
       putmess "Operation activation failed: %%($procerrorcontext)"
-    endselectcase
+    endtry
 
     ; More activates...
 
@@ -164,9 +162,8 @@
     vHandle = $occhandle("MYENTITY.MYMODEL")
 
     ; Activate operation
-    vHandle-&gt;operationName(vParam1, vParam2, ...)
-    selectcase $procerror  ; Check execution error
-    case 0                 ; ok
+    try
+      vHandle-&gt;operationName(vParam1, vParam2, ...)
       selectcase $status   ; Check operation return value
       case 0
         ; Your code here...
@@ -174,14 +171,14 @@
       elsecase
         ; Your code here...
       endselectcase
-    case -59               ; No definition found for operation.
+    ; Catch execution error
+    catch &lt;UACTERR_NO_OPERATION&gt;  ; No definition found for operation.	
       ; Your specific error handling here...
-    case -1123             ; Wrong number of parameters.
+    catch &lt;UPROCERR_NPARAMETERS   ; Wrong number of parameters.
       ; Your specific error handling here...
-    elsecase
-      ; Generic error handling here...
+    catch                         ; Generic error handling here...
       putmess "Operation activation failed: %%($procerrorcontext)"
-    endselectcase
+    endtry
 
     ; More activates...</DAT>
 </OCC>
@@ -194,9 +191,8 @@
 <DAT name="UDESCR" xml:space='preserve'>Activate statefull component operation</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;activate&lt;/x&gt; instName.oper(p1,p2,..)&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>    ; Activate operation
-    activate vExistingInstanceName.operationName(vParam1, vParam2, ...)
-    selectcase $procerror  ; Check execution error
-    case 0                 ; ok
+    try
+      activate vExistingInstanceName.operationName(vParam1, vParam2, ...)
       selectcase $status   ; Check operation return value
       case 0
         ; Your code here...
@@ -204,27 +200,25 @@
       elsecase
         ; Your code here...
       endselectcase
-    case -57               ; The named instance cannot be found in the instance pool.
-      ; Your specific error handling here, e.g.:
-    case -59               ; No definition found for operation.
+    ; Catch execution error
+    catch &lt;UACTERR_NO_INSTANCE&gt;   ; The named instance cannot be found in the instance pool.	
       ; Your specific error handling here...
-    case -1123             ; Wrong number of parameters.
+    catch &lt;UACTERR_NO_OPERATION&gt;  ; No definition found for operation.	
       ; Your specific error handling here...
-    elsecase
-      ; Generic error handling here...
+    catch &lt;UPROCERR_NPARAMETERS   ; Wrong number of parameters.
+      ; Your specific error handling here...
+    catch                         ; Generic error handling here...
       putmess "Operation activation failed: %%($procerrorcontext)"
-    endselectcase
-
-    ; More activates...
+    endtry
 
     ; Delete instance (operation cleanup is implicitly invoked as part of deleteinstance)
-    deleteinstance vInstanceName
-    selectcase $procerror
-    case -57               ; The named instance cannot be found in the instance pool.
+    try
+      deleteinstance vInstanceName
+    catch &lt;UACTERR_NO_INSTANCE&gt;    ; The named instance cannot be found in the instance pool.
       ; Your specific error handling here, e.g.:
-    elsecase
+    catch
       putmess "Delete instance failed: %%($procerrorcontext)"
-    endselectcase</DAT>
+    endtry</DAT>
 </OCC>
 <OCC>
 <DAT name="UNAME">ACTIVATE_STATELESS</DAT>
@@ -235,9 +229,8 @@
 <DAT name="UDESCR" xml:space='preserve'>Activate stateless component operation</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;activate&lt;/x&gt;/stateless instName.oper(p1,p2,..)&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>    ; Activate component (an implicit newinstance/deleteinstance is performed)
-    activate/stateless "COMPONENTNAME".operationName(vParam1, vParam2, ...)
-    selectcase $procerror  ; Check execution error
-    case 0                 ; ok
+    try
+      activate/stateless "COMPONENTNAME".operationName(vParam1, vParam2, ...)
       selectcase $status   ; Check operation return value
       case 0
         ; Your code here...
@@ -245,18 +238,18 @@
       elsecase
         ; Your code here...
       endselectcase
-    case -50               ; Signature not found. For example, the component name provided is not valid.
-      ; Your error handling here...
-    case -57               ; The named instance cannot be found in the instance pool.
-      ; Your specific error handling here, e.g.:
-    case -59               ; No definition found for operation.
+    ; Catch execution error
+    catch &lt;UACTERR_NO_SIGNATURE&gt;  ; Signature not found. For example, the component name provided is not valid..	
       ; Your specific error handling here...
-    case -1123             ; Wrong number of parameters.
+    catch &lt;UACTERR_NO_INSTANCE&gt;   ; The named instance cannot be found in the instance pool.	
       ; Your specific error handling here...
-    elsecase
-      ; Generic error handling here...
+    catch &lt;UACTERR_NO_OPERATION&gt;  ; No definition found for operation.	
+      ; Your specific error handling here...
+    catch &lt;UPROCERR_NPARAMETERS   ; Wrong number of parameters.
+      ; Your specific error handling here...
+    catch                         ; Generic error handling here...
       putmess "Activate error: %%($procerrorcontext)"
-    endselectcase</DAT>
+    endtry</DAT>
 </OCC>
 <OCC>
 <DAT name="UNAME">COPY_OCCURRENCE</DAT>
@@ -272,7 +265,8 @@
     getlistitems/occ/init vData, "TARGET_ENTITY_NAME"
     ; 2. Copy single occurrence between compatible entities (e.g. subtypes) to be used as data
     putlistitems/occ vData, "SOURCE_ENTITY_NAME"
-    getlistitems/occ vData, "TARGET_ENTITY_NAME"</DAT>
+    getlistitems/occ vData, "TARGET_ENTITY_NAME"
+		</DAT>
 </OCC>
 <OCC>
 <DAT name="UNAME">DELETE_INSTANCE_BY_HANDLE</DAT>
@@ -296,13 +290,14 @@
 <DAT name="UDESCR" xml:space='preserve'>Delete component instance via instance name</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;deleteinstance&lt;/x&gt; instName&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>    ; Delete instance (operation cleanup is implicitly invoked as part of deleteinstance)
-    deleteinstance vExistingInstanceName
-    selectcase $procerror
-    case -57               ; The named instance cannot be found in the instance pool.
+    try
+      deleteinstance vExistingInstanceName
+    ; Catch execution error
+    catch &lt;UACTERR_NO_INSTANCE&gt;     ; The named instance cannot be found in the instance pool.
       ; Your specific error handling here, e.g.:
-    elsecase
+    catch                           ; Generic error handling here...
       putmess "Delete instance failed: %%($procerrorcontext)"
-    endselectcase</DAT>
+    endtry</DAT>
 </OCC>
 <OCC>
 <DAT name="UNAME">ENTRY</DAT>
@@ -313,6 +308,7 @@
 <DAT name="UDESCR" xml:space='preserve'>Function or Entry declaration</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;entry&lt;/x&gt; myFunction&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>entry myFunction
+throws
 ; Your RETURNS declaration here...
 ; Your PARAMS block here...
 ; Your VARIABLES block here...
@@ -416,15 +412,16 @@ end</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Instantiate component using provided instance name</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;newinstance&lt;/x&gt; &lt;y&gt;"CPTNAME"&lt;/y&gt;, "INST"&lt;/t&gt;</DAT>
-<DAT name="UTEXT" xml:space='preserve'>    newinstance "COMPONENTNAME", "MYINSTANCENAME"
-    selectcase $procerror
-    case -50                ; Signature not found. For example, the component name provided is not valid.
+<DAT name="UTEXT" xml:space='preserve'>    try
+      newinstance "COMPONENTNAME", "MYINSTANCENAME"
+    ; Catch execution error
+    catch &lt;UACTERR_NO_SIGNATURE&gt;          ; Signature not found. For example, the component name provided is not valid.
       ; Your error handling here...
-    case -154               ; An instance with this name "MYINSTANCENAME" already exists.
+    catch &lt;UACTERR_INSTANCE_NAME_EXISTS&gt;  ; An instance with this name "MYINSTANCENAME" already exists.
       ; Your error handling here...
-    elsecase
+    catch                                 ; Generic error handling here...
       putmess "Newinstance error: %%($procerrorcontext)"
-    endselectcase</DAT>
+    endtry</DAT>
 </OCC>
 <OCC>
 <DAT name="UNAME">NEWINSTANCE_RETURN_HANDLE</DAT>
@@ -434,13 +431,15 @@ end</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Instantiate component and return handle</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;newinstance&lt;/x&gt; &lt;y&gt;"CPTNAME"&lt;/y&gt;, instHandle&lt;/t&gt;</DAT>
-<DAT name="UTEXT" xml:space='preserve'>    newinstance "COMPONENTNAME", vHandle   ; vHandle returns handle to instance
-    selectcase $procerror
-    case -50                ; Signature not found. For example, the component name provided is not valid.
+<DAT name="UTEXT" xml:space='preserve'>    try
+      newinstance "COMPONENTNAME", vHandle   ; vHandle returns handle to instance
+    ; Catch execution error
+    catch &lt;UACTERR_NO_SIGNATURE&gt;             ; Signature not found. For example, the component name provided is not valid.
       ; Your error handling here...
-    elsecase
+    catch                                    ; Generic error handling here...
       putmess "Newinstance error: %%($procerrorcontext)"
-    endselectcase</DAT>
+    endtry
+</DAT>
 </OCC>
 <OCC>
 <DAT name="UNAME">NEWINSTANCE_RETURN_NAME</DAT>
@@ -450,13 +449,14 @@ end</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Instantiate component and return instance name</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;newinstance&lt;/x&gt; &lt;y&gt;"CPTNAME"&lt;/y&gt;, instName&lt;/t&gt;</DAT>
-<DAT name="UTEXT" xml:space='preserve'>    newinstance "COMPONENTNAME", vInstanceName   ; vInstanceName holds generated instance name
-    selectcase $procerror
-    case -50                ; Signature not found. For example, the component name provided is not valid.
+<DAT name="UTEXT" xml:space='preserve'>    try
+      newinstance "COMPONENTNAME", vInstanceName   ; vInstanceName holds generated instance name
+    ; Catch execution error
+    catch &lt;UACTERR_NO_SIGNATURE&gt;      ; Signature not found. For example, the component name provided is not valid.
       ; Your error handling here...
-    elsecase
+    catch                             ; Generic error handling here...
       putmess "Newinstance error: %%($procerrorcontext)"
-    endselectcase</DAT>
+    endtry</DAT>
 </OCC>
 <OCC>
 <DAT name="UNAME">OPER_DSP_CLIENT</DAT>
@@ -489,6 +489,7 @@ end</DAT>
 ;   public web  - specifies that this operation can be activated from the web client
 ;   partner web - specifies that this operation cannot be activated from the web client,
 ;                 but its scope can be included in other operations/triggers
+throws
 public web
 
 ; Your SCOPE  block here (optional)...
@@ -498,7 +499,7 @@ public web
   ; Your implementation here...
 
   ; Return execution status (available in $status after activate):
-  ;   return 0    ; return &gt;= 0 typically indicates a succesful execution
+  ;   return 0    ; return &gt;= 0 typically indicates a successful execution
   ;   return -1   ; return &lt; 0 typically indicates an error during execution
   return 0
   
@@ -513,13 +514,14 @@ end</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Operation declaration with component visibility</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;partner operation&lt;/x&gt; myOperation&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>partner operation myOperation
+throws
 ; Your PARAMS block here (optional)...
 ; Your VARIABLES block here (optional)...
 
   ; Your implementation here...
 
   ; Return execution status (available in $status after activate):
-  ;   return 0     ; &gt;= 0 typically indicates succesful execution
+  ;   return 0     ; &gt;= 0 typically indicates successful execution
   ;   return -1    ;  &lt; 0 typically indicates an error during execution
   return 0
   
@@ -535,13 +537,14 @@ end</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Operation declaration with public visibility</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;public operation&lt;/x&gt; myOperation&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>public operation myOperation
+throws
 ; Your PARAMS block here (optional)...
 ; Your VARIABLES block here (optional)...
 
   ; Your implementation here...
 
   ; Return execution status (available in $status after activate):
-  ;   return 0     ; &gt;= 0 typically indicates succesful execution
+  ;   return 0     ; &gt;= 0 typically indicates successful execution
   ;   return -1    ;  &lt; 0 typically indicates an error during execution
   return 0
   
@@ -580,17 +583,16 @@ endparams</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Communicate between instances in difference processes</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;postmessage&lt;/x&gt; &lt;y&gt;"server:INSTNAME"&lt;/y&gt;,id,data&lt;/y&gt;</DAT>
-<DAT name="UTEXT" xml:space='preserve'>    postmessage "localhost+13002|user|wasv:MYINSTANCENAME", vMessageId, vMessageData
-    selectcase $procerror  ; Check execution error
-    case 0                 ; ok
-    case -159              ; Message could not be delivered to requested queue. 
+<DAT name="UTEXT" xml:space='preserve'>    try
+      postmessage "localhost+13002|user|wasv:MYINSTANCENAME", vMessageId, vMessageData
+    ; Catch execution error
+    catch &lt;UACTERR_QUEUE&gt;    ; Message could not be delivered to requested queue. 
       ; Your specific error handling here...
-    case -1107             ; The path name is not correct or the path does not exist.
+    catch &lt;UPROCERR_PATH&gt;    ; The path name is not correct or the path does not exist.
       ; Your specific error handling here...
-    elsecase
-      ; Generic error handling here...
+    catch                    ; Generic error handling here...
       putmess "Postmessage error: %%($procerrorcontext)"
-    endselectcase</DAT>
+    endtry</DAT>
 </OCC>
 <OCC>
 <DAT name="UNAME">POSTMESSAGE_INTERNAL</DAT>
@@ -600,15 +602,14 @@ endparams</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Communicate between instances within single process</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;postmessage&lt;/x&gt; &lt;y&gt;"INSTNAME"&lt;/y&gt;,id,data&lt;/y&gt;</DAT>
-<DAT name="UTEXT" xml:space='preserve'>    postmessage "INSTANCENAME", vMessageId, vMessageData
-    selectcase $procerror  ; Check execution error
-    case 0                 ; ok
-    case -57               ; The named instance cannot be found in the instance pool.
+<DAT name="UTEXT" xml:space='preserve'>    try
+      postmessage "INSTANCENAME", vMessageId, vMessageData
+    ; Catch execution error
+    catch &lt;UACTERR_NO_INSTANCE&gt;    ; The named instance cannot be found in the instance pool.
       ; Your specific error handling here, e.g.:
-    elsecase
-      ; Generic error handling here...
+    catch                          ; Generic error handling here...
       putmess "Postmessage error: %%($procerrorcontext)"
-    endselectcase
+    endtry
 </DAT>
 </OCC>
 <OCC>
@@ -688,6 +689,7 @@ endscope</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Function that adds node to struct and returns a reference to it</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;node = addStructNode()&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>entry addStructNode
+throws
 ; Add struct node as last child
 ; Usage:
 ;   vStructNode1 = addStructNode(vStructNode0, "node1")
@@ -719,6 +721,7 @@ end</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Function that copies the struct and returns a reference to it</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;target = copyStruct(source)&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>entry copyStruct
+throws
 ; Copy struct
 ; Usage:
 ;   vTargetStruct = copyStruct(vSourceStruct)
@@ -775,6 +778,67 @@ end</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Trace/debug struct</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;putmess&lt;/x&gt; struct-&gt;$dbgstring&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>    putmess vStruct-&gt;$dbgstring</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">THROW</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Throw a custom exception</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;throw&lt;/x&gt; custom exception&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>; Throw your custom defined exceptions.
+; make sure that custom error numbers do not conflict with Uniface error numbers, use negative integers outside the range -1..-9999
+throw vErrorNumber, vErrorDescription, vAdditionalInfo</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">THROWS</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Script module throws exceptions</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;throws&lt;/x&gt; exceptions&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>; Declares that a module can raise exceptions.
+; If some code within the module would set $procerror to a negative value, then
+; - in case of try-catch block, code execution would continue to a corresponding catch block.
+; - or, in case of no try-catch block, code execution would continue with this module's caller right after that call, with that negative $procerror value.
+throws</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">THROW_LIST</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Throw custom exception in a list</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;throw&lt;/x&gt; custom exception list&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>; Throw your custom defined exceptions in a Uniface list.
+; make sure that custom error numbers do not conflict with Uniface error numbers, use negative integers outside the range -1..-9999
+throw/list vList</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">TRY_CATCH</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_COMMON</DAT>
+<DAT name="UCATEGORY">Constructions</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>try-catch-endtry block</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;try&lt;/x&gt; &lt;/t&gt;...&lt;t&gt; &lt;x&gt;catch&lt;/x&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>    try   ; If some code here would set $procerror to a negative value, code execution would continue in the catch-block below.
+    ; Your code here...
+
+    catch &lt;UPROCERROR&gt;  ; Code that catches an exception raised for particular procerror from within the try-block above.
+      ; Your code here...
+
+    catch &lt;UPROCERROR_ANOTHER&gt; ; handle another exception
+      ; Your code here...
+
+    catch   ; general catch handler
+      ; Your code here...
+
+    endtry</DAT>
 </OCC>
 <OCC>
 <DAT name="UNAME">VARIABLES</DAT>

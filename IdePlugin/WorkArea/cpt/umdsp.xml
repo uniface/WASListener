@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
-<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!-- Created by Uniface - (C) Rocket Software B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
 <UNIFACE release="10.4" repversion="8" xmlengine="2.0">
 <TABLE>
@@ -143,7 +143,7 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2016-08-15T18:49:44.00</DAT>
+<DAT name="UTIMESTAMP">2022-06-08T14:46:24.00</DAT>
 <DAT name="ULABEL">UMDSP</DAT>
 <DAT name="FTYP">K</DAT>
 <DAT name="DATA_ACCESS">N</DAT>
@@ -159,12 +159,24 @@
 <DAT name="UINHERIT">T</DAT>
 <DAT name="UTRANSACT">7</DAT>
 <DAT name="UPURPOSE">T</DAT>
-<DAT name="UDECLARATIONS" xml:space='preserve'>; Your component defines here (optional)...
+<DAT name="UDECLARATIONS" xml:space='preserve'>; Define the component variables that need to be maintained by the state manager here:
+;   #define STATE_VARIABLES   $ComponentVariable1${&uSEP;$ComponentVariable2${&uSEP;...}}
+; Define the entities for which the entity properties need to be maintained by the state manager here:
+;   #define STATE_ENTITIES    ENTITYNAME1{&uSEP;ENTITYNAME2{&uSEP;...}}
 
-; Your component VARIABLES block here (optional)...
+; More #defines here...
 
+; Your component VARIABLES block here...
+; variables
+;  ...
+; endvariables
 </DAT>
 <DAT name="USCRIPT" xml:space='preserve'>operation exec
+throws
+; The exec operation of a DSP is fired in the following situations:
+; - Explicitly by a web client's URL: "&lt;website&gt;/wrd/MYDSP.exec"
+; - Implicitly by a web client's URL: "&lt;website&gt;/wrd/MYDSP", where exec is the default operation if not specified
+; - Implicitly by a web client requesting a contained DSP
 public web
 ; Your SCOPE  block here (optional)...
 ; Your VARIABLES block here (optional)...
@@ -172,7 +184,7 @@ public web
   ; Your implementation here...
 
   ; Return execution status:
-  ;   return 0    ; return &gt;= 0 typically indicates a succesful execution
+  ;   return 0    ; return &gt;= 0 typically indicates a successful execution
   ;   return -1   ; return &lt; 0 typically indicates an error during execution
   return 0
 
@@ -180,212 +192,118 @@ end
 
 
 trigger preActivate
-variables
-  string  vWebServerContext, vCookie, vSession, vUserContext, vOuter
-  numeric i
-endvariables
+throws
+; The preActivate trigger of a DSP is fired just before the activation of the requested operation or trigger.
+; It typically handles:
+; - Loading instance specific state
+; - Loading the data send received from the web client.
 
-  #comment ; $cmpStateManagedBy is specified by component property 'State Stored By'
-  #if (&lt;$cmpStateManagedBy&gt; == 1)  ; Cookie (client side state management)
-    ;- Get state from cookie
-    getitem/id vCookie, $webinfo("COOKIESIN"), "MY_VARLIST_COOKIE"
-    getlistitems/id/component vCookie
+  ; Load instance state here, e.g.:
+  ; (See libsnp:USCRIPT_DSP/snp:'partner operation stateLoad' for examples on saving/loading state)
+  ; $instancehandle()-&gt;stateLoad()
 
-    ; Insert your code...
-
-  #elsif (&lt;$cmpStateManagedBy&gt; == 2)  ; State managing component
-    ; Get state from state managing component (server side state management)
-    vWebServerContext = $webinfo("WEBSERVERCONTEXT")
-    getitem/id vSession, vWebServerContext, "SESSION"
-    vUserContext = ""
-    activate "USYSSTAT".getState(vSession, $instancename, vUserContext)
-    getlistitems/id /component vUserContext
-
-    ; Insert your code...
-
-  #endif
-
-  ; Insert more code here...
-
-  ; Parse client web request
+  ; Load the load data send from the web client into the instance
   selectcase $webrequesttype
   case "DYNAMIC"
-    webload                         ; Get Data
-    if ($procerror &lt; 0)
-      $webinfo("OUTPUT") = getErrorPage("WEBLOAD Failed", $procerrorcontext)
-      return -1
-    endif
-
-    forlist vOuter in $componentinfo($instancename, "OUTERENTITIES")
-      reconnect "%%vOuter%%%"    ; Reconnect Data
-      if ($procerror &lt; 0)
-        $webinfo("OUTPUT") = getErrorPage("RECONNECT Failed", $procerrorcontext)
-        return -1
-      elseif ($status != 0)
-        $webinfo("OUTPUT") = getErrorPage("RECONNECT Failed", "$status=%%$status%%%&uSEP;ENTITY=%%vOuter%%%")
-        return -1
-      endif
-    endfor
-
-    websetocc                       ; Set Occurrence Context
-    if ($procerror &lt; 0)
-      $webinfo("OUTPUT") = getErrorPage("WEBSETOCC Failed", $procerrorcontext)
-      return -1
-    endif
+    ; Load data as disconnected records into instance
+    ; Use occurrence triggers preDeserialize and postDeserialize to influence loading of the data.
+    webload
+    ; Reconnect data with database and other data already in instance
+    $instancehandle()-&gt;reconnect()
+    ; Set active path
+    websetocc
   endselectcase
 
-  ; Return execution status:
-  ;   return 0  - continue with operation execution
-  ;   return -1 - reject operation execution and return an error to the web server (yellow page)
+  ; return &gt;= 0 to continue with operation/trigger activation
+  ; return &lt; 0 to reject operation execution, this causes a -71 &lt;UACTERR_GET_STATE&gt; exception
   return 0
+
+end
+
+
+partner operation reconnect
+throws
+variables
+  string vEntityName
+  boolean vReconnectErrorsFound
+  struct vDataErrors
+endvariables
+
+  ; Reconnect disconnected records already loaded in the component instance with database and connected data already in the instance
+  vDataErrors = $newstruct
+  forlist vEntityName in $componentinfo($instancename, "OUTERENTITIES")
+    reconnect vEntityName
+    if ($status &gt; 0)
+      ; Reconnect errors detected, errors are reported by error trigger and added to entity data
+      vReconnectErrorsFound = 1
+      try
+        ; Add errors to report
+        $collhandle(vEntityName)-&gt;reportDataErrors(vDataErrors)
+      catch &lt;UPROCERR_OPERATION&gt;
+        ; Operation to generate error report is not available -&gt; add simple error report
+        vDataErrors-&gt;"%%(vEntityName)" = "Reconnect failed"
+      endtry
+    endif
+  endfor
+  ; Return exception with errors
+  if (vReconnectErrorsFound)
+    ; Show errors by throwing exception; further DSP execution is canceled
+    throw -310, "Reconnect failed", ustruct::toList(vDataErrors)
+  endif
 
 end
 
 
 trigger postActivate
+throws
+; The postActivate trigger of a DSP is fired just after the activation of the requested operation or trigger.
+; It typically handles:
+; - Generation of a response for the web client
+; - Saving any instance specific state.
 variables
-  string vWebServerCntxt, vSessionId, vVarlist
+  string vCookie, vState, vVarList
+  string vEntityName, vEntityProperties
 endvariables
 
-  ; =======================================================================================
-  ; Generate web response
-  ; ---------------------------------------------------------------------------------------
   selectcase $webresponsetype
-  case "UPDATE"           ; Update page
-    websave               ; Generate data
-    if ($procerror &lt; 0)
-      webmessage/error getErrorMessage("websave failed", $procerrorcontext)
-      return 0
-    endif
-
-  case "FULLPAGE"         ; Initial page
-    ; Provide the layout, some options:
-    ; 1. Use the layout of the DSP component itself:
-    ;    No additional code required
-    ; 2. Load a layout from file, optionally process it, and assign it to the instance:
-    ;    fileload "filename.html", vLayout
-    ;    call processLayout(vLayout)
-    ;    $instancelayout = vLayout
-    ; 3. Use the layout of the DSP component itself, process it, and assign it back to the instance:
-    ;    vLayout = $instancelayout
-    ;    call processLayout(vLayout)
-    ;    $instancelayout = vLayout
-
-    ; Add instance layout to initial web response
-    weblayout
-    if ($procerror &lt; 0)
-      $webinfo("OUTPUT") = getErrorPage("weblayout failed", $procerrorcontext)
-      return -1
-    endif
-
-    ; Provide DSP component definitions, some options:
-    ; 1. Set default field properties:
-    ;    putitem/id $properties("MYFIELD.MYENTITY")
-    ; 2. Set default field valreps:
-    ;    putitem/id $valrep("MYFIELD.MYENTITY")
-
-    ; Add component definitions (including defaults) to initial web response
-    webdefinitions
-    if ($procerror &lt; 0)
-      $webinfo("OUTPUT") = getErrorPage("weblayout failed", $procerrorcontext)
-      return -1
-    endif
-
-    ; Add component data to initial web response
-    ; (During websave, occurrence triggers preSerialize and postSerialize are fired to influence occurrence serialization.)
+  case "UPDATE"
+    ; Instance is already known by web client; only add instance data to web response
+    ; Use occurrence triggers preSerialize and postSerialize to influence saving of the data.
     websave
-    if ($procerror &lt; 0)
-      webmessage/error getErrorMessage("websave failed", $procerrorcontext)
-      return 0
-    endif
+  case "FULLPAGE"
+    ; Instance is not known by web client; add definitions, layout and data to web response
+    ; Add layout to web response, e.g.:
+    ; - from DSP component definition (see Design Layout Worksheet):
+    ;   weblayout
+    ; - from external file:
+    ;   weblayout "filename.html"
+    ; - from pre-processed DSP component definition (see Design Layout Worksheet):
+    ;   vLayout = $instancelayout
+    ;   call processLayout(vLayout)
+    ;   $instancelayout = vLayout
+    ;   weblayout
+    weblayout
+    ; Add component definitions to web response, this includes:
+    ; - component structure
+    ; - default properties
+    ; - default valreps
+    ; - initial values
+    ; Set properties and valreps values here, using:
+    ;   putitem/id $properties(MYFIELD.MYENTITY)
+    ;   putitem/id $valrep(MYFIELD.MYENTITY)
+    webdefinitions
+    ; Add instance data to web response
+    ; During websave, occurrence triggers preSerialize and postSerialize are fired to influence occurrence serialization.
+    websave
   endselectcase
-  ; =======================================================================================
 
-
-  ; =======================================================================================
-  ; Set state
-  ; ---------------------------------------------------------------------------------------
-  #comment ; $cmpStateManagedBy is specified by component property 'State Stored By'
-  #if (&lt;$cmpStateManagedBy&gt; == 1)  ; Cookie
-    ; Initialize vVarList with all component variables.
-    vVarlist = $componentinfo($instancename, "VARIABLES")
-    ; Add the current values of the component variables to vVarList.
-    putlistitems/id/component vVarlist
-
-    ; Add more state here...
-
-    putitem/id $webinfo("COOKIESOUT"), "MY_VARLIST_COOKIE", vVarlist
-
-  #elsif (&lt;$cmpStateManagedBy&gt; == 2)  ; State manager component
-    vWebServerCntxt = $webinfo("WEBSERVERCONTEXT")
-    getitem/id vSessionId, vWebServerCntxt, "SESSION"
-    ; Initialize vVarList with all component variables.
-    vVarlist = $componentinfo($instancename, "VARIABLES")
-    ; Add the current values of the component variables to vVarList.
-    putlistitems/id/component vVarlist
-    
-    ; Add more state here...
-
-    activate "USYSSTAT".setState(vSessionId, $instancename, vVarlist)
-
-  #endif
-  ; =======================================================================================
-
-  ; Return your execution status
-  ; return 0 - specifies 
-  return 0
+  ; Save instance state here, e.g.:
+  ; (See libsnp:USCRIPT_DSP/snp:'partner operation stateSave' for examples on saving/loading state)
+  ; $instancehandle()-&gt;stateSave()
 
 end
 
-
-entry getErrorPage
-; Returns HTML error page
-returns string
-params
-  string pHeader      : IN
-  string pContextList : IN
-endparams
-variables
-  string vMessage, vAdditionalList
-endvariables
-  vMessage = $replace($htmlmessage, 1, "__HEADER__", pHeader)
-  vAdditionalList = $item("ADDITIONAL", pContextList)
-  delitem/id pContextList, "ADDITIONAL"
-  pContextList = $concat(pContextList, "&uSEP;&uSEP;Additional:&uSEP;", vAdditionalList)
-  pContextList = $replace(pContextList, 1, "COMPONENT", "DSP_INSTANCE=%%$instancename%%%&uSEP;COMPONENT")
-  vMessage = $replace(vMessage, 1, "__MESSAGE__", $replace(pContextList, 1, "&uSEP;", "&lt;br /&gt;", -1))
-  return vMessage
-
-htmlmessage:blockdata ~
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
- &lt;body style="color: rgb(0, 0, 0); background-color: orange;" alink="#000099" link="#000099" vlink="#990099"&gt;
-  &lt;span style="font-weight: bold;"&gt;__HEADER__&lt;/span&gt;&lt;br /&gt;
-  &lt;hr style="width: 100%; height: 2px;" /&gt;
-  __MESSAGE__&lt;br /&gt;
- &lt;/body&gt;
-&lt;/html&gt;
-~
-end
-
-
-entry getErrorMessage
-; Returns error message
-returns string
-params
-  string pHeader      : IN
-  string pContextList : IN
-endparams
-variables
-  string vMessage, vAdditionalList
-endvariables
-  vAdditionalList = $item("ADDITIONAL", pContextList)
-  delitem/id pContextList, "ADDITIONAL"
-  pContextList = $concat(pContextList, "&uSEP;&uSEP;Additional:&uSEP;", vAdditionalList)
-  pContextList = $replace(pContextList, 1, "COMPONENT", "DSP_INSTANCE=%%$instancename%%%&uSEP;COMPONENT")
-  vMessage = $concat(pHeader, "%%^", $replace(pContextList, 1, "&uSEP;", "%%^", -1))
-  return vMessage
-end</DAT>
+</DAT>
 <DAT name="TITLE" xml:space='preserve'>My Dynamic Server Page</DAT>
 <DAT name="USCONTAINED">T</DAT>
 <DAT name="USTATEMANAGEDBY">0</DAT>

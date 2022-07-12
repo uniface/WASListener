@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
-<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!-- Created by Uniface - (C) Rocket Software B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
 <UNIFACE release="10.4" repversion="8" xmlengine="2.0">
 <TABLE>
@@ -143,7 +143,7 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2016-08-25T15:27:44.00</DAT>
+<DAT name="UTIMESTAMP">2022-05-27T16:26:56.00</DAT>
 <DAT name="ULABEL">UMFRN</DAT>
 <DAT name="FTYP">K</DAT>
 <DAT name="DATA_ACCESS">N</DAT>
@@ -160,21 +160,46 @@
 <DAT name="UTRANSACT">0</DAT>
 <DAT name="UPURPOSE">T</DAT>
 <DAT name="UDECLARATIONS" xml:space='preserve'>; Your component defines here (optional)...
-
 ; Your component VARIABLES block here (optional)...
-
 </DAT>
 <DAT name="USCRIPT" xml:space='preserve'>operation exec
+throws
+; The exec operation of a form is fired in the following situations:
+; - activate "MYFORM"
+; - activate "MYFORM".exec()
+; - myFormHandle-&gt;exec()
+; - Select (Compile &amp;) Test from Component Editor in IDE (No parameters allowed)
+
+; Your PARAMS block here (optional)...
+; Your SCOPE  block here (optional)...
+; Your VARIABLES block here (optional)...
 
   ; Your pre-edit code here...
 
-  ; Shows the form component and allow data entry
+  ; A form uses the edit (or display) statement to indicate it is ready to receive user input:
+  ; - For a modal form, being the only form that can receive user input, this happens immediately
+  ; - For non-modal forms this is postponed until all forms are ready to receive user input, which is either implicitly,
+  ;   when there is no more code to execute, or explicitly using an apstart statement.
+  ; During the process of showing/refreshing forms, additional triggers are fired, like read triggers (depending on
+  ; the amount of painted occurrences) and/or formatToDisplay triggers.
+  ; Once Uniface is idle, code execution stops and Uniface waits for user input, like pushing a button, setting focus to a
+  ; field or data entry.
+  ; Any user action causes an interactive trigger to be fired, once executed, Uniface becomes idle again.
+  ; Successful execution of the accept and quit trigger break this loop causing this modal form to exit, after which code
+  ; execution continues after the edit statement.
+  ; Exceptions thrown from interactive triggers bubble up to the statement that initiated the idle mode:
+  ; - For a modal form, that would be the edit (or display) statement
+  ; - For a non-modal form, that would be the apstart statement (which must be present)
+  ; Although it is tempting to catch exceptions by adding a try-catch around the edit (or display) or apstart statement,
+  ; with the intention to correct the error situation, is complex and therefore considered bad practise. Instead, catch 
+  ; exceptions in the interactive triggers itself, where the call-stack and the context is clear.
+  ; Obviously, catching exceptions for reporting is fine.
   edit
 
   ; Your post-edit code here...
 
   ; Return execution status:
-  ;   return 0    ; return &gt;= 0 typically indicates a succesful execution
+  ;   return 0    ; return &gt;= 0 typically indicates a successful execution
   ;   return -1   ; return &lt; 0 typically indicates an error during execution
   return 0
 
@@ -182,34 +207,40 @@ end
 
 
 trigger accept
-; This trigger is fired by a macro ^ACCEPT (GOLD-A) and typically closes the component.
-; It is only fired if the current active path is successfuly validated.
+throws
+; This trigger is fired by a macro ^ACCEPT (GOLD-A, CTRL-A), or activate "MYFORM".accept(), and exits the form component
+; It is typically used to accept any data changes and then exit
+; Pre-condition: Data on the active path is successfully validated
 
-  ; Your implementation here...  
+  ; Your implementation here...
 
-  ; Return execution status:
-  ;   return 0    ; return &gt;= 0 to allow the component to close
-  ;   return -1   ; return &lt; 0 to prevent the component from closing
+  ; Return &gt;=0 to continue component exit ($status is 9 after edit statement in exec operation)
+  ; Return &lt;0 to prevent component exit
   return 0
 
 end
 
 
 trigger quit
-; This trigger is fired by a macro ^QUIT (GOLD-Q) and typically closes the component
+throws
+; This trigger is fired by a macro ^QUIT (GOLD-Q), or activate "MYFORM".quit(), and exits the form component
+; It is typically used to cancel any data changes and exit
+; Pre-condition: None, unlike the accept and store trigger
 
   ; Your implementation here...  
 
-  ; Return execution status:
-  ;   return 0    ; return &gt;= 0 to allow the component to close
-  ;   return -1   ; return &lt; 0 to prevent the component from closing
+  ; Return &gt;=0 to continue component exit ($status is 10 after edit statement in exec operation)
+  ; Return &lt;0 to prevent component exit
   return 0
 
 end
 
 
 trigger clear
-; This trigger is fired by a macro ^CLEAR (GOLD-G) and typically cleares the data from the component without storing
+throws
+; This trigger is fired by a macro ^CLEAR (GOLD-G)
+; It is typically used to clear the data from the component
+; Pre-condition: None, unlike the accept and store trigger
 
   ; Your implementation here, e.g.:
   clear
@@ -220,112 +251,89 @@ end
 
 
 trigger retrieve
-; This trigger is fired on macro ^RETRIEVE (GOLD-R) and typically performs a data retrieve
+throws
+; This trigger is fired on macro ^RETRIEVE (GOLD-R)
+; It is typically used to retrieve data from the database into the main entity
+; Pre-condition: None, unlike the accept and store trigger
+variables
+  string vProfiles
+endvariables
 
-  ; Your implementation here, e.g.:
-  retrieve
-  selectcase $procerror
-  case 0
-    ; ok
-  case -2, -4
-    message/info "Retrieve: No data found in the database."
-  elsecase
-    message/error "Retrieve: Error occurred - (%%($procerror))."
-  endselectcase
+#ifdefined option_1
+  ; Optionally copy a single occurrence from another entity to be used as profile input
+  clear/e "&lt;$entname&gt;"
+  putlistitems/occ vProfiles, "PROFILE_ENTITY"
+  getlistitems/occ/init vProfiles, "&lt;$entname&gt;"
+#endif
 
-  return 0
+  ; Retrieve data from DBMS using current occurrence as profile
+  try
+    retrieve
+    message "Retrieve successful"
+  catch &lt;UIOSERR_OCC_NOT_FOUND&gt;, &lt;UIOSERR_OPEN_FAILURE&gt;  ; -2, -4
+    message "Retrieve failed - No data found in the database."
+  endtry
 
 end
 
 
 trigger store
-; This trigger is fired on macro ^STORE(GOLD-S) and typically performs a data store
-; It is only fired if the current active path is successfuly validated.
-
+throws
+; This trigger is fired on macro ^STORE (GOLD-S)
+; It is typically used to invoke a data store
+; Pre-condition: Data on the active path is successfully validated
 variables
-  numeric vProcError
-  ; More variables here ...
+  string vProcErrorContext
 endvariables
 
-  ; Your implementation here, e.g.:
-  store
-  selectcase $status
-  case 1
-    ; no modifications
-    message/warning "No modifications."
-  case 0
-    ; store successful
-    commit
-    selectcase $procerror
-    case 0
-      ; store and commit successful
-      message/info "Store successful."
-    elsecase
-      ; commit error
-      message/info "Commit failed ($procerror=%%($procerror))."
-    endselectcase
-  elsecase
-    ; store failed
-    vProcError = $procerror
-    ; rollback
-    rollback
-    selectcase $procerror
-    case 0
-      ; rollback successful
-      message/error "Store failed ($procerror=%%(vProcError)) - transaction rolled back."
-    elsecase
-      ; rollback error
-      message/error "Store failed ($procerror=%%(vProcError)) - Rollback failed ($procerror=%%($procerror))."
-    endselectcase
-  endselectcase
-
-  return 0
+  ; Validate data before store to separate validation errors from store errors
+  ; Validation errors are reported back to the data and will be shown by the DSP web client
+  try
+    validate
+    try
+      store
+      if ($status == 1)
+        message "No modifications made or entity read-only"
+      else
+        commit
+        message "Store successful."
+      endif
+    catch
+      vProcErrorContext = $procerrorcontext
+      rollback
+      throw $item("ERROR", vProcErrorContext), "Rethrow", vProcErrorContext
+    endtry
+  catch &lt;UGENERR_4GL_SAYS_ERROR&gt;, &lt;UVALERR_SYNTAX&gt;, &lt;UVALERR_CONSTRAINT&gt;, &lt;UVALERR_KEY_PROFILE&gt;, &lt;UVALERR_KEY_EMPTY&gt;
+    ; Validation errors are already reported by the error trigger -&gt; ignore
+  endtry
 
 end
 
 
 trigger erase
-; This trigger is fired on macro ^ERASE (GOLD-E) and typically erases retrieved data
-
+throws
+; This trigger is fired on macro ^ERASE (GOLD-E)
+; It is typically used to erase all data currently in the component from the database
+; Pre-condition: None, unlike the accept and store trigger
 variables
-  numeric vProcError
-  ; More variables here ...
+  string vProcErrorContext
 endvariables
 
   ; Your implementation here, e.g.:
-  erase
-  ; Erase (delete and store) retrieved data of specified entity
-  ;   (make sure delete trigger is defined for entity)
-  erase
-  selectcase $procerror
-  case 0
-    ; erase successful or no modifications
-    commit
-    selectcase $procerror
-    case 0
-      ; erase and commit successful
-      message/info "Erase successful."
-    elsecase
-      ; commit error
-      message/info "Commit failed ($procerror=%%($procerror))."
-    endselectcase
-  elsecase
-    ; erase failed
-    vProcError = $procerror
-
-    ; rollback
+  try
+    erase/e "&lt;$entname&gt;"
+    pResult-&gt;status = $status
+    if (pResult-&gt;status == 1)
+      pResult-&gt;message = "Erase not allowed"
+    else
+      commit
+      pResult-&gt;message = "Store successful"
+    endif
+  catch
+    pResult-&gt;message = "Store failed"
+    pResult-&gt;context = $procerrorcontext
     rollback
-    selectcase $procerror
-    case 0
-      ; rollback successful
-      message/error "Erase failed ($procerror=%%(vProcError)) - transaction rolled back."
-    elsecase
-      ; rollback error
-      message/error "Erase failed ($procerror=%%(vProcError)) - Rollback failed ($procerror=%%($procerror))."
-    endselectcase
-  endselectcase
-
-  return 0
+  endtry
 
 end</DAT>
 <DAT name="TITLE" xml:space='preserve'>My non-modal Form</DAT>

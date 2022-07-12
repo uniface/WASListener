@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
-<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!-- Created by Uniface - (C) Rocket Software B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
 <UNIFACE release="10.4" repversion="8" xmlengine="2.0">
 <TABLE>
@@ -71,7 +71,7 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2016-08-16T15:21:10.00</DAT>
+<DAT name="UTIMESTAMP">2022-06-13T14:36:45.00</DAT>
 <DAT name="ULABEL">UAPS</DAT>
 <DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">3</DAT>
@@ -111,8 +111,12 @@ MYSVC=$asv:MYSVC\par
 \pard\ltrpar\lang1043\f2\par
 }
 </DAT>
-<DAT name="UDECLARATIONS" xml:space='preserve'>; Application Shell for interactive MS Windows applications
-</DAT>
+<DAT name="UDECLARATIONS" xml:space='preserve'>; Application Shell for interactive GUI applications
+
+#comment ; Define how uncaught exceptions need to be reported
+#define DEVELOPMENT = TRUE
+#comment ; FALSE - writes the uncaught exceptions to exception.log and shows a generic exception on the screen
+#comment ; TRUE  - shows the uncaught exception on the screen, including all details (hardcoded default)</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Fired triggers are:
 ;   trigger apstart        (&lt;v10 known as 'Application Execute' trigger)
 ;   trigger receiveMessage (&lt;v10 known as 'Asynchronous Interrupt' trigger)
@@ -121,13 +125,62 @@ MYSVC=$asv:MYSVC\par
 ;   trigger keyboardSwitch
 
 
-; The trigger apstart is mandatory.
 trigger apstart
-; Your VARIABLES block here (optional)...
+throws
+; This is the first trigger fired at application startup
+; Any command line arguments are available in $1, $2, etc
 
-  ; Activate this first component of your application here...
+#if (&lt;DEVELOPMENT&gt; != TRUE)
+  try
+#endif
+
+    ; Activate the first component of your application here, e.g....
+    activate "MYFORM".exec()
+    ; Include apstart to catch exceptions from non-modal forms
+    apstart
+
+#if (&lt;DEVELOPMENT&gt; != TRUE)
+  catch
+    ; Write uncaught exceptions to log file and throw generic exception
+    call logException($procerrorcontext)
+  endtry
+#endif
+
+  return 0
 
 end
+
+
+entry logException
+throws
+returns string  ; exception-list
+params
+  string pProcErrorContext: in
+endparams
+variables
+  string vErrorId, vError
+endvariables
+
+  ; Generate an error Id for reference
+  vErrorId = $uuid
+
+  ; This example filedumps the exception details in procerror.log
+  ; Avoid showing implementation details to the end-user by logging exceptions.
+  ; Exception details contain harmful information, which can be abused by hackers.
+
+  ; Modify this code to suit your needs:
+
+  filedump/append "An unexpected procerror terminated the application%%^", "procerror.log"
+  filedump/append "ERRORID=%%(vErrorId)%%^", "procerror.log"
+  filedump/append "DATETIME=%%($datim)%%^", "procerror.log"
+  filedump/append "PROCERRORCONTEXT=%%(pProcErrorContext)%%^", "procerror.log"
+  filedump/append "%%^", "procerror.log"
+
+  ; Show a generic error message containing the error Id
+  message/error "An unexpected procerror will terminate the application, contact your administrator.%%^Provide the following error Id for reference: %%(vErrorId)~Uncaught exception"
+
+end
+
 </DAT>
 <DAT name="SCREENPIC" xml:space='preserve'>&uFRM;TYP=F&uSEP;NAM=MESSAGE&uSEP;WID=80&uSEP;HEI=1&uSEP;HOC=80&uSEP;VOC=1&uFRM;
 &uFRM;TYP=F&uSEP;NAM=FORMAREA&uSEP;WID=80&uSEP;HEI=23&uSEP;HOC=80&uSEP;VOC=23&uFRM;</DAT>

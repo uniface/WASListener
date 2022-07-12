@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
-<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!-- Created by Uniface - (C) Rocket Software B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
 <UNIFACE release="10.4" repversion="8" xmlengine="2.0">
 <TABLE>
@@ -31,7 +31,7 @@
 <DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Library of trigger snippets for Entity Service components</DAT>
-<DAT name="UTIMESTAMP">2016-08-24T14:43:41.00</DAT>
+<DAT name="UTIMESTAMP">2022-06-13T15:55:52.00</DAT>
 <DAT name="UPURPOSE">N</DAT>
 </OCC>
 </TABLE>
@@ -263,6 +263,526 @@ end
 </DAT>
 </OCC>
 <OCC>
+<DAT name="UNAME">U071_URETR</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ESV</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>ESV API: Retrieve a list of occurrences given a particular profile</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;z&gt;uRetr[esvEntity]&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;public operation&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>public operation uRetr&lt;esvEntity&gt;
+throws
+; purpose:  retrieve a list of occurrences given a particular profile
+; pre:      first READ trigger at client component
+params
+  entity     &lt;esvEntity&gt; : OUT ; list of retrieved occurrences
+  occurrence &lt;esvEntity&gt; : IN  ; profile occurrence
+  string     pFieldList  : IN  ; fields to be retrieved into &lt;esvEntity&gt;
+  string     where       : IN  ; where clause for read (only used when called explicitly)
+  string     uWhere      : IN  ; uWhere clause for read (only used when called explicitly)
+endparams
+variables
+  numeric    vStatus
+endvariables
+
+  if (where != "" &amp; uWhere != "")
+    throw &lt;inParamError&gt;, "One of the parameters 'where' and 'uwhere' must be empty."
+  endif
+
+  ; profile occ. is unpacked and made current. Retrieve the data.
+  vStatus = $instancehandle()-&gt;zRetrA&lt;esvEntity&gt;(pFieldList, where, uWhere)
+  if (vStatus &gt;= 0)
+    set $subsetreturn("&lt;esvEntity&gt;") ; data to be returned is subsetted to the just retrieved set
+  endif
+
+  return vStatus    ; data is packed and returned by UNIFACE
+end ; uRetr&lt;esvEntity&gt;</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U072_USTORE</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ESV</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>ESV API: Indicate a store transaction (i.e. a serie of Proc statements 'write' and 'delete' at the client)</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;z&gt;uStore[esvEntity]&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;public operation&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>public operation uStore&lt;esvEntity&gt;
+throws
+; purpose: indicate a store transaction (i.e. a serie of Proc statements 'write' and 'delete' at the client)
+; pre:     Proc statement 'store' at client component
+
+  putitem/id $entityproperties(&lt;esvEntity&gt;), "IN_STORE", 1
+end ; uStore&lt;esvEntity&gt;
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U073_UUPD</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ESV</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>ESV API: Create or update an occurrence. Similar to uRem&lt;esvEntity&gt;</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;z&gt;uUpd[esvEntity]&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;public operation&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>public operation uUpd&lt;esvEntity&gt;
+throws
+; purpose: create or update an occurrence. Similar to uRem&lt;esvEntity&gt;
+; pre:     Proc statement 'write' at client component ; uStore
+params
+  string     pFieldList  : IN ; fields to be updated
+  occurrence &lt;esvEntity&gt; : IN ; source occurrence: contains key + data for update
+endparams
+variables
+  string  vKeyFields, vProcErrorContext
+  numeric vStatus
+  boolean vInStore
+endvariables
+
+  getitem/id vInStore, $entityproperties("&lt;esvEntity&gt;"), "IN_STORE"
+  try
+    if (!vInStore)
+      throw &lt;notInStoreMode&gt;, "uStore&lt;esvEntity&gt; must be called before uUpd&lt;esvEntity&gt;."
+    endif
+
+    findkey "&lt;esvEntity&gt;", 1                          ; look-up if we already have the source occurrence in our hitlist
+    selectcase $status
+    case &lt;keyNew&gt;                                     ; not in our hitlist, nor in database
+      creocc "&lt;esvEntity&gt;", 0
+      setocc "&lt;esvEntity&gt;", $curocc+1                 ; position on source occurrence
+      moveocc "&lt;esvEntity&gt;", $curocc-1, pFieldList    ; move data, delete source occurrence and position on target occurrence
+    case &lt;keyInHitlist&gt;                               ; already as target occurrence in our hitlist (position now in $result)
+      moveocc "&lt;esvEntity&gt;", $result, pFieldList      ; move data into target occurrence
+    case &lt;keyInDatabase&gt;                              ; already in database, but not in our hitlist. Retrieve into hitlist and update it.
+      vKeyFields = $keyfields("&lt;esvEntity&gt;", &lt;PRIMARYKEY&gt;)
+      putlistitems/id vKeyFields                      ; copy source occurrence's primary key data into keyFields
+      creocc "&lt;esvEntity&gt;", 0                         ; create profile occurrence.
+      getlistitems/id vKeyFields                      ; paste primary key data into profile occurrence
+      vStatus = $instancehandle()-&gt;zRetrA&lt;esvEntity&gt;(pFieldList, "", "") ; retrieve target
+      setocc "&lt;esvEntity&gt;", $curocc+1               ; position on source occurrence
+      moveocc "&lt;esvEntity&gt;", $curocc-1, pFieldList  ; move data from source into target, delete source and position on target
+    endselectcase
+    try
+      vStatus = $occhandle("&lt;esvEntity&gt;")-&gt;afterUpdate()
+    catch &lt;UPROCERR_OPERATION&gt;
+      ; operation is option -&gt; ignore
+    endtry
+  catch
+    vProcErrorContext = $procerrorcontext
+    remocc "&lt;esvEntity&gt;"
+    throw $item("ERROR", vProcErrorContext), "rethrow", vProcErrorContext
+  endtry
+
+  return vStatus
+end ; uUpd&lt;esvEntity&gt;</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U074_UREM</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ESV</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>ESV API: Mark an occurrence for deletion. Similar to uUpd&lt;esvEntity&gt;</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;z&gt;uRem[esvEntity]&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;public operation&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>public operation uRem&lt;esvEntity&gt;
+throws
+; purpose: mark an occurrence for deletion. Similar to uUpd&lt;esvEntity&gt;
+; pre:     Proc statement 'delete' at client component ; uStore
+; pre:     uStore
+params
+  occurrence &lt;esvEntity&gt; : IN ; source occurrence
+endparams
+variables
+  numeric vStatus
+  string vProcErrorContext
+  boolean vInStore
+endvariables
+
+  getitem/id vInStore, $entityproperties("&lt;esvEntity&gt;"), "IN_STORE"
+  try
+    if (!vInStore)
+      throw &lt;notInStoreMode&gt;, "uStore&lt;esvEntity&gt; must be called before uRem&lt;esvEntity&gt;."
+    endif
+
+    findkey "&lt;esvEntity&gt;", 1 ; look-up target occurrence
+    selectcase $status
+    case &lt;keyNew&gt;
+      ; already removed - done
+    case &lt;keyInHitlist&gt;
+      moveocc "&lt;esvEntity&gt;", $result, ""                             ; position on target
+    case &lt;keyInDatabase&gt;
+      vStatus = $instancehandle()-&gt;zRetrA&lt;esvEntity&gt;("", "", "")     ; retrieve it for removal
+    endselectcase
+
+    try
+      vStatus = $occhandle("&lt;esvEntity&gt;")-&gt;beforeRemove()
+    catch &lt;UPROCERR_OPERATION&gt;
+      ; operation is option -&gt; ignore
+      vStatus = 0
+    endtry
+
+    if (vStatus = 0)
+      remocc "&lt;esvEntity&gt;", 0
+    endif
+
+  catch
+    vProcErrorContext = $procerrorcontext
+    remocc "&lt;esvEntity&gt;"
+    throw $item("ERROR", vProcErrorContext), "rethrow", vProcErrorContext
+  endtry
+
+  return vStatus
+end ; uRem&lt;esvEntity&gt;
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U075_UENDSTORE</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ESV</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>ESV API: Indicate store transaction is completed, start physical store process</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;z&gt;uEndStore[esvEntity]&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;public operation&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>public operation uEndStore
+throws
+; purpose: indicate store transaction is completed, start physical store process
+; pre:     last Proc statement 'write' or 'delete' at client component ; uStore
+variables
+  numeric vStatus
+endvariables
+
+  putitem/id $entityproperties(&lt;esvEntity&gt;), "IN_STORE", 0
+  vStatus = $instancehandle()-&gt;zSave&lt;esvEntity&gt;()    ; communicate physical write and delete to DBMS
+
+  return vStatus
+end ; uEndStore
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U076_ULOCK</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ESV</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>ESV API: Lock occurrence</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;z&gt;uLock[esvEntity]&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;public operation&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>public operation uLock&lt;esvEntity&gt;
+throws
+; purpose: lock occurrence
+; pre:     Proc statement 'lock' at client component
+params
+  occurrence &lt;esvEntity&gt; : IN ; profile occurrence to be locked
+endparams
+variables
+  numeric vStatus
+  string vProcErrorContext
+endvariables
+
+  findkey "&lt;esvEntity&gt;", 1                       ; look-up target occurrence
+  selectcase $status
+  case &lt;keyNew&gt;
+    remocc "&lt;esvEntity&gt;", 0                      ; remove profile occurrence
+    return -1
+  case &lt;keyInHitlist&gt;
+    moveocc "&lt;esvEntity&gt;", $result, ""           ; remove profile occurrence and position on occurrence to be locked
+  case &lt;keyInDatabase&gt;
+    vStatus = $instancehandle()-&gt;zRetrA&lt;esvEntity&gt;("", "", "")     ; retrieve it into hitlist
+  endselectcase
+
+  try
+    lock
+    return $status
+  catch &lt;UIOSERR_UPDATE_NOT_ALLOWED&gt;
+    ; No write or delete permission for the table or file. The occurrence is read-only (cannot be locked)
+    return -5
+  catch &lt;UIOSERR_WRITE_FAILURE&gt;
+    ; An error occurred while writing, updating, or deleting the table or file; for example, lack of disk space,
+    ; no write permission, or violation of a database constraint
+    ; Inform caller by returning -6 and continue processing
+    return -6
+  catch &lt;UIOSERR_DUPLICATE_KEY&gt;
+    ; The key exists in the database but was not found in the hitlist. This occurs when the user tries to enter a duplicate key
+    ; Inform caller by returning -7 and continue processing
+    return -7
+  catch &lt;UIOSERR_LOGON_ERROR&gt;
+    ; DBMS logon error. This can occur if the database connection has been lost or the maximum number
+    ; of DBMS logons has already been reached
+    ; Inform caller by returning -9 and continue processing
+    return -9
+  catch &lt;UIOSERR_LOCK_DATA_MISMATCH&gt;
+    ; Occurrence has been modified or removed since it was retrieved
+    ; Reload the occurrence and continue processing
+    reload
+  catch &lt;UIOSERR_LOCKED&gt;
+    ; Occurrence already locked; wait and try again
+    ; Inform caller by returning -11 and continue processing
+    return -11
+  endtry
+
+end ; uLock&lt;esvEntity&gt;
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U077_UCOMMIT</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ESV</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>ESV API: Commit transaction on ESV subtype's DBMS path</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;z&gt;uCommit[esvEntity]&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;public operation&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>public operation uCommit
+throws
+; purpose: commit transaction on ESV subtype's DBMS path
+; pre:     Proc statement 'commit' at client component
+
+  commit
+  return $status
+end ; uCommit</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U078_UROLLBACK</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ESV</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>ESV API: Rollback transaction on ESV subtype's DBMS path</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;z&gt;uRollBack[esvEntity]&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;public operation&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>public operation uRollBack
+throws
+; purpose: rollback transaction on ESV subtype's DBMS path
+; pre:     Proc statement 'rollback' at client component
+
+  clear
+  rollback
+  return $status
+end ; uRollback
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U081_ZRETRA</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ESV</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>ESV API: Retrieve additional occurrences</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;z&gt;zRetrA[esvEntity]&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;partner operation&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>partner operation zRetrA&lt;esvEntity&gt;
+throws
+params
+  string pFieldList : IN
+  string where     : IN
+  string uWhere    : IN
+endparams
+variables
+  string vProcErrorContext
+endvariables
+
+  if (where != "")
+    putitem/id $entityproperties(&lt;esvEntity&gt;), "WHERE", where
+  elseif (uWhere != "")
+    putitem/id $entityproperties(&lt;esvEntity&gt;), "U_WHERE", uWhere
+  endif
+
+  $selectlist ("&lt;esvEntity&gt;") = pFieldList
+  try
+    retrieve/a "&lt;esvEntity&gt;"
+    return $status
+  catch &lt;UIOSERR_OCC_NOT_FOUND&gt;, &lt;UIOSERR_OPEN_FAILURE&gt;  ; -2, -4
+    vProcErrorContext = $procerrorcontext
+    remocc "&lt;esvEntity&gt;", 0 ; remove profile
+    return $item("ERROR", vProcErrorContext)
+  catch
+    vProcErrorContext = $procerrorcontext
+    remocc "&lt;esvEntity&gt;", 0 ; remove profile
+    throw $item("ERROR", vProcErrorContext), "rethrow", vProcErrorContext
+  endtry
+
+end ; zRetrA&lt;esvEntity&gt;</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U082_ZSAVE</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ESV</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>ESV API: Store modifications</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;z&gt;zSave[esvEntity]&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;partner operation&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>partner operation zSave&lt;esvEntity&gt;
+throws
+variables
+  string vProcErrorContext
+  struct vDataErrors
+endvariables
+
+  try
+    validate/e "&lt;esvEntity&gt;"
+    store/e "&lt;esvEntity&gt;"
+  catch &lt;UGENERR_4GL_SAYS_ERROR&gt;, &lt;UVALERR_SYNTAX&gt;, &lt;UVALERR_CONSTRAINT&gt;, &lt;UVALERR_KEY_PROFILE&gt;, &lt;UVALERR_KEY_EMPTY&gt;
+    ; Data errors, as reported by error triggers, cannot be passed back to the client component
+    ; Instead, return an exception including a data error report
+    vProcErrorContext = $procerrorcontext
+    try
+      ; Get data errors as reported by error triggers and add to procerrorcontext
+      $collhandle(&lt;esvEntity&gt;)-&gt;reportDataErrors(vDataErrors)
+      putitem/id vProcErrorContext, "DATAERRORS", vDataErrors-&gt;$dbgstring
+    catch &lt;UPROCERR_OPERATION&gt;
+      ; Ignore
+    endtry
+    throw &lt;UGENERR_4GL_SAYS_ERROR&gt;, "Data validation failed", vProcErrorContext
+  endtry
+  return $status
+end ; zSave&lt;esvEntity&gt;
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U091_INIT</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ESV</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Invoked when component gets loaded</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;init&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;operation&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>operation init
+throws
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U092_CLEANUP</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ESV</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Invoked when instance gets unloaded</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;cleanup&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;operation&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>operation cleanup
+throws
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U093_PREACTIVATE_SVC</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ESV</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>RPT SVC ESV SSV</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired before activation of an operation (SVC ESV SSV)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;preActivate&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger preActivate
+throws
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U094_POSTACTIVATE_SVC</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ESV</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>RPT SVC ESV SSV</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired after activation of an operation (SVC ESV SSV)</DAT>
+<DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;postActivate&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger postActivate
+throws
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+end
+
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U110_ERRREPORT</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_ESV</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Adds any data errors to a report of type struct</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;z&gt;reportDataErrors&lt;/z&gt;&lt;r&gt;&lt;s&gt;coll&lt;/s&gt;&lt;x&gt;partner operation&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>partner operation reportDataErrors
+throws
+; This operation looks for any data errors in the current collection and adds them to the struct report.
+; The error message are expected to be available as $occproperties and $fieldproperties using the "errormsg" id.
+; The value of the "errormsg" property is expected to be an indexed list with one or more error messages.
+; The report is a struct and its structure represents the collection structure.
+; This report activates this same operation for all its inner entities/collections.
+;
+; Use this report after data validation of service components, where a report needs to be returned to the caller.
+; Return this report as a reference of the report struct; serialize to e.g. JSON first before returning.
+; You can also use myDatapErrorReport-&gt;$dbgstring to write the report to a log in human readable format.
+; Interactive components, like DSPs, USPs, and FRMs read the errors directly from the data; no need to generate this report.
+params
+  byref struct pErrorReport: inout
+endparams
+variables
+  struct vCollErrors, vOccErrors
+  string vFieldName, vInnerEntityName, vErrorMsg, vMsg
+endvariables
+
+  ; Initialize the error report of the current collection and add it to the report struct
+  pErrorReport-&gt;*{-1} = $newstruct
+  vCollErrors = pErrorReport-&gt;*{-1}
+  vCollErrors-&gt;$name = "&lt;$entname&gt;.&lt;$modelname&gt;"
+  
+  ; Iterate all occurrences of this collection.
+  forentity "&lt;$entname&gt;"
+    vCollErrors-&gt;*{-1} = $newstruct
+    vOccErrors = vCollErrors-&gt;*{-1}
+    vOccErrors-&gt;$name = "OCC%%($curocc(&lt;$entname&gt;))"
+
+    ; Add occurrence errors (if any); includes any key errors
+    getitem/id vErrorMsg, $occproperties(&lt;$entname&gt;), "errormsg"
+    if ($status &gt; 0)
+      forlist vMsg in vErrorMsg
+        vOccErrors-&gt;"$error"{-1} = vErrorMsg
+      endfor
+    endif
+
+    ; Add field errors (if any)
+    forlist vFieldName in $entinfo(&lt;$entname&gt;, "PAINTEDFIELDS")
+      getitem/id vErrorMsg, $fieldproperties("%%(vFieldname).&lt;$entname&gt;"), "errormsg"
+      if ($status &gt; 0)
+        vOccErrors-&gt;"%%(vFieldName)" = $newstruct
+        vOccErrors-&gt;"%%(vFieldName)"-&gt;"$value" = @("%%(vFieldname).&lt;$entname&gt;")
+        forlist vMsg in vErrorMsg
+          vOccErrors-&gt;"%%(vFieldName)"-&gt;"$error"{-1} = vMsg
+        endfor
+      endif
+    endfor
+    
+    ; Add errors of inner collections (if any)
+    forlist vInnerEntityName in $entinfo(&lt;$entname&gt;, "INNER")
+      $collhandle(vInnerEntityName)-&gt;reportDataErrors(vOccErrors)
+    endfor
+
+    ; Occurrence has no context -&gt; delete it
+    if (vOccErrors-&gt;$membercount == 0)
+      vOccErrors-&gt;$parent = ""
+    endif
+  endfor
+
+end
+</DAT>
+</OCC>
+<OCC>
 <DAT name="UNAME">U211_READ</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_ESV</DAT>
@@ -272,73 +792,57 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for occs read from the DBMS (retrieve)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;read&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger read
+throws
 ; This trigger is fired as part of the retrieve process.
 ; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
-
-  ; Your implementation here...
-  #define example_1
-
-#ifdefined example_1
-  ; Read basic:
-  read
-#endif
-
-#ifdefined example_2
-  ; Read with DBMS lock for paranoid locking:
-  read/lock
-#endif
-
-#ifdefined example_3
-  ; Read with DBMS paging:
 variables
-  numeric vPageSize, vPageOffset
+  string vOrderByFieldName, vParams, vOptions, vMaxHits, vOffset
+  boolean vOrderDescending
 endvariables
-  ; The page size and offset are maintained as entity properties,
-  ; this could also be maintained alsewhere.
-  vPageSize   = $item("PAGESIZE", $entityproperties("&lt;$entname&gt;"))
-  vPageOffset = $item("PAGEOFFSET", $entityproperties("&lt;$entname&gt;"))
-  read options "step=%%(vPageSize)&uSEP;offset=%%(vPageOffset)"
-#endif
-
-#ifdefined example_4
-  ; Read with DBMS where clause:
-variables
-  string  vProfile1, vProfile2   ; , ...
-endvariables
-  ; The profiles are maintained as entity properties,
-  ; this could also be maintained alsewhere, e.g. a dedicated profile entity with the fields that match the database fields.
-  vProfile1 = $item("PROFILE1", $entityproperties("&lt;$entname&gt;"))
-  vProfile2 = $item("PROFILE2", $entityproperties("&lt;$entname&gt;"))
-  ; ...
-  read u_where (MYFIELD1 == vProfile1 &amp;&amp; MYFIELD2 == MYFIELD2)
-#endif
-
-#ifdefined example_5
-  ; Read with DBMS order by:
-  read order by "MYFIELD1, MYFIELD2"
-#endif
-
-#ifdefined example_6
-  ; Typical read error handling
-  if ($status = 0)
-    ; Hit found. Your post read code here...
-  endif
-#endif
-
-#ifdefined example_7
-  ;- Discarding hits form the hitlist based on a procedural condition
-  read
-  if ($status = 0)
-    if (FIELD1.&lt;$entname&gt; &gt; FIELD2.&lt;$entname&gt;)
-      ; Some procedural condition determined to discard this occurrence.
-      discard
+  
+  if ($rettype == 78)
+    ; Read the next occurrence
+    read
+  
+  else
+    ; Read the occurrence, e.g.:
+    ; - Get order-by information from e.g. $entityproperties
+    getitem/id vOrderByFieldName, $entityproperties(&lt;$entname&gt;), "ORDERBY_FIELDNAME"
+    if ($status &gt; 0)
+      getitem/id vOrderDescending, $entityproperties(&lt;$entname&gt;), "ORDERBY_DESCENDING"
+      if (vOrderDescending)
+        vOrderByFieldName = "%%(vOrderByFieldName) desc"
+      else
+        vOrderByFieldName = "%%(vOrderByFieldName)"
+      endif
+    endif
+    ; - Get paging info from e.g. $entityproperties
+    getitem/id vMaxHits, $entityproperties(&lt;$entname&gt;), "MAX_HITS"
+    if ($status &gt; 0)
+      putitem/id vOptions, "maxhits", vMaxHits
+    endif
+    getitem/id vOffset, $entityproperties(&lt;$entname&gt;), "OFFSET"
+    if ($status &gt; 0)
+      putitem/id vOptions, "offset", vOffset
+    endif
+    ; - Get U_CONDITION, U_WHERE, or WHERE from e.g. $entityproperties and perform read
+    getitem/id vParams, $entityproperties(&lt;$entname&gt;), "U_CONDITION"
+    if ($status &gt; 0)
+      read options vOptions u_condition (vParams) order by vOrderByFieldName
+    else
+      getitem/id vParams, $entityproperties(&lt;$entname&gt;), "U_WHERE"
+      if ($status &gt; 0)
+        read options vOptions u_where (vParams) order by vOrderByFieldName
+      else
+        getitem/id vParams, $entityproperties(&lt;$entname&gt;), "WHERE"
+        if ($status &gt; 0)
+          read options vOptions where (vParams) order by vOrderByFieldName
+        else
+          read options vOptions order by vOrderByFieldName
+        endif
+      endif
     endif
   endif
-#endif
-
-  ; Do not influence the return value of either the read and/or discard statements.
-  ; The returned value is used by the retrieve statement to determine e.g. fetch more hits.
-  return $status
 
 end
 </DAT>
@@ -353,15 +857,15 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for occs that need to be written to DBMS (store)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;write&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger write
-; This trigger is fired as part of the store process.
-; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+throws
+; This trigger is fired when Uniface writes the occurrences to the database, typically as part of a store.
 
-  ; Your last moment field updates here...
+  ; Your last moment field updates here, e.g.:
+  ; TIMESTAMP.&lt;$entname&gt; = $datim
 
   write
 
 end
-
 </DAT>
 </OCC>
 <OCC>
@@ -374,15 +878,15 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for up-occs that need to be written to DBMS (store)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;writeUp&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger writeUp
-; This trigger is fired as part of the store process.
-; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+throws
+; This trigger is fired when Uniface writes an occurrence of an up entity to the database, typically as part of a store.
 
-  ; Your last moment field updates here...
+  ; Your last moment field updates here, e.g.:
+  ; TIMESTAMP.&lt;$entname&gt; = $datim
 
   write
 
 end
-
 </DAT>
 </OCC>
 <OCC>
@@ -392,17 +896,15 @@ end
 <DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
 <DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
-<DAT name="UDESCR" xml:space='preserve'>Fired for occs that needs to be deleted from the DBMS</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for occs that need to be deleted from the DBMS</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;delete&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger delete
-; This trigger is fired as part of the store/erase process.
-; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+throws
+; This trigger is fired when Uniface deletes the occurrences from the database, typically as part of a store or erase.
 
   delete
 
-end
-
-</DAT>
+end</DAT>
 </OCC>
 <OCC>
 <DAT name="UNAME">U212_DELETEUP</DAT>
@@ -414,14 +916,12 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for every up occ marked for deletion (statement store)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;deleteUp&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger deleteUp
-; This trigger is fired as part of the store/erase process.
-; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+throws
+; This trigger is fired when Uniface deletes the occurrences of an up entity from the database, typically as part of a store or erase.
 
   delete
 
-end
-
-</DAT>
+end</DAT>
 </OCC>
 <OCC>
 <DAT name="UNAME">U22_LOCK</DAT>
@@ -433,12 +933,46 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for occs with validation errors</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;lock&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger lock
+throws
+; This trigger is fired as part of a database lock request.
+; Depending on the locking strategy and DBMS locking support, this can happen at different moments:
+; - During read (using read/lock)
+; - At field start modification on interactive Form component
+; - At field assignment in ProcScript
+; - During a reconnect of disconnected records
+; By catching lock exceptions and return a negative value, Uniface is instructed to continue processing.
+; By not catching lock exceptions Uniface will not continue processing.
 
-  lock
-  if ($status = -10) reload
+  try
+    lock
+  catch &lt;UIOSERR_UPDATE_NOT_ALLOWED&gt;
+    ; No write or delete permission for the table or file. The occurrence is read-only (cannot be locked)
+    return -5
+  catch &lt;UIOSERR_WRITE_FAILURE&gt;
+    ; An error occurred while writing, updating, or deleting the table or file; for example, lack of disk space,
+    ; no write permission, or violation of a database constraint
+    ; Inform caller by returning -6 and continue processing
+    return -6
+  catch &lt;UIOSERR_DUPLICATE_KEY&gt;
+    ; The key exists in the database but was not found in the hitlist. This occurs when the user tries to enter a duplicate key
+    ; Inform caller by returning -7 and continue processing
+    return -7
+  catch &lt;UIOSERR_LOGON_ERROR&gt;
+    ; DBMS logon error. This can occur if the database connection has been lost or the maximum number
+    ; of DBMS logons has already been reached
+    ; Inform caller by returning -9 and continue processing
+    return -9
+  catch &lt;UIOSERR_LOCK_DATA_MISMATCH&gt;
+    ; Occurrence has been modified or removed since it was retrieved
+    ; Reload the occurrence and continue processing
+    reload
+  catch &lt;UIOSERR_LOCKED&gt;
+    ; Occurrence already locked; wait and try again
+    ; Inform caller by returning -11 and continue processing
+    return -11
+  endtry
 
 end
-
 </DAT>
 </OCC>
 <OCC>
@@ -451,24 +985,24 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for occs that need to be validated</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;validate&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger validate
-; This trigger is fired as part of the validate/store process.
-; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
-
-; Your VARIABLES block here (optional)...
+throws
+; This trigger is fired as part of the validation process and should be used to
+; create occurrence-specific validation rules.
+; Write one or more validation checks and return a unique negative number for every failing check;
+; this negative number is used by the error trigger to report the error.
+; Remove this trigger if no procedural validation is required.
 
   ; Your occurrence validation rules here...
-  if (check1)
-    return -1
-  elseif (check2)
-    return -2
-  ...
-  endif
+  ; if (FIELD1 &gt; FIELD2)
+  ;   return -1
+  ; elseif (FIELD3 &lt; FIELD4)
+  ;   return -2
+  ; endif
 
-  ; If we reach this point, validation was successful
+  ; Validation is successful
   return 0
 
 end
-
 </DAT>
 </OCC>
 <OCC>
@@ -481,36 +1015,41 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for keys (prim/candidate) that need to be validated</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;validateKey&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger validateKey
-; This trigger is fired as part of the validate/store process.
-; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+throws
+; This trigger is fired as part of the validation process and should be used to
+; create primary and candidate key validation rules.
+; Write one or more field validation checks and return a unique negative number for every failing check;
+; this negative number is used by the error trigger to report the error.
+; Remove this trigger if no key validation is required; note that the store might fail as a consequence.
 
-  ; Your key validation rules here...
-  #define example_1
-
-#ifdefined example_1
-  ; Key exists check
-  findkey $entname, $curkey
-  if ($procerror &lt; 0)          ; procerror
-    $result = $procerrorcontext
-    return -1                  ; procerror
-  endif
+  findkey "&lt;$entname&gt;", $curkey
   selectcase $status
-  case 0                       ; key not found
-    if ($foreign) return -2    ; non existing key in up entity
-  case 1                       ; key found in Component
-    if (!$foreign) return -3   ; duplicate key in down entity
-  case 2                       ; key found in DBMS
-    if (!$foreign) return -4   ; duplicate key in down entity
+  case 0
+    ; No occurrence found with this key
+    if ($foreign)
+      ; Related one occurrence not found
+      return -2
+    endif
+  case 1
+    ; Occurrence with this key found in component
+    if (!$foreign)
+      ; Occurrence already exists in component
+      return -3
+    endif
+  case 2
+    ; Occurrence with this key found in DBMS
+    if (!$foreign)
+      ; Occurrence already exists in DBMS
+      return -4
+    endif
   elsecase
     return $status 
   endselectcase
-#endif
 
-  ; If we reach this point, validation was successful
+  ; Validation is successful
   return 0
 
 end
-
 </DAT>
 </OCC>
 <OCC>
@@ -523,102 +1062,73 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for occs with validation errors (RPT SVC ESV SSV)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;error&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger error
-; This trigger is fired as part of the validate/store process for every occurrence that is in error.
-; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+throws
+; This trigger is fired when data validation of the current occurrence or key failed.
+; This trigger should:
+; - determine whether the validation error is to be ignored or not
+;    - return &gt;=0 to indicate the error is to be ignored
+;    - return &lt;0 to indicate the error is not to be ignored
+; - determine the error message
+; - determine the fields involved with the error for reporting purposes
+; - report the error message.
 variables
-  string vErrorMsg, vEnt, vOcc
+  string vErrorMsg, vErrors, vErrorFields, vFieldName
   numeric vKeyNr
 endvariables
 
-  if ($error != 0)
-  
-    ; Specific error messages first:
-    selectcase $error
-    case 0148, 0149 ; No more hits before first/last occurrence -&gt; ignore
-      return 0
+  ; Use all fields as default involved fields
+  vErrorFields = $entinfo(&lt;$entname&gt;, "PAINTEDFIELDS")
 
-    case 0147       ; Validation error caused by occurrence trigger validateKey (details in $dataerrorcontext)
-      vKeyNr = $item("KEY", $dataerrorcontext)
-      selectcase $item("STATUS", $dataerrorcontext)
-      ; Generate specific key error message
-      case -1       ; Findkey procerror ($procerrorcontext is in $result)
-        vErrorMsg = "%%($item("DESCRIPTION", $result)), key=%%(vKeyNr)"
-      case -2       ; Non existing key in up entity
-        vErrorMsg = "Lookup failed for up-entity %%($entinfo("&lt;$entname&gt;", "INNER"))"
-      case -3, -4   ; Duplicate key found in either component or DBMS
-        vErrorMsg = "Occurrence already exists for key %%(vKeyNr)"
-      ; case ...
-        ; More ...
-      elsecase
-        ; Generic key error message
-        vErrorMsg = "%%(getMessageText($item("ERROR", $dataerrorcontext))), key=%%(vKeyNr), $status=%%($item("STATUS", $dataerrorcontext))"
-      endselectcase
-
-    case 0153       ; Validation error caused by occurrence trigger validate (details in $dataerrorcontext)
-      selectcase $item("STATUS", $dataerrorcontext)
-      case -1       ; Check 1
-        vErrorMsg    = "Your error message for check1 here..."
-      ; case ...
-        ; ...
-      elsecase
-        ; Generic occurrence error message
-        vErrorMsg = "Occurrence validation failed"
-      endselectcase
-
-    ; More specific messages here:
-    ; case 2004       ; No modifications allowed on occurrence of this entity
-    ; case 2009       ; Occurrence locked
-    ; case 2012       ; Occurrence in form does not match database occurrence
-    ; case 2013       ; Occurrence does not exist
+  ; Determine the error message and involved error fields
+  selectcase $error
+  case 0147
+    ; Error caused by occurrence trigger validateKey
+    vKeyNr = $item("KEY", $dataerrorcontext)
+    vErrorFields = $keyfields(&lt;$entname&gt;, vKeyNr)
+    selectcase $item("STATUS", $dataerrorcontext)
+    case -2
+      vErrorMsg = $concat($text("%%($error)"), " - Related one-occurrence not found")
+    case -3
+      vErrorMsg = $concat($text("%%($error)"), " - Occurrence with the same key (%%(vKeyNr)) exists in component")
+    case -4
+      vErrorMsg = $concat($text("%%($error)"), " - Occurrence with the same key (%%(vKeyNr)) already exists in DBMS")
     ; ...
-
     elsecase
-
-      ; Generic error handling:
-      vErrorMsg = "Generic occurrence error handling: %%($dataerrorcontext)"
+      vErrorMsg = $text("%%($error)")
     endselectcase
-
-#ifdefined DATAERRORS
-    ; Add error to data validation log:
-    #comment ; For the reporting to work, a variable must be declared and initialized to "" before the start of validation/store.
-    #comment ; The name of the variable must be available in component level constant DATAERRORS
-
-    ; Add error to validation log:
-    vEnt = "ent:&lt;$entname&gt;.&lt;$modelname&gt;"
-    vOcc = "occ:%%($curocc("&lt;$entname&gt;"))"
-    if (&lt;DATAERRORS&gt;-&gt;$collsize == 0)                         &lt;DATAERRORS&gt; = $newstruct
-    if (&lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;$collsize == 0)             &lt;DATAERRORS&gt;-&gt;"%%(vEnt)" = $newstruct
-    if (&lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;$collsize == 0) &lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)" = $newstruct
-    &lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;*{-1} = vErrorMsg
-#endif
-
-    return -1
-  endif
-
-  return 0
-
-end
-
-entry getMessageText
-returns string
-params
-  string pMessageId : in
-endparams
-
-  selectcase $length(pMessageId)
-  case 1
-    return $text("000%%pMessageId")
-  case 2
-    return $text("00%%pMessageId")
-  case 3
-    return $text("0%%pMessageId")
+  case 0153       
+    ; Error caused by occurrence trigger validate
+    selectcase $item("STATUS", $dataerrorcontext)
+    case -1
+      vErrorMsg = $concat($text("%%($error)"), " - Your error message for check 1 here")
+      ; vErrorFields = "..."  ; The list of fields involved with the validation error
+    ; case ...
+      ; ...
+    elsecase
+      vErrorMsg = $text("%%($error)")
+      ; vErrorFields = "..."  ; The list of fields involved with this check
+    endselectcase
+  ; case 2004       ; No modifications allowed on occurrence of this entity
+  ; case 2009       ; Occurrence locked
+  ; case 2012       ; Occurrence in form does not match database occurrence
+  ; case 2013       ; Occurrence does not exist
+  ; ...
   elsecase
-    return $text("%%pMessageId")
+    vErrorMsg = $text("%%($error)")
+    ; vErrorFields = "..."  ; The list of fields involved with the validation error
   endselectcase
 
-end
+  ; Service components log the error back to the data,
+  ; where it can be used to generate an error report once validation is completed.
+  getitem/id vErrors, $occproperties(&lt;$entname&gt;), "errormsg"
+  putitem vErrors, -1, vErrorMsg
+  putitem/id $occproperties(&lt;$entname&gt;), "errormsg", vErrors
 
-</DAT>
+  ; Return &gt;=0 to indicate the error is ignored
+  ; Return &lt;0 to indicate the error is not ignored
+  return -1
+
+end</DAT>
 </OCC>
 <OCC>
 <DAT name="UNAME">U241_PRE_SERIALIZE</DAT>
@@ -714,24 +1224,23 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields that require validation</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;validate&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger validate
-; This trigger is fired as part of the validate/store process.
-; Make sure not to leave the context of this field, it would disrupt the trigger flow and give unpredictable results.
-
-; Your VARIABLES block here (optional)...
+throws
+; This trigger is fired as part of the validation process and should be used to create field-specific validation rules.
+; Write one or more field validation checks and return a unique negative number for every failing check.
+; This negative number is used by the error trigger to report the error.
+; Remove this trigger if no procedural validation is required.
 
   ; Your field validation rules here...
-  if (check1)
-    return -1
-  elseif (check2)
-    return -2
-  ...
-  endif
+  ; if (&lt;$fieldname&gt;.&lt;$entname&gt; &lt; 0)
+  ;   return -1
+  ; elseif (&lt;$fieldname&gt;.&lt;$entname&gt; &gt; 100)
+  ;   return -2
+  ; endif
 
-  ; If we reach this point, validation was successful.
+  ; Validation is successful.
   return 0
 
 end
-
 </DAT>
 </OCC>
 <OCC>
@@ -744,69 +1253,58 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields with validation errors (RPT SVC ESV SSV)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;error&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger error
+throws
+; This trigger is fired when data validation of the current field failed.
+; This trigger should:
+; 1. determine whether the validation error is to be ignored or not
+;    - return &gt;=0 to indicate the error is to be ignored
+;    - return &lt;0 to indicate the error is not to be ignored
+; 2. determine the error message
+; 3. report the error message
 variables
-  string vErrorMsg, vEnt, vOcc, vFld
+  string vErrorMsg, vDataErrorContext, vErrors
 endvariables
 
-  if ($error != 0)
-    selectcase $error
-    ; Specific error message first:
-    case 0140       ; Validation error caused by field trigger validate (details in $dataerrorcontext)
-
-      selectcase $item("STATUS", $dataerrorcontext)
-      case -1       ; Check 1
-        vErrorMsg = "Your error message for check 1"
-      case -2, -3   ; Check 2
-        vErrorMsg = "Your error message for check 2"
-      ; case ...
-        ; More ...
-      elsecase
-        vErrorMsg = "Field validation failed"
-      endselectcase
-
-    case 0129       ; subfield(s) are required
-      vErrorMsg = "Value not allowed to be empty"
-
-    ; More specific error messager here:
-    ; case 0119       ; illegal ValRep value
-    ; case 0120       ; subfield too large
-    ; case 0121       ; subfield too small
-    ; case 0122       ; incorrect checkdigit
-    ; case 0123       ; illegal format for numeric field
-    ; case 0124       ; illegal format for date field
-    ; case 0125       ; illegal format for time field
-    ; case 0126       ; illegal syntax format
-    ; case 0127       ; illegal entry format
-    ; case 0128       ; subfield too large to check
-    ; case 0130       ; too many subfields specified
-    ; case 0138       ; illegal format for floating field
-    ; ...
-
+  ; Determine error message
+  selectcase $error
+  case 0140
+    ; Validation error caused by field trigger validate
+    selectcase $item("STATUS", $dataerrorcontext)
+    case -1
+      ; vErrorMsg = $concat($text("%%($error)"), " - Check 1 in validate trigger failed")
+      vErrorMsg = $concat($text("%%($error)"), " - Value must be between 0 and 100")
+    case -2
+      vErrorMsg = $concat($text("%%($error)"), " - Check 2 in validate trigger failed")
     elsecase
-      ; Generic error message:
-      vErrorMsg = $dataerrorcontext
+      vErrorMsg = $text("%%($error)")
     endselectcase
+  ; case 0119       ; illegal ValRep value
+  ; case 0120       ; subfield too large
+  ; case 0121       ; subfield too small
+  ; case 0122       ; incorrect checkdigit
+  ; case 0123       ; illegal format for numeric field
+  ; case 0124       ; illegal format for date field
+  ; case 0125       ; illegal format for time field
+  ; case 0126       ; illegal syntax format
+  ; case 0127       ; illegal entry format
+  ; case 0128       ; subfield too large to check
+  ; case 0129       ; subfield(s) are required
+  ; case 0130       ; too many subfields specified
+  ; case 0138       ; illegal format for floating field
+  ; ...
+  elsecase
+    vErrorMsg = $text("%%($error)")
+  endselectcase
 
-#ifdefined DATAERRORS
-    ; Add error to validation log:
-    #comment ; For the reporting to work, a variable must be declared and initialized to "" before the start of validation/store.
-    #comment ; The name of the variable must be available in component level constant DATAERRORS.
+  ; Service components log the error back to the data,
+  ; where it can be used to generate an error report once validation is completed.
+  getitem/id vErrors, $fieldproperties(&lt;$fieldname&gt;.&lt;$entname&gt;), "errormsg"
+  putitem vErrors, -1, vErrorMsg
+  putitem/id $fieldproperties(&lt;$fieldname&gt;.&lt;$entname&gt;), "errormsg", vErrors
 
-    ; Add error to validation log:
-    vEnt = "ent:&lt;$entname&gt;.&lt;$modelname&gt;"
-    vOcc = "occ:%%($curocc("&lt;$entname&gt;"))"
-    vFld = "fld:&lt;$fieldname&gt;"
-    if (&lt;DATAERRORS&gt;-&gt;$collsize == 0)                                     &lt;DATAERRORS&gt; = $newstruct
-    if (&lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;$collsize == 0)                         &lt;DATAERRORS&gt;-&gt;"%%(vEnt)" = $newstruct
-    if (&lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;$collsize == 0)             &lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)" = $newstruct
-    if (&lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;"%%(vFld)"-&gt;$collsize == 0) &lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;"%%(vFld)" = $newstruct
-    &lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;"%%(vFld)"-&gt;*{-1} = vErrorMsg
-#endif
-
-    return -1
-  endif
-
-  return 0
+  ; Return &gt;=0 to indicate the error is ignored
+  ; Return &lt;0 to indicate the error is not ignored
+  return -1
 
 end
 </DAT>

@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
-<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!-- Created by Uniface - (C) Rocket Software B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
 <UNIFACE release="10.4" repversion="8" xmlengine="2.0">
 <TABLE>
@@ -25,7 +25,7 @@
  pointer="0" inum="0" ufocc="0" />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2018-06-18T16:45:49.00</DAT>
+<DAT name="UTIMESTAMP">2022-05-11T16:11:17.00</DAT>
 <DAT name="U_VLAB">MODEL</DAT>
 <DAT name="U_TLAB">UENTTABLE</DAT>
 <DAT name="UKVERSION">5</DAT>
@@ -180,8 +180,7 @@
 <DAT name="U_MAXR">0</DAT>
 <DAT name="UPURPOSE">T</DAT>
 <DAT name="UOCC_SCRIPT" xml:space='preserve'>trigger read
-; This trigger is fired as part of the retrieve process.
-; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+throws
 
   read
 
@@ -189,46 +188,72 @@ end
 
 
 trigger lock
-; This trigger is fired as part of a database lock request.
-; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+throws
 
-  lock
-  if ($status = -10) reload
+  try
+    lock
+  catch &lt;UIOSERR_UPDATE_NOT_ALLOWED&gt;
+    ; No write or delete permission for the table or file. The occurrence is read-only (cannot be locked)
+    ; -&gt; Return this to caller of lock trigger
+    return -5
+  catch &lt;UIOSERR_WRITE_FAILURE&gt;
+    ; An error occurred while writing, updating, or deleting the table or file; for example, lack of disk space,
+    ; no write permission, or violation of a database constraint -&gt; Return this to caller of lock trigger
+    return -6
+  catch &lt;UIOSERR_DUPLICATE_KEY&gt;
+    ; The key exists in the database but was not found in the hitlist. This occurs when the user tries to
+    ; enter a duplicate key -&gt; Return this to caller of lock trigger
+    return -7
+  catch &lt;UIOSERR_LOGON_ERROR&gt;
+    ; DBMS logon error. This can occur if the database connection has been lost or the maximum number
+    ; of DBMS logons has already been reached -&gt; Return this to caller of lock trigger
+    return -9
+  catch &lt;UIOSERR_LOCK_DATA_MISMATCH&gt;
+    ; Occurrence has been modified or removed since it was retrieved; reload the occurrence.
+    reload
+  catch &lt;UIOSERR_LOCKED&gt;
+    ; Occurrence already locked; wait and try again -&gt; Return this to caller of lock trigger
+    return -11
+  endtry
 
 end
 
 
 trigger validateKey
-; This trigger is fired as part of the validate/store process.
-; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+throws
 
-  findkey $entname, $curkey
-  if ($procerror &lt; 0)          ; procerror
-    $result = $procerrorcontext
-    return -1                  ; procerror
-  endif
+  findkey "&lt;$entname&gt;", $curkey
   selectcase $status
-  case 0                       ; key not found
-    if ($foreign) return -2    ; non existing key in up entity
-  case 1                       ; key found in Component
-    if (!$foreign) return -3   ; duplicate key in down entity
-  case 2                       ; key found in DBMS
-    if (!$foreign) return -4   ; duplicate key in down entity
+  case 0
+    ; No occurrence found with this key
+    if ($foreign)
+      ; Related one occurrence not found
+      return -2
+    endif
+  case 1
+    ; Occurrence with this key found in component
+    if (!$foreign)
+      ; Occurrence already exists in component
+      return -3
+    endif
+  case 2
+    ; Occurrence with this key found in DBMS
+    if (!$foreign)
+      ; Occurrence already exists in DBMS
+      return -4
+    endif
   elsecase
     return $status 
   endselectcase
 
-  ; If we reach this point, validation was successful
+  ; Validation is successful
   return 0
 
 end
 
 
 trigger write
-; This trigger is fired as part of the store process.
-; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
-
-  ; Your last moment field updates here...
+throws
 
   write
 
@@ -236,8 +261,7 @@ end
 
 
 trigger delete
-; This trigger is fired as part of the store/erase process.
-; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+throws
 
   delete
 

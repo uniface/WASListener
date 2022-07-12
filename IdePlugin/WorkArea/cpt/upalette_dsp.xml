@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
-<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!-- Created by Uniface - (C) Rocket Software B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
 <UNIFACE release="10.4" repversion="8" xmlengine="2.0">
 <TABLE>
@@ -143,7 +143,7 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2020-10-29T10:44:03.00</DAT>
+<DAT name="UTIMESTAMP">2022-05-24T10:28:39.00</DAT>
 <DAT name="ULABEL">UPALETTE_DSP</DAT>
 <DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">3</DAT>
@@ -687,8 +687,7 @@ end</DAT>
 
 ; TO DO:
 ;   1. Define this field in the structure as child of the entity to be cleared
-;   2. Because this field is static, you can define its HTML element in the layout outside of the occurrence repetition,
-;      so that it is not repeated with each occurrence:
+;   2. Because this field is static, you can define its HTML element in the layout outside of the occurrence repetition:
 ;     &lt;div id="uent:MYENTITY.MYMODEL"&gt;
 ;       &lt;div id="ufld:BTN_CLEAR_CLIENT.MYENTITY.MYMODEL" /&gt;
 ;       &lt;div id="uocc:MYENTITY.MYMODEL"&gt;
@@ -769,13 +768,13 @@ end
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;Clear (Server)</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>trigger detail
+throws
 ; Clears the retrieved occurrences from the entity.
 ; Code executed on the server.
 
 ; TO DO:
 ;   1. Define this field in the structure as a child of the entity it needs to control.
-;   2. Because this field is static, you can define its HTML element in the layout outside of the occurrence repetition,
-;      so that it is not repeated with each occurrence:
+;   2. Because this field is static, you can define its HTML element in the layout outside of the occurrence repetition:
 ;     &lt;div id="uent:MYENTITY.MYMODEL"&gt;
 ;       &lt;div id="ufld:BTN_CLEAR_SERVER.MYENTITY.MYMODEL" /&gt;
 ;       &lt;div id="uocc:MYENTITY.MYMODEL"&gt;
@@ -791,7 +790,6 @@ endscope
   clear/e "&lt;$entname&gt;"
 
 end
-
 </DAT>
 <DAT name="INITVALUE">Clear</DAT>
 <DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
@@ -944,6 +942,7 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;Create Occurrence (Server)</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>trigger detail
+throws
 ; Creates a new occurrence after the current occurrence of the current entity.
 ; Code executed on the server.
 
@@ -963,8 +962,11 @@ scope
 endscope
 
   creocc "&lt;$entname&gt;", $curocc("&lt;$entname&gt;")
+
+#ifdefined option_1
   ; Insert code to generate any technical keys, e.g.
   ; KEYFIELD.&lt;$entname&gt; = $uuid
+#endif
 
 end</DAT>
 <DAT name="INITVALUE">Insert</DAT>
@@ -1112,6 +1114,7 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;Remove Occurrence (Server)</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>trigger detail
+throws
 ; Marks the current current occurrence for deletion, actual deletion occurs upon store.
 ; Code is executed on the server.
 
@@ -1172,7 +1175,7 @@ variables
 endvariables
 
 #ifdefined option_1
-  ; Optionally copy a single ooccurrence from an other entity to be used as profile input
+  ; Optionally copy a single occurrence from an other entity to be used as profile input
   clear/e "&lt;$entname&gt;"
   putlistitems/occ vProfiles, "PROFILE_ENTITY"
   getlistitems/occ/init vProfiles, "&lt;$entname&gt;"
@@ -1211,13 +1214,13 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;Retrieve</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>trigger detail
+throws
 ; Retrieves data from database and loads it as occurrences into the entity.
 ; Code is executed on the server.
 
 ; TO DO:
 ;   1. Define this field in the structure as a child of the entity it needs to control.
-;   2. Because this field is static, you can define its HTML element in the layout outside of the occurrence repetition,
-;      so that it is not repeated with each occurrence:
+;   2. Because this field is static, you can define its HTML element in the layout outside of the occurrence repetition:
 ;     &lt;div id="uent:MYENTITY.MYMODEL"&gt;
 ;       &lt;div id="ufld:BTN_RETRIEVE.MYENTITY.MYMODEL" /&gt;
 ;       &lt;div id="uocc:MYENTITY.MYMODEL"&gt;
@@ -1238,15 +1241,11 @@ endvariables
 #endif
 
   ; Retrieve data from database
-  retrieve/e "&lt;$entname&gt;"
-  selectcase $procerror
-  case 0
-    ; ok
-  case -2, -4
-    webmessage/info "Retrieve: No data found in the database."
-  elsecase
-    webmessage/error "Retrieve: Error occurred - (%%($procerror))."
-  endselectcase
+  try
+    retrieve/e "&lt;$entname&gt;"
+  catch &lt;UIOSERR_OCC_NOT_FOUND&gt;, &lt;UIOSERR_OPEN_FAILURE&gt;  ; -2, -4
+    webmessage "Retrieve failed - No data found in the database."
+  endtry
 
   return 0
 
@@ -1373,15 +1372,13 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Control Button: &lt;/c&gt;&lt;/t&gt;Store</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>trigger detail
+throws
 ; Stores occurrences that are modified into the database and deletes any occurrences marked for deletion from the database.
 ; Code is executed on the server.
 
 ; TO DO:
 ;   1. Define this field in the structure as a child of the entity it needs to control.
-;   2. Optionally, define a component variable of type struct and report any validation errors to it in the error triggers of the entity and field.
-;      Define a constant DATAERRORS with the name of this component variable.
-;   3. Because this field is static, you can define its HTML element in the layout outside of the occurrence repetition,
-;      so that it is not repeated with each occurrence:
+;   2. Because this field is static, you can define its HTML element in the layout outside of the occurrence repetition:
 ;     &lt;div id="uent:MYENTITY.MYMODEL"&gt;
 ;       &lt;div id="ufld:BTN_STORE.MYENTITY.MYMODEL" /&gt;
 ;       &lt;div id="uocc:MYENTITY.MYMODEL"&gt;
@@ -1394,65 +1391,30 @@ scope
   input
   output
 endscope
+variables
+  string vProcErrorContext
+endvariables
 
-  ; Initialize message frame so it can be used for logging 
-  clrmess
-
-#ifdefined DATAERRORS
-  ; Initialize a component variable holding the data validation error, as reported by the entity and field error triggers
-  ; Note that this needs to be done before store initiation.
-  ; (See 'trigger error' snippets for DSPs)
-  &lt;DATAERRORS&gt; = $newstruct
-  &lt;DATAERRORS&gt;-&gt;$name = "Data validation errors"
-#endif
-
-  ; Initiate the store
-  store/e "&lt;$entname&gt;"
-  selectcase $status
-  case 0
-    ; Store successful -&gt; report
-    putmess "Store successful."
-    commit
-    selectcase $procerror
-    case 0
-      ; Commit successful -&gt; report
-	  putmess "Commit successful."
-      ; Instruct browser to show the store log
-      webmessage/info $putmess
-    elsecase
-      ; Commit failed -&gt; report
-	  putmess "Commit failed  ($procerror=%%($procerror))."
-	  rollback
-      ; Instruct browser to show the store log
-      webmessage/error $putmess
-    endselectcase
-  case 1
-    ; No modifications -&gt; report
-    ; Instruct browser to show the error log
-    webmessage/warning "No modifications."
-  elsecase
-    ; store failed -&gt; report $procerror (more information also available in $procerrorcontext)
-    putmess "Store failed ($procerror=%%($procerror))."
-
-#ifdefined DATAERRORS
-    ; Also report the validation errors that might have been reported in &lt;DATAERRORS&gt;
-    putmess &lt;DATAERRORS&gt;-&gt;$dbgstring
-#endif
-
-    ; Perfromm rollback
-    rollback
-    selectcase $procerror
-    case 0
-      ; rollback ok
-      putmess "Rollback successful."
-    elsecase
-      ; rollback also failed
-      putmess "Rollback failed ($procerror=%%($procerror))."
-    endselectcase
-
-    ; Instruct browser to show the error log
-    webmessage/error $putmess
-  endselectcase
+  ; Validate data before store to separate validation errors from store errors
+  ; Validation errors are reported back to the data and will be shown by the DSP web client
+  try
+    validate/e "&lt;$entname&gt;"
+    try
+      store/e "&lt;$entname&gt;"
+      if ($status == 1)
+        webmessage "No modifications made or entity read-only"
+      else
+        commit
+        webmessage "Store successful."
+      endif
+    catch
+      vProcErrorContext = $procerrorcontext
+      rollback
+      throw $item("ERROR", vProcErrorContext), "Rethrow", vProcErrorContext
+    endtry
+  catch &lt;UGENERR_4GL_SAYS_ERROR&gt;, &lt;UVALERR_SYNTAX&gt;, &lt;UVALERR_CONSTRAINT&gt;, &lt;UVALERR_KEY_PROFILE&gt;, &lt;UVALERR_KEY_EMPTY&gt;
+    ; Validation errors are already reported by the error trigger -&gt; ignore
+  endtry
 
   return 0
 
@@ -1479,7 +1441,8 @@ end</DAT>
 ; webtrigger OnSyntaxError()
 ; webtrigger onSyntaxErrorResolved()
 ; webtrigger showError()
-; webtrigger clearError()</DAT>
+; webtrigger clearError()
+</DAT>
 <DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="DSP_WIDGETTYPE">CHECKBOX</DAT>
 <DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
@@ -1519,7 +1482,8 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>Button (secure)</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Typical trigger fired by this widget:
-; (web)trigger detail</DAT>
+; (web)trigger detail
+</DAT>
 <DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
 <DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
 <DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
@@ -1538,7 +1502,8 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Button: &lt;/c&gt;&lt;/t&gt;Command Button (Read-Only)</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Typical trigger fired by this widget:
-; (web)trigger detail</DAT>
+; (web)trigger detail
+</DAT>
 <DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
 <DAT name="DSP_WIDGETTYPE">COMMANDBUTTON</DAT>
 <DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
@@ -1557,7 +1522,8 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>Button (non-secure)</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Typical trigger fired by this widget:
-; (web)trigger detail</DAT>
+; (web)trigger detail
+</DAT>
 <DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
 <DAT name="DSP_WIDGETTYPE">COMMANDBUTTON_UPDATABLE</DAT>
 <DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
@@ -1576,7 +1542,8 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Button: &lt;/c&gt;&lt;/t&gt;Command Button (Updatable)</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Typical trigger fired by this widget:
-; (web)trigger detail</DAT>
+; (web)trigger detail
+</DAT>
 <DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
 <DAT name="DSP_WIDGETTYPE">COMMANDBUTTON_UPDATABLE</DAT>
 <DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
@@ -1598,7 +1565,8 @@ end</DAT>
 ; webtrigger OnSyntaxError()
 ; webtrigger onSyntaxErrorResolved()
 ; webtrigger showError()
-; webtrigger clearError()</DAT>
+; webtrigger clearError()
+</DAT>
 <DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="DSP_WIDGETTYPE">DATEPICKER</DAT>
 <DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
@@ -1641,7 +1609,8 @@ end</DAT>
 ; webtrigger OnSyntaxError()
 ; webtrigger onSyntaxErrorResolved()
 ; webtrigger showError()
-; webtrigger clearError()</DAT>
+; webtrigger clearError()
+</DAT>
 <DAT name="DSP_WIDGETTYPE">DROPDOWNLIST</DAT>
 </OCC>
 <OCC>
@@ -1677,7 +1646,8 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>DSP Container</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Typical triggers fired by this widget:
-; (web)trigger OnChange</DAT>
+; (web)trigger OnChange
+</DAT>
 <DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="DSP_WIDGETTYPE">DSPCONTAINER</DAT>
 <DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
@@ -1696,7 +1666,8 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Complex: &lt;/c&gt;&lt;/t&gt;DSP Container</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Typical triggers fired by this widget:
-; (web)trigger OnChange</DAT>
+; (web)trigger OnChange
+</DAT>
 <DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="DSP_WIDGETTYPE">DSPCONTAINER</DAT>
 <DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
@@ -1720,7 +1691,6 @@ end</DAT>
 ; webtrigger onSyntaxErrorResolved()
 ; webtrigger showError()
 ; webtrigger clearError()
-
 </DAT>
 <DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
@@ -1743,7 +1713,6 @@ end</DAT>
 ; (web)trigger OnChange
 ; webtrigger OnSyntaxError()
 ; webtrigger OnResolvedSyntaxError()
-
 </DAT>
 <DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
@@ -1797,7 +1766,8 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>Flat Button (secure)</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Typical trigger fired by this widget:
-; (web)trigger detail</DAT>
+; (web)trigger detail
+</DAT>
 <DAT name="DSP_WIDGETTYPE">FLATBUTTON</DAT>
 </OCC>
 <OCC>
@@ -1814,7 +1784,8 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Button: &lt;/c&gt;&lt;/t&gt;Flat Button (Read-Only)</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Typical trigger fired by this widget:
-; (web)trigger detail</DAT>
+; (web)trigger detail
+</DAT>
 <DAT name="DSP_WIDGETTYPE">FLATBUTTON</DAT>
 </OCC>
 <OCC>
@@ -1831,7 +1802,8 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>Flat Button (non-secure)</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Typical trigger fired by this widget:
-; (web)trigger detail</DAT>
+; (web)trigger detail
+</DAT>
 <DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="DSP_WIDGETTYPE">FLATBUTTON_UPDATABLE</DAT>
 <DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
@@ -1850,7 +1822,8 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Button: &lt;/c&gt;&lt;/t&gt;Flat Button (Updatable)</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Typical trigger fired by this widget:
-; (web)trigger detail</DAT>
+; (web)trigger detail
+</DAT>
 <DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="DSP_WIDGETTYPE">FLATBUTTON_UPDATABLE</DAT>
 <DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
@@ -1938,7 +1911,8 @@ end</DAT>
 ; webtrigger OnSyntaxError()
 ; webtrigger onSyntaxErrorResolved()
 ; webtrigger showError()
-; webtrigger clearError()</DAT>
+; webtrigger clearError()
+</DAT>
 <DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="DSP_WIDGETTYPE">PASSWORD</DAT>
 <DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
@@ -1978,7 +1952,8 @@ end</DAT>
 <DAT name="IS_CONTROL">F</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>Picture Button (secure)</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Typical trigger fired by this widget:
-; (web)trigger detail</DAT>
+; (web)trigger detail
+</DAT>
 <DAT name="DSP_WIDGETTYPE">PICTUREBUTTON</DAT>
 </OCC>
 <OCC>
@@ -1994,7 +1969,8 @@ end</DAT>
 <DAT name="IS_CONTROL">F</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Display: &lt;/c&gt;&lt;/t&gt;Picture Button (Read-Only)</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Typical trigger fired by this widget:
-; (web)trigger detail</DAT>
+; (web)trigger detail
+</DAT>
 <DAT name="DSP_WIDGETTYPE">PICTUREBUTTON</DAT>
 </OCC>
 <OCC>
@@ -2010,7 +1986,8 @@ end</DAT>
 <DAT name="IS_CONTROL">F</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>Picture Button (non-secure)</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Typical trigger fired by this widget:
-; (web)trigger detail</DAT>
+; (web)trigger detail
+</DAT>
 <DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="DSP_WIDGETTYPE">PICTUREBUTTON_UPDATABLE</DAT>
 <DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
@@ -2028,7 +2005,8 @@ end</DAT>
 <DAT name="IS_CONTROL">F</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Display: &lt;/c&gt;&lt;/t&gt;Picture Button (Updatable)</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Typical trigger fired by this widget:
-; (web)trigger detail</DAT>
+; (web)trigger detail
+</DAT>
 <DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="DSP_WIDGETTYPE">PICTUREBUTTON_UPDATABLE</DAT>
 <DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
@@ -2046,7 +2024,8 @@ end</DAT>
 <DAT name="IS_CONTROL">F</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>Picture (secure)</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Typical trigger fired by this widget:
-; (web)trigger detail</DAT>
+; (web)trigger detail
+</DAT>
 <DAT name="DSP_WIDGETTYPE">PICTURE</DAT>
 </OCC>
 <OCC>
@@ -2062,7 +2041,8 @@ end</DAT>
 <DAT name="IS_CONTROL">F</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Display: &lt;/c&gt;&lt;/t&gt;Picture (Read-Only)</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Typical trigger fired by this widget:
-; (web)trigger detail</DAT>
+; (web)trigger detail
+</DAT>
 <DAT name="DSP_WIDGETTYPE">PICTURE</DAT>
 </OCC>
 <OCC>
@@ -2078,7 +2058,8 @@ end</DAT>
 <DAT name="IS_CONTROL">F</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>Picture (non-secure)</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Typical trigger fired by this widget:
-; (web)trigger detail</DAT>
+; (web)trigger detail
+</DAT>
 <DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="DSP_WIDGETTYPE">PICTURE_UPDATABLE</DAT>
 <DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
@@ -2096,7 +2077,8 @@ end</DAT>
 <DAT name="IS_CONTROL">F</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;c&gt;Display: &lt;/c&gt;&lt;/t&gt;Picture (Updatable)</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Typical trigger fired by this widget:
-; (web)trigger detail</DAT>
+; (web)trigger detail
+</DAT>
 <DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="DSP_WIDGETTYPE">PICTURE_UPDATABLE</DAT>
 <DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
@@ -2291,7 +2273,8 @@ end</DAT>
 ; webtrigger OnSyntaxError()
 ; webtrigger onSyntaxErrorResolved()
 ; webtrigger showError()
-; webtrigger clearError()</DAT>
+; webtrigger clearError()
+</DAT>
 <DAT name="DSP_WIDGETTYPE">TEXTAREA</DAT>
 </OCC>
 <OCC>
