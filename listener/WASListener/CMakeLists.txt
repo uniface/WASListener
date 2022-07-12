@@ -44,7 +44,6 @@ if( Boost_FOUND )
 	target_include_directories( WASListener PRIVATE ${UNIFACE_3GL_FOLDER}/include )
 	target_link_libraries( WASListener PRIVATE 
 		${UNIFACE_3GL_FOLDER}/lib/ucall.lib 
-		Boost::boost 
 		Boost::program_options
 		Boost::thread
 	)
