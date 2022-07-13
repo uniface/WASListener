@@ -12,6 +12,7 @@
 git clone --recurse git@github.com:uniface/WASListener.git
 cd WASListener\listener
 vcpkg\bootstrap-vcpkg.bat
+
 ```
 
 ## Compile x64
