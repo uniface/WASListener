@@ -1,25 +1,41 @@
-# WASListener.exe
+# Build Instructions
 
-## Prerequisites for 3gl
+## prerequisites
 
-- [VCPKG](https://vcpkg.io/en/getting-started.html)
-  - git clone https://github.com/Microsoft/vcpkg.git
-  - .\vcpkg\bootstrap-vcpkg.bat
-  - .\vcpkg\vcpkg integrate install
-- [Visual Studio 2019](https://visualstudio.microsoft.com/ "Get Visual Studio")
 - [Uniface 10](https://uniface.com/get-started "Register for Uniface 10 CE")
+- [cmake](https://cmake.org/download/ "Download cmake")
+- [Visual Studio](https://visualstudio.microsoft.com/ "Get Visual Studio")
+  
+## Get the source code and prepare the the package manager
 
-## Building
+```powershell
+git clone --recurse @github.com:uniface/WASListener.git
+cd WASListener\listener
+vcpkg\bootstrap-vcpkg.bat
+```
 
-- Make sure vcpkg is installed and integrated
-- In visual studio open the listener folder
-- Create your x86 Configuration - Project -> CMake setting for WASListener
-  - Configuration name: **x86-Release**
-  - Configuration type: **Release**
-  - Toolset: **msvc_x86_x64**
-  - Build toot: **${projectDir}\out\build\${name}**
-  - CMake command arguments: **-DUNIFACE_3GL_FOLDER="{Uniface install Folder}/uniface/3gl"**
-    - **-DVCPKG_TARGET_TRIPLET=x86-windows-static** can also be added to statically link boost
+## Compile x64
 
-The new profile should now be able to build the WASListener project.
- 
+```powershell
+cmake -DCMAKE_TOOLCHAIN_FILE="vcpkg/scripts/buildsystems/vcpkg.cmake" -DVCPKG_TARGET_TRIPLET="x64-windows-static" -DUNIFACE_3GL_FOLDER="C:\Program Files\Uniface\Uniface 10 10.4.02\uniface\3gl" -A="x64" -B="build\x64"
+
+cmake --build build\x64 --config Release
+
+or 
+
+cmake --build build\x64 --config Debug
+```
+
+## Compile x86
+
+```powershell
+cmake -DCMAKE_TOOLCHAIN_FILE="vcpkg/scripts/buildsystems/vcpkg.cmake" -DVCPKG_TARGET_TRIPLET="x86-windows-static" -DUNIFACE_3GL_FOLDER="C:\Program Files (x86)\Uniface\Uniface 10 10.4.02\uniface\3gl" -A="Win32" -B="build\x86"
+
+cmake --build build\x86 --config Release
+
+or 
+
+cmake --build build\x86 --config Debug
+```
+
+
