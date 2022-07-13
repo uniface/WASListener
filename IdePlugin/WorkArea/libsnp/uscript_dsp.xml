@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
-<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!-- Created by Uniface - (C) Rocket Software B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
 <UNIFACE release="10.4" repversion="8" xmlengine="2.0">
 <TABLE>
@@ -31,7 +31,7 @@
 <DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Library of trigger snippets for Dynamic Server Page components</DAT>
-<DAT name="UTIMESTAMP">2019-11-06T11:19:30.00</DAT>
+<DAT name="UTIMESTAMP">2022-06-13T14:55:33.00</DAT>
 <DAT name="UPURPOSE">N</DAT>
 </OCC>
 </TABLE>
@@ -68,6 +68,20 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\C2,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
+<DAT name="UNAME">U000_DECLARATIONS</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_DSP</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR">Declarations</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>cpt: Declarations</DAT>
+<DAT name="UTEXT" xml:space='preserve'>; Define the component variables that need to be maintained by the state manager here:
+#define STATE_VARIABLES   $ComponentVariable1$&uSEP;$ComponentVariable2$&uSEP;...
+; Define the entities for which the entity properties need to be maintained by the state manager here:
+#define STATE_ENTITIES    ENTITYNAME1&uSEP;ENTITYNAME2&uSEP;...
+</DAT>
+</OCC>
+<OCC>
 <DAT name="UNAME">U01_EXEC_DSP</DAT>
 <DAT name="USYNTAX">PROCSCRIPT</DAT>
 <DAT name="ULIBRARY">USCRIPT_DSP</DAT>
@@ -77,6 +91,11 @@
 <DAT name="UDESCR" xml:space='preserve'>Invoked on static web request (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;exec&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;operation&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>operation exec
+throws
+; The exec operation of a DSP is fired in the following situations:
+; - Explicitly by a web client's URL: "&lt;website&gt;/wrd/MYDSP.exec"
+; - Implicitly by a web client's URL: "&lt;website&gt;/wrd/MYDSP", where exec is the default operation if not specified
+; - Implicitly by a web client requesting a contained DSP
 public web
 ; Your SCOPE  block here (optional)...
 ; Your VARIABLES block here (optional)...
@@ -84,7 +103,7 @@ public web
   ; Your implementation here...
 
   ; Return execution status:
-  ;   return 0    ; return &gt;= 0 typically indicates a succesful execution
+  ;   return 0    ; return &gt;= 0 typically indicates a successful execution
   ;   return -1   ; return &lt; 0 typically indicates an error during execution
   return 0
 
@@ -102,6 +121,7 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Invoked when component gets loaded</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;init&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;operation&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>operation init
+throws
 ; Your VARIABLES block here (optional)...
 
   ; Your implementation here...
@@ -120,6 +140,7 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Invoked when instance gets unloaded</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;cleanup&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;operation&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>operation cleanup
+throws
 ; Your VARIABLES block here (optional)...
 
   ; Your implementation here...
@@ -158,6 +179,7 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Invoked when DSP gets attached to DSP Container (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;attach&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;operation&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>public operation attach
+throws
 partner web
 ; Your SCOPE  block here (optional)...
 ; Your VARIABLES block here (optional)...
@@ -198,6 +220,7 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Invoked when DSP gets detached from DSP Container (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;detach&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;operation&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>public operation detach
+throws
 partner web
 ; Your SCOPE  block here (optional)...
 ; Your VARIABLES block here (optional)...
@@ -218,6 +241,8 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired on unload request (by accept operation)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;accept&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger accept
+throws
+public web
 ; Your VARIABLES block here (optional)...
 
   ; Your implementation here...
@@ -241,6 +266,8 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired on unload request (by quit operation)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;quit&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger quit
+throws
+public web
 ; Your VARIABLES block here (optional)...
 
   ; Your implementation here...
@@ -264,6 +291,7 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired when postmessage is received</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;receiveMessage&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger receiveMessage
+throws
 ; $result contains source indication:
 ;   "message" - trigger receiveMessage was fired by postmessage statement
 ;               $msgid contains the message id
@@ -317,106 +345,66 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired before activation of an operation (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;preActivate&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger preActivate
-; This trigger is typically used to restore state before the actual operation gets activated.
-; For dynamic DSP requests, this includes applying the object active-path.
-variables
-  string  vWebServerContext, vCookie, vSession, vUserContext, vOuter
-  numeric i
-endvariables
+throws
+; The preActivate trigger of a DSP is fired just before the activation of the requested operation or trigger.
+; It typically handles:
+; - Loading instance specific state
+; - Loading the data send from the web client.
 
-  #comment ; $cmpStateManagedBy is specified by component property 'State Stored By'
-  #if (&lt;$cmpStateManagedBy&gt; == 1)  ; Cookie (client side state management)
-    ;- Get state from cookie
-    getitem/id vCookie, $webinfo("COOKIESIN"), "MY_VARLIST_COOKIE"
-    getlistitems/id/component vCookie
+  ; Load instance state here, e.g.:
+  ; (See libsnp:USCRIPT_DSP/snp:'partner operation stateLoad' for examples on saving/loading state)
+  ; $instancehandle()-&gt;stateLoad()
 
-    ; Insert your code...
-
-  #elsif (&lt;$cmpStateManagedBy&gt; == 2)  ; State managing component
-    ; Get state from state managing component (server side state management)
-    vWebServerContext = $webinfo("WEBSERVERCONTEXT")
-    getitem/id vSession, vWebServerContext, "SESSION"
-    vUserContext = ""
-    activate "USYSSTAT".getState(vSession, $instancename, vUserContext)
-    getlistitems/id /component vUserContext
-
-    ; Insert your code...
-
-  #endif
-
-  ; Insert more code here...
-
-  ; Parse client web request
+  ; Load the load data send from the web client into the instance
   selectcase $webrequesttype
   case "DYNAMIC"
-    webload                         ; Get Data
-    if ($procerror &lt; 0)
-      $webinfo("OUTPUT") = getErrorPage("WEBLOAD Failed", $procerrorcontext)
-      return -1
-    endif
-
-    forlist vOuter in $componentinfo($instancename, "OUTERENTITIES")
-      reconnect "%%vOuter%%%"       ; Reconnect Data
-      if ($procerror &lt; 0)
-        $webinfo("OUTPUT") = getErrorPage("RECONNECT Failed", $procerrorcontext)
-        return -1
-      elseif ($status != 0)
-        $webinfo("OUTPUT") = getErrorPage("RECONNECT Failed", "$status=%%$status%%%&uSEP;ENTITY=%%vOuter%%%")
-        return -1
-      endif
-    endfor
-
-    websetocc                       ; Set Occurrence Context
-    if ($procerror &lt; 0)
-      $webinfo("OUTPUT") = getErrorPage("WEBSETOCC Failed", $procerrorcontext)
-      return -1
-    endif
+    ; Load data as disconnected records into instance
+    ; Use occurrence triggers preDeserialize and postDeserialize to influence loading of the data.
+    webload
+    ; Reconnect data with database and other data already in instance
+    $instancehandle()-&gt;reconnect()
+    ; Set active path
+    websetocc
   endselectcase
 
-  ; Return execution status:
-  ;   return 0  - continue with operation execution
-  ;   return -1 - reject operation execution and return an error to the web server (yellow page)
+  ; return &gt;= 0 to continue with operation/trigger activation
+  ; return &lt; 0 to reject operation execution, this causes a -71 &lt;UACTERR_GET_STATE&gt; exception
   return 0
 
 end
 
 
-#ifundefined entry_getErrorPage
-  #define entry_getErrorPage
-  #comment ; to avoid duplicates
-
-entry getErrorPage
-; Returns HTML error page
-returns string
-params
-  string pHeader      : IN
-  string pContextList : IN
-endparams
+partner operation reconnect
+throws
 variables
-  string vMessage, vAdditionalList
+  string vEntityName
+  boolean vReconnectErrorsFound
+  struct vDataErrors
 endvariables
-  vMessage = $replace($htmlmessage, 1, "__HEADER__", pHeader)
-  vAdditionalList = $item("ADDITIONAL", pContextList)
-  delitem/id pContextList, "ADDITIONAL"
-  pContextList = $concat(pContextList, "&uSEP;&uSEP;Additional:&uSEP;", vAdditionalList)
-  pContextList = $replace(pContextList, 1, "COMPONENT", "DSP_INSTANCE=%%$instancename%%%&uSEP;COMPONENT")
-  vMessage = $replace(vMessage, 1, "__MESSAGE__", $replace(pContextList, 1, "&uSEP;", "&lt;br /&gt;", -1))
-  return vMessage
 
-htmlmessage:blockdata ~
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
- &lt;body style="color: rgb(0, 0, 0); background-color: orange;" alink="#000099" link="#000099" vlink="#990099"&gt;
-  &lt;span style="font-weight: bold;"&gt;__HEADER__&lt;/span&gt;&lt;br /&gt;
-  &lt;hr style="width: 100%; height: 2px;" /&gt;
-  __MESSAGE__&lt;br /&gt;
- &lt;/body&gt;
-&lt;/html&gt;
-~
+  ; Reconnect disconnected records already loaded in the component instance with database and connected data already in the instance
+  vDataErrors = $newstruct
+  forlist vEntityName in $componentinfo($instancename, "OUTERENTITIES")
+    reconnect vEntityName
+    if ($status &gt; 0)
+      ; Reconnect errors detected, errors are reported by error trigger and added to entity data
+      vReconnectErrorsFound = 1
+      try
+        ; Add errors to report
+        $collhandle(vEntityName)-&gt;reportDataErrors(vDataErrors)
+      catch &lt;UPROCERR_OPERATION&gt;
+        ; Operation to generate error report is not available -&gt; add simple error report
+        vDataErrors-&gt;"%%(vEntityName)" = "Reconnect failed"
+      endtry
+    endif
+  endfor
+  ; Return exception with errors
+  if (vReconnectErrorsFound)
+    ; Show errors by throwing exception; further DSP execution is canceled
+    throw -310, "Reconnect failed", ustruct::toList(vDataErrors)
+  endif
+
 end
-
-#endif
-
 </DAT>
 </OCC>
 <OCC>
@@ -429,155 +417,264 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired after activation of an operation (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;postActivate&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger postActivate
-; This trigger is typically used to construct the full or update response that is send back to the browser, after the operation has been handled
-; Optionally, it save any state that needs to be maintained for later browser requests.
+throws
+; The postActivate trigger of a DSP is fired just after the activation of the requested operation or trigger.
+; It typically handles:
+; - Generation of a response for the web client
+; - Saving any instance specific state.
 variables
-  string vWebServerCntxt, vSessionId, vVarlist
+  string vCookie, vState, vVarList
+  string vEntityName, vEntityProperties
 endvariables
 
-  ; =======================================================================================
-  ; Generate web response
-  ; ---------------------------------------------------------------------------------------
   selectcase $webresponsetype
-  case "UPDATE"           ; Update page
-    websave               ; Generate data
-    if ($procerror &lt; 0)
-      webmessage/error getErrorMessage("websave failed", $procerrorcontext)
-      return 0
-    endif
-
-  case "FULLPAGE"         ; Initial page
-    ; Provide the layout, some options:
-    ; 1. Use the layout of the DSP component itself:
-    ;    No additional code required
-    ; 2. Load a layout from file, optionally process it, and assign it to the instance:
-    ;    fileload "filename.html", vLayout
-    ;    call processLayout(vLayout)
-    ;    $instancelayout = vLayout
-    ; 3. Use the layout of the DSP component itself, process it, and assign it back to the instance:
-    ;    vLayout = $instancelayout
-    ;    call processLayout(vLayout)
-    ;    $instancelayout = vLayout
-
-    ; Add instance layout to initial web response
-    weblayout
-    if ($procerror &lt; 0)
-      $webinfo("OUTPUT") = getErrorPage("weblayout failed", $procerrorcontext)
-      return -1
-    endif
-
-    ; Provide DSP component definitions, some options:
-    ; 1. Set default field properties:
-    ;    putitem/id $properties("MYFIELD.MYENTITY")
-    ; 2. Set default field valreps:
-    ;    putitem/id $valrep("MYFIELD.MYENTITY")
-
-    ; Add component definitions (including defaults) to initial web response
-    webdefinitions
-    if ($procerror &lt; 0)
-      $webinfo("OUTPUT") = getErrorPage("weblayout failed", $procerrorcontext)
-      return -1
-    endif
-
-    ; Add component data to initial web response
-    ; (During websave, occurrence triggers preSerialize and postSerialize are fired to influence occurrence serialization.)
+  case "UPDATE"
+    ; Instance is already known by web client; only add instance data to web response
+    ; Use occurrence triggers preSerialize and postSerialize to influence saving of the data.
     websave
-    if ($procerror &lt; 0)
-      webmessage/error getErrorMessage("websave failed", $procerrorcontext)
-      return 0
-    endif
+  case "FULLPAGE"
+    ; Instance is not known by web client; add definitions, layout and data to web response
+    ; Add layout to web response, e.g.:
+    ; - from DSP component definition (see Design Layout Worksheet):
+    ;   weblayout
+    ; - from external file:
+    ;   weblayout "filename.html"
+    ; - from pre-processed DSP component definition (see Design Layout Worksheet):
+    ;   vLayout = $instancelayout
+    ;   call processLayout(vLayout)
+    ;   $instancelayout = vLayout
+    ;   weblayout
+    weblayout
+    ; Add component definitions to web response, this includes:
+    ; - component structure
+    ; - default properties
+    ; - default valreps
+    ; - initial values
+    ; Set properties and valreps values here, using:
+    ;   putitem/id $properties(MYFIELD.MYENTITY)
+    ;   putitem/id $valrep(MYFIELD.MYENTITY)
+    webdefinitions
+    ; Add instance data to web response
+    ; During websave, occurrence triggers preSerialize and postSerialize are fired to influence occurrence serialization.
+    websave
   endselectcase
-  ; =======================================================================================
 
+  ; Save instance state here, e.g.:
+  ; (See libsnp:USCRIPT_DSP/snp:'partner operation stateSave' for examples on saving/loading state)
+  ; $instancehandle()-&gt;stateSave()
 
-  ; =======================================================================================
-  ; Set state
-  ; ---------------------------------------------------------------------------------------
-  #comment ; $cmpStateManagedBy is specified by component property 'State Stored By'
-  #if (&lt;$cmpStateManagedBy&gt; == 1)  ; Cookie
-    ; Initialize vVarList with all component variables.
-    vVarlist = $componentinfo($instancename, "VARIABLES")
-    ; Add the current values of the component variables to vVarList.
-    putlistitems/id/component vVarlist
+end
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U063_STATELOAD_DSP_USP</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_DSP</DAT>
+<DAT name="UCATEGORY">DSP</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Load instance state (DSP,USP)</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;z&gt;stateLoad&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;partner operation&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>partner operation stateLoad
+throws
+variables
+  string vState
+  string vEntityName1, vEntityName2
+endvariables
 
-    ; Add more state here...
-
-    putitem/id $webinfo("COOKIESOUT"), "MY_VARLIST_COOKIE", vVarlist
-
-  #elsif (&lt;$cmpStateManagedBy&gt; == 2)  ; State manager component
-    vWebServerCntxt = $webinfo("WEBSERVERCONTEXT")
-    getitem/id vSessionId, vWebServerCntxt, "SESSION"
-    ; Initialize vVarList with all component variables.
-    vVarlist = $componentinfo($instancename, "VARIABLES")
-    ; Add the current values of the component variables to vVarList.
-    putlistitems/id/component vVarlist
-    
-    ; Add more state here...
-
-    activate "USYSSTAT".setState(vSessionId, $instancename, vVarlist)
-
+  ; State can be managed using different techniques.
+  ; Architect the way state is maintained and choose the right technique.
+  ; It could also be a combination of multiple techniques.
+  ; For example (The value of &lt;$cmpStateManagedBy&gt; is specified by component property 'State Stored By'):
+  #if (&lt;$cmpStateManagedBy&gt; == 1)
+    ; Load instance state from cookie(s):
+    getitem/id vState, $webinfo("COOKIESIN"), $instancename
+    ; ...
+  #elseif (&lt;$cmpStateManagedBy&gt; == 2)
+    ; Load instance state from server-side state manager:
+    activate "USYSSTAT".getState($item("SESSION", $webinfo("WEBSERVERCONTEXT")), $instancename, vState)
+    ; ...
+  #elseif (&lt;$cmpStateManagedBy&gt; == 3)
+    ; Load instance state from state field(s):
+    vState = STATE.ENTITY.NONDBMS
+    ; ...
+  #else
+    ; Some other state storage...
   #endif
-  ; =======================================================================================
 
-  ; Return your execution status
-  ; return 0 - specifies 
-  return 0
+  ; Get variables/properties from state, e.g.:
+  getitem/id $variable1$, vState, "VAR1"
+  getitem/id $variable2$, vState, "VAR2"
+  getitem/id $entityproperties(vEntityName1), vState, "ENT_PROPS1"
+  getitem/id $entityproperties(vEntityName2), vState, "ENT_PROPS2"
+  ; ...
+
+  ; Get read-only variables/properties from state and check they are not modified, e.g.:
+  getitem/id $variable1$, vState, "VAR1"
+  if ($status &gt; 0)
+    ; The variable is in the state, its hash should also be in the state
+    if ($item("HASH1", vState) != $encode("HMAC_MD5", $variable1$))
+      throw &lt;UWEBERR_HASH&gt;, "State has been tempored with", "STATEID=VAR1&uSEP;VARIABLE=$variable1$&uSEP;HASHID=HASH1&uSEP;"
+    endif
+  endif
+  ; ...
+
+  ; Decrypt any encrypted variables/properties, e.g.:
+  ; (Consider to encrypt the complete state variable)
+  $variable1$ = $decode("TDES", $variable1$, "YOUR_KEY")
+  $variable2$ = $decode("TDES", $variable2$, "YOUR_KEY")
+  ; ...
+
+  ; Validate variables/properties before using them, e.g.:
+  if ($variable1$ == "&lt;YOUR_CONDITION1&gt;")
+    ; React when invalid, e.g. throw an exception (be careful with echoing invalid values!!!)
+    throw -1, "Invalid state", "STATE_TARGET=$variable1$"
+  endif
+  if ($variable2$ != "&lt;YOUR_CONDITION2&gt;")
+    ; React when invalid, e.g. by clearing state and fall back to some default
+    $variable2$ = ""
+  endif
 
 end
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U064_STATESAVE_DSP_USP</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_DSP</DAT>
+<DAT name="UCATEGORY">DSP</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Save instance state (DSP,USP)</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;z&gt;stateSave&lt;/z&gt;&lt;r&gt;&lt;s&gt;cpt&lt;/s&gt;&lt;x&gt;partner operation&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>; Save instance state
+partner operation stateSave
+throws
+variables
+  string vState
+  string vEntityName1, vEntityName2
+endvariables
 
+  ; Encrypt your variables/properties if it contains sensitive data
+  ; (Consider not to save sensitive data into cookies)
+  ; (Consider to encrypt the complete state variable)
+  $variable1$ = $encode("TDES", $variable1$, "YOUR_KEY")
+  $variable2$ = $encode("TDES", $variable2$, "YOUR_KEY")
+  ; ...
 
-#ifundefined entry_getErrorPage
-  #define entry_getErrorPage
-entry getErrorPage
-; Returns HTML error page
-returns string
+  ; Add variables and/or properties to the state variable, e.g.:
+  putitem/id vState, "VAR1", $variable1$
+  putitem/id vState, "VAR2", $variable2$
+  putitem/id vState, "ENT_PROPS1", $entityproperties(vEntityName1)
+  putitem/id vState, "ENT_PROPS2", $entityproperties(vEntityName2)
+  ; ...
+
+  ; Protect any variables/properties that are suppose to be read-only, e.g. by adding a hash:
+  putitem/id vState, "HASH1", $encode("HMAC_MD5", $variable1$)
+  ; ...
+
+  ; State can be managed using different techniques.
+  ; Architect the way state is maintained and choose the right technique for your application/component.
+  ; It could also be a combination of multiple techniques.
+  ; For example (The value of &lt;$cmpStateManagedBy&gt; is specified by component property 'State Stored By'):
+  #if (&lt;$cmpStateManagedBy&gt; == 1)
+    ; Save state to cookie(s):
+    putitem vCookie, -1, vState
+    ; Set cookie attributes
+    ; putitem/id vCookie, "expires", Seconds
+    ; putitem/id vCookie, "domain", Domain
+    ; putitem/id vCookie, "path", Path
+    ; putitem/id vCookie, "secure", "T" | "F"
+    ; ...
+    putitem/id $webinfo("COOKIESOUT"), $instancename, vCookie
+    ; ...
+  #elseif (&lt;$cmpStateManagedBy&gt; == 2)
+    ; Save state to state manager:
+    activate "USYSSTAT".setState($item("SESSION", $webinfo("WEBSERVERCONTEXT")), $instancename, vState)
+    ; ...
+  #elseif (&lt;$cmpStateManagedBy&gt; == 3)
+    ; Save state from state field(s):
+    STATE.ENTITY.NONDBMS = vState
+    ; ...
+  #else
+    ; Some other state storage...
+  #endif
+
+end
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">U110_ERRREPORT</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_DSP</DAT>
+<DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Adds any data errors to a report of type struct</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;z&gt;reportDataErrors&lt;/z&gt;&lt;r&gt;&lt;s&gt;coll&lt;/s&gt;&lt;x&gt;partner operation&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>partner operation reportDataErrors
+throws
+; This operation looks for any data errors in the current collection and adds them to the struct report.
+; The error message are expected to be available as $occproperties and $fieldproperties using the "errormsg" id.
+; The value of the "errormsg" property is expected to be an indexed list with one or more error messages.
+; The report is a struct and its structure represents the collection structure.
+; This report activates this same operation for all its inner entities/collections.
+;
+; Use this report after data validation of service components, where a report needs to be returned to the caller.
+; Return this report as a reference of the report struct; serialize to e.g. JSON first before returning.
+; You can also use myDatapErrorReport-&gt;$dbgstring to write the report to a log in human readable format.
+; Interactive components, like DSPs, USPs, and FRMs read the errors directly from the data; no need to generate this report.
 params
-  string pHeader      : IN
-  string pContextList : IN
+  byref struct pErrorReport: inout
 endparams
 variables
-  string vMessage, vAdditionalList
+  struct vCollErrors, vOccErrors
+  string vFieldName, vInnerEntityName, vErrorMsg, vMsg
 endvariables
-  vMessage = $replace($htmlmessage, 1, "__HEADER__", pHeader)
-  vAdditionalList = $item("ADDITIONAL", pContextList)
-  delitem/id pContextList, "ADDITIONAL"
-  pContextList = $concat(pContextList, "&uSEP;&uSEP;Additional:&uSEP;", vAdditionalList)
-  pContextList = $replace(pContextList, 1, "COMPONENT", "DSP_INSTANCE=%%$instancename%%%&uSEP;COMPONENT")
-  vMessage = $replace(vMessage, 1, "__MESSAGE__", $replace(pContextList, 1, "&uSEP;", "&lt;br /&gt;", -1))
-  return vMessage
 
-htmlmessage:blockdata ~
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
- &lt;body style="color: rgb(0, 0, 0); background-color: orange;" alink="#000099" link="#000099" vlink="#990099"&gt;
-  &lt;span style="font-weight: bold;"&gt;__HEADER__&lt;/span&gt;&lt;br /&gt;
-  &lt;hr style="width: 100%; height: 2px;" /&gt;
-  __MESSAGE__&lt;br /&gt;
- &lt;/body&gt;
-&lt;/html&gt;
-~
+  ; Initialize the error report of the current collection and add it to the report struct
+  pErrorReport-&gt;*{-1} = $newstruct
+  vCollErrors = pErrorReport-&gt;*{-1}
+  vCollErrors-&gt;$name = "&lt;$entname&gt;.&lt;$modelname&gt;"
+  
+  ; Iterate all occurrences of this collection.
+  forentity "&lt;$entname&gt;"
+    vCollErrors-&gt;*{-1} = $newstruct
+    vOccErrors = vCollErrors-&gt;*{-1}
+    vOccErrors-&gt;$name = "OCC%%($curocc(&lt;$entname&gt;))"
+
+    ; Add occurrence errors (if any); includes any key errors
+    getitem/id vErrorMsg, $occproperties(&lt;$entname&gt;), "errormsg"
+    if ($status &gt; 0)
+      forlist vMsg in vErrorMsg
+        vOccErrors-&gt;"$error"{-1} = vErrorMsg
+      endfor
+    endif
+
+    ; Add field errors (if any)
+    forlist vFieldName in $entinfo(&lt;$entname&gt;, "PAINTEDFIELDS")
+      getitem/id vErrorMsg, $fieldproperties("%%(vFieldname).&lt;$entname&gt;"), "errormsg"
+      if ($status &gt; 0)
+        vOccErrors-&gt;"%%(vFieldName)" = $newstruct
+        vOccErrors-&gt;"%%(vFieldName)"-&gt;"$value" = @("%%(vFieldname).&lt;$entname&gt;")
+        forlist vMsg in vErrorMsg
+          vOccErrors-&gt;"%%(vFieldName)"-&gt;"$error"{-1} = vMsg
+        endfor
+      endif
+    endfor
+    
+    ; Add errors of inner collections (if any)
+    forlist vInnerEntityName in $entinfo(&lt;$entname&gt;, "INNER")
+      $collhandle(vInnerEntityName)-&gt;reportDataErrors(vOccErrors)
+    endfor
+
+    ; Occurrence has no context -&gt; delete it
+    if (vOccErrors-&gt;$membercount == 0)
+      vOccErrors-&gt;$parent = ""
+    endif
+  endfor
+
 end
-#endif
-
-
-entry getErrorMessage
-; Returns error message
-returns string
-params
-  string pHeader      : IN
-  string pContextList : IN
-endparams
-variables
-  string vMessage, vAdditionalList
-endvariables
-  vAdditionalList = $item("ADDITIONAL", pContextList)
-  delitem/id pContextList, "ADDITIONAL"
-  pContextList = $concat(pContextList, "&uSEP;&uSEP;Additional:&uSEP;", vAdditionalList)
-  pContextList = $replace(pContextList, 1, "COMPONENT", "DSP_INSTANCE=%%$instancename%%%&uSEP;COMPONENT")
-  vMessage = $concat(pHeader, "%%^", $replace(pContextList, 1, "&uSEP;", "%%^", -1))
-  return vMessage
-end
-
 </DAT>
 </OCC>
 <OCC>
@@ -590,73 +687,57 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for occs read from the DBMS (retrieve)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;read&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger read
+throws
 ; This trigger is fired as part of the retrieve process.
 ; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
-
-  ; Your implementation here...
-  #define example_1
-
-#ifdefined example_1
-  ; Read basic:
-  read
-#endif
-
-#ifdefined example_2
-  ; Read with DBMS lock for paranoid locking:
-  read/lock
-#endif
-
-#ifdefined example_3
-  ; Read with DBMS paging:
 variables
-  numeric vPageSize, vPageOffset
+  string vOrderByFieldName, vParams, vOptions, vMaxHits, vOffset
+  boolean vOrderDescending
 endvariables
-  ; The page size and offset are maintained as entity properties,
-  ; this could also be maintained alsewhere.
-  vPageSize   = $item("PAGESIZE", $entityproperties("&lt;$entname&gt;"))
-  vPageOffset = $item("PAGEOFFSET", $entityproperties("&lt;$entname&gt;"))
-  read options "step=%%(vPageSize)&uSEP;offset=%%(vPageOffset)"
-#endif
-
-#ifdefined example_4
-  ; Read with DBMS where clause:
-variables
-  string  vProfile1, vProfile2   ; , ...
-endvariables
-  ; The profiles are maintained as entity properties,
-  ; this could also be maintained alsewhere, e.g. a dedicated profile entity with the fields that match the database fields.
-  vProfile1 = $item("PROFILE1", $entityproperties("&lt;$entname&gt;"))
-  vProfile2 = $item("PROFILE2", $entityproperties("&lt;$entname&gt;"))
-  ; ...
-  read u_where (MYFIELD1 == vProfile1 &amp;&amp; MYFIELD2 == MYFIELD2)
-#endif
-
-#ifdefined example_5
-  ; Read with DBMS order by:
-  read order by "MYFIELD1, MYFIELD2"
-#endif
-
-#ifdefined example_6
-  ; Typical read error handling
-  if ($status = 0)
-    ; Hit found. Your post read code here...
-  endif
-#endif
-
-#ifdefined example_7
-  ;- Discarding hits form the hitlist based on a procedural condition
-  read
-  if ($status = 0)
-    if (FIELD1.&lt;$entname&gt; &gt; FIELD2.&lt;$entname&gt;)
-      ; Some procedural condition determined to discard this occurrence.
-      discard
+  
+  if ($rettype == 78)
+    ; Read the next occurrence
+    read
+  
+  else
+    ; Read the occurrence, e.g.:
+    ; - Get order-by information from e.g. $entityproperties
+    getitem/id vOrderByFieldName, $entityproperties(&lt;$entname&gt;), "ORDERBY_FIELDNAME"
+    if ($status &gt; 0)
+      getitem/id vOrderDescending, $entityproperties(&lt;$entname&gt;), "ORDERBY_DESCENDING"
+      if (vOrderDescending)
+        vOrderByFieldName = "%%(vOrderByFieldName) desc"
+      else
+        vOrderByFieldName = "%%(vOrderByFieldName)"
+      endif
+    endif
+    ; - Get paging info from e.g. $entityproperties
+    getitem/id vMaxHits, $entityproperties(&lt;$entname&gt;), "MAX_HITS"
+    if ($status &gt; 0)
+      putitem/id vOptions, "maxhits", vMaxHits
+    endif
+    getitem/id vOffset, $entityproperties(&lt;$entname&gt;), "OFFSET"
+    if ($status &gt; 0)
+      putitem/id vOptions, "offset", vOffset
+    endif
+    ; - Get U_CONDITION, U_WHERE, or WHERE from e.g. $entityproperties and perform read
+    getitem/id vParams, $entityproperties(&lt;$entname&gt;), "U_CONDITION"
+    if ($status &gt; 0)
+      read options vOptions u_condition (vParams) order by vOrderByFieldName
+    else
+      getitem/id vParams, $entityproperties(&lt;$entname&gt;), "U_WHERE"
+      if ($status &gt; 0)
+        read options vOptions u_where (vParams) order by vOrderByFieldName
+      else
+        getitem/id vParams, $entityproperties(&lt;$entname&gt;), "WHERE"
+        if ($status &gt; 0)
+          read options vOptions where (vParams) order by vOrderByFieldName
+        else
+          read options vOptions order by vOrderByFieldName
+        endif
+      endif
     endif
   endif
-#endif
-
-  ; Do not influence the return value of either the read and/or discard statements.
-  ; The returned value is used by the retrieve statement to determine e.g. fetch more hits.
-  return $status
 
 end
 </DAT>
@@ -671,15 +752,15 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for occs that need to be written to DBMS (store)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;write&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger write
-; This trigger is fired as part of the store process.
-; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+throws
+; This trigger is fired when Uniface writes the occurrences to the database, typically as part of a store.
 
-  ; Your last moment field updates here...
+  ; Your last moment field updates here, e.g.:
+  ; TIMESTAMP.&lt;$entname&gt; = $datim
 
   write
 
 end
-
 </DAT>
 </OCC>
 <OCC>
@@ -692,15 +773,15 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for up-occs that need to be written to DBMS (store)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;writeUp&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger writeUp
-; This trigger is fired as part of the store process.
-; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+throws
+; This trigger is fired when Uniface writes occurrences of an up entity to the database, typically as part of a store.
 
-  ; Your last moment field updates here...
+  ; Your last moment field updates here, e.g.:
+  ; TIMESTAMP.&lt;$entname&gt; = $datim
 
   write
 
 end
-
 </DAT>
 </OCC>
 <OCC>
@@ -710,17 +791,15 @@ end
 <DAT name="UCATEGORY" xml:space='preserve'>FRM RPT DSP USP SVC ESV SSV ENT</DAT>
 <DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
-<DAT name="UDESCR" xml:space='preserve'>Fired for occs that needs to be deleted from the DBMS</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for occs that need to be deleted from the DBMS</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;delete&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger delete
-; This trigger is fired as part of the store/erase process.
-; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+throws
+; This trigger is fired when Uniface deletes the occurrences from the database, typically as part of a store or erase.
 
   delete
 
-end
-
-</DAT>
+end</DAT>
 </OCC>
 <OCC>
 <DAT name="UNAME">U212_DELETEUP</DAT>
@@ -732,14 +811,12 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for every up occ marked for deletion (statement store)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;deleteUp&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger deleteUp
-; This trigger is fired as part of the store/erase process.
-; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+throws
+; This trigger is fired when Uniface deletes the occurrences of an up entity from the database, typically as part of a store or erase.
 
   delete
 
-end
-
-</DAT>
+end</DAT>
 </OCC>
 <OCC>
 <DAT name="UNAME">U22_LOCK</DAT>
@@ -751,12 +828,46 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for occs with validation errors</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;lock&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger lock
+throws
+; This trigger is fired as part of a database lock request.
+; Depending on the locking strategy and DBMS locking support, this can happen at different moments:
+; - During read (using read/lock)
+; - At field start modification on interactive Form component
+; - At field assignment in ProcScript
+; - During a reconnect of disconnected records
+; By catching lock exceptions and return a negative value, Uniface is instructed to continue processing.
+; By not catching lock exceptions Uniface will not continue processing.
 
-  lock
-  if ($status = -10) reload
+  try
+    lock
+  catch &lt;UIOSERR_UPDATE_NOT_ALLOWED&gt;
+    ; No write or delete permission for the table or file. The occurrence is read-only (cannot be locked)
+    return -5
+  catch &lt;UIOSERR_WRITE_FAILURE&gt;
+    ; An error occurred while writing, updating, or deleting the table or file; for example, lack of disk space,
+    ; no write permission, or violation of a database constraint
+    ; Inform caller by returning -6 and continue processing
+    return -6
+  catch &lt;UIOSERR_DUPLICATE_KEY&gt;
+    ; The key exists in the database but was not found in the hitlist. This occurs when the user tries to enter a duplicate key
+    ; Inform caller by returning -7 and continue processing
+    return -7
+  catch &lt;UIOSERR_LOGON_ERROR&gt;
+    ; DBMS logon error. This can occur if the database connection has been lost or the maximum number
+    ; of DBMS logons has already been reached
+    ; Inform caller by returning -9 and continue processing
+    return -9
+  catch &lt;UIOSERR_LOCK_DATA_MISMATCH&gt;
+    ; Occurrence has been modified or removed since it was retrieved
+    ; Reload the occurrence and continue processing
+    reload
+  catch &lt;UIOSERR_LOCKED&gt;
+    ; Occurrence already locked; wait and try again
+    ; Inform caller by returning -11 and continue processing
+    return -11
+  endtry
 
 end
-
 </DAT>
 </OCC>
 <OCC>
@@ -769,24 +880,24 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for occs that need to be validated</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;validate&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger validate
-; This trigger is fired as part of the validate/store process.
-; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
-
-; Your VARIABLES block here (optional)...
+throws
+; This trigger is fired as part of the validation process and should be used to
+; create occurrence-specific validation rules.
+; Write one or more validation checks and return a unique negative number for every failing check;
+; this negative number is used by the error trigger to report the error.
+; Remove this trigger if no procedural validation is required.
 
   ; Your occurrence validation rules here...
-  if (check1)
-    return -1
-  elseif (check2)
-    return -2
-  ...
-  endif
+  ; if (FIELD1 &gt; FIELD2)
+  ;   return -1
+  ; elseif (FIELD3 &lt; FIELD4)
+  ;   return -2
+  ; endif
 
-  ; If we reach this point, validation was successful
+  ; Validation is successful
   return 0
 
 end
-
 </DAT>
 </OCC>
 <OCC>
@@ -799,36 +910,41 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for keys (prim/candidate) that need to be validated</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;validateKey&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger validateKey
-; This trigger is fired as part of the validate/store process.
-; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+throws
+; This trigger is fired as part of the validation process and should be used to
+; create primary and candidate key validation rules.
+; Write one or more field validation checks and return a unique negative number for every failing check;
+; this negative number is used by the error trigger to report the error.
+; Remove this trigger if no key validation is required; note that the store might fail as a consequence.
 
-  ; Your key validation rules here...
-  #define example_1
-
-#ifdefined example_1
-  ; Key exists check
-  findkey $entname, $curkey
-  if ($procerror &lt; 0)          ; procerror
-    $result = $procerrorcontext
-    return -1                  ; procerror
-  endif
+  findkey "&lt;$entname&gt;", $curkey
   selectcase $status
-  case 0                       ; key not found
-    if ($foreign) return -2    ; non existing key in up entity
-  case 1                       ; key found in Component
-    if (!$foreign) return -3   ; duplicate key in down entity
-  case 2                       ; key found in DBMS
-    if (!$foreign) return -4   ; duplicate key in down entity
+  case 0
+    ; No occurrence found with this key
+    if ($foreign)
+      ; Related one occurrence not found
+      return -2
+    endif
+  case 1
+    ; Occurrence with this key found in component
+    if (!$foreign)
+      ; Occurrence already exists in component
+      return -3
+    endif
+  case 2
+    ; Occurrence with this key found in DBMS
+    if (!$foreign)
+      ; Occurrence already exists in DBMS
+      return -4
+    endif
   elsecase
     return $status 
   endselectcase
-#endif
 
-  ; If we reach this point, validation was successful
+  ; Validation is successful
   return 0
 
 end
-
 </DAT>
 </OCC>
 <OCC>
@@ -841,115 +957,74 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for occs with validation errors (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;error&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger error
-; This trigger is fired as part of the validate/store process for every occurrence that is in error.
-; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+throws
+; This trigger is fired when data validation of the current occurrence or key failed.
+; This trigger should:
+; - determine whether the validation error is to be ignored or not
+;    - return &gt;=0 to indicate the error is to be ignored
+;    - return &lt;0 to indicate the error is not to be ignored
+; - determine the error message
+; - determine the fields involved with the error for reporting purposes
+; - report the error message.
 variables
-  string vErrorMsg, vErrorFields, vField, vEnt, vOcc
+  string vErrorMsg, vErrors, vErrorFields, vFieldName
   numeric vKeyNr
 endvariables
 
-  if ($error != 0)
-  
-    ; Specific error messages first:
-    selectcase $error
-    case 0148, 0149 ; No more hits before first/last occurrence -&gt; ignore
-      return 0
+  ; Use all fields as default involved fields
+  vErrorFields = $entinfo(&lt;$entname&gt;, "PAINTEDFIELDS")
 
-    case 0147       ; Validation error caused by occurrence trigger validateKey (details in $dataerrorcontext)
-
-      vKeyNr = $item("KEY", $dataerrorcontext)
-      selectcase $item("STATUS", $dataerrorcontext)
-      ; Generate specific key error message
-      case -1       ; Findkey procerror ($procerrorcontext is in $result)
-        vErrorMsg = "%%($item("DESCRIPTION", $result)), key=%%(vKeyNr)"
-      case -2       ; Non existing key in up entity
-        vErrorMsg = "Lookup failed for up-entity %%($entinfo("&lt;$entname&gt;", "INNER"))"
-      case -3, -4   ; Duplicate key found in either component or DBMS
-        vErrorMsg = "Occurrence already exists for key %%(vKeyNr)"
-      ; case ...
-        ; More ...
-      elsecase
-        ; Generic key error message
-        vErrorMsg = "%%(getMessageText($item("ERROR", $dataerrorcontext))), key=%%(vKeyNr), $status=%%($item("STATUS", $dataerrorcontext))"
-      endselectcase
-      ; Set involved fields
-      vErrorFields = $keyfields("&lt;$entname&gt;", vKeyNr)
-
-    case 0153       ; Validation error caused by occurrence trigger validate (details in $dataerrorcontext)
-
-      selectcase $item("STATUS", $dataerrorcontext)
-      case -1       ; Check 1
-        vErrorMsg    = "Your error message for check1 here..."
-        vErrorFields = ""  ; The list of fields involved with this check
-      ; case ...
-        ; ...
-      elsecase
-        ; Generic occurrence error message
-        vErrorMsg = "Occurrence validation failed"
-        vErrorFields = ""  ; The list of fields involved with this check
-      endselectcase
-
-    ; More specific messages here:
-    ; case 2004       ; No modifications allowed on occurrence of this entity
-    ; case 2009       ; Occurrence locked
-    ; case 2012       ; Occurrence in form does not match database occurrence
-    ; case 2013       ; Occurrence does not exist
+  ; Determine the error message and involved error fields
+  selectcase $error
+  case 0147
+    ; Error caused by occurrence trigger validateKey
+    vKeyNr = $item("KEY", $dataerrorcontext)
+    vErrorFields = $keyfields(&lt;$entname&gt;, vKeyNr)
+    selectcase $item("STATUS", $dataerrorcontext)
+    case -2
+      vErrorMsg = $concat($text("%%($error)"), " - Related one-occurrence not found")
+    case -3
+      vErrorMsg = $concat($text("%%($error)"), " - Occurrence with the same key (%%(vKeyNr)) exists in component")
+    case -4
+      vErrorMsg = $concat($text("%%($error)"), " - Occurrence with the same key (%%(vKeyNr)) already exists in DBMS")
     ; ...
-
     elsecase
-
-      ; Generic error handling:
-      vErrorMsg = "Generic occurrence error handling: %%($dataerrorcontext)"
+      vErrorMsg = $text("%%($error)")
     endselectcase
-
-    ; Add errors to DSP response, so the browser can show the errors
-    forlist vField in vErrorFields
-      putitem/id $fieldproperties(vField), "errormsg", vErrorMsg
-    endfor
-    ; Tag occurrence with error
-    putitem/id $occproperties("&lt;$entname&gt;"), "errormsg", vErrorMsg
-
-#ifdefined DATAERRORS
-    ; Add error to data validation log:
-    #comment ; For the reporting to work, a variable must be declared and initialized to "" before the start of validation/store.
-    #comment ; The name of the variable must be available in component level constant DATAERRORS
-
-    ; Add error to validation log:
-    vEnt = "ent:&lt;$entname&gt;.&lt;$modelname&gt;"
-    vOcc = "occ:%%($curocc("&lt;$entname&gt;"))"
-    if (&lt;DATAERRORS&gt;-&gt;$collsize == 0)                         &lt;DATAERRORS&gt; = $newstruct
-    if (&lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;$collsize == 0)             &lt;DATAERRORS&gt;-&gt;"%%(vEnt)" = $newstruct
-    if (&lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;$collsize == 0) &lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)" = $newstruct
-    &lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;*{-1} = vErrorMsg
-#endif
-
-    return -1
-  endif
-
-  return 0
-
-end
-
-entry getMessageText
-returns string
-params
-  string pMessageId : in
-endparams
-
-  selectcase $length(pMessageId)
-  case 1
-    return $text("000%%pMessageId")
-  case 2
-    return $text("00%%pMessageId")
-  case 3
-    return $text("0%%pMessageId")
+  case 0153       
+    ; Error caused by occurrence trigger validate
+    selectcase $item("STATUS", $dataerrorcontext)
+    case -1
+      vErrorMsg = $concat($text("%%($error)"), " - Your error message for check 1 here")
+      ; vErrorFields = "..."  ; The list of fields involved with the validation error
+    ; case ...
+      ; ...
+    elsecase
+      vErrorMsg = $text("%%($error)")
+      ; vErrorFields = "..."  ; The list of fields involved with this check
+    endselectcase
+  ; case 2004       ; No modifications allowed on occurrence of this entity
+  ; case 2009       ; Occurrence locked
+  ; case 2012       ; Occurrence in form does not match database occurrence
+  ; case 2013       ; Occurrence does not exist
+  ; ...
   elsecase
-    return $text("%%pMessageId")
+    vErrorMsg = $text("%%($error)")
+    ; vErrorFields = "..."  ; The list of fields involved with the validation error
   endselectcase
 
-end
+  ; For DSP components, (multiple) data errors are reported and shown via the involved fields:
+  forlist vFieldName in vErrorFields
+    getitem/id vErrors, $fieldproperties("%%(vFieldName).&lt;$entname&gt;"), "errormsg"
+    putitem vErrors, -1, vErrorMsg
+    putitem/id $fieldproperties("%%(vFieldName).&lt;$entname&gt;"), "errormsg", vErrors
+  endfor
 
-</DAT>
+  ; Return &gt;=0 to indicate the error is ignored
+  ; Return &lt;0 to indicate the error is not ignored
+  return -1
+
+end</DAT>
 </OCC>
 <OCC>
 <DAT name="UNAME">U241_PRE_SERIALIZE</DAT>
@@ -961,6 +1036,7 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired before occ serialization (componentToStruct, xmlsave)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;preSerialize&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger preSerialize
+throws
 ; This trigger is fired as part of the entity serialization process, caused by e.g. xmlsave.
 ; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
 
@@ -982,6 +1058,7 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired after occ serialization (componentToStruct, xmlsave)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;postSerialize&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger postSerialize
+throws
 ; This trigger is fired as part of the entity serialization process, caused by e.g. xmlsave.
 ; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
 
@@ -1003,6 +1080,7 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired before occ deserialization (StructToComponent, xmlload)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;preDeserialize&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger preDeserialize
+throws
 ; This trigger is fired as part of the entity deserialization process, caused by e.g. xmlload.
 ; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
 
@@ -1024,6 +1102,7 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired after occ deserialization (StructToComponent, xmlload)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;postDeserialize&lt;/z&gt;&lt;r&gt;&lt;s&gt;occ&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger postDeserialize
+throws
 ; This trigger is fired as part of the entity deserialization process, caused by e.g. xmlload.
 ; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
 
@@ -1065,6 +1144,7 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the value is changed (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onChange&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger onChange
+throws
 public web
 ; Your SCOPE  block here (optional)...
 ; Your VARIABLES block here (optional)...
@@ -1085,24 +1165,23 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields that require validation</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;validate&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger validate
-; This trigger is fired as part of the validate/store process.
-; Make sure not to leave the context of this field, it would disrupt the trigger flow and give unpredictable results.
-
-; Your VARIABLES block here (optional)...
+throws
+; This trigger is fired as part of the validation process and should be used to create field-specific validation rules.
+; Write one or more field validation checks and return a unique negative number for every failing check.
+; This negative number is used by the error trigger to report the error.
+; Remove this trigger if no procedural validation is required.
 
   ; Your field validation rules here...
-  if (check1)
-    return -1
-  elseif (check2)
-    return -2
-  ...
-  endif
+  ; if (&lt;$fieldname&gt;.&lt;$entname&gt; &lt; 0)
+  ;   return -1
+  ; elseif (&lt;$fieldname&gt;.&lt;$entname&gt; &gt; 100)
+  ;   return -2
+  ; endif
 
-  ; If we reach this point, validation was successful.
+  ; Validation is successful.
   return 0
 
 end
-
 </DAT>
 </OCC>
 <OCC>
@@ -1115,90 +1194,59 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields with validation errors (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;error&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger error
+throws
+; This trigger is fired when data validation of the current field failed.
+; This trigger should:
+; 1. determine whether the validation error is to be ignored or not
+;    - return &gt;=0 to indicate the error is to be ignored
+;    - return &lt;0 to indicate the error is not to be ignored
+; 2. determine the error message
+; 3. report the error message
 variables
-  string vErrorMsg, vEnt, vOcc, vFld
+  string vErrorMsg, vDataErrorContext, vErrors
 endvariables
 
-  if ($error != 0)
-    selectcase $error
-    ; Specific error message first:
-    case 0140       ; Validation error caused by field trigger validate (details in $dataerrorcontext)
-
-      selectcase $item("STATUS", $dataerrorcontext)
-      case -1       ; Check 1
-        vErrorMsg = "Your error message for check 1"
-      case -2, -3   ; Check 2
-        vErrorMsg = "Your error message for check 2"
-      ; case ...
-        ; More ...
-      elsecase
-        vErrorMsg = "Field validation failed"
-      endselectcase
-
-    case 0129       ; subfield(s) are required
-      vErrorMsg = "Value not allowed to be empty"
-
-    ; More specific error messager here:
-    ; case 0119       ; illegal ValRep value
-    ; case 0120       ; subfield too large
-    ; case 0121       ; subfield too small
-    ; case 0122       ; incorrect checkdigit
-    ; case 0123       ; illegal format for numeric field
-    ; case 0124       ; illegal format for date field
-    ; case 0125       ; illegal format for time field
-    ; case 0126       ; illegal syntax format
-    ; case 0127       ; illegal entry format
-    ; case 0128       ; subfield too large to check
-    ; case 0130       ; too many subfields specified
-    ; case 0138       ; illegal format for floating field
-    ; ...
-
+  ; Determine error message
+  selectcase $error
+  case 0140
+    ; Validation error caused by field trigger validate
+    selectcase $item("STATUS", $dataerrorcontext)
+    case -1
+      ; vErrorMsg = $concat($text("%%($error)"), " - Check 1 in validate trigger failed")
+      vErrorMsg = $concat($text("%%($error)"), " - Value must be between 0 and 100")
+    case -2
+      vErrorMsg = $concat($text("%%($error)"), " - Check 2 in validate trigger failed")
     elsecase
-      ; Generic error message:
-      vErrorMsg = "A validation error occurred - %%($dataerrorcontext)"
+      vErrorMsg = $text("%%($error)")
     endselectcase
+  ; case 0119       ; illegal ValRep value
+  ; case 0120       ; subfield too large
+  ; case 0121       ; subfield too small
+  ; case 0122       ; incorrect checkdigit
+  ; case 0123       ; illegal format for numeric field
+  ; case 0124       ; illegal format for date field
+  ; case 0125       ; illegal format for time field
+  ; case 0126       ; illegal syntax format
+  ; case 0127       ; illegal entry format
+  ; case 0128       ; subfield too large to check
+  ; case 0129       ; subfield(s) are required
+  ; case 0130       ; too many subfields specified
+  ; case 0138       ; illegal format for floating field
+  ; ...
+  elsecase
+    vErrorMsg = $text("%%($error)")
+  endselectcase
 
-    ; Add error info to DSP response, allowing the browser to show the error
-    putitem/id $fieldproperties("&lt;$fieldname&gt;"), "errormsg", vErrorMsg
-    ; TO DO:
-    ;   1. Style the field to visualize that it is in error using the following CSS selector, like:
-    ;     .-ufld-highlight-error- {background-color: pink; }
-    ;   2. Add an error element to your layout to visualize the error message.
-    ;      Make sure it repeats with occurrence repetition, like:
-    ;     &lt;div id="uent:MYENTITY.MYMODEL"&gt;
-    ;       &lt;div id="uocc:MYENTITY.MYMODEL"&gt;
-    ;         ...
-    ;         &lt;input id="ufld:MYFIELD.MYENTITY.MYMODEL" /&gt;&lt;span id="uflderror:MYFIELD.MYENTITY.MYMODEL" /&gt;
-    ;         ...
-    ;       &lt;/div&gt;
-    ;     &lt;/div&gt;
-    ;   2. Style the error element using the following CSS selectors:
-    ;     .-uflderror-no-error- {display: none; }
-    ;     .-uflderror-in-error- {color: red; }
+  ; For DSP components, (multiple) data errors are reported and shown via the field:
+  getitem/id vErrors, $fieldproperties(&lt;$fieldname&gt;.&lt;$entname&gt;), "errormsg"
+  putitem vErrors, -1, vErrorMsg
+  putitem/id $fieldproperties(&lt;$fieldname&gt;.&lt;$entname&gt;), "errormsg", vErrors
 
-#ifdefined DATAERRORS
-    ; Add error to validation log:
-    #comment ; For the reporting to work, a variable must be declared and initialized to "" before the start of validation/store.
-    #comment ; The name of the variable must be available in component level constant DATAERRORS.
-
-    ; Add error to validation log:
-    vEnt = "ent:&lt;$entname&gt;.&lt;$modelname&gt;"
-    vOcc = "occ:%%($curocc("&lt;$entname&gt;"))"
-    vFld = "fld:&lt;$fieldname&gt;"
-    if (&lt;DATAERRORS&gt;-&gt;$collsize == 0)                                     &lt;DATAERRORS&gt; = $newstruct
-    if (&lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;$collsize == 0)                         &lt;DATAERRORS&gt;-&gt;"%%(vEnt)" = $newstruct
-    if (&lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;$collsize == 0)             &lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)" = $newstruct
-    if (&lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;"%%(vFld)"-&gt;$collsize == 0) &lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;"%%(vFld)" = $newstruct
-    &lt;DATAERRORS&gt;-&gt;"%%(vEnt)"-&gt;"%%(vOcc)"-&gt;"%%(vFld)"-&gt;*{-1} = vErrorMsg
-#endif
-
-    return -1
-  endif
-
-  return 0
+  ; Return &gt;=0 to indicate the error is ignored
+  ; Return &lt;0 to indicate the error is not ignored
+  return -1
 
 end
-
 </DAT>
 </OCC>
 <OCC>
@@ -1211,11 +1259,12 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields that are read from the DBMS (read)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;formatFromDbms&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger formatFromDbms
+throws
 ; This trigger is fired as part of the read from DBMS process.
 ; Make sure not to leave the context of this field, it would disrupt the trigger flow and give unpredictable results.
 
-  ; Your conversion or decoding code here...
-  ; Example: Data was stored encrypted using BLOWFISH in the DBMS, so decrypt it:
+  ; Your conversion or decoding code here, e.g.:
+  ; Data was stored encrypted using BLOWFISH in the DBMS, so decrypt it:
   &lt;$fieldname&gt;.&lt;$entname&gt; = $decode("BLOWFISH", &lt;$fieldname&gt;.&lt;$entname&gt;, "my secret key")
 
 end
@@ -1232,11 +1281,12 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields that are written to the DBMS (write)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;formatToDbms&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger formatToDbms
+throws
 ; This trigger is fired as part of the write to DBMS process.
 ; Make sure not to leave the context of this field, it would disrupt the trigger flow and give unpredictable results.
 
-  ; Your conversion or encoding code here...
-  ; Example: Data is stored encrypted using BLOWFISH in the DBMS:
+  ; Your conversion or encoding code here, e.g.:
+  ; Data is stored encrypted using BLOWFISH in the DBMS:
   &lt;$fieldname&gt;.&lt;$entname&gt; = $encode("BLOWFISH", &lt;$fieldname&gt;.&lt;$entname&gt;, "my secret key")
 
 end
@@ -1253,6 +1303,7 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields of which a value has been entered (DSP,USP,FRM)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;formatFromDisplay&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger formatFromDisplay
+throws
 ; This trigger is fired as part of the data entry process.
 ; Make sure not to leave the context of this field, it would disrupt the trigger flow and give unpredictable results.
 ; var = $format - returns the value as entered by the user
@@ -1261,7 +1312,6 @@ end
   ; Your display deformatting code here...
 
 #ifdefined example_1
-  ; Data is displayed as a URL, deformat it:
   ; 'GOLD-*' are displayed as regular '*' characters, convert them back on data entry
   $format = $replace($format, 1, "*", "&uALL;", -1)
 #endif
@@ -1280,6 +1330,7 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields that are displayed (DSP USP FRM RPT)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;formatToDisplay&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger formatToDisplay
+throws
 ; This trigger is fired as part of the show process.
 ; Make sure not to leave the context of this field, it would disrupt the trigger flow and give unpredictable results.
 ; var = $format - returns the internal value of the field
@@ -1361,16 +1412,11 @@ javascript
   // Show error alert box 
   var vErrorObject = this.getError();
   var vErrorString = "There as a Uniface Syntax Error.\n\n";
-  vErrorString += "Exception Code: " + errorObject.exceptionCode + "\n\n";
-  vErrorString += "Message: " + errorObject.message + "\n\n";
-  vErrorString += "Value in error: " + errorObject.valueInError+ "\n\n";
+  vErrorString += "Exception Code: " + vErrorObject.exceptionCode + "\n\n";
+  vErrorString += "Message: " + vErrorObject.message + "\n\n";
+  vErrorString += "Value in error: " + vErrorObject.valueInError+ "\n\n";
   alert(vErrorString);
 #endif
-
-  // Return execution status:
-  // return false;  // Suppress default syntax error handling.
-  // return true;   // Also apply default syntax error handling.
-  return true;
 
 endjavascript
 end
@@ -1434,6 +1480,7 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the button-widget gets pressed (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;detail&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger detail
+throws
 public web
 ; Your SCOPE  block here (optional)...
 ; Your VARIABLES block here (optional)...
@@ -1474,6 +1521,7 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the widget is clicked (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onClick&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger onClick
+throws
 public web
 ; Your SCOPE  block here (optional)...
 ; Your VARIABLES block here (optional)...
@@ -1514,6 +1562,7 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the widget is double-clicked (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onDblClick&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger onDblClick
+throws
 public web
 ; Your SCOPE  block here (optional)...
 ; Your VARIABLES block here (optional)...
@@ -1554,6 +1603,7 @@ end
 <DAT name="UDESCR" xml:space='preserve'>Fired for fields of which the widget received a key press (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;onKeyPressed&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;trigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger onKeyPressed
+throws
 public web
 ; Your SCOPE  block here (optional)...
 ; Your VARIABLES block here (optional)...
@@ -1626,7 +1676,7 @@ end</DAT>
 <DAT name="UCATEGORY" xml:space='preserve'>DSP ENT</DAT>
 <DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
-<DAT name="UDESCR" xml:space='preserve'>Fired for fields when in  server error (DSP)</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired for fields when in server error (DSP)</DAT>
 <DAT name="UALT_NAME">&lt;t&gt;&lt;z&gt;clearError&lt;/z&gt;&lt;r&gt;&lt;s&gt;fld&lt;/s&gt;&lt;x&gt;webtrigger&lt;/x&gt;&lt;/r&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>webtrigger clearError
 javascript

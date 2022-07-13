@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
-<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!-- Created by Uniface - (C) Rocket Software B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
 <UNIFACE release="10.4" repversion="8" xmlengine="2.0">
 <TABLE>
@@ -71,7 +71,7 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\CF,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2016-08-16T14:26:49.00</DAT>
+<DAT name="UTIMESTAMP">2022-05-21T09:57:53.00</DAT>
 <DAT name="ULABEL">UAPU</DAT>
 <DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">3</DAT>
@@ -112,44 +112,24 @@ The order in which triggers are fired in the Userver is:\par
 }
 </DAT>
 <DAT name="UDECLARATIONS" xml:space='preserve'>; Application Shell for (Web) USERVER
-
-; Use this startup shell instead of the usys:userver.aps, e.g. for:
-; - user defined authentication
-; - environment verification 
-; - log file or audit file record keeping
+; Use this startup shell instead of the default usys:userver.aps
 </DAT>
 <DAT name="USCRIPT" xml:space='preserve'>; Fired triggers are:
 ;   trigger apstart        (&lt;v10 known as 'Application Execute' trigger)
 ;   trigger receiveMessage (&lt;v10 known as 'Asynchronous Interrupt' trigger)
-;   trigger preRequest
-;   trigger postRequest
 
 
 trigger apstart
-; Your VARIABLES block here (optional)...
+throws
+; This trigger is fired at startup of the userver process; it is not fired on every client request.
+; Use this trigger to setup state and singletons shared by all client requests.
+; After executionn of this trigger, the userver is ready to handle any client requests send by the urouter.
 
-  ; Your implementation here...
+  ; Your code  here...
 
 end
 
-
-trigger preRequest
-; For WRD-level user authentication for WEB applications, select one of the following methods:
-; - Verify $user and $password against the operating system or a user administration system.
-; - Verify $user using the LDAP connector.
-; - Verify $user against an internal table of authorized users.
-;
-
-  ; Insert your code...
-
-  ; Return execution status:
-  ;   return 0    ; return &gt;= 0 indicates succesful execution -&gt; the requested component is activated
-  ;   return -1   ; return &lt; 0 indicates an error during execution -&gt; the request is cancelled.
-  ;   return -21  ; Specific error: Authorization failure.
-  ; endif
-  return 0
-
-end</DAT>
+</DAT>
 <DAT name="SCREENPIC" xml:space='preserve'>&uFRM;TYP=F&uSEP;NAM=MESSAGE&uSEP;WID=80&uSEP;HEI=1&uSEP;HOC=80&uSEP;VOC=1&uFRM;
 &uFRM;TYP=F&uSEP;NAM=FORMAREA&uSEP;WID=80&uSEP;HEI=23&uSEP;HOC=80&uSEP;VOC=23&uFRM;</DAT>
 </OCC>

@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
-<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!-- Created by Uniface - (C) Rocket Software B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
 <UNIFACE release="10.4" repversion="8" xmlengine="2.0">
 <TABLE>
@@ -143,7 +143,7 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2016-08-15T18:49:47.00</DAT>
+<DAT name="UTIMESTAMP">2022-06-01T20:36:32.00</DAT>
 <DAT name="ULABEL">UMESV</DAT>
 <DAT name="FTYP">K</DAT>
 <DAT name="DATA_ACCESS">N</DAT>
@@ -159,9 +159,7 @@
 <DAT name="UINHERIT">T</DAT>
 <DAT name="UTRANSACT">3</DAT>
 <DAT name="UPURPOSE">T</DAT>
-<DAT name="UDECLARATIONS" xml:space='preserve'>; Your component defines here ...
-
-; =============================================================================================
+<DAT name="UDECLARATIONS" xml:space='preserve'>; =============================================================================================
 ; An Entity Service is a Component that defines a business logic component 
 ; that handles database I/O for a single entity on behalf of other components.
 ;
@@ -179,26 +177,18 @@
 #endif
 
 #comment Constants:
-#define keyError      = -1
 #define keyNew        = 0
-
 #define keyInHitList  = 1
 #define keyInDatabase = 2
-#define primaryKey    = 1
 
+#comment Custom exceptions
+#define inParamError   = -100001
+#define notInStoreMode = -100002
+#define loadFailure    = -100003
 
-
-; Your component VARIABLES block here ...
-variables
-  numeric inStore
-  string  uWhere
-  string  where
-endvariables
+#define PRIMARYKEY    = 1
 </DAT>
-<DAT name="USCRIPT" xml:space='preserve'>; See DOC tab for documentation and instructions.
-
-
-; =============================================================================================
+<DAT name="USCRIPT" xml:space='preserve'>; =============================================================================================
 ;
 ;                            PUBLIC INTERFACE - DO NOT CHANGE!
 ;
@@ -206,137 +196,97 @@ endvariables
 
 
 public operation uRetr&lt;esvEntity&gt;
+throws
 ; purpose:  retrieve a list of occurrences given a particular profile
 ; pre:      first READ trigger at client component
 params
   entity     &lt;esvEntity&gt; : OUT ; list of retrieved occurrences
   occurrence &lt;esvEntity&gt; : IN  ; profile occurrence
-  string     fieldList   : IN  ; fields to be retrieved into &lt;esvEntity&gt;
+  string     pFieldList  : IN  ; fields to be retrieved into &lt;esvEntity&gt;
   string     where       : IN  ; where clause for read (only used when called explicitly)
   string     uWhere      : IN  ; uWhere clause for read (only used when called explicitly)
 endparams
 variables
-  numeric    n
+  numeric    vStatus
 endvariables
 
   if (where != "" &amp; uWhere != "")
-    $instancehandle()-&gt;zException("uRetr&lt;esvEntity&gt;", "One of the parameters 'where' and 'uwhere' must be empty.")
-    return (-1)
+    throw &lt;inParamError&gt;, "One of the parameters 'where' and 'uwhere' must be empty."
   endif
 
-  $instancehandle()-&gt;zRetrA&lt;esvEntity&gt;(fieldList, n, where, uWhere) ; profile occ. is unpacked and made current. Retrieve the data.
-
-  if (n &gt;= 0)
+  ; profile occ. is unpacked and made current. Retrieve the data.
+  vStatus = $instancehandle()-&gt;zRetrA&lt;esvEntity&gt;(pFieldList, where, uWhere)
+  if (vStatus &gt;= 0)
     set $subsetreturn("&lt;esvEntity&gt;") ; data to be returned is subsetted to the just retrieved set
-
-    if ($status &lt; 0)
-      $instancehandle()-&gt;zProcError($procerrorcontext)
-      return (-1)
-    endif
   endif
 
-  return (n) ; data is packed and returned by UNIFACE
+  return vStatus    ; data is packed and returned by UNIFACE
 end ; uRetr&lt;esvEntity&gt;
 
 
 public operation uStore&lt;esvEntity&gt;
+throws
 ; purpose: indicate a store transaction (i.e. a serie of Proc statements 'write' and 'delete' at the client)
 ; pre:     Proc statement 'store' at client component
 
-  $inStore$ = 1
+  putitem/id $entityproperties(&lt;esvEntity&gt;), "IN_STORE", 1
 end ; uStore&lt;esvEntity&gt;
 
 
 public operation uUpd&lt;esvEntity&gt;
+throws
 ; purpose: create or update an occurrence. Similar to uRem&lt;esvEntity&gt;
 ; pre:     Proc statement 'write' at client component ; uStore
 params
-  string     fieldList   : IN ; fields to be updated
+  string     pFieldList  : IN ; fields to be updated
   occurrence &lt;esvEntity&gt; : IN ; source occurrence: contains key + data for update
 endparams
 variables
-  string  keyFields
-  numeric n
+  string  vKeyFields, vProcErrorContext
+  numeric vStatus
+  boolean vInStore
 endvariables
 
-  if (!$inStore$)
-    $instancehandle()-&gt;zException("uUpd&lt;esvEntity&gt;", "uStore must be called before uUpd.")
+  getitem/id vInStore, $entityproperties("&lt;esvEntity&gt;"), "IN_STORE"
+  try
+    if (!vInStore)
+      throw &lt;notInStoreMode&gt;, "uStore&lt;esvEntity&gt; must be called before uUpd&lt;esvEntity&gt;."
+    endif
+
+    findkey "&lt;esvEntity&gt;", 1                          ; look-up if we already have the source occurrence in our hitlist
+    selectcase $status
+    case &lt;keyNew&gt;                                     ; not in our hitlist, nor in database
+      creocc "&lt;esvEntity&gt;", 0
+      setocc "&lt;esvEntity&gt;", $curocc+1                 ; position on source occurrence
+      moveocc "&lt;esvEntity&gt;", $curocc-1, pFieldList    ; move data, delete source occurrence and position on target occurrence
+    case &lt;keyInHitlist&gt;                               ; already as target occurrence in our hitlist (position now in $result)
+      moveocc "&lt;esvEntity&gt;", $result, pFieldList      ; move data into target occurrence
+    case &lt;keyInDatabase&gt;                              ; already in database, but not in our hitlist. Retrieve into hitlist and update it.
+      vKeyFields = $keyfields("&lt;esvEntity&gt;", &lt;PRIMARYKEY&gt;)
+      putlistitems/id vKeyFields                      ; copy source occurrence's primary key data into keyFields
+      creocc "&lt;esvEntity&gt;", 0                         ; create profile occurrence.
+      getlistitems/id vKeyFields                      ; paste primary key data into profile occurrence
+      vStatus = $instancehandle()-&gt;zRetrA&lt;esvEntity&gt;(pFieldList, "", "") ; retrieve target
+      setocc "&lt;esvEntity&gt;", $curocc+1               ; position on source occurrence
+      moveocc "&lt;esvEntity&gt;", $curocc-1, pFieldList  ; move data from source into target, delete source and position on target
+    endselectcase
+    try
+      vStatus = $occhandle("&lt;esvEntity&gt;")-&gt;afterUpdate()
+    catch &lt;UPROCERR_OPERATION&gt;
+      ; operation is option -&gt; ignore
+    endtry
+  catch
+    vProcErrorContext = $procerrorcontext
     remocc "&lt;esvEntity&gt;"
-    return (-1)
-  endif
+    throw $item("ERROR", vProcErrorContext), "rethrow", vProcErrorContext
+  endtry
 
-  findkey "&lt;esvEntity&gt;", 1 ; look-up if we already have the source occurrence in our hitlist
-
-  selectcase $status
-
-  case &lt;keyError&gt;
-    $instancehandle()-&gt;zProcError($procerrorcontext)
-    remocc "&lt;esvEntity&gt;" ; remove source occurrence
-    return (-1)
-
-  case &lt;keyNew&gt; ; not in our hitlist, nor in database
-    creocc "&lt;esvEntity&gt;"
-
-    if (n = -1)
-      return (-1)
-    endif
-
-    setocc "&lt;esvEntity&gt;", $curocc+1             ; position on source occurrence
-    moveocc "&lt;esvEntity&gt;", $curocc-1, fieldList ; move data, delete source occurrence and position on target occurrence
-
-    if ($status &lt; 0)                            ; move data was unsucessful
-      $instancehandle()-&gt;zProcError($procerrorcontext)
-      remocc "&lt;esvEntity&gt;"                      ; remove source occurrence ...
-      setocc "&lt;esvEntity&gt;", $curocc-1
-      remocc "&lt;esvEntity&gt;"                      ; ... and remove target occurrence
-      return (-1)
-    endif
-
-    $occhandle("&lt;esvEntity&gt;")-&gt;afterCreate(n)
-
-  case &lt;keyInHitlist&gt;                           ; already as target occurrence in our hitlist (position now in $result)
-    moveocc "&lt;esvEntity&gt;", $result, fieldList   ; move data into target occurrence
-
-    if ($status &lt; 0)                            ; move unsuccessful
-      $instancehandle()-&gt;zProcError($procerrorcontext)
-      remocc "&lt;esvEntity&gt;"                      ; remove source occurrence
-      return (-1)
-    endif
-
-    $occhandle("&lt;esvEntity&gt;")-&gt;afterUpdate(n)
-
-  case &lt;keyInDatabase&gt;                          ; already in database, but not in our hitlist. Retrieve into hitlist and update it.
-    keyFields = $keyfields("&lt;esvEntity&gt;", &lt;primaryKey&gt;)
-    putlistitems/id keyFields                   ; copy source occurrence's primary key data into keyFields
-    creocc "&lt;esvEntity&gt;"                        ; create profile occurrence.
-    getlistitems/id keyFields                   ; paste primary key data into profile occurrence
-
-    $instancehandle()-&gt;zRetrA&lt;esvEntity&gt;(fieldList, n, "", "") ; retrieve target
-
-    if (n &lt; 0)                                    ; retrieve unsucessful, target occurrence removed
-      remocc "&lt;esvEntity&gt;"                        ; remove source occurrence
-      return (-1)
-
-    else
-      setocc "&lt;esvEntity&gt;", $curocc+1             ; position on source occurrence
-      moveocc "&lt;esvEntity&gt;", $curocc-1, fieldList ; move data from source into target, delete source and position on target
-
-      if ($status &lt; 0)                            ; move unsucessful
-        $instancehandle()-&gt;zProcError($procerrorcontext)
-        remocc "&lt;esvEntity&gt;"                      ; remove source occurrence
-        return (-1)
-      endif
-    endif
-
-    $occhandle("&lt;esvEntity&gt;")-&gt;afterUpdate(n)
-
-  endselectcase
-
-  return (n)
+  return vStatus
 end ; uUpd&lt;esvEntity&gt;
 
 
 public operation uRem&lt;esvEntity&gt;
+throws
 ; purpose: mark an occurrence for deletion. Similar to uUpd&lt;esvEntity&gt;
 ; pre:     Proc statement 'delete' at client component ; uStore
 ; pre:     uStore
@@ -344,153 +294,137 @@ params
   occurrence &lt;esvEntity&gt; : IN ; source occurrence
 endparams
 variables
-  numeric n
+  numeric vStatus
+  string vProcErrorContext
+  boolean vInStore
 endvariables
 
-  if (!$inStore$)
-    $instancehandle()-&gt;zException("uRem&lt;esvEntity&gt;", "uStore&lt;esvEntity&gt; must be called before uRem&lt;esvEntity&gt;.")
-    remocc "&lt;esvEntity&gt;"   ; remove source occurrence
-    return (-1)
-  endif
-
-  findkey "&lt;esvEntity&gt;", 1 ; look-up target occurrence
-
-  selectcase $status
-
-  case &lt;KeyError&gt;
-    $instancehandle()-&gt;zProcError($procerrorcontext)
-    remocc "&lt;esvEntity&gt;"   ; remove source occurrence
-    return (-1)
-
-  case &lt;keyNew&gt;
-                           ; already removed - done
-
-  case &lt;keyInHitlist&gt;
-    moveocc "&lt;esvEntity&gt;", $result, "" ; remove source and position on target
-
-    if ($status &lt; 0)                   ; move unsuccessful
-      $instancehandle()-&gt;zProcError($procerrorcontext)
-      return (-1)
+  getitem/id vInStore, $entityproperties("&lt;esvEntity&gt;"), "IN_STORE"
+  try
+    if (!vInStore)
+      throw &lt;notInStoreMode&gt;, "uStore&lt;esvEntity&gt; must be called before uRem&lt;esvEntity&gt;."
     endif
 
-  case &lt;keyInDatabase&gt;
-    $instancehandle()-&gt;zRetrA&lt;esvEntity&gt;("", n, "", "") ; retrieve it for removal
+    findkey "&lt;esvEntity&gt;", 1 ; look-up target occurrence
+    selectcase $status
+    case &lt;keyNew&gt;
+      ; already removed - done
+    case &lt;keyInHitlist&gt;
+      moveocc "&lt;esvEntity&gt;", $result, ""                             ; position on target
+    case &lt;keyInDatabase&gt;
+      vStatus = $instancehandle()-&gt;zRetrA&lt;esvEntity&gt;("", "", "")     ; retrieve it for removal
+    endselectcase
 
-    if (n &lt; 0)
-      return (n)
+    try
+      vStatus = $occhandle("&lt;esvEntity&gt;")-&gt;beforeRemove()
+    catch &lt;UPROCERR_OPERATION&gt;
+      ; operation is option -&gt; ignore
+      vStatus = 0
+    endtry
+
+    if (vStatus = 0)
+      remocc "&lt;esvEntity&gt;", 0
     endif
-  endselectcase
 
-  $occhandle("&lt;esvEntity&gt;")-&gt;beforeRemove(n)
-
-  if (n = 0)
+  catch
+    vProcErrorContext = $procerrorcontext
     remocc "&lt;esvEntity&gt;"
-  endif
+    throw $item("ERROR", vProcErrorContext), "rethrow", vProcErrorContext
+  endtry
 
-  return (n)
+  return vStatus
 end ; uRem&lt;esvEntity&gt;
 
 
 public operation uEndStore
+throws
 ; purpose: indicate store transaction is completed, start physical store process
 ; pre:     last Proc statement 'write' or 'delete' at client component ; uStore
 variables
-  numeric n
+  numeric vStatus
 endvariables
 
-  $inStore$ = 0
-  $instancehandle()-&gt;zSave&lt;esvEntity&gt;(n) ; communicate physical write and delete to DBMS
+  putitem/id $entityproperties(&lt;esvEntity&gt;), "IN_STORE", 0
+  vStatus = $instancehandle()-&gt;zSave&lt;esvEntity&gt;()    ; communicate physical write and delete to DBMS
 
-  return (n)
+  return vStatus
 end ; uEndStore
 
 
 public operation uLock&lt;esvEntity&gt;
+throws
 ; purpose: lock occurrence
 ; pre:     Proc statement 'lock' at client component
 params
   occurrence &lt;esvEntity&gt; : IN ; profile occurrence to be locked
 endparams
 variables
-  numeric n
+  numeric vStatus
+  string vProcErrorContext
 endvariables
 
-  findkey "&lt;esvEntity&gt;", 1                     ; look-up target occurrence
-
+  findkey "&lt;esvEntity&gt;", 1                       ; look-up target occurrence
   selectcase $status
-
-  case &lt;keyError&gt;
-    $instancehandle()-&gt;zProcError($procerrorcontext)
-    remocc "&lt;esvEntity&gt;"                       ; remove profile occurrence
-    return (-1)
-
   case &lt;keyNew&gt;
-    $instancehandle()-&gt;zException("uLock&lt;esvEntity&gt;", "Occurrence does not exist.")
-    remocc "&lt;esvEntity&gt;"                       ; remove profile occurrence
-    return (-1)
-
+    remocc "&lt;esvEntity&gt;", 0                      ; remove profile occurrence
+    return -1
   case &lt;keyInHitlist&gt;
-    moveocc "&lt;esvEntity&gt;", $result, ""         ; remove profile occurrence and position on occurrence to be locked
-    if ($status &lt; 0)
-      $instancehandle()-&gt;zProcError($procerrorcontext)
-      remocc "&lt;esvEntity&gt;"                     ; remove profile occurrence
-      return (-1)
-    endif
-
+    moveocc "&lt;esvEntity&gt;", $result, ""           ; remove profile occurrence and position on occurrence to be locked
   case &lt;keyInDatabase&gt;
-    $instancehandle()-&gt;zRetrA&lt;esvEntity&gt;("", n, "", "") ; retrieve it into hitlist
-
-    if (n &lt; 0)
-      return (n)
-    endif
+    vStatus = $instancehandle()-&gt;zRetrA&lt;esvEntity&gt;("", "", "")     ; retrieve it into hitlist
   endselectcase
 
-  lock
-  n = $status
+  try
+    lock
+    return $status
+  catch &lt;UIOSERR_UPDATE_NOT_ALLOWED&gt;
+    ; No write or delete permission for the table or file. The occurrence is read-only (cannot be locked)
+    return -5
+  catch &lt;UIOSERR_WRITE_FAILURE&gt;
+    ; An error occurred while writing, updating, or deleting the table or file; for example, lack of disk space,
+    ; no write permission, or violation of a database constraint
+    ; Inform caller by returning -6 and continue processing
+    return -6
+  catch &lt;UIOSERR_DUPLICATE_KEY&gt;
+    ; The key exists in the database but was not found in the hitlist. This occurs when the user tries to enter a duplicate key
+    ; Inform caller by returning -7 and continue processing
+    return -7
+  catch &lt;UIOSERR_LOGON_ERROR&gt;
+    ; DBMS logon error. This can occur if the database connection has been lost or the maximum number
+    ; of DBMS logons has already been reached
+    ; Inform caller by returning -9 and continue processing
+    return -9
+  catch &lt;UIOSERR_LOCK_DATA_MISMATCH&gt;
+    ; Occurrence has been modified or removed since it was retrieved
+    ; Reload the occurrence and continue processing
+    reload
+  catch &lt;UIOSERR_LOCKED&gt;
+    ; Occurrence already locked; wait and try again
+    ; Inform caller by returning -11 and continue processing
+    return -11
+  endtry
 
-  if (n &lt; 0)
-    $instancehandle()-&gt;zProcError($procerrorcontext)
-  endif
-
-  return (n)
 end ; uLock&lt;esvEntity&gt;
 
 
 public operation uCommit
+throws
 ; purpose: commit transaction on ESV subtype's DBMS path
 ; pre:     Proc statement 'commit' at client component
-variables
-  numeric n
-endvariables
 
   commit
-  n = $status
-
-  if (n &lt; 0)
-     $instancehandle()-&gt;zProcError($procerrorcontext)
-  endif
-
-  return (n)
+  return $status
 end ; uCommit
 
 
 public operation uRollBack
+throws
 ; purpose: rollback transaction on ESV subtype's DBMS path
 ; pre:     Proc statement 'rollback' at client component
-variables
-  numeric n
-endvariables
 
   clear
   rollback
-  n = $status
-
-  if (n &lt; 0)
-     $instancehandle()-&gt;zProcError($procerrorcontext)
-
-  endif
-
-  return (n)
+  return $status
 end ; uRollback
 
 
@@ -510,72 +444,65 @@ end ; uRollback
 
 
 partner operation zRetrA&lt;esvEntity&gt;
+throws
 params
-  string fieldList : IN
-  numeric n        : OUT
+  string pFieldList : IN
   string where     : IN
   string uWhere    : IN
 endparams
+variables
+  string vProcErrorContext
+endvariables
 
   if (where != "")
-    $where$  = where
+    putitem/id $entityproperties(&lt;esvEntity&gt;), "WHERE", where
   elseif (uWhere != "")
-    $uWhere$ = uWhere
+    putitem/id $entityproperties(&lt;esvEntity&gt;), "U_WHERE", uWhere
   endif
 
-  $selectlist ("&lt;esvEntity&gt;") = fieldList
-  retrieve/a "&lt;esvEntity&gt;"
-  n = $status
+  $selectlist ("&lt;esvEntity&gt;") = pFieldList
+  try
+    retrieve/a "&lt;esvEntity&gt;"
+    return $status
+  catch &lt;UIOSERR_OCC_NOT_FOUND&gt;, &lt;UIOSERR_OPEN_FAILURE&gt;  ; -2, -4
+    vProcErrorContext = $procerrorcontext
+    remocc "&lt;esvEntity&gt;", 0 ; remove profile
+    return $item("ERROR", vProcErrorContext)
+  catch
+    vProcErrorContext = $procerrorcontext
+    remocc "&lt;esvEntity&gt;", 0 ; remove profile
+    throw $item("ERROR", vProcErrorContext), "rethrow", vProcErrorContext
+  endtry
 
-  if (n &lt; 0)
-    $instancehandle()-&gt;zProcError($procErrorContext)
-    remocc "&lt;esvEntity&gt;" ; remove profile
-  endif
 end ; zRetrA&lt;esvEntity&gt;
 
 
 partner operation zSave&lt;esvEntity&gt;
-params
-  numeric n : OUT
-endparams
-
-  store/e "&lt;esvEntity&gt;"
-  n = $status
-
-  if (n &lt; 0)
-    $instancehandle()-&gt;zProcError($procErrorContext)
-  endif
-end ; zSave&lt;esvEntity&gt;
-
-
-partner operation zProcError
-; purpose: report an unexpected failure in a Proc statement
-; client:  -
-; pre:     context contains information about $procErrorContext
-params
-  string pContext : IN
-endparams
+throws
 variables
-  string vError
-  string vErrorDescr
-  string vOperationName
+  string vProcErrorContext
+  struct vDataErrors
 endvariables
 
-  getitem/id vError, pContext, "error"
-  getitem/id vErrorDescr, pContext, "description"
-  getitem/id vOperationName, pContext, "procName"
-  putmess "Error detected by entity service %%$componentName()%%%, operation %%vOperationName%%%. %%vErrorDescr%%% (%%vError%%%)"
-end ; zProcError
-
-
-partner operation zException
-params
-  string pOperationName : IN
-  string pErrorDescr    : IN
-endparams
-
-  putmess "Exception detected by entity service %%$componentName()%%%, operation %%pOperationName%%% failed. %%pErrorDescr%%%"
-end ; zException</DAT>
+  try
+    validate/e "&lt;esvEntity&gt;"
+    store/e "&lt;esvEntity&gt;"
+  catch &lt;UGENERR_4GL_SAYS_ERROR&gt;, &lt;UVALERR_SYNTAX&gt;, &lt;UVALERR_CONSTRAINT&gt;, &lt;UVALERR_KEY_PROFILE&gt;, &lt;UVALERR_KEY_EMPTY&gt;
+    ; Data errors, as reported by error triggers, cannot be passed back to the client component
+    ; Instead, return an exception including a data error report
+    vProcErrorContext = $procerrorcontext
+    try
+      ; Get data errors as reported by error triggers and add to procerrorcontext
+      $collhandle(&lt;esvEntity&gt;)-&gt;reportDataErrors(vDataErrors)
+      putitem/id vProcErrorContext, "DATAERRORS", vDataErrors-&gt;$dbgstring
+    catch &lt;UPROCERR_OPERATION&gt;
+      ; Ignore
+    endtry
+    throw &lt;UGENERR_4GL_SAYS_ERROR&gt;, "Data validation failed", vProcErrorContext
+  endtry
+  return $status
+end ; zSave&lt;esvEntity&gt;
+</DAT>
 <DAT name="USCONTAINED">F</DAT>
 <DAT name="ATTACHED">F</DAT>
 <DAT name="USTATEMANAGEDBY">0</DAT>

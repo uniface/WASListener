@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
-<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!-- Created by Uniface - (C) Rocket Software B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
 <UNIFACE release="10.4" repversion="8" xmlengine="2.0">
 <TABLE>
@@ -31,7 +31,7 @@
 <DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Library of trigger snippets for Application Shells</DAT>
-<DAT name="UTIMESTAMP">2016-08-16T20:32:21.00</DAT>
+<DAT name="UTIMESTAMP">2022-06-13T14:39:46.00</DAT>
 <DAT name="UPURPOSE">N</DAT>
 </OCC>
 </TABLE>
@@ -73,14 +73,52 @@
 <DAT name="ULIBRARY">USCRIPT_APS</DAT>
 <DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
-<DAT name="UDESCR" xml:space='preserve'>Fired on server request</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired at application startup (Interactive)</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;trigger&lt;/x&gt; &lt;z&gt;apstart&lt;/z&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger apstart
-; Your VARIABLES block here (optional)...
+throws
+; This is the first trigger fired at application startup
+; Any command line arguments are available in $1, $2, etc
 
-  ; Your implementation here...
+#if (&lt;DEVELOPMENT&gt; != TRUE)
+  try
+#endif
 
-end</DAT>
+    ; Activate the first component of your application here, e.g....
+    activate "MYFORM".exec()
+    ; Include apstart to catch exceptions from non-modal forms
+    apstart
+
+#if (&lt;DEVELOPMENT&gt; != TRUE)
+  catch
+    ; Write uncaught exceptions to log file and throw generic exception
+    call logException($procerrorcontext)
+  endtry
+#endif
+
+  return 0
+
+end
+</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">APSTART_US</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_APS</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired at application startup (USERVER)</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;trigger&lt;/x&gt; &lt;z&gt;apstart&lt;/z&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger apstart
+throws
+; This trigger is fired at startup of the userver process; it is not fired by any client request.
+; Use this trigger to setup state and singletons shared by all client requests.
+; After execution of this trigger, the userver is ready to handle any client requests send by the urouter.
+
+  ; Your code  here...
+
+end
+</DAT>
 </OCC>
 <OCC>
 <DAT name="UNAME">KEYBOARDSWITCH</DAT>
@@ -88,9 +126,10 @@ end</DAT>
 <DAT name="ULIBRARY">USCRIPT_APS</DAT>
 <DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
-<DAT name="UDESCR" xml:space='preserve'>Fired on macro "^SWITCH_KEY"</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired on macro "^SWITCH_KEY" (Interactive)</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;trigger&lt;/x&gt; &lt;z&gt;keyboardSwitch&lt;/z&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger keyboardSwitch
+throws
 ; Your VARIABLES block here (optional)...
 
   ; Your implementation here...
@@ -103,9 +142,10 @@ end</DAT>
 <DAT name="ULIBRARY">USCRIPT_APS</DAT>
 <DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
-<DAT name="UDESCR" xml:space='preserve'>Fired on macro "^MENU"</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired on macro "^MENU" (Interactive)</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;trigger&lt;/x&gt; &lt;z&gt;menu&lt;/z&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger menu
+throws
 ; Your VARIABLES block here (optional)...
 
   ; Your implementation here...
@@ -121,6 +161,23 @@ end</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired at end of server request</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;trigger&lt;/x&gt; &lt;z&gt;postRequest&lt;/z&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger postRequest
+throws
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+end</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">POSTREQUEST_US</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_APS</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired at end of Web request  (USERVER)</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;trigger&lt;/x&gt; &lt;z&gt;postRequest&lt;/z&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger postRequest
+throws
 ; Your VARIABLES block here (optional)...
 
   ; Your implementation here...
@@ -136,6 +193,7 @@ end</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Fired at start of server request</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;trigger&lt;/x&gt; &lt;z&gt;preRequest&lt;/z&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger preRequest
+throws
 ; For WRD-level user authentication for WEB applications, select one of the following methods:
 ; - Verify $user and $password against the operating system or a user administration system.
 ; - Verify $user using the LDAP connector.
@@ -146,7 +204,35 @@ end</DAT>
   ; Insert your code...
 
   ; Return execution status:
-  ;   return 0    ; return &gt;= 0 indicates succesful execution -&gt; the requested component is activated
+  ;   return 0    ; return &gt;= 0 indicates successful execution -&gt; the requested component is activated
+  ;   return -1   ; return &lt; 0 indicates an error during execution -&gt; the request is cancelled.
+  ;   return -21  ; Specific error: Authorization failure.
+  ; endif
+  return 0
+
+end</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">PREREQUEST_US</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_APS</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired at start of Web request (USERVER)</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;trigger&lt;/x&gt; &lt;z&gt;preRequest&lt;/z&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger preRequest
+throws
+; For WRD-level user authentication for WEB applications, select one of the following methods:
+; - Verify $user and $password against the operating system or a user administration system.
+; - Verify $user using the LDAP connector.
+; - Verify $user against an internal table of authorized users.
+
+; Your VARIABLES block here (optional)...
+
+  ; Insert your code...
+
+  ; Return execution status:
+  ;   return 0    ; return &gt;= 0 indicates successful execution -&gt; the requested component is activated
   ;   return -1   ; return &lt; 0 indicates an error during execution -&gt; the request is cancelled.
   ;   return -21  ; Specific error: Authorization failure.
   ; endif
@@ -160,9 +246,59 @@ end</DAT>
 <DAT name="ULIBRARY">USCRIPT_APS</DAT>
 <DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
-<DAT name="UDESCR" xml:space='preserve'>Fired when server postmessage is received</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired when postmessage is received (Interactive)</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;trigger&lt;/x&gt; &lt;z&gt;receiveMessage&lt;/z&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger receiveMessage
+throws
+; A message arrrives here, when no component instance has received it.
+; $result contains source indication:
+;   "message" - trigger receiveMessage was fired by postmessage statement
+;               $msgid contains the message id
+;               $msgdata contains the message data
+;               $msgsrc contains the message source
+;   "Timeout" - trigger receiveMessage was fired by $TIMEOUT as configured in your assignment file
+
+; Your VARIABLES block here (optional)...
+
+  ;- Example:
+  selectcase $uppercase($result)
+  case "MESSAGE"
+    ; Trigger fired by postmessage statement
+
+    selectcase $uppercase($msgid)
+    case "MSG1"
+      ; Trigger fired by postmessage with message Id "MSG1"
+
+      ; Your implementation here...
+
+    case "MSG2"
+      ; Trigger fired by: postmessage instanceName, "MSG2", ...
+
+      ; Your implementation here...
+
+    endselectcase
+
+  case "TIMEOUT"
+    ; Trigger fired by $TIMEOUT
+    ; $TIMEOUT can be set in the [SETTINGS] section of your assignment file
+    ; and generates a TIMEOUT message after an inactive period.
+
+    ; Your implementation here...
+
+  endselectcase
+
+end</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">RECEIVEMESSAGE_US</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_APS</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired when postmessage is received (USERVER)</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;trigger&lt;/x&gt; &lt;z&gt;receiveMessage&lt;/z&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>trigger receiveMessage
+throws
 ; A message arrrives here, when no component instance has received it.
 ; $result contains source indication:
 ;   "message" - trigger receiveMessage was fired by postmessage statement
@@ -208,9 +344,10 @@ end</DAT>
 <DAT name="ULIBRARY">USCRIPT_APS</DAT>
 <DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">2</DAT>
-<DAT name="UDESCR" xml:space='preserve'>Fired on macro "^USER_KEY"</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired on macro "^USER_KEY" (Interactive)</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;trigger&lt;/x&gt; &lt;z&gt;userKey&lt;/z&gt;&lt;/t&gt;</DAT>
 <DAT name="UTEXT" xml:space='preserve'>trigger userKey
+throws
 ; This trigger is used to define the processing associated with user-defined key sequences.
 ; These are defined in the keyboard translation table using the ^USER_KEY definition.
 ; The identification character for this user key sequence is available in $char.
@@ -232,6 +369,43 @@ endvariables
   endselectcase
 
 end</DAT>
+</OCC>
+<OCC>
+<DAT name="UNAME">Z_LOGEXCEPTION</DAT>
+<DAT name="USYNTAX">PROCSCRIPT</DAT>
+<DAT name="ULIBRARY">USCRIPT_APS</DAT>
+<DAT name="UKVERSION">7</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Fired on macro "^USER_KEY" (Interactive)</DAT>
+<DAT name="UALT_NAME" xml:space='preserve'>&lt;t&gt;&lt;x&gt;entry&lt;/x&gt; &lt;z&gt;logException&lt;/z&gt;&lt;/t&gt;</DAT>
+<DAT name="UTEXT" xml:space='preserve'>entry logException
+throws
+returns string  ; exception-list
+params
+  string pProcErrorContext: in
+endparams
+variables
+  string vErrorId, vError
+endvariables
+
+  ; Generate an error Id for reference
+  vErrorId = $uuid
+
+  ; To avoid showing implementation details to the end-user, which could be abused by hackers,
+  ; make the exception details available to a support team, for example by sending a mail or by writing to a redirected log file.
+  ; As a simple example, we will write the exception details to the log file.
+  ; Modify this code to suit your needs:
+  filedump/append "An unexpected procerror terminated the application%%^", "procerror.log"
+  filedump/append "ERRORID=%%(vErrorId)%%^", "procerror.log"
+  filedump/append "DATETIME=%%($datim)%%^", "procerror.log"
+  filedump/append "PROCERRORCONTEXT=%%(pProcErrorContext)%%^", "procerror.log"
+  filedump/append "%%^", "procerror.log"
+
+  ; Show a generic error message containing the error Id
+  message/error "An unexpected procerror will terminate the application, contact your administrator.%%^Provide the following error Id for reference: %%(vErrorId)~Uncaught exception"
+
+end
+</DAT>
 </OCC>
 </TABLE>
 </UNIFACE>

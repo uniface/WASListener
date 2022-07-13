@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
-<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!-- Created by Uniface - (C) Rocket Software B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
 <UNIFACE release="10.4" repversion="8" xmlengine="2.0">
 <TABLE>
@@ -143,7 +143,7 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2020-01-28T09:47:32.00</DAT>
+<DAT name="UTIMESTAMP">2022-06-09T11:32:07.00</DAT>
 <DAT name="ULABEL">UPALETTE_RPT</DAT>
 <DAT name="UKVERSION">7</DAT>
 <DAT name="UMVERSION">3</DAT>
@@ -345,8 +345,8 @@
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Inline header frame for printed reports</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>Printer Break Frame</DAT>
-<DAT name="UOCC_SCRIPT" xml:space='preserve'>
-trigger getFocus
+<DAT name="UOCC_SCRIPT" xml:space='preserve'>trigger getFocus
+throws
 
 end
 </DAT>
@@ -412,8 +412,8 @@ end
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Header frame for printed reports</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>Printer Header frame</DAT>
-<DAT name="UOCC_SCRIPT" xml:space='preserve'>
-trigger getFocus
+<DAT name="UOCC_SCRIPT" xml:space='preserve'>trigger getFocus
+throws
 
 end
 </DAT>
@@ -426,8 +426,8 @@ end
 <DAT name="UMVERSION">4</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Footer frame for printed reports</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>Printer Footer Frame</DAT>
-<DAT name="UOCC_SCRIPT" xml:space='preserve'>
-trigger getFocus
+<DAT name="UOCC_SCRIPT" xml:space='preserve'>trigger getFocus
+throws
 
 end
 </DAT>

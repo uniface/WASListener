@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
-<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!-- Created by Uniface - (C) Rocket Software B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
 <UNIFACE release="10.4" repversion="8" xmlengine="2.0">
 <TABLE>
@@ -25,7 +25,7 @@
  pointer="0" inum="0" ufocc="0" />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2016-08-16T11:42:21.00</DAT>
+<DAT name="UTIMESTAMP">2022-06-13T14:26:03.00</DAT>
 <DAT name="U_VLAB">MODEL</DAT>
 <DAT name="U_TLAB">UENTDB</DAT>
 <DAT name="UKVERSION">5</DAT>
@@ -179,56 +179,326 @@
 <DAT name="U_MINR">0</DAT>
 <DAT name="U_MAXR">0</DAT>
 <DAT name="UPURPOSE">T</DAT>
+<DAT name="UCOLL_SCRIPT" xml:space='preserve'>partner operation reportDataErrors
+throws
+; This operation looks for any data errors in the current collection and adds them to the struct report.
+; The error messages are expected to be available as $occproperties and $fieldproperties using the "errormsg" id.
+; The value of the "errormsg" property is expected to be an indexed list with one or more error messages.
+; The report is a struct and its structure represents the collection structure.
+; This report activates this same operation for all its inner entities/collections.
+;
+; Use this report after data validation of service components, where a report needs to be returned to the caller.
+; Return this report as a reference of the report struct; serialize to e.g. JSON first before returning.
+; You can also use myDatapErrorReport-&gt;$dbgstring to write the report to a log in human readable format.
+; Interactive components, like DSPs, USPs, and FRMs read the errors directly from the data; no need to generate this report.
+params
+  byref struct pErrorReport: inout
+endparams
+variables
+  struct vCollErrors, vOccErrors
+  string vFieldName, vInnerEntityName, vErrorMsg, vMsg
+endvariables
+
+  ; Initialize the error report of the current collection and add it to the report struct
+  pErrorReport-&gt;*{-1} = $newstruct
+  vCollErrors = pErrorReport-&gt;*{-1}
+  vCollErrors-&gt;$name = "&lt;$entname&gt;.&lt;$modelname&gt;"
+  
+  ; Iterate all occurrences of this collection.
+  forentity "&lt;$entname&gt;"
+    vCollErrors-&gt;*{-1} = $newstruct
+    vOccErrors = vCollErrors-&gt;*{-1}
+    vOccErrors-&gt;$name = "OCC%%($curocc(&lt;$entname&gt;))"
+
+    ; Add occurrence errors (if any); includes any key errors
+    getitem/id vErrorMsg, $occproperties(&lt;$entname&gt;), "errormsg"
+    if ($status &gt; 0)
+      forlist vMsg in vErrorMsg
+        vOccErrors-&gt;"$error"{-1} = vErrorMsg
+      endfor
+    endif
+
+    ; Add field errors (if any)
+    forlist vFieldName in $entinfo(&lt;$entname&gt;, "PAINTEDFIELDS")
+      getitem/id vErrorMsg, $fieldproperties("%%(vFieldname).&lt;$entname&gt;"), "errormsg"
+      if ($status &gt; 0)
+        vOccErrors-&gt;"%%(vFieldName)" = $newstruct
+        vOccErrors-&gt;"%%(vFieldName)"-&gt;"$value" = @("%%(vFieldname).&lt;$entname&gt;")
+        forlist vMsg in vErrorMsg
+          vOccErrors-&gt;"%%(vFieldName)"-&gt;"$error"{-1} = vMsg
+        endfor
+      endif
+    endfor
+    
+    ; Add errors of inner collections (if any)
+    forlist vInnerEntityName in $entinfo(&lt;$entname&gt;, "INNER")
+      $collhandle(vInnerEntityName)-&gt;reportDataErrors(vOccErrors)
+    endfor
+
+    ; Occurrence has no context -&gt; delete it
+    if (vOccErrors-&gt;$membercount == 0)
+      vOccErrors-&gt;$parent = ""
+    endif
+  endfor
+
+end
+
+</DAT>
 <DAT name="UOCC_SCRIPT" xml:space='preserve'>trigger read
+throws
 ; This trigger is fired as part of the retrieve process.
 ; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
-
-  read
+variables
+  string vOrderByFieldName, vParams, vOptions, vMaxHits, vOffset
+  boolean vOrderDescending
+endvariables
+  
+  if ($rettype == 78)
+    ; Read the next occurrence
+    read
+  
+  else
+    ; Read the occurrence, e.g.:
+    ; - Get order-by information from e.g. $entityproperties
+    getitem/id vOrderByFieldName, $entityproperties(&lt;$entname&gt;), "ORDERBY_FIELDNAME"
+    if ($status &gt; 0)
+      getitem/id vOrderDescending, $entityproperties(&lt;$entname&gt;), "ORDERBY_DESCENDING"
+      if (vOrderDescending)
+        vOrderByFieldName = "%%(vOrderByFieldName) desc"
+      else
+        vOrderByFieldName = "%%(vOrderByFieldName)"
+      endif
+    endif
+    ; - Get paging info from e.g. $entityproperties
+    getitem/id vMaxHits, $entityproperties(&lt;$entname&gt;), "MAX_HITS"
+    if ($status &gt; 0)
+      putitem/id vOptions, "maxhits", vMaxHits
+    endif
+    getitem/id vOffset, $entityproperties(&lt;$entname&gt;), "OFFSET"
+    if ($status &gt; 0)
+      putitem/id vOptions, "offset", vOffset
+    endif
+    ; - Get U_CONDITION, U_WHERE, or WHERE from e.g. $entityproperties and perform read
+    getitem/id vParams, $entityproperties(&lt;$entname&gt;), "U_CONDITION"
+    if ($status &gt; 0)
+      read options vOptions u_condition (vParams) order by vOrderByFieldName
+    else
+      getitem/id vParams, $entityproperties(&lt;$entname&gt;), "U_WHERE"
+      if ($status &gt; 0)
+        read options vOptions u_where (vParams) order by vOrderByFieldName
+      else
+        getitem/id vParams, $entityproperties(&lt;$entname&gt;), "WHERE"
+        if ($status &gt; 0)
+          read options vOptions where (vParams) order by vOrderByFieldName
+        else
+          read options vOptions order by vOrderByFieldName
+        endif
+      endif
+    endif
+  endif
 
 end
 
 
 trigger lock
+throws
 ; This trigger is fired as part of a database lock request.
-; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+; Depending on the locking strategy and DBMS locking support, this can happen at different moments:
+; - During read (using read/lock)
+; - At field start modification on interactive Form component
+; - At field assignment in ProcScript
+; - During a reconnect of disconnected records
+; By catching lock exceptions and return a negative value, Uniface is instructed to continue processing.
+; By not catching lock exceptions Uniface will not continue processing.
 
-  lock
-  if ($status = -10) reload
+  try
+    lock
+  catch &lt;UIOSERR_UPDATE_NOT_ALLOWED&gt;
+    ; No write or delete permission for the table or file. The occurrence is read-only (cannot be locked)
+    return -5
+  catch &lt;UIOSERR_WRITE_FAILURE&gt;
+    ; An error occurred while writing, updating, or deleting the table or file; for example, lack of disk space,
+    ; no write permission, or violation of a database constraint
+    ; Inform caller by returning -6 and continue processing
+    return -6
+  catch &lt;UIOSERR_DUPLICATE_KEY&gt;
+    ; The key exists in the database but was not found in the hitlist. This occurs when the user tries to enter a duplicate key
+    ; Inform caller by returning -7 and continue processing
+    return -7
+  catch &lt;UIOSERR_LOGON_ERROR&gt;
+    ; DBMS logon error. This can occur if the database connection has been lost or the maximum number
+    ; of DBMS logons has already been reached
+    ; Inform caller by returning -9 and continue processing
+    return -9
+  catch &lt;UIOSERR_LOCK_DATA_MISMATCH&gt;
+    ; Occurrence has been modified or removed since it was retrieved
+    ; Reload the occurrence and continue processing
+    reload
+  catch &lt;UIOSERR_LOCKED&gt;
+    ; Occurrence already locked; wait and try again
+    ; Inform caller by returning -11 and continue processing
+    return -11
+  endtry
 
 end
 
 
-trigger validateKey
-; This trigger is fired as part of the validate/store process.
-; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
 
-  findkey $entname, $curkey
-  if ($procerror &lt; 0)          ; procerror
-    $result = $procerrorcontext
-    return -1                  ; procerror
-  endif
+trigger validateKey
+throws
+; This trigger is fired as part of the validation process and should be used to
+; create primary and candidate key validation rules.
+; Write one or more field validation checks and return a unique negative number for every failing check;
+; this negative number is used by the error trigger to report the error.
+; Remove this trigger if no key validation is required; note that the store might fail as a consequence.
+
+  findkey "&lt;$entname&gt;", $curkey
   selectcase $status
-  case 0                       ; key not found
-    if ($foreign) return -2    ; non existing key in up entity
-  case 1                       ; key found in Component
-    if (!$foreign) return -3   ; duplicate key in down entity
-  case 2                       ; key found in DBMS
-    if (!$foreign) return -4   ; duplicate key in down entity
+  case 0
+    ; No occurrence found with this key
+    if ($foreign)
+      ; Related one occurrence not found
+      return -2
+    endif
+  case 1
+    ; Occurrence with this key found in component
+    if (!$foreign)
+      ; Occurrence already exists in component
+      return -3
+    endif
+  case 2
+    ; Occurrence with this key found in DBMS
+    if (!$foreign)
+      ; Occurrence already exists in DBMS
+      return -4
+    endif
   elsecase
     return $status 
   endselectcase
 
-  ; If we reach this point, validation was successful
+  ; Validation is successful
   return 0
 
 end
 
 
-trigger write
-; This trigger is fired as part of the store process.
-; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+trigger validate
+throws
+; This trigger is fired as part of the validation process and should be used to
+; create occurrence-specific validation rules.
+; Write one or more validation checks and return a unique negative number for every failing check;
+; this negative number is used by the error trigger to report the error.
+; Remove this trigger if no procedural validation is required.
 
-  ; Your last moment field updates here...
+  ; Your occurrence validation rules here...
+  ; if (FIELD1 &gt; FIELD2)
+  ;   return -1
+  ; elseif (FIELD3 &lt; FIELD4)
+  ;   return -2
+  ; endif
+
+  ; Validation is successful
+  return 0
+
+end
+
+
+trigger error
+throws
+; This trigger is fired when data validation of the current occurrence or key failed.
+; This trigger should:
+; - determine whether the validation error is to be ignored or not
+;    - return &gt;=0 to indicate the error is to be ignored
+;    - return &lt;0 to indicate the error is not to be ignored
+; - determine the error message
+; - determine the fields involved with the error for reporting purposes
+; - report the error message.
+variables
+  string vErrorMsg, vErrors, vErrorFields, vFieldName
+  numeric vKeyNr
+endvariables
+
+  ; Use all fields as default involved fields
+  vErrorFields = $entinfo(&lt;$entname&gt;, "PAINTEDFIELDS")
+
+  ; Determine the error message and involved error fields
+  selectcase $error
+  case 0147
+    ; Error caused by occurrence trigger validateKey
+    vKeyNr = $item("KEY", $dataerrorcontext)
+    vErrorFields = $keyfields(&lt;$entname&gt;, vKeyNr)
+    selectcase $item("STATUS", $dataerrorcontext)
+    case -2
+      vErrorMsg = $concat($text("%%($error)"), " - Related one-occurrence not found")
+    case -3
+      vErrorMsg = $concat($text("%%($error)"), " - Occurrence with the same key (%%(vKeyNr)) exists in component")
+    case -4
+      vErrorMsg = $concat($text("%%($error)"), " - Occurrence with the same key (%%(vKeyNr)) already exists in DBMS")
+    ; ...
+    elsecase
+      vErrorMsg = $text("%%($error)")
+    endselectcase
+  case 0153       
+    ; Error caused by occurrence trigger validate
+    selectcase $item("STATUS", $dataerrorcontext)
+    case -1
+      vErrorMsg = $concat($text("%%($error)"), " - Your error message for check 1 here")
+      ; vErrorFields = "..."  ; The list of fields involved with the validation error
+    ; case ...
+      ; ...
+    elsecase
+      vErrorMsg = $text("%%($error)")
+      ; vErrorFields = "..."  ; The list of fields involved with this check
+    endselectcase
+  ; case 2004       ; No modifications allowed on occurrence of this entity
+  ; case 2009       ; Occurrence locked
+  ; case 2012       ; Occurrence in form does not match database occurrence
+  ; case 2013       ; Occurrence does not exist
+  ; ...
+  elsecase
+    vErrorMsg = $text("%%($error)")
+    ; vErrorFields = "..."  ; The list of fields involved with the validation error
+  endselectcase
+
+  #if (&lt;$componenttype&gt;==D)
+    ; For DSP components, (multiple) data errors are reported and shown via the involved fields:
+    forlist vFieldName in vErrorFields
+      getitem/id vErrors, $fieldproperties("%%(vFieldName).&lt;$entname&gt;"), "errormsg"
+      putitem vErrors, -1, vErrorMsg
+      putitem/id $fieldproperties("%%(vFieldName).&lt;$entname&gt;"), "errormsg", vErrors
+    endfor
+  #elseif (&lt;$componenttype&gt;==P)
+    ; For USP components, (multiple) data errors are reported and shown via the involved fields:
+    forlist vFieldName in vErrorFields
+      getitem/id vErrors, $fieldproperties("%%(vFieldName).&lt;$entname&gt;"), "errormsg"
+      putitem vErrors, -1, vErrorMsg
+      putitem/id $fieldproperties("%%(vFieldName).&lt;$entname&gt;"), "errormsg", vErrors
+      putitem/id $fieldproperties("%%(vFieldName).&lt;$entname&gt;"), "SubClass", "errorstyle"
+    endfor
+  #elseif (&lt;$componenttype&gt;==F)
+    ; Form components usually do not get in situations where multiple errors need to be shown, because the Structure Editor prevents leaving modified fields/key/occurrences that are in error.
+    ; For Form components, reporting the error message in the message line is sufficient.
+    message vErrorMsg
+  #else
+    ; Other components log the error back to the data need, where it can be used to generate an error report once validation is completed.
+    getitem/id vErrors, $occproperties(&lt;$entname&gt;), "errormsg"
+    putitem vErrors, -1, vErrorMsg
+    putitem/id $occproperties(&lt;$entname&gt;), "errormsg", vErrors
+  #endif
+
+  ; Return &gt;=0 to indicate the error is ignored
+  ; Return &lt;0 to indicate the error is not ignored
+  return -1
+
+end
+
+
+trigger write
+throws
+; This trigger is fired when Uniface writes the occurrences to the database, typically as part of a store.
+
+  ; Your last moment field updates here, e.g.:
+  ; TIMESTAMP.&lt;$entname&gt; = $datim
 
   write
 
@@ -236,8 +506,8 @@ end
 
 
 trigger delete
-; This trigger is fired as part of the store/erase process.
-; Make sure not to leave the context of this occurrence, it would disrupt the trigger flow and give unpredictable results.
+throws
+; This trigger is fired when Uniface deletes the occurrences from the database, typically as part of a store or erase.
 
   delete
 
@@ -372,6 +642,100 @@ end</DAT>
 <DAT name="IS_STATIC">F</DAT>
 <DAT name="IS_CONTROL">F</DAT>
 <DAT name="U_INT">C40</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger validate
+throws
+; This trigger is fired as part of the validation process and should be used to create field-specific validation rules.
+; Write one or more field validation checks and return a unique negative number for every failing check.
+; This negative number is used by the error trigger to report the error.
+; Remove this trigger if no procedural validation is required.
+
+  ; Your field validation rules here...
+  ; if (&lt;$fieldname&gt;.&lt;$entname&gt; &lt; 0)
+  ;   return -1
+  ; elseif (&lt;$fieldname&gt;.&lt;$entname&gt; &gt; 100)
+  ;   return -2
+  ; endif
+
+  ; Validation is successful.
+  return 0
+
+end
+
+
+trigger error
+throws
+; This trigger is fired when data validation of the current field failed.
+; This trigger should:
+; 1. determine whether the validation error is to be ignored or not
+;    - return &gt;=0 to indicate the error is to be ignored
+;    - return &lt;0 to indicate the error is not to be ignored
+; 2. determine the error message
+; 3. report the error message
+variables
+  string vErrorMsg, vDataErrorContext, vErrors
+endvariables
+
+  ; Determine error message
+  selectcase $error
+  case 0140
+    ; Validation error caused by field trigger validate
+    selectcase $item("STATUS", $dataerrorcontext)
+    case -1
+      ; vErrorMsg = $concat($text("%%($error)"), " - Check 1 in validate trigger failed")
+      vErrorMsg = $concat($text("%%($error)"), " - Value must be between 0 and 100")
+    case -2
+      vErrorMsg = $concat($text("%%($error)"), " - Check 2 in validate trigger failed")
+    elsecase
+      vErrorMsg = $text("%%($error)")
+    endselectcase
+  ; case 0119       ; illegal ValRep value
+  ; case 0120       ; subfield too large
+  ; case 0121       ; subfield too small
+  ; case 0122       ; incorrect checkdigit
+  ; case 0123       ; illegal format for numeric field
+  ; case 0124       ; illegal format for date field
+  ; case 0125       ; illegal format for time field
+  ; case 0126       ; illegal syntax format
+  ; case 0127       ; illegal entry format
+  ; case 0128       ; subfield too large to check
+  ; case 0129       ; subfield(s) are required
+  ; case 0130       ; too many subfields specified
+  ; case 0138       ; illegal format for floating field
+  ; ...
+  elsecase
+    vErrorMsg = $text("%%($error)")
+  endselectcase
+
+  #if (&lt;$componenttype&gt;==D)
+    ; For DSP components, (multiple) data errors are reported and shown via the field:
+    getitem/id vErrors, $fieldproperties(&lt;$fieldname&gt;.&lt;$entname&gt;), "errormsg"
+    putitem vErrors, -1, vErrorMsg
+    putitem/id $fieldproperties(&lt;$fieldname&gt;.&lt;$entname&gt;), "errormsg", vErrors
+  #elseif (&lt;$componenttype&gt;==P)
+    ; For USP components, (multiple) data errors are reported and shown via the field:
+    getitem/id vErrors, $fieldproperties(&lt;$fieldname&gt;.&lt;$entname&gt;), "errormsg"
+    putitem vErrors, -1, vErrorMsg
+    putitem/id $fieldproperties(&lt;$fieldname&gt;.&lt;$entname&gt;), "errormsg", vErrors
+    putitem/id $fieldproperties(&lt;$fieldname&gt;.&lt;$entname&gt;), "SubClass", "errorstyle"
+  #elseif (&lt;$componenttype&gt;==F)
+    ; Form components usually do not get in situations where multiple errors need to be shown, because the Structure Editor prevents leaving modified fields/key/occurrences that are in error.
+    ; For Form components, reporting the error message in the message line is sufficient.
+    message vErrorMsg
+  #else
+    ; Other components log the error back to the data need, where it can be used to generate an error report once validation is completed.
+    getitem/id vErrors, $occproperties(&lt;$entname&gt;), "errormsg"
+    putitem vErrors, -1, vErrorMsg
+    putitem/id $occproperties(&lt;$entname&gt;), "errormsg", vErrors
+  #endif
+
+  ; Return &gt;=0 to indicate the error is ignored
+  ; Return &lt;0 to indicate the error is not ignored
+  return -1
+
+end
+
+
+</DAT>
 <DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="USP_WIDGETTYPE">U_INPUT</DAT>
@@ -389,6 +753,98 @@ end</DAT>
 <DAT name="IS_STATIC">F</DAT>
 <DAT name="IS_CONTROL">F</DAT>
 <DAT name="U_INT">C40</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>trigger validate
+throws
+; This trigger is fired as part of the validation process and should be used to create field-specific validation rules.
+; Write one or more field validation checks and return a unique negative number for every failing check.
+; This negative number is used by the error trigger to report the error.
+; Remove this trigger if no procedural validation is required.
+
+  ; Your field validation rules here...
+  ; if (&lt;$fieldname&gt;.&lt;$entname&gt; &lt; 0)
+  ;   return -1
+  ; elseif (&lt;$fieldname&gt;.&lt;$entname&gt; &gt; 100)
+  ;   return -2
+  ; endif
+
+  ; Validation is successful.
+  return 0
+
+end
+
+
+trigger error
+throws
+; This trigger is fired when data validation of the current field failed.
+; This trigger should:
+; 1. determine whether the validation error is to be ignored or not
+;    - return &gt;=0 to indicate the error is to be ignored
+;    - return &lt;0 to indicate the error is not to be ignored
+; 2. determine the error message
+; 3. report the error message
+variables
+  string vErrorMsg, vDataErrorContext, vErrors
+endvariables
+
+  ; Determine error message
+  selectcase $error
+  case 0140
+    ; Validation error caused by field trigger validate
+    selectcase $item("STATUS", $dataerrorcontext)
+    case -1
+      ; vErrorMsg = $concat($text("%%($error)"), " - Check 1 in validate trigger failed")
+      vErrorMsg = $concat($text("%%($error)"), " - Value must be between 0 and 100")
+    case -2
+      vErrorMsg = $concat($text("%%($error)"), " - Check 2 in validate trigger failed")
+    elsecase
+      vErrorMsg = $text("%%($error)")
+    endselectcase
+  ; case 0119       ; illegal ValRep value
+  ; case 0120       ; subfield too large
+  ; case 0121       ; subfield too small
+  ; case 0122       ; incorrect checkdigit
+  ; case 0123       ; illegal format for numeric field
+  ; case 0124       ; illegal format for date field
+  ; case 0125       ; illegal format for time field
+  ; case 0126       ; illegal syntax format
+  ; case 0127       ; illegal entry format
+  ; case 0128       ; subfield too large to check
+  ; case 0129       ; subfield(s) are required
+  ; case 0130       ; too many subfields specified
+  ; case 0138       ; illegal format for floating field
+  ; ...
+  elsecase
+    vErrorMsg = $text("%%($error)")
+  endselectcase
+
+  #if (&lt;$componenttype&gt;==D)
+    ; For DSP components, (multiple) data errors are reported and shown via the field:
+    getitem/id vErrors, $fieldproperties(&lt;$fieldname&gt;.&lt;$entname&gt;), "errormsg"
+    putitem vErrors, -1, vErrorMsg
+    putitem/id $fieldproperties(&lt;$fieldname&gt;.&lt;$entname&gt;), "errormsg", vErrors
+  #elseif (&lt;$componenttype&gt;==P)
+    ; For USP components, (multiple) data errors are reported and shown via the field:
+    getitem/id vErrors, $fieldproperties(&lt;$fieldname&gt;.&lt;$entname&gt;), "errormsg"
+    putitem vErrors, -1, vErrorMsg
+    putitem/id $fieldproperties(&lt;$fieldname&gt;.&lt;$entname&gt;), "errormsg", vErrors
+    putitem/id $fieldproperties(&lt;$fieldname&gt;.&lt;$entname&gt;), "SubClass", "errorstyle"
+  #elseif (&lt;$componenttype&gt;==F)
+    ; Form components usually do not get in situations where multiple errors need to be shown, because the Structure Editor prevents leaving modified fields/key/occurrences that are in error.
+    ; For Form components, reporting the error message in the message line is sufficient.
+    message vErrorMsg
+  #else
+    ; Other components log the error back to the data need, where it can be used to generate an error report once validation is completed.
+    getitem/id vErrors, $occproperties(&lt;$entname&gt;), "errormsg"
+    putitem vErrors, -1, vErrorMsg
+    putitem/id $occproperties(&lt;$entname&gt;), "errormsg", vErrors
+  #endif
+
+  ; Return &gt;=0 to indicate the error is ignored
+  ; Return &lt;0 to indicate the error is not ignored
+  return -1
+
+end
+</DAT>
 <DAT name="U_DESC" xml:space='preserve'>Prim key field</DAT>
 <DAT name="FRM_WIDGETTYPE">EDITBOX</DAT>
 <DAT name="DSP_WIDGETTYPE">EDITBOX</DAT>

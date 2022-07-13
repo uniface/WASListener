@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
-<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!-- Created by Uniface - (C) Rocket Software B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
 <UNIFACE release="10.4" repversion="8" xmlengine="2.0">
 <TABLE>
@@ -143,7 +143,7 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2016-08-18T15:40:19.00</DAT>
+<DAT name="UTIMESTAMP">2022-06-10T15:05:36.00</DAT>
 <DAT name="ULABEL">UCRPT</DAT>
 <DAT name="DATA_ACCESS">L</DAT>
 <DAT name="UKVERSION">7</DAT>
@@ -158,6 +158,30 @@
 <DAT name="UINHERIT">F</DAT>
 <DAT name="UTRANSACT">2</DAT>
 <DAT name="UPURPOSE">T</DAT>
+<DAT name="USCRIPT" xml:space='preserve'>operation exec
+throws
+; The exec operation of a report is fired in the following situations:
+; - activate "MYREPORT"
+; - activate "MYREPORT".exec()
+; - myReportHandle-&gt;exec()
+; - Select (Compile &amp;) Test from Component Editor in IDE (No parameters allowed)
+
+; Your PARAMS block here (optional)...
+; Your SCOPE  block here (optional)...
+; Your VARIABLES block here (optional)...
+
+  ; Your implementation here...
+
+  ; Initiate printing by retrieving data.
+  ; - Use parameters - PrintJobModel, PrintMode, and USE_SYSTEM_SETTINGS based on your need. 
+  print
+ 
+  ; Return execution status:
+  ;   return 0    ; return &gt;= 0 typically indicates a successful execution
+  ;   return -1   ; return &lt; 0 typically indicates an error during execution
+  return 0
+
+end</DAT>
 </OCC>
 </TABLE>
 </UNIFACE>
