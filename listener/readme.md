@@ -1,6 +1,6 @@
 # Build Instructions
 
-## prerequisites
+## Prerequisites
 
 - [Uniface 10](https://uniface.com/get-started "Register for Uniface 10 CE")
 - [cmake](https://cmake.org/download/ "Download cmake")
