@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
-<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!-- Created by Uniface - (C) Rocket Software B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
 <UNIFACE release="10.4" repversion="8" xmlengine="2.0">
 <TABLE>
@@ -72,14 +72,6 @@
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Template: Application Shell - Character Mode</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>Character Mode Shell</DAT>
-</OCC>
-<OCC>
-<DAT name="UPROJECT">UTEMPLATES</DAT>
-<DAT name="ULABEL">UAPM</DAT>
-<DAT name="UKVERSION">6</DAT>
-<DAT name="UMVERSION">2</DAT>
-<DAT name="UDESCR" xml:space='preserve'>Template: Application Shell - Mobile</DAT>
-<DAT name="UALT_NAME" xml:space='preserve'>Mobile Shell</DAT>
 </OCC>
 <OCC>
 <DAT name="UPROJECT">UTEMPLATES</DAT>
@@ -321,39 +313,6 @@
 </OCC>
 </TABLE>
 <TABLE>
-<DSC name="UREFLIBPRC" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
- rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
-<FLD name="UPROJECT" seqno="1" type="S" level="2" pack="0" scale="0" length="60"
- pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,5" idxsnr="101,1" />
-<FLD name="UNAME" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
- pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,4" idxsnr="102,1" />
-<FLD name="UKVERSION" seqno="3" type="N" level="2" pack="10" scale="0" length="2"
- pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
-<FLD name="UMVERSION" seqno="4" type="N" level="2" pack="10" scale="0" length="2"
- pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
-<FLD name="UDESCR" seqno="5" type="S" level="2" pack="13" scale="0" length="256"
- pointer="0" inum="0" ufocc="0" />
-<FLD name="UALT_NAME" seqno="6" type="S" level="2" pack="13" scale="0" length="128"
- pointer="0" inum="0" ufocc="0" />
-<FLD name="UWAORDER" seqno="7" type="N" level="2" pack="7" scale="0" length="5"
- pointer="0" inum="0" ufocc="0" />
-</DSC>
-<OCC>
-<DAT name="UPROJECT">UTEMPLATES</DAT>
-<DAT name="UNAME">ULIBPRC</DAT>
-<DAT name="UKVERSION">6</DAT>
-<DAT name="UMVERSION">2</DAT>
-<DAT name="UDESCR" xml:space='preserve'>Template: Global ProcScript Library</DAT>
-</OCC>
-<OCC>
-<DAT name="UPROJECT">UTEMPLATES</DAT>
-<DAT name="UNAME">UPALETTE_LIBPRC</DAT>
-<DAT name="UKVERSION">6</DAT>
-<DAT name="UMVERSION">2</DAT>
-<DAT name="UDESCR" xml:space='preserve'>Palette of objects for Global ProcScript Libraries</DAT>
-</OCC>
-</TABLE>
-<TABLE>
 <DSC name="UREFLIBINC" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
  rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
 <FLD name="UPROJECT" seqno="1" type="S" level="2" pack="0" scale="0" length="60"
@@ -384,6 +343,39 @@
 <DAT name="UKVERSION">6</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Palette of objects for IncludeScript Libraries</DAT>
+</OCC>
+</TABLE>
+<TABLE>
+<DSC name="UREFLIBPRC" model="DICT" system="S" pseudo ="73" level="1" noupdate="0"
+ rbk="0" ffsql="0" transnr="0" segsize="0" ufocc="0" charset=".U">
+<FLD name="UPROJECT" seqno="1" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,5" idxsnr="101,1" />
+<FLD name="UNAME" seqno="2" type="S" level="2" pack="0" scale="0" length="60"
+ pointer="0" inum="2" ufocc="0" mandatory="yes" idxnum="1,4" idxsnr="102,1" />
+<FLD name="UKVERSION" seqno="3" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="2" idxsnr="1" />
+<FLD name="UMVERSION" seqno="4" type="N" level="2" pack="10" scale="0" length="2"
+ pointer="0" inum="1" ufocc="0" idxnum="3" idxsnr="1" />
+<FLD name="UDESCR" seqno="5" type="S" level="2" pack="13" scale="0" length="256"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UALT_NAME" seqno="6" type="S" level="2" pack="13" scale="0" length="128"
+ pointer="0" inum="0" ufocc="0" />
+<FLD name="UWAORDER" seqno="7" type="N" level="2" pack="7" scale="0" length="5"
+ pointer="0" inum="0" ufocc="0" />
+</DSC>
+<OCC>
+<DAT name="UPROJECT">UTEMPLATES</DAT>
+<DAT name="UNAME">ULIBPRC</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Template: Global ProcScript Library</DAT>
+</OCC>
+<OCC>
+<DAT name="UPROJECT">UTEMPLATES</DAT>
+<DAT name="UNAME">UPALETTE_LIBPRC</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Palette of objects for Global ProcScript Libraries</DAT>
 </OCC>
 </TABLE>
 <TABLE>
@@ -495,6 +487,13 @@
 <DAT name="UKVERSION">6</DAT>
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Library of script snippets for Static Server Page components</DAT>
+</OCC>
+<OCC>
+<DAT name="UPROJECT">UTEMPLATES</DAT>
+<DAT name="UNAME">USTRUCT</DAT>
+<DAT name="UKVERSION">6</DAT>
+<DAT name="UMVERSION">2</DAT>
+<DAT name="UDESCR" xml:space='preserve'>Library of script snippets for Struct handling</DAT>
 </OCC>
 </TABLE>
 <TABLE>

@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
-<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!-- Created by Uniface - (C) Rocket Software B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
 <UNIFACE release="10.4" repversion="8" xmlengine="2.0">
 <TABLE>
@@ -75,7 +75,7 @@
 <DAT name="UMVERSION">2</DAT>
 <DAT name="UDESCR" xml:space='preserve'>Layout declaration of a contained DSP</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>DSP: Layout declaration for contained DSP</DAT>
-<DAT name="UTEXT" xml:space='preserve'>&lt;!-- No need for a html document declaration, DOCTYPE, &lt;head&gt;, ...
+<DAT name="UTEXT" xml:space='preserve'>&lt;!-- No need for an html document declaration, DOCTYPE, &lt;head&gt;, ...
      By default, &lt;head&gt; of the Main DSP (the DSP that contains this DSP) is used.
 --&gt;
 
@@ -90,7 +90,7 @@
 <DAT name="UDESCR" xml:space='preserve'>Layout for grid view of database entity (DSP)</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>DSP: Database entity grid</DAT>
 <DAT name="UTEXT" xml:space='preserve'>      &lt;!-- Layout of database grid entity with control buttons, header, and footer:
-           TO DO: - Bind all id attributes to actualy database entity and fields in the component structure.
+           TO DO: - Bind all id attributes to actual database entity and fields in the component structure.
                   - Remove not used elements
       --&gt;
       &lt;div class="entity"&gt;
@@ -128,7 +128,7 @@
               &lt;/tr&gt;
 
               &lt;!-- Column profile fields:
-                   TO DO: - Create a sub type entity of DATA_ENTITY.MODEL with name e.g. PROFILE.MODEL
+                   TO DO: - Create a subtype entity of DATA_ENTITY.MODEL with name e.g. PROFILE.MODEL
                           - Set entity Database Behavior property to: N (Not in database)
                           - Set Widget property of all fields to: Editbox
               --&gt;
@@ -428,7 +428,7 @@
 <DAT name="UTEXT" xml:space='preserve'>    &lt;form method="post" action="" onsubmit="return uSubmit(this);"&gt;
 
       &lt;!-- Layout of database grid entity with control buttons, header, and footer:
-           TO DO: - Bind all &lt;x-tags&gt; to actualy database entity/fields/labels in the component structure.
+           TO DO: - Bind all &lt;x-tags&gt; to actual database entity/fields/labels in the component structure.
                   - Remove not used elements
       --&gt;
       &lt;div class="entity"&gt;
