@@ -1,6 +1,6 @@
 # Build Instructions
 
-## prerequisites
+## Prerequisites
 
 - [Uniface 10](https://uniface.com/get-started "Register for Uniface 10 CE")
 - [cmake](https://cmake.org/download/ "Download cmake")
@@ -12,6 +12,7 @@
 git clone --recurse git@github.com:uniface/WASListener.git
 cd WASListener\listener
 vcpkg\bootstrap-vcpkg.bat
+
 ```
 
 ## Compile x64
