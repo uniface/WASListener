@@ -9,7 +9,7 @@
 ## Get the source code and prepare the the package manager
 
 ```powershell
-git clone --recurse git@github.com:uniface/WASListener.git
+git clone --recurse https://github.com/uniface/WASListener.git
 cd WASListener\listener
 vcpkg\bootstrap-vcpkg.bat
 
