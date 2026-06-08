@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
-<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!-- Created by Uniface - (C) Rocket Software B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
 <UNIFACE release="10.4" repversion="8" xmlengine="2.0">
 <TABLE>
@@ -143,7 +143,7 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2020-03-04T11:27:24.00</DAT>
+<DAT name="UTIMESTAMP">2026-06-08T17:34:40.00</DAT>
 <DAT name="ULABEL">VC_MAIN</DAT>
 <DAT name="FTYP">Q</DAT>
 <DAT name="DATA_ACCESS">N</DAT>
@@ -228,13 +228,19 @@ operation loadFromWA
 	endif
 
 	forlist vUDO in $ldirlist(vFolder, "DIR")
-		forlist vFile in $ldirlist("%%(vFolder)\%%(vUDO)", "FILE")
 
-			$instanceHandle-&gt;vc("%%(vFolder)\%%(vUDO)\%%(vFile)", 1, 1)
+		if(vUDO != "sig")
+			putmess "Importing %%(vUDO)"
+		    forlist vFile in $ldirlist("%%(vFolder)\%%(vUDO)", "FILE")
 
-		endFor
+			    $instanceHandle-&gt;vc("%%(vFolder)\%%(vUDO)\%%(vFile)", 1, 1)
+
+		    endFor
+		else
+			putmess "Not importing signatures"
+		endif
+
 	endfor
-end
 
 operation vc
 	params
