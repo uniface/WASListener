@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8' ?>
-<!-- Created by Uniface - (C) Uniface B.V. All rights reserved -->
+<!-- Created by Uniface - (C) Rocket Software B.V. All rights reserved -->
 <!DOCTYPE UNIFACE PUBLIC "UNIFACE.DTD" "UNIFACE.DTD">
 <UNIFACE release="10.4" repversion="8" xmlengine="2.0">
 <TABLE>
@@ -143,7 +143,7 @@
  pointer="0" inum="0" ufocc="0" varinfo=",1,0,2,\1F\E1,0,0,0,,0,0,0,," />
 </DSC>
 <OCC>
-<DAT name="UTIMESTAMP">2020-04-23T11:16:03.00</DAT>
+<DAT name="UTIMESTAMP">2026-06-08T17:36:13.00</DAT>
 <DAT name="ULABEL">VC_UPDATED</DAT>
 <DAT name="DATA_ACCESS">L</DAT>
 <DAT name="UKVERSION">7</DAT>
@@ -222,11 +222,16 @@ operation loadFromWA
 		handle vVc
 	endVariables
 	
-	activate "IDE_API_1".outputMessage("Importing from Workarea")
-	newinstance "VC_MAIN", vVc
-	vVc-&gt;loadFromWA()
+	askmess "Import whole WorkArea?", "Yes, No"
 
-	pNeedsRefresh = 2
+	if($status = 1); yes
+	    activate "IDE_API_1".outputMessage("Importing from Workarea")
+	    newinstance "VC_MAIN", vVc
+	    vVc-&gt;loadFromWA()
+
+	    pNeedsRefresh = 2
+	endif
+
 end
 
 operation resetWASstamps
@@ -323,7 +328,7 @@ end ;- entry addOption</DAT>
 &uFRM;TYP=E&uSEP;NAM=USSPEC.DICT&uSEP;WID=2&uSEP;HEI=1&uSEP;HOC=2&uSEP;VOC=1&uFRM;  &uFRM;TYP=E&uSEP;NAM=ENTITY.NOMODEL&uSEP;WID=99&uSEP;HEI=3&uSEP;HOC=99&uSEP;VOC=3&uSEP;BAR=N&uFRM;                                                                          &uFRM;TYP=F&uSEP;NAM=PB_EXPORTALL&uSEP;WID=11&uSEP;HEI=3&uFRM; &uFRM;TYP=F&uSEP;NAM=PB_REVERTALL&uSEP;WID=11&uSEP;HEI=3&uFRM;
 &uFRM;TYP=E&uSEP;NAM=USIMPL.DICT&uSEP;WID=2&uSEP;HEI=1&uSEP;HOC=2&uSEP;VOC=1&uFRM;  &uFRM;TYP=F&uSEP;NAM=INCLUNISIGS&uSEP;WID=2&uSEP;HEI=1&uFRM;&uFRM;TYP=L&uSEP;NAM=INCLUNISIGS.ENTITY&uSEP;WID=24&uSEP;HEI=1&uSEP;LAB=Include Uniface CPT Signatures?&uFRM;</DAT>
 <DAT name="TITLE" xml:space='preserve'>Export or revert modified development objects</DAT>
-<DAT name="WINPROP" xml:space='preserve'>CANRESIZE=F&uSEP;AUTOCLOSE=F&uSEP;UTYPE=DIALOG&uSEP;DIALOG=T&uSEP;SPLIT=(101,22,h,b,h,f,p,p)&uSEP;KEEPLAYOUT=F&uSEP;WINDOWTYPE=DIALOG</DAT>
+<DAT name="WINPROP" xml:space='preserve'>CANRESIZE=F&uSEP;AUTOCLOSE=F&uSEP;UTYPE=DIALOG&uSEP;DIALOG=T&uSEP;SPLIT=(0,22,h,b,h,f,p,p)&uSEP;KEEPLAYOUT=F&uSEP;WINDOWTYPE=DIALOG</DAT>
 </OCC>
 </TABLE>
 <TABLE>
@@ -482,6 +487,7 @@ end ;- entry addOption</DAT>
 <DAT name="UMVERSION">4</DAT>
 </OCC>
 <OCC>
+<DAT name="UTIMESTAMP">2025-12-08T16:17:00.00</DAT>
 <DAT name="ULABEL">VC_UPDATED</DAT>
 <DAT name="UBASE">VC_VIEWS</DAT>
 <DAT name="UFORM">VC_UPDATED</DAT>
@@ -504,12 +510,11 @@ partner operation revertAll
 end
 
 </DAT>
-<DAT name="UOCC_SCRIPT" xml:space='preserve'>trigger read
+<DAT name="UOCC_SCRIPT" xml:space='preserve'>trigger read 
 	variables
 	  string vUSSPEC, vUSIMPL
 	endvariables
-
-	read
+	read order by "TYPE asc, NAME asc"
 	if ($status &gt;= 0 &amp; !INCLUNISIGS.ENTITY)
 		if ($lowercase(TYPE.VC_UPDATED) = "sig")
 			selectdb UDEFPATH from "USSPEC" u_where (USPECNAM.USSPEC = NAME.VC_UPDATED) to (vUSSPEC)
@@ -775,6 +780,7 @@ end</DAT>
 <DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
 </OCC>
 <OCC>
+<DAT name="UTIMESTAMP">2026-06-08T17:36:13.00</DAT>
 <DAT name="ULABEL">PB_REVERTALL</DAT>
 <DAT name="GRP">ENTITY</DAT>
 <DAT name="UBASE">NOMODEL</DAT>
@@ -788,7 +794,12 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>Command Button</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>trigger detail
-	$collHandle(VC_UPDATED)-&gt;revertAll()
+	askmess "Revert All?", "Yes,No"
+	if($status = 1)
+
+	    $collHandle(VC_UPDATED)-&gt;revertAll()
+
+	endif
 end</DAT>
 <DAT name="INITVALUE" xml:space='preserve'>Revert All</DAT>
 <DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
@@ -797,6 +808,7 @@ end</DAT>
 <DAT name="USP_WIDGETTYPE">U_BUTTON</DAT>
 </OCC>
 <OCC>
+<DAT name="UTIMESTAMP">2026-06-08T17:35:47.00</DAT>
 <DAT name="ULABEL">REVERT</DAT>
 <DAT name="GRP">VC_UPDATED</DAT>
 <DAT name="UBASE">VC_VIEWS</DAT>
@@ -810,7 +822,12 @@ end</DAT>
 <DAT name="U_INT">W*</DAT>
 <DAT name="UALT_NAME" xml:space='preserve'>Command Button</DAT>
 <DAT name="USCRIPT" xml:space='preserve'>trigger detail
-	$occhandle-&gt;revert()
+	askmess "Revert your changes to what is in the repo", "Yes,No"
+	if($status = 1)
+
+	    $occhandle-&gt;revert()
+
+	endif
 end</DAT>
 <DAT name="INITVALUE">Revert</DAT>
 <DAT name="FRM_WIDGETTYPE">COMMANDBUTTON</DAT>
